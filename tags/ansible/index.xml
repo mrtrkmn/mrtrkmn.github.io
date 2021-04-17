@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ansible on mrturkmen</title>
-    <link>/tags/ansible/</link>
+    <link>https://mrtrkmn.github.io/tags/ansible/</link>
     <description>Recent content in ansible on mrturkmen</description>
     <image>
-      <url>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://mrtrkmn.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://mrtrkmn.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 12 Dec 2020 17:42:03 +0000</lastBuildDate><atom:link href="/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Dec 2020 17:42:03 +0000</lastBuildDate><atom:link href="https://mrtrkmn.github.io/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Deploy with Ansible on CI/CD</title>
-      <link>/posts/deploy-with-ansible/</link>
+      <link>https://mrtrkmn.github.io/posts/deploy-with-ansible/</link>
       <pubDate>Sat, 12 Dec 2020 17:42:03 +0000</pubDate>
       
-      <guid>/posts/deploy-with-ansible/</guid>
+      <guid>https://mrtrkmn.github.io/posts/deploy-with-ansible/</guid>
       <description>Deploying with Ansible on CI/CD. </description>
     </item>
     
     <item>
       <title>Introduction to Ansible - Handwritten Notes</title>
-      <link>/posts/introduction-to-ansible-notes/</link>
+      <link>https://mrtrkmn.github.io/posts/introduction-to-ansible-notes/</link>
       <pubDate>Sat, 05 Dec 2020 12:45:03 +0000</pubDate>
       
-      <guid>/posts/introduction-to-ansible-notes/</guid>
+      <guid>https://mrtrkmn.github.io/posts/introduction-to-ansible-notes/</guid>
       <description>While watching video tutorial about Ansible, I took some notes and created following PDF file.
 INTRODUCTION TO ANSIBLE HANDWRITTEN NOTES</description>
     </item>

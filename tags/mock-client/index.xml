@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mock-client on mrturkmen</title>
-    <link>/tags/mock-client/</link>
+    <link>https://mrtrkmn.github.io/tags/mock-client/</link>
     <description>Recent content in mock-client on mrturkmen</description>
     <image>
-      <url>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://mrtrkmn.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://mrtrkmn.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 08 Aug 2020 09:19:03 +0000</lastBuildDate><atom:link href="/tags/mock-client/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Aug 2020 09:19:03 +0000</lastBuildDate><atom:link href="https://mrtrkmn.github.io/tags/mock-client/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Universal gRPC client demonstration [Evans]</title>
-      <link>/posts/grpc-calls-with-evans/</link>
+      <link>https://mrtrkmn.github.io/posts/grpc-calls-with-evans/</link>
       <pubDate>Sat, 08 Aug 2020 09:19:03 +0000</pubDate>
       
-      <guid>/posts/grpc-calls-with-evans/</guid>
+      <guid>https://mrtrkmn.github.io/posts/grpc-calls-with-evans/</guid>
       <description>Mock gRPC client</description>
     </item>
     

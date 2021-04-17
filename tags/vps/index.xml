@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vps on mrturkmen</title>
-    <link>/tags/vps/</link>
+    <link>https://mrtrkmn.github.io/tags/vps/</link>
     <description>Recent content in vps on mrturkmen</description>
     <image>
-      <url>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://mrtrkmn.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://mrtrkmn.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 01 Jul 2020 10:00:03 +0000</lastBuildDate><atom:link href="/tags/vps/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Jul 2020 10:00:03 +0000</lastBuildDate><atom:link href="https://mrtrkmn.github.io/tags/vps/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Kendimize özel VPN kurulumu </title>
-      <link>/posts/vpn-kuralim/</link>
+      <link>https://mrtrkmn.github.io/posts/vpn-kuralim/</link>
       <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
       
-      <guid>/posts/vpn-kuralim/</guid>
+      <guid>https://mrtrkmn.github.io/posts/vpn-kuralim/</guid>
       <description>Decent open source, lightweight VPN solution.</description>
     </item>
     
     <item>
       <title>Free VPN [WireGuard] Setup  </title>
-      <link>/posts/setup-free-vpn/</link>
+      <link>https://mrtrkmn.github.io/posts/setup-free-vpn/</link>
       <pubDate>Sat, 06 Jun 2020 10:00:03 +0000</pubDate>
       
-      <guid>/posts/setup-free-vpn/</guid>
+      <guid>https://mrtrkmn.github.io/posts/setup-free-vpn/</guid>
       <description>Decent open source, lightweight VPN solution.</description>
     </item>
     

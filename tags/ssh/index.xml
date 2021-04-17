@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ssh on mrturkmen</title>
-    <link>/tags/ssh/</link>
+    <link>https://mrtrkmn.github.io/tags/ssh/</link>
     <description>Recent content in ssh on mrturkmen</description>
     <image>
-      <url>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://mrtrkmn.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://mrtrkmn.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 24 Feb 2021 12:00:03 +0000</lastBuildDate><atom:link href="/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Feb 2021 12:00:03 +0000</lastBuildDate><atom:link href="https://mrtrkmn.github.io/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>fail2ban: block ssh bruteforce attacks </title>
-      <link>/posts/fail2ban/</link>
+      <link>https://mrtrkmn.github.io/posts/fail2ban/</link>
       <pubDate>Wed, 24 Feb 2021 12:00:03 +0000</pubDate>
       
-      <guid>/posts/fail2ban/</guid>
+      <guid>https://mrtrkmn.github.io/posts/fail2ban/</guid>
       <description>fail2ban: ban failed attempts</description>
     </item>
     

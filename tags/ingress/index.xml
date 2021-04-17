@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ingress on mrturkmen</title>
-    <link>/tags/ingress/</link>
+    <link>https://mrtrkmn.github.io/tags/ingress/</link>
     <description>Recent content in ingress on mrturkmen</description>
     <image>
-      <url>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://mrtrkmn.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://mrtrkmn.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 10 Jul 2020 16:35:03 +0000</lastBuildDate><atom:link href="/tags/ingress/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Jul 2020 16:35:03 +0000</lastBuildDate><atom:link href="https://mrtrkmn.github.io/tags/ingress/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NGINX Ingress Controller with HAProxy for k8s cluster</title>
-      <link>/posts/setup-ingress-controller/</link>
+      <link>https://mrtrkmn.github.io/posts/setup-ingress-controller/</link>
       <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
       
-      <guid>/posts/setup-ingress-controller/</guid>
+      <guid>https://mrtrkmn.github.io/posts/setup-ingress-controller/</guid>
       <description>NGINX Ingress Controller Setup</description>
     </item>
     
     <item>
       <title>Setup Highly Available Kubernetes Cluster with HAProxy</title>
-      <link>/posts/install-ha-kubernetes-cluster/</link>
+      <link>https://mrtrkmn.github.io/posts/install-ha-kubernetes-cluster/</link>
       <pubDate>Sun, 05 Jul 2020 17:43:03 +0000</pubDate>
       
-      <guid>/posts/install-ha-kubernetes-cluster/</guid>
+      <guid>https://mrtrkmn.github.io/posts/install-ha-kubernetes-cluster/</guid>
       <description>Installation of Highly Available Kubernetes Cluster</description>
     </item>
     
