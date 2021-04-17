@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on mrturkmen</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on mrturkmen</description>
+    <image>
+      <url>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 17 Apr 2021 09:00:03 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>automation</title>
+      <link>/tags/automation/</link>
+      <pubDate>Sat, 17 Apr 2021 09:00:03 +0000</pubDate>
+      
+      <guid>/tags/automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aws</title>
+      <link>/tags/aws/</link>
+      <pubDate>Sat, 17 Apr 2021 09:00:03 +0000</pubDate>
+      
+      <guid>/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>packer</title>
+      <link>/tags/packer/</link>
+      <pubDate>Sat, 17 Apr 2021 09:00:03 +0000</pubDate>
+      
+      <guid>/tags/packer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ubuntu</title>
+      <link>/tags/ubuntu/</link>
+      <pubDate>Sat, 17 Apr 2021 09:00:03 +0000</pubDate>
+      
+      <guid>/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>attack</title>
+      <link>/tags/attack/</link>
+      <pubDate>Wed, 24 Feb 2021 12:00:03 +0000</pubDate>
+      
+      <guid>/tags/attack/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bruteforce</title>
+      <link>/tags/bruteforce/</link>
+      <pubDate>Wed, 24 Feb 2021 12:00:03 +0000</pubDate>
+      
+      <guid>/tags/bruteforce/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fail2ban</title>
+      <link>/tags/fail2ban/</link>
+      <pubDate>Wed, 24 Feb 2021 12:00:03 +0000</pubDate>
+      
+      <guid>/tags/fail2ban/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssh</title>
+      <link>/tags/ssh/</link>
+      <pubDate>Wed, 24 Feb 2021 12:00:03 +0000</pubDate>
+      
+      <guid>/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ansible</title>
+      <link>/tags/ansible/</link>
+      <pubDate>Sat, 12 Dec 2020 17:42:03 +0000</pubDate>
+      
+      <guid>/tags/ansible/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>continuous</title>
+      <link>/tags/continuous/</link>
+      <pubDate>Sat, 12 Dec 2020 17:42:03 +0000</pubDate>
+      
+      <guid>/tags/continuous/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>deployment</title>
+      <link>/tags/deployment/</link>
+      <pubDate>Sat, 12 Dec 2020 17:42:03 +0000</pubDate>
+      
+      <guid>/tags/deployment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github</title>
+      <link>/tags/github/</link>
+      <pubDate>Sat, 12 Dec 2020 17:42:03 +0000</pubDate>
+      
+      <guid>/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>download</title>
+      <link>/tags/download/</link>
+      <pubDate>Tue, 24 Nov 2020 10:55:03 +0000</pubDate>
+      
+      <guid>/tags/download/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fetch</title>
+      <link>/tags/fetch/</link>
+      <pubDate>Tue, 24 Nov 2020 10:55:03 +0000</pubDate>
+      
+      <guid>/tags/fetch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>playlist</title>
+      <link>/tags/playlist/</link>
+      <pubDate>Tue, 24 Nov 2020 10:55:03 +0000</pubDate>
+      
+      <guid>/tags/playlist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>youtube</title>
+      <link>/tags/youtube/</link>
+      <pubDate>Tue, 24 Nov 2020 10:55:03 +0000</pubDate>
+      
+      <guid>/tags/youtube/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>youtubeto</title>
+      <link>/tags/youtubeto/</link>
+      <pubDate>Tue, 24 Nov 2020 10:55:03 +0000</pubDate>
+      
+      <guid>/tags/youtubeto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>latex</title>
+      <link>/tags/latex/</link>
+      <pubDate>Mon, 26 Oct 2020 16:25:03 +0000</pubDate>
+      
+      <guid>/tags/latex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>workflow</title>
+      <link>/tags/workflow/</link>
+      <pubDate>Mon, 26 Oct 2020 16:25:03 +0000</pubDate>
+      
+      <guid>/tags/workflow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>automated</title>
+      <link>/tags/automated/</link>
+      <pubDate>Sat, 08 Aug 2020 09:19:03 +0000</pubDate>
+      
+      <guid>/tags/automated/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cli</title>
+      <link>/tags/cli/</link>
+      <pubDate>Sat, 08 Aug 2020 09:19:03 +0000</pubDate>
+      
+      <guid>/tags/cli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>client</title>
+      <link>/tags/client/</link>
+      <pubDate>Sat, 08 Aug 2020 09:19:03 +0000</pubDate>
+      
+      <guid>/tags/client/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>go</title>
+      <link>/tags/go/</link>
+      <pubDate>Sat, 08 Aug 2020 09:19:03 +0000</pubDate>
+      
+      <guid>/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>grpc</title>
+      <link>/tags/grpc/</link>
+      <pubDate>Sat, 08 Aug 2020 09:19:03 +0000</pubDate>
+      
+      <guid>/tags/grpc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mock-client</title>
+      <link>/tags/mock-client/</link>
+      <pubDate>Sat, 08 Aug 2020 09:19:03 +0000</pubDate>
+      
+      <guid>/tags/mock-client/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>server</title>
+      <link>/tags/server/</link>
+      <pubDate>Sat, 08 Aug 2020 09:19:03 +0000</pubDate>
+      
+      <guid>/tags/server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cluster</title>
+      <link>/tags/cluster/</link>
+      <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
+      
+      <guid>/tags/cluster/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>/tags/docker/</link>
+      <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
+      
+      <guid>/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HAProxy</title>
+      <link>/tags/haproxy/</link>
+      <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
+      
+      <guid>/tags/haproxy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ingress</title>
+      <link>/tags/ingress/</link>
+      <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
+      
+      <guid>/tags/ingress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>/tags/kubernetes/</link>
+      <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
+      
+      <guid>/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>master</title>
+      <link>/tags/master/</link>
+      <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
+      
+      <guid>/tags/master/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nginx</title>
+      <link>/tags/nginx/</link>
+      <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
+      
+      <guid>/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>node</title>
+      <link>/tags/node/</link>
+      <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
+      
+      <guid>/tags/node/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pod</title>
+      <link>/tags/pod/</link>
+      <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
+      
+      <guid>/tags/pod/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>worker</title>
+      <link>/tags/worker/</link>
+      <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
+      
+      <guid>/tags/worker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>/tags/linux/</link>
+      <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
+      
+      <guid>/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>macosx</title>
+      <link>/tags/macosx/</link>
+      <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
+      
+      <guid>/tags/macosx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>security</title>
+      <link>/tags/security/</link>
+      <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
+      
+      <guid>/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tunneling</title>
+      <link>/tags/tunneling/</link>
+      <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
+      
+      <guid>/tags/tunneling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vpn</title>
+      <link>/tags/vpn/</link>
+      <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
+      
+      <guid>/tags/vpn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vps</title>
+      <link>/tags/vps/</link>
+      <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
+      
+      <guid>/tags/vps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wireguard</title>
+      <link>/tags/wireguard/</link>
+      <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
+      
+      <guid>/tags/wireguard/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>coursera</title>
+      <link>/tags/coursera/</link>
+      <pubDate>Sat, 13 Jun 2020 10:00:03 +0000</pubDate>
+      
+      <guid>/tags/coursera/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>examples</title>
+      <link>/tags/examples/</link>
+      <pubDate>Sat, 13 Jun 2020 10:00:03 +0000</pubDate>
+      
+      <guid>/tags/examples/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>/tags/golang/</link>
+      <pubDate>Sat, 13 Jun 2020 10:00:03 +0000</pubDate>
+      
+      <guid>/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>google</title>
+      <link>/tags/google/</link>
+      <pubDate>Sat, 13 Jun 2020 10:00:03 +0000</pubDate>
+      
+      <guid>/tags/google/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>/tags/programming/</link>
+      <pubDate>Sat, 13 Jun 2020 10:00:03 +0000</pubDate>
+      
+      <guid>/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>default</title>
+      <link>/tags/default/</link>
+      <pubDate>Mon, 18 May 2020 00:00:03 +0000</pubDate>
+      
+      <guid>/tags/default/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>error</title>
+      <link>/tags/error/</link>
+      <pubDate>Mon, 18 May 2020 00:00:03 +0000</pubDate>
+      
+      <guid>/tags/error/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>storage</title>
+      <link>/tags/storage/</link>
+      <pubDate>Mon, 18 May 2020 00:00:03 +0000</pubDate>
+      
+      <guid>/tags/storage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>terminal</title>
+      <link>/tags/terminal/</link>
+      <pubDate>Mon, 18 May 2020 00:00:03 +0000</pubDate>
+      
+      <guid>/tags/terminal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elasticsearch</title>
+      <link>/tags/elasticsearch/</link>
+      <pubDate>Sun, 17 Feb 2019 09:04:03 +0000</pubDate>
+      
+      <guid>/tags/elasticsearch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>performance</title>
+      <link>/tags/performance/</link>
+      <pubDate>Sun, 17 Feb 2019 09:04:03 +0000</pubDate>
+      
+      <guid>/tags/performance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>performans</title>
+      <link>/tags/performans/</link>
+      <pubDate>Sun, 17 Feb 2019 09:04:03 +0000</pubDate>
+      
+      <guid>/tags/performans/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>html</title>
+      <link>/tags/html/</link>
+      <pubDate>Fri, 11 Jan 2019 09:04:03 +0000</pubDate>
+      
+      <guid>/tags/html/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>komut</title>
+      <link>/tags/komut/</link>
+      <pubDate>Fri, 11 Jan 2019 09:04:03 +0000</pubDate>
+      
+      <guid>/tags/komut/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nftp</title>
+      <link>/tags/nftp/</link>
+      <pubDate>Fri, 11 Jan 2019 09:04:03 +0000</pubDate>
+      
+      <guid>/tags/nftp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>scp</title>
+      <link>/tags/scp/</link>
+      <pubDate>Fri, 11 Jan 2019 09:04:03 +0000</pubDate>
+      
+      <guid>/tags/scp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vim</title>
+      <link>/tags/vim/</link>
+      <pubDate>Fri, 11 Jan 2019 09:04:03 +0000</pubDate>
+      
+      <guid>/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wget</title>
+      <link>/tags/wget/</link>
+      <pubDate>Fri, 11 Jan 2019 09:04:03 +0000</pubDate>
+      
+      <guid>/tags/wget/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ci/cd</title>
+      <link>/tags/ci/cd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ci/cd/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

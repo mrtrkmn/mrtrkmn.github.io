@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>default on mrturkmen</title>
+    <link>/tags/default/</link>
+    <description>Recent content in default on mrturkmen</description>
+    <image>
+      <url>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 18 May 2020 00:00:03 +0000</lastBuildDate><atom:link href="/tags/default/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>no space left on this device </title>
+      <link>/posts/no-space-left-on-device/</link>
+      <pubDate>Mon, 18 May 2020 00:00:03 +0000</pubDate>
+      
+      <guid>/posts/no-space-left-on-device/</guid>
+      <description>How to solve issue of &amp;#39;No space left on device&amp;#39; which is caused by Docker. </description>
+    </item>
+    
+  </channel>
+</rss>

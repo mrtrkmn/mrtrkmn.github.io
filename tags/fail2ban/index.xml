@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>fail2ban on mrturkmen</title>
+    <link>/tags/fail2ban/</link>
+    <description>Recent content in fail2ban on mrturkmen</description>
+    <image>
+      <url>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 24 Feb 2021 12:00:03 +0000</lastBuildDate><atom:link href="/tags/fail2ban/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>fail2ban: block ssh bruteforce attacks </title>
+      <link>/posts/fail2ban/</link>
+      <pubDate>Wed, 24 Feb 2021 12:00:03 +0000</pubDate>
+      
+      <guid>/posts/fail2ban/</guid>
+      <description>fail2ban: ban failed attempts</description>
+    </item>
+    
+  </channel>
+</rss>

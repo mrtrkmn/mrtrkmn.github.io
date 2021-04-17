@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>coursera on mrturkmen</title>
+    <link>/tags/coursera/</link>
+    <description>Recent content in coursera on mrturkmen</description>
+    <image>
+      <url>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 13 Jun 2020 10:00:03 +0000</lastBuildDate><atom:link href="/tags/coursera/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go notes (Concurrency) </title>
+      <link>/posts/go-concur/</link>
+      <pubDate>Sat, 13 Jun 2020 10:00:03 +0000</pubDate>
+      
+      <guid>/posts/go-concur/</guid>
+      <description>Go Programming Language Notes.</description>
+    </item>
+    
+    <item>
+      <title>Go notes (OOP topics) </title>
+      <link>/posts/go-notes/</link>
+      <pubDate>Mon, 08 Jun 2020 10:00:03 +0000</pubDate>
+      
+      <guid>/posts/go-notes/</guid>
+      <description>Go Programming Language Notes.</description>
+    </item>
+    
+  </channel>
+</rss>

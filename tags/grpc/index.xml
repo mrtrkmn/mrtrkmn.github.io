@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>grpc on mrturkmen</title>
+    <link>/tags/grpc/</link>
+    <description>Recent content in grpc on mrturkmen</description>
+    <image>
+      <url>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 08 Aug 2020 09:19:03 +0000</lastBuildDate><atom:link href="/tags/grpc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Universal gRPC client demonstration [Evans]</title>
+      <link>/posts/grpc-calls-with-evans/</link>
+      <pubDate>Sat, 08 Aug 2020 09:19:03 +0000</pubDate>
+      
+      <guid>/posts/grpc-calls-with-evans/</guid>
+      <description>Mock gRPC client</description>
+    </item>
+    
+  </channel>
+</rss>
