@@ -1,5 +1,5 @@
 <!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>packer: build custom images on cloud and local | mrturkmen</title><meta name=keywords content="packer,aws,ubuntu,automation"><meta name=description content="create custom images on with packer"><meta name=author content="mrturkmen"><link rel=canonical href=/posts/build-with-packer/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.min.04512c372388e08b5118f5b117b2d3efef4ddae52017e16085c8d8d4e361c43d.css integrity="sha256-BFEsNyOI4ItRGPWxF7LT7+9N2uUgF+FghcjY1ONhxD0=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script><link rel=icon href=%3Clink%20/%20abs%20url%3E><link rel=icon type=image/png sizes=16x16 href=%3Clink%20/%20abs%20url%3E><link rel=icon type=image/png sizes=32x32 href=%3Clink%20/%20abs%20url%3E><link rel=apple-touch-icon href=%3Clink%20/%20abs%20url%3E><link rel=mask-icon href=%3Clink%20/%20abs%20url%3E><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><meta name=generator content="Hugo 0.81.0"><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-123-45','auto'),ga('send','pageview'))</script><meta property="og:title" content="packer: build custom images on cloud and local "><meta property="og:description" content="create custom images on with packer"><meta property="og:type" content="article"><meta property="og:url" content="/posts/build-with-packer/"><meta property="og:image" content="../../images/packer_build_on_aws.png"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-04-17T09:00:03+00:00"><meta property="article:modified_time" content="2021-04-17T09:00:03+00:00"><meta property="og:site_name" content="Ahmet Turkmen"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="../../images/packer_build_on_aws.png"><meta name=twitter:title content="packer: build custom images on cloud and local "><meta name=twitter:description content="create custom images on with packer"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"/posts/"},{"@type":"ListItem","position":3,"name":"packer: build custom images on cloud and local ","item":"/posts/build-with-packer/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"packer: build custom images on cloud and local ","name":"packer: build custom images on cloud and local ","description":"create custom images on with packer","keywords":["packer","aws","ubuntu","automation"],"articleBody":" THE REPOSITORY: https://github.com/mrtrkmnhub/ubuntu-packer\nIn this blog post, provisioning and customizing images using packer will be shown with a template repository.\nIf you are asking or wondering what is Packer, the official definition is :\n Packer is a free and open source tool for creating golden images for multiple platforms from a single source configuration. (From Official Website).\n This post includes provisioning of ubuntu image on AWS and local.\nBuild Custom Ubuntu 20.04 LTS on Local In an ideal repository of Packer template, it would be nice to have a skeleton where it includes uploads, http, scripts folders along packer configuration file with a readme. Overall, the structure of folder might look like this :\n├── http │ └── preseed.cfg # required to change defualt values of ubuntu image ├── readme.md # readme file to have instructions about what to do ├── scripts # scripts/ dir, includes scripts to run on custom image │ ├── cleanup.sh # cleans up /tmp  │ ├── install_tools.sh # installs custom tools │ └── setup.sh # setting up config in system wise ├── ubuntu-20.04.json # packer config for ubuntu 20.04 └── uploads # directory to upload files to custom image  └── .gitkeep In this setup, http/preseed.cfg defines answers to the questions which may be asked during installation of Ubuntu operating system. More information regarding to preseed.cfg file can be checked from its wiki\n  scripts folder composed of bash scripts, chef, ansible or any other installer configuration files or scripts which will install customized tools and define settings of ubuntu image.\n  uploads folder includes all files, deb packages, or any other files which will be copied to image which will be inside customized image.\n  Anatomy of Packer Configuration File Any packer file composed of three main components which are ;\nBuilders Define the desired platform and platform configurations, including API Key information and desired source images. Example snippet is given from the Packer file:\n\"builders\": [ { \"boot_command\": [ \"\", \"\", \"\", \"/install/vmlinuz\", \" auto\", \" console-setup/ask_detect=false\", \" console-setup/layoutcode=us\", \" console-setup/modelcode=pc105\", \" debconf/frontend=noninteractive\", \" debian-installer=en_US\", \" fb=false\", \" initrd=/install/initrd.gz\", \" kbd-chooser/method=us\", \" keyboard-configuration/layout=USA\", \" keyboard-configuration/variant=USA\", \" locale=en_US\", \" netcfg/get_domain=vm\", \" netcfg/get_hostname=ubuntu\", \" grub-installer/bootdev=/dev/sda\", \" noapic\", \" preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg\", \" -- \", \"\" ], \"boot_wait\": \"10s\", \"format\": \"ova\", \"disk_size\": 25240, \"guest_additions_path\": \"VBoxGuestAdditions_{{.Version}}.iso\", \"guest_os_type\": \"Ubuntu_64\", \"headless\": true, \"http_directory\": \"http\", \"iso_checksum\": \"sha256:f11bda2f2caed8f420802b59f382c25160b114ccc665dbac9c5046e7fceaced2\", \"iso_urls\": [ \"iso/ubuntu-20.04.1-legacy-server-amd64.iso\", \"https://cdimage.ubuntu.com/ubuntu-legacy-server/releases/20.04/release/ubuntu-20.04.1-legacy-server-amd64.iso\" ], \"shutdown_command\": \"echo 'ubuntu'|sudo -S shutdown -P now\", \"ssh_password\": \"ubuntu\", \"ssh_port\": 22, \"ssh_timeout\": \"10000s\", \"ssh_username\": \"ubuntu\", \"type\": \"virtualbox-iso\", \"vboxmanage\": [ [ \"modifyvm\", \"{{.Name}}\", \"--memory\", \"2048\" ], [ \"modifyvm\", \"{{.Name}}\", \"--cpus\", \"1\" ] ], \"virtualbox_version_file\": \".vbox_version\", \"vm_name\": \"ubuntu_vm_ubuntu_20_{{timestamp}}\" } ] In the builders config, we are defining some set of keys in JSON file, which are very obvious from its name, we are considering to build image locally. All the keys are important in given builders config however most important and might need to update time to time is iso_urls which are the places where packer download iamges and customize it according to your scripts. Another crucial key is to have headless value true which means that there will be no GUI running when packer command is executed to run the Packer JSON file.\nProvisioner Defines how to configure the image most likely by your using existing configuration management tools like Ansible, Chef, Puppet or pure bash scripts.\nIn our example, bash scripts will be provided to install tools and update configuration of ubuntu image to make it customized. Provisioner section of a Packer JSON file can be seen as below:\n\"provisioners\": [ { \"type\": \"file\", \"source\":\"uploads\", \"destination\": \"/home/ubuntu\" }, { \"execute_command\": \"echo 'ubuntu' | {{.Vars}} sudo -S -E bash '{{.Path}}'\", \"script\": \"scripts/install_tools.sh\", \"type\": \"shell\" }, { \"execute_command\": \"echo 'ubuntu' | {{.Vars}} sudo -S -E bash '{{.Path}}'\", \"script\": \"scripts/setup.sh\", \"type\": \"shell\" }, { \"execute_command\": \"echo 'ubuntu' | {{.Vars}} sudo -S -E bash '{{.Path}}'\", \"script\": \"scripts/cleanup.sh\", \"type\": \"shell\" } ] Here we are defining existing bash scripts in order to execute in the process of customizing Ubuntu image. The steps under provisioners are pretty clear.\n  The content of uploads file will be uploaded to home directory /home/ubuntu\n  In second step, install_tools.sh will be executed and other steps will be followed in order.\n  Post Processors Related to the builder, runs after the image is built, it is generally used to generate or apply artifacts. In this example, it is not required however more information can be found here: post processors\nCommunicator How packer works on the machine image during the creation. By default it is over SSH communication and it does not need to be defined explicitly. More information can be found here: communicator\nOver all packer file can be seen as follow:\n{ \"builders\": [ { \"boot_command\": [ \"\", \"\", \"\", \"/install/vmlinuz\", \" auto\", \" console-setup/ask_detect=false\", \" console-setup/layoutcode=us\", \" console-setup/modelcode=pc105\", \" debconf/frontend=noninteractive\", \" debian-installer=en_US\", \" fb=false\", \" initrd=/install/initrd.gz\", \" kbd-chooser/method=us\", \" keyboard-configuration/layout=USA\", \" keyboard-configuration/variant=USA\", \" locale=en_US\", \" netcfg/get_domain=vm\", \" netcfg/get_hostname=ubuntu\", \" grub-installer/bootdev=/dev/sda\", \" noapic\", \" preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg\", \" -- \", \"\" ], \"boot_wait\": \"10s\", \"format\": \"ova\", \"disk_size\": 25240, \"guest_additions_path\": \"VBoxGuestAdditions_{{.Version}}.iso\", \"guest_os_type\": \"Ubuntu_64\", \"headless\": true, \"http_directory\": \"http\", \"iso_checksum\": \"sha256:f11bda2f2caed8f420802b59f382c25160b114ccc665dbac9c5046e7fceaced2\", \"iso_urls\": [ \"iso/ubuntu-20.04.1-legacy-server-amd64.iso\", \"https://cdimage.ubuntu.com/ubuntu-legacy-server/releases/20.04/release/ubuntu-20.04.1-legacy-server-amd64.iso\" ], \"shutdown_command\": \"echo 'ubuntu'|sudo -S shutdown -P now\", \"ssh_password\": \"ubuntu\", \"ssh_port\": 22, \"ssh_timeout\": \"10000s\", \"ssh_username\": \"ubuntu\", \"type\": \"virtualbox-iso\", \"vboxmanage\": [ [ \"modifyvm\", \"{{.Name}}\", \"--memory\", \"2048\" ], [ \"modifyvm\", \"{{.Name}}\", \"--cpus\", \"1\" ] ], \"virtualbox_version_file\": \".vbox_version\", \"vm_name\": \"ubuntu_vm_ubuntu_20_{{timestamp}}\" } ], \"provisioners\": [ { \"type\": \"file\", \"source\":\"uploads\", \"destination\": \"/home/ubuntu\" }, { \"execute_command\": \"echo 'ubuntu' | {{.Vars}} sudo -S -E bash '{{.Path}}'\", \"script\": \"scripts/install_tools.sh\", \"type\": \"shell\" }, { \"execute_command\": \"echo 'ubuntu' | {{.Vars}} sudo -S -E bash '{{.Path}}'\", \"script\": \"scripts/setup.sh\", \"type\": \"shell\" }, { \"execute_command\": \"echo 'ubuntu' | {{.Vars}} sudo -S -E bash '{{.Path}}'\", \"script\": \"scripts/cleanup.sh\", \"type\": \"shell\" } ], \"variables\": { \"version\": \"0.1\" } } How to run locally This file can be run from the place where ubuntu-20.04.json file is located.\n$ packer build ubuntu-20.04.json It will start to build custom image by installing tools which are defined under scripts and configure username and password according to preseed.cfg and setup.sh files.\nBuild Custom Ubuntu 20.04 LTS on Cloud It is more practical and preferrable to use if you already have an cloud option to consider. This packer configuration will create custom image directly on cloud and save it to AMIs to your AWS account.\nThe anatomy of packer files is similar, only section which needs to be changed compared to local one, is builders section. It is defining all required AWS variables and AMIs to customize.\nAs an cloud example AWS will be used to create custom image.\nBuilders on Cloud \"builders\": [ { \"type\":\"amazon-ebs\", \"region\": \"{{user `aws_region`}}\", \"access_key\": \"{{user `aws_access_key`}}\", \"secret_key\": \"{{user `aws_secret_key`}}\", \"subnet_id\": \"{{user `aws_subnet_id`}}\", \"security_group_id\": \"{{user `aws_security_group`}}\", \"source_ami_filter\": { \"filters\": { \"virtualization-type\": \"hvm\", \"name\": \"ubuntu/images/*ubuntu-focal-20.04-amd64-server-*\", \"root-device-type\": \"ebs\" }, \"owners\": [\"099720109477\"], \"most_recent\": true }, \"instance_type\": \"{{user `instance_type`}}\", \"ssh_username\":\"ubuntu\", \"ami_name\": \"ubuntu-ami-custom_{{timestamp}}\" } ] In this configuration, all keys are important to consider, however there are some which are crucial and required to run it. More information about the keys can be found here: Amazon AMI Builder\nWe would like to create a custom Ubuntu-20.04 image on cloud and save it as AMI to run it later, we are searching its pattern from available AMIs on AWS Management Console or it can be found through out this website : https://cloud-images.ubuntu.com/locator/ec2/\nOnce you have declared which AMI to customize, it needs to be located under source_ami_filter with wildcards and owners. Setting most_recent to true means that when this Packer JSON file is executed it will fetch and customize last updated AMI.\nAccess Key, Secret Key are required and should not be exposed to public in any moment, if exposed, they need to be updated immediately. They will be used to communicate with AWS to fire up instances to create custom image according to given settings defined in builders and provisioners.\nThe values of keys are defined in variables and parsed from out of it.\n\"variables\": { \"aws_access_key\": \"\", \"aws_secret_key\": \"\", \"aws_region\": \"\", \"aws_vpc\": \"\", \"aws_subnet\": \"\", \"ami_name\": \"\", \"ami_description\": \"\", \"builder_name\": \"\", \"username\":\"ubuntu\", \"instance_type\":\"t2.medium\", \"tarball\": \"\" }, In variables section, username, instance_type, aws_access_key, aws_secret_key variables should be set correctly to create the image on cloud. Other variables are optional and variables section can be populated more.\nCustomize settins on Cloud On cloud builds, cloud configuration file should be used instead of preseed.cfg to customize settings. The defaults.cfg file where it contains custom settings such as default username, password, changing visudo file and more. Example defaults.cfg can be as follow:\n#cloud-config system_info: default_user: name: ubuntu sudo: [\"ALL=(ALL) NOPASSWD:ALL\"] lock_passwd: false plain_text_passwd: 'ubuntu' More information regarding to defaults.cfg file can be found here and customized more: https://cloudinit.readthedocs.io/en/latest/topics/examples.html\nHow to run Once variables are set, it can be run in same way with the local one.\n$ packer build aws_packer.json Complete packer JSON file : aws_packer.json\nAs a summary, Packer is really cool tool to use to automate the process of creating custom images and it can be used for Dockers as well. For local example in this post, it will produce OVA file to import, on cloud it will generate custom AMI under your AWS account.\nAll scripts and config files can be found in this repository: https://github.com/mrtrkmnhub/ubuntu-packer\n","wordCount":"1516","inLanguage":"en","image":"../../images/packer_build_on_aws.png","datePublished":"2021-04-17T09:00:03Z","dateModified":"2021-04-17T09:00:03Z","author":{"@type":"Person","name":"mrturkmen"},"mainEntityOfPage":{"@type":"WebPage","@id":"/posts/build-with-packer/"},"publisher":{"@type":"Organization","name":"mrturkmen","logo":{"@type":"ImageObject","url":"%3Clink%20/%20abs%20url%3E"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script><noscript><style type=text/css>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><header class=header><nav class=nav><div class=logo><a href accesskey=h title="Home (Alt + H)">Home</a>
-<span class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></span></div><ul id=menu onscroll=menu_on_scroll()><li><a href=archives/ title=Archive><span>Archive</span></a></li><li><a href=search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href>Home</a>&nbsp;»&nbsp;<a href=/posts/>Posts</a></div><h1 class=post-title>packer: build custom images on cloud and local</h1><div class=post-description>create custom images on with packer</div><div class=post-meta>April 17, 2021&nbsp;·&nbsp;8 min&nbsp;·&nbsp;mrturkmen&nbsp;|&nbsp;<a href=https://github.com/mrtrkmn/mrtrkmn.github.io/content/posts/build-with-packer.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><figure class=entry-cover><img loading=lazy src=../../images/packer_build_on_aws.png alt="Build custom AMI on AWS"><p>Build custom AMI on AWS</p></figure><div class=toc><details><summary accesskey=c title="(Alt + C)"><div class=details>Table of Contents</div></summary><div class=inner><ul><li><a href=#build-custom-ubuntu-2004-lts-on-local aria-label="Build Custom Ubuntu 20.04 LTS on Local">Build Custom Ubuntu 20.04 LTS on Local</a><ul><li><a href=#anatomy-of-packer-configuration-file aria-label="Anatomy of Packer Configuration File">Anatomy of Packer Configuration File</a><ul><li><a href=#builders aria-label=Builders>Builders</a></li><li><a href=#provisioner aria-label=Provisioner>Provisioner</a></li><li><a href=#post-processors aria-label="Post Processors">Post Processors</a></li><li><a href=#communicator aria-label=Communicator>Communicator</a></li></ul></li><li><a href=#how-to-run-locally aria-label="How to run locally">How to run locally</a></li></ul></li><li><a href=#build-custom-ubuntu-2004-lts-on-cloud aria-label="Build Custom Ubuntu 20.04 LTS on Cloud">Build Custom Ubuntu 20.04 LTS on Cloud</a><ul><li><a href=#builders-on-cloud aria-label="Builders on Cloud">Builders on Cloud</a></li><li><a href=#customize-settins-on-cloud aria-label="Customize settins on Cloud">Customize settins on Cloud</a></li><li><a href=#how-to-run aria-label="How to run">How to run</a></li></ul></li></ul></div></details></div><div class=post-content><hr><p><strong>THE REPOSITORY: <a href=https://github.com/mrtrkmnhub/ubuntu-packer>https://github.com/mrtrkmnhub/ubuntu-packer</a></strong></p><p>In this blog post, provisioning and customizing images using packer will be shown with a template repository.</p><p>If you are asking or wondering what is Packer, the official definition is :</p><blockquote><p>Packer is a free and open source tool for creating golden images for multiple platforms from a single source configuration. (From Official Website).</p></blockquote><p>This post includes provisioning of ubuntu image on AWS and local.</p><h1 id=build-custom-ubuntu-2004-lts-on-local>Build Custom Ubuntu 20.04 LTS on Local<a hidden class=anchor aria-hidden=true href=#build-custom-ubuntu-2004-lts-on-local>#</a></h1><p>In an ideal repository of Packer template, it would be nice to have a skeleton where it includes <code>uploads</code>, <code>http</code>, <code>scripts</code> folders along packer configuration file with a readme. Overall, the structure of folder might look like this :</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>
+<span class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></span></div><ul id=menu onscroll=menu_on_scroll()><li><a href=archives/ title=Archive><span>Archive</span></a></li><li><a href=search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href>Home</a>&nbsp;»&nbsp;<a href=/posts/>Posts</a></div><h1 class=post-title>packer: build custom images on cloud and local</h1><div class=post-description>create custom images on with packer</div><div class=post-meta>April 17, 2021&nbsp;·&nbsp;8 min&nbsp;·&nbsp;mrturkmen&nbsp;|&nbsp;<a href=https://github.com/mrtrkmn/mrtrkmn.github.io/edit/master/content/posts/build-with-packer.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><figure class=entry-cover><img loading=lazy src=../../images/packer_build_on_aws.png alt="Build custom AMI on AWS"><p>Build custom AMI on AWS</p></figure><div class=toc><details><summary accesskey=c title="(Alt + C)"><div class=details>Table of Contents</div></summary><div class=inner><ul><li><a href=#build-custom-ubuntu-2004-lts-on-local aria-label="Build Custom Ubuntu 20.04 LTS on Local">Build Custom Ubuntu 20.04 LTS on Local</a><ul><li><a href=#anatomy-of-packer-configuration-file aria-label="Anatomy of Packer Configuration File">Anatomy of Packer Configuration File</a><ul><li><a href=#builders aria-label=Builders>Builders</a></li><li><a href=#provisioner aria-label=Provisioner>Provisioner</a></li><li><a href=#post-processors aria-label="Post Processors">Post Processors</a></li><li><a href=#communicator aria-label=Communicator>Communicator</a></li></ul></li><li><a href=#how-to-run-locally aria-label="How to run locally">How to run locally</a></li></ul></li><li><a href=#build-custom-ubuntu-2004-lts-on-cloud aria-label="Build Custom Ubuntu 20.04 LTS on Cloud">Build Custom Ubuntu 20.04 LTS on Cloud</a><ul><li><a href=#builders-on-cloud aria-label="Builders on Cloud">Builders on Cloud</a></li><li><a href=#customize-settins-on-cloud aria-label="Customize settins on Cloud">Customize settins on Cloud</a></li><li><a href=#how-to-run aria-label="How to run">How to run</a></li></ul></li></ul></div></details></div><div class=post-content><hr><p><strong>THE REPOSITORY: <a href=https://github.com/mrtrkmnhub/ubuntu-packer>https://github.com/mrtrkmnhub/ubuntu-packer</a></strong></p><p>In this blog post, provisioning and customizing images using packer will be shown with a template repository.</p><p>If you are asking or wondering what is Packer, the official definition is :</p><blockquote><p>Packer is a free and open source tool for creating golden images for multiple platforms from a single source configuration. (From Official Website).</p></blockquote><p>This post includes provisioning of ubuntu image on AWS and local.</p><h1 id=build-custom-ubuntu-2004-lts-on-local>Build Custom Ubuntu 20.04 LTS on Local<a hidden class=anchor aria-hidden=true href=#build-custom-ubuntu-2004-lts-on-local>#</a></h1><p>In an ideal repository of Packer template, it would be nice to have a skeleton where it includes <code>uploads</code>, <code>http</code>, <code>scripts</code> folders along packer configuration file with a readme. Overall, the structure of folder might look like this :</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>
     ├── http
     │   └── preseed.cfg     <span style=color:#75715e># required to change defualt values of ubuntu  image</span>
     ├── readme.md           <span style=color:#75715e># readme file to have instructions about what to do</span>
@@ -10,226 +10,226 @@
     ├── ubuntu-20.04.json       <span style=color:#75715e># packer config for ubuntu 20.04</span>
     └── uploads                 <span style=color:#75715e># directory to upload files to custom image </span>
         └── .gitkeep    
-</code></pre></div><p>In this setup, <code>http/preseed.cfg</code> defines answers to the questions which may be asked during installation of Ubuntu operating system. More information regarding to <em>preseed.cfg</em> file can be checked from <a href=https://wiki.debian.org/DebianInstaller/Preseed>its wiki</a></p><ul><li><p><code>scripts</code> folder composed of bash scripts, chef, ansible or any other installer configuration files or scripts which will install customized tools and define settings of ubuntu image.</p></li><li><p><code>uploads</code> folder includes all files, deb packages, or any other files which will be copied to image which will be inside customized image.</p></li></ul><h2 id=anatomy-of-packer-configuration-file>Anatomy of Packer Configuration File<a hidden class=anchor aria-hidden=true href=#anatomy-of-packer-configuration-file>#</a></h2><p>Any packer file composed of three main components which are ;</p><h3 id=builders>Builders<a hidden class=anchor aria-hidden=true href=#builders>#</a></h3><p>Define the desired platform and platform configurations, including API Key information and desired source images. Example snippet is given from the Packer file:</p><pre><code class=language-raw data-lang=raw>
-   &quot;builders&quot;: [
+</code></pre></div><p>In this setup, <code>http/preseed.cfg</code> defines answers to the questions which may be asked during installation of Ubuntu operating system. More information regarding to <em>preseed.cfg</em> file can be checked from <a href=https://wiki.debian.org/DebianInstaller/Preseed>its wiki</a></p><ul><li><p><code>scripts</code> folder composed of bash scripts, chef, ansible or any other installer configuration files or scripts which will install customized tools and define settings of ubuntu image.</p></li><li><p><code>uploads</code> folder includes all files, deb packages, or any other files which will be copied to image which will be inside customized image.</p></li></ul><h2 id=anatomy-of-packer-configuration-file>Anatomy of Packer Configuration File<a hidden class=anchor aria-hidden=true href=#anatomy-of-packer-configuration-file>#</a></h2><p>Any packer file composed of three main components which are ;</p><h3 id=builders>Builders<a hidden class=anchor aria-hidden=true href=#builders>#</a></h3><p>Define the desired platform and platform configurations, including API Key information and desired source images. Example snippet is given from the Packer file:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>
+   <span style=color:#e6db74>&#34;builders&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> [
    {
-     &quot;boot_command&quot;: [
-       &quot;&lt;esc&gt;&lt;wait&gt;&quot;,
-       &quot;&lt;esc&gt;&lt;wait&gt;&quot;,
-       &quot;&lt;enter&gt;&lt;wait&gt;&quot;,
-       &quot;/install/vmlinuz&lt;wait&gt;&quot;,
-       &quot; auto&lt;wait&gt;&quot;,
-       &quot; console-setup/ask_detect=false&lt;wait&gt;&quot;,
-       &quot; console-setup/layoutcode=us&lt;wait&gt;&quot;,
-       &quot; console-setup/modelcode=pc105&lt;wait&gt;&quot;,
-       &quot; debconf/frontend=noninteractive&lt;wait&gt;&quot;,
-       &quot; debian-installer=en_US&lt;wait&gt;&quot;,
-       &quot; fb=false&lt;wait&gt;&quot;,
-       &quot; initrd=/install/initrd.gz&lt;wait&gt;&quot;,
-       &quot; kbd-chooser/method=us&lt;wait&gt;&quot;,
-       &quot; keyboard-configuration/layout=USA&lt;wait&gt;&quot;,
-       &quot; keyboard-configuration/variant=USA&lt;wait&gt;&quot;,
-       &quot; locale=en_US&lt;wait&gt;&quot;,
-       &quot; netcfg/get_domain=vm&lt;wait&gt;&quot;,
-       &quot; netcfg/get_hostname=ubuntu&lt;wait&gt;&quot;,
-       &quot; grub-installer/bootdev=/dev/sda&lt;wait&gt;&quot;,
-       &quot; noapic&lt;wait&gt;&quot;,
-       &quot; preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg&lt;wait&gt;&quot;,
-       &quot; -- &lt;wait&gt;&quot;,
-       &quot;&lt;enter&gt;&lt;wait&gt;&quot;
+     <span style=color:#f92672>&#34;boot_command&#34;</span>: [
+       <span style=color:#e6db74>&#34;&lt;esc&gt;&lt;wait&gt;&#34;</span>,
+       <span style=color:#e6db74>&#34;&lt;esc&gt;&lt;wait&gt;&#34;</span>,
+       <span style=color:#e6db74>&#34;&lt;enter&gt;&lt;wait&gt;&#34;</span>,
+       <span style=color:#e6db74>&#34;/install/vmlinuz&lt;wait&gt;&#34;</span>,
+       <span style=color:#e6db74>&#34; auto&lt;wait&gt;&#34;</span>,
+       <span style=color:#e6db74>&#34; console-setup/ask_detect=false&lt;wait&gt;&#34;</span>,
+       <span style=color:#e6db74>&#34; console-setup/layoutcode=us&lt;wait&gt;&#34;</span>,
+       <span style=color:#e6db74>&#34; console-setup/modelcode=pc105&lt;wait&gt;&#34;</span>,
+       <span style=color:#e6db74>&#34; debconf/frontend=noninteractive&lt;wait&gt;&#34;</span>,
+       <span style=color:#e6db74>&#34; debian-installer=en_US&lt;wait&gt;&#34;</span>,
+       <span style=color:#e6db74>&#34; fb=false&lt;wait&gt;&#34;</span>,
+       <span style=color:#e6db74>&#34; initrd=/install/initrd.gz&lt;wait&gt;&#34;</span>,
+       <span style=color:#e6db74>&#34; kbd-chooser/method=us&lt;wait&gt;&#34;</span>,
+       <span style=color:#e6db74>&#34; keyboard-configuration/layout=USA&lt;wait&gt;&#34;</span>,
+       <span style=color:#e6db74>&#34; keyboard-configuration/variant=USA&lt;wait&gt;&#34;</span>,
+       <span style=color:#e6db74>&#34; locale=en_US&lt;wait&gt;&#34;</span>,
+       <span style=color:#e6db74>&#34; netcfg/get_domain=vm&lt;wait&gt;&#34;</span>,
+       <span style=color:#e6db74>&#34; netcfg/get_hostname=ubuntu&lt;wait&gt;&#34;</span>,
+       <span style=color:#e6db74>&#34; grub-installer/bootdev=/dev/sda&lt;wait&gt;&#34;</span>,
+       <span style=color:#e6db74>&#34; noapic&lt;wait&gt;&#34;</span>,
+       <span style=color:#e6db74>&#34; preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg&lt;wait&gt;&#34;</span>,
+       <span style=color:#e6db74>&#34; -- &lt;wait&gt;&#34;</span>,
+       <span style=color:#e6db74>&#34;&lt;enter&gt;&lt;wait&gt;&#34;</span>
      ],
-     &quot;boot_wait&quot;: &quot;10s&quot;,
-     &quot;format&quot;: &quot;ova&quot;,
-     &quot;disk_size&quot;: 25240,
-     &quot;guest_additions_path&quot;: &quot;VBoxGuestAdditions_{{.Version}}.iso&quot;,
-     &quot;guest_os_type&quot;: &quot;Ubuntu_64&quot;,
-     &quot;headless&quot;: true,
-     &quot;http_directory&quot;: &quot;http&quot;,
-     &quot;iso_checksum&quot;: &quot;sha256:f11bda2f2caed8f420802b59f382c25160b114ccc665dbac9c5046e7fceaced2&quot;,
-     &quot;iso_urls&quot;: [
-       &quot;iso/ubuntu-20.04.1-legacy-server-amd64.iso&quot;,
-       &quot;https://cdimage.ubuntu.com/ubuntu-legacy-server/releases/20.04/release/ubuntu-20.04.1-legacy-server-amd64.iso&quot;
+     <span style=color:#f92672>&#34;boot_wait&#34;</span>: <span style=color:#e6db74>&#34;10s&#34;</span>,
+     <span style=color:#f92672>&#34;format&#34;</span>: <span style=color:#e6db74>&#34;ova&#34;</span>,
+     <span style=color:#f92672>&#34;disk_size&#34;</span>: <span style=color:#ae81ff>25240</span>,
+     <span style=color:#f92672>&#34;guest_additions_path&#34;</span>: <span style=color:#e6db74>&#34;VBoxGuestAdditions_{{.Version}}.iso&#34;</span>,
+     <span style=color:#f92672>&#34;guest_os_type&#34;</span>: <span style=color:#e6db74>&#34;Ubuntu_64&#34;</span>,
+     <span style=color:#f92672>&#34;headless&#34;</span>: <span style=color:#66d9ef>true</span>,
+     <span style=color:#f92672>&#34;http_directory&#34;</span>: <span style=color:#e6db74>&#34;http&#34;</span>,
+     <span style=color:#f92672>&#34;iso_checksum&#34;</span>: <span style=color:#e6db74>&#34;sha256:f11bda2f2caed8f420802b59f382c25160b114ccc665dbac9c5046e7fceaced2&#34;</span>,
+     <span style=color:#f92672>&#34;iso_urls&#34;</span>: [
+       <span style=color:#e6db74>&#34;iso/ubuntu-20.04.1-legacy-server-amd64.iso&#34;</span>,
+       <span style=color:#e6db74>&#34;https://cdimage.ubuntu.com/ubuntu-legacy-server/releases/20.04/release/ubuntu-20.04.1-legacy-server-amd64.iso&#34;</span>
      ],
-     &quot;shutdown_command&quot;: &quot;echo 'ubuntu'|sudo -S shutdown -P now&quot;,
-     &quot;ssh_password&quot;: &quot;ubuntu&quot;,
-     &quot;ssh_port&quot;: 22,
-     &quot;ssh_timeout&quot;: &quot;10000s&quot;,
-     &quot;ssh_username&quot;: &quot;ubuntu&quot;,
-     &quot;type&quot;: &quot;virtualbox-iso&quot;,
-     &quot;vboxmanage&quot;: [
+     <span style=color:#f92672>&#34;shutdown_command&#34;</span>: <span style=color:#e6db74>&#34;echo &#39;ubuntu&#39;|sudo -S shutdown -P now&#34;</span>,
+     <span style=color:#f92672>&#34;ssh_password&#34;</span>: <span style=color:#e6db74>&#34;ubuntu&#34;</span>,
+     <span style=color:#f92672>&#34;ssh_port&#34;</span>: <span style=color:#ae81ff>22</span>,
+     <span style=color:#f92672>&#34;ssh_timeout&#34;</span>: <span style=color:#e6db74>&#34;10000s&#34;</span>,
+     <span style=color:#f92672>&#34;ssh_username&#34;</span>: <span style=color:#e6db74>&#34;ubuntu&#34;</span>,
+     <span style=color:#f92672>&#34;type&#34;</span>: <span style=color:#e6db74>&#34;virtualbox-iso&#34;</span>,
+     <span style=color:#f92672>&#34;vboxmanage&#34;</span>: [
        [
-         &quot;modifyvm&quot;,
-         &quot;{{.Name}}&quot;,
-         &quot;--memory&quot;,
-         &quot;2048&quot;
+         <span style=color:#e6db74>&#34;modifyvm&#34;</span>,
+         <span style=color:#e6db74>&#34;{{.Name}}&#34;</span>,
+         <span style=color:#e6db74>&#34;--memory&#34;</span>,
+         <span style=color:#e6db74>&#34;2048&#34;</span>
        ],
        [
-         &quot;modifyvm&quot;,
-         &quot;{{.Name}}&quot;,
-         &quot;--cpus&quot;,
-         &quot;1&quot;
+         <span style=color:#e6db74>&#34;modifyvm&#34;</span>,
+         <span style=color:#e6db74>&#34;{{.Name}}&#34;</span>,
+         <span style=color:#e6db74>&#34;--cpus&#34;</span>,
+         <span style=color:#e6db74>&#34;1&#34;</span>
        ]
      ],
-     &quot;virtualbox_version_file&quot;: &quot;.vbox_version&quot;,
-     &quot;vm_name&quot;: &quot;ubuntu_vm_ubuntu_20_{{timestamp}}&quot;
+     <span style=color:#f92672>&#34;virtualbox_version_file&#34;</span>: <span style=color:#e6db74>&#34;.vbox_version&#34;</span>,
+     <span style=color:#f92672>&#34;vm_name&#34;</span>: <span style=color:#e6db74>&#34;ubuntu_vm_ubuntu_20_{{timestamp}}&#34;</span>
    }
  ]
-</code></pre><p>In the builders config, we are defining some set of keys in JSON file, which are very obvious from its name, we are considering to build image locally. All the keys are important in given builders config however most important and might need to update time to time is <code>iso_urls</code> which are the places where packer download iamges and customize it according to your scripts.
-Another crucial key is to have <code>headless</code> value <code>true</code> which means that there will be no GUI running when packer command is executed to run the Packer JSON file.</p><h3 id=provisioner>Provisioner<a hidden class=anchor aria-hidden=true href=#provisioner>#</a></h3><p>Defines how to configure the image most likely by your using existing configuration management tools like Ansible, Chef, Puppet or pure bash scripts.</p><p>In our example, bash scripts will be provided to install tools and update configuration of ubuntu image to make it customized. Provisioner section of a Packer JSON file can be seen as below:</p><pre><code class=language-raw data-lang=raw>
- &quot;provisioners&quot;: [
+</code></pre></div><p>In the builders config, we are defining some set of keys in JSON file, which are very obvious from its name, we are considering to build image locally. All the keys are important in given builders config however most important and might need to update time to time is <code>iso_urls</code> which are the places where packer download iamges and customize it according to your scripts.
+Another crucial key is to have <code>headless</code> value <code>true</code> which means that there will be no GUI running when packer command is executed to run the Packer JSON file.</p><h3 id=provisioner>Provisioner<a hidden class=anchor aria-hidden=true href=#provisioner>#</a></h3><p>Defines how to configure the image most likely by your using existing configuration management tools like Ansible, Chef, Puppet or pure bash scripts.</p><p>In our example, bash scripts will be provided to install tools and update configuration of ubuntu image to make it customized. Provisioner section of a Packer JSON file can be seen as below:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>
+ <span style=color:#e6db74>&#34;provisioners&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> [
     {
-      &quot;type&quot;: &quot;file&quot;,
-      &quot;source&quot;:&quot;uploads&quot;,
-      &quot;destination&quot;: &quot;/home/ubuntu&quot;
+      <span style=color:#f92672>&#34;type&#34;</span>: <span style=color:#e6db74>&#34;file&#34;</span>,
+      <span style=color:#f92672>&#34;source&#34;</span>:<span style=color:#e6db74>&#34;uploads&#34;</span>,
+      <span style=color:#f92672>&#34;destination&#34;</span>: <span style=color:#e6db74>&#34;/home/ubuntu&#34;</span>
     },
     {
-      &quot;execute_command&quot;: &quot;echo 'ubuntu' | {{.Vars}} sudo -S -E bash '{{.Path}}'&quot;,
-      &quot;script&quot;: &quot;scripts/install_tools.sh&quot;,
-      &quot;type&quot;: &quot;shell&quot;
+      <span style=color:#f92672>&#34;execute_command&#34;</span>: <span style=color:#e6db74>&#34;echo &#39;ubuntu&#39; | {{.Vars}} sudo -S -E bash &#39;{{.Path}}&#39;&#34;</span>,
+      <span style=color:#f92672>&#34;script&#34;</span>: <span style=color:#e6db74>&#34;scripts/install_tools.sh&#34;</span>,
+      <span style=color:#f92672>&#34;type&#34;</span>: <span style=color:#e6db74>&#34;shell&#34;</span>
     },
     {
-      &quot;execute_command&quot;: &quot;echo 'ubuntu' | {{.Vars}} sudo -S -E bash '{{.Path}}'&quot;,
-      &quot;script&quot;: &quot;scripts/setup.sh&quot;,
-      &quot;type&quot;: &quot;shell&quot;
+      <span style=color:#f92672>&#34;execute_command&#34;</span>: <span style=color:#e6db74>&#34;echo &#39;ubuntu&#39; | {{.Vars}} sudo -S -E bash &#39;{{.Path}}&#39;&#34;</span>,
+      <span style=color:#f92672>&#34;script&#34;</span>: <span style=color:#e6db74>&#34;scripts/setup.sh&#34;</span>,
+      <span style=color:#f92672>&#34;type&#34;</span>: <span style=color:#e6db74>&#34;shell&#34;</span>
     },
     {
-      &quot;execute_command&quot;: &quot;echo 'ubuntu' | {{.Vars}} sudo -S -E bash '{{.Path}}'&quot;,
-      &quot;script&quot;: &quot;scripts/cleanup.sh&quot;,
-      &quot;type&quot;: &quot;shell&quot;
+      <span style=color:#f92672>&#34;execute_command&#34;</span>: <span style=color:#e6db74>&#34;echo &#39;ubuntu&#39; | {{.Vars}} sudo -S -E bash &#39;{{.Path}}&#39;&#34;</span>,
+      <span style=color:#f92672>&#34;script&#34;</span>: <span style=color:#e6db74>&#34;scripts/cleanup.sh&#34;</span>,
+      <span style=color:#f92672>&#34;type&#34;</span>: <span style=color:#e6db74>&#34;shell&#34;</span>
     }
   ]
-</code></pre><p>Here we are defining existing bash scripts in order to execute in the process of customizing Ubuntu image. The steps under provisioners are pretty clear.</p><ul><li><p>The content of uploads file will be uploaded to home directory <code>/home/ubuntu</code></p></li><li><p>In second step, <code>install_tools.sh</code> will be executed and other steps will be followed in order.</p></li></ul><h3 id=post-processors>Post Processors<a hidden class=anchor aria-hidden=true href=#post-processors>#</a></h3><p>Related to the builder, runs after the image is built, it is generally used to generate or apply artifacts. In this example, it is not required however more information can be found here: <a href=https://www.packer.io/docs/post-processors>post processors</a></p><h3 id=communicator>Communicator<a hidden class=anchor aria-hidden=true href=#communicator>#</a></h3><p>How packer works on the machine image during the creation. By default it is over SSH communication and it does not need to be defined explicitly. More information can be found here: <a href=https://www.packer.io/docs/communicators>communicator</a></p><p>Over all packer file can be seen as follow:</p><pre><code class=language-raw data-lang=raw>{
-    &quot;builders&quot;: [
+</code></pre></div><p>Here we are defining existing bash scripts in order to execute in the process of customizing Ubuntu image. The steps under provisioners are pretty clear.</p><ul><li><p>The content of uploads file will be uploaded to home directory <code>/home/ubuntu</code></p></li><li><p>In second step, <code>install_tools.sh</code> will be executed and other steps will be followed in order.</p></li></ul><h3 id=post-processors>Post Processors<a hidden class=anchor aria-hidden=true href=#post-processors>#</a></h3><p>Related to the builder, runs after the image is built, it is generally used to generate or apply artifacts. In this example, it is not required however more information can be found here: <a href=https://www.packer.io/docs/post-processors>post processors</a></p><h3 id=communicator>Communicator<a hidden class=anchor aria-hidden=true href=#communicator>#</a></h3><p>How packer works on the machine image during the creation. By default it is over SSH communication and it does not need to be defined explicitly. More information can be found here: <a href=https://www.packer.io/docs/communicators>communicator</a></p><p>Over all packer file can be seen as follow:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+    <span style=color:#f92672>&#34;builders&#34;</span>: [
         {
-        &quot;boot_command&quot;: [
-            &quot;&lt;esc&gt;&lt;wait&gt;&quot;,
-            &quot;&lt;esc&gt;&lt;wait&gt;&quot;,
-            &quot;&lt;enter&gt;&lt;wait&gt;&quot;,
-            &quot;/install/vmlinuz&lt;wait&gt;&quot;,
-            &quot; auto&lt;wait&gt;&quot;,
-            &quot; console-setup/ask_detect=false&lt;wait&gt;&quot;,
-            &quot; console-setup/layoutcode=us&lt;wait&gt;&quot;,
-            &quot; console-setup/modelcode=pc105&lt;wait&gt;&quot;,
-            &quot; debconf/frontend=noninteractive&lt;wait&gt;&quot;,
-            &quot; debian-installer=en_US&lt;wait&gt;&quot;,
-            &quot; fb=false&lt;wait&gt;&quot;,
-            &quot; initrd=/install/initrd.gz&lt;wait&gt;&quot;,
-            &quot; kbd-chooser/method=us&lt;wait&gt;&quot;,
-            &quot; keyboard-configuration/layout=USA&lt;wait&gt;&quot;,
-            &quot; keyboard-configuration/variant=USA&lt;wait&gt;&quot;,
-            &quot; locale=en_US&lt;wait&gt;&quot;,
-            &quot; netcfg/get_domain=vm&lt;wait&gt;&quot;,
-            &quot; netcfg/get_hostname=ubuntu&lt;wait&gt;&quot;,
-            &quot; grub-installer/bootdev=/dev/sda&lt;wait&gt;&quot;,
-            &quot; noapic&lt;wait&gt;&quot;,
-            &quot; preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg&lt;wait&gt;&quot;,
-            &quot; -- &lt;wait&gt;&quot;,
-            &quot;&lt;enter&gt;&lt;wait&gt;&quot;
+        <span style=color:#f92672>&#34;boot_command&#34;</span>: [
+            <span style=color:#e6db74>&#34;&lt;esc&gt;&lt;wait&gt;&#34;</span>,
+            <span style=color:#e6db74>&#34;&lt;esc&gt;&lt;wait&gt;&#34;</span>,
+            <span style=color:#e6db74>&#34;&lt;enter&gt;&lt;wait&gt;&#34;</span>,
+            <span style=color:#e6db74>&#34;/install/vmlinuz&lt;wait&gt;&#34;</span>,
+            <span style=color:#e6db74>&#34; auto&lt;wait&gt;&#34;</span>,
+            <span style=color:#e6db74>&#34; console-setup/ask_detect=false&lt;wait&gt;&#34;</span>,
+            <span style=color:#e6db74>&#34; console-setup/layoutcode=us&lt;wait&gt;&#34;</span>,
+            <span style=color:#e6db74>&#34; console-setup/modelcode=pc105&lt;wait&gt;&#34;</span>,
+            <span style=color:#e6db74>&#34; debconf/frontend=noninteractive&lt;wait&gt;&#34;</span>,
+            <span style=color:#e6db74>&#34; debian-installer=en_US&lt;wait&gt;&#34;</span>,
+            <span style=color:#e6db74>&#34; fb=false&lt;wait&gt;&#34;</span>,
+            <span style=color:#e6db74>&#34; initrd=/install/initrd.gz&lt;wait&gt;&#34;</span>,
+            <span style=color:#e6db74>&#34; kbd-chooser/method=us&lt;wait&gt;&#34;</span>,
+            <span style=color:#e6db74>&#34; keyboard-configuration/layout=USA&lt;wait&gt;&#34;</span>,
+            <span style=color:#e6db74>&#34; keyboard-configuration/variant=USA&lt;wait&gt;&#34;</span>,
+            <span style=color:#e6db74>&#34; locale=en_US&lt;wait&gt;&#34;</span>,
+            <span style=color:#e6db74>&#34; netcfg/get_domain=vm&lt;wait&gt;&#34;</span>,
+            <span style=color:#e6db74>&#34; netcfg/get_hostname=ubuntu&lt;wait&gt;&#34;</span>,
+            <span style=color:#e6db74>&#34; grub-installer/bootdev=/dev/sda&lt;wait&gt;&#34;</span>,
+            <span style=color:#e6db74>&#34; noapic&lt;wait&gt;&#34;</span>,
+            <span style=color:#e6db74>&#34; preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg&lt;wait&gt;&#34;</span>,
+            <span style=color:#e6db74>&#34; -- &lt;wait&gt;&#34;</span>,
+            <span style=color:#e6db74>&#34;&lt;enter&gt;&lt;wait&gt;&#34;</span>
         ],
-        &quot;boot_wait&quot;: &quot;10s&quot;,
-        &quot;format&quot;: &quot;ova&quot;,
-        &quot;disk_size&quot;: 25240,
-        &quot;guest_additions_path&quot;: &quot;VBoxGuestAdditions_{{.Version}}.iso&quot;,
-        &quot;guest_os_type&quot;: &quot;Ubuntu_64&quot;,
-        &quot;headless&quot;: true,
-        &quot;http_directory&quot;: &quot;http&quot;,
-        &quot;iso_checksum&quot;: &quot;sha256:f11bda2f2caed8f420802b59f382c25160b114ccc665dbac9c5046e7fceaced2&quot;,
-        &quot;iso_urls&quot;: [
-            &quot;iso/ubuntu-20.04.1-legacy-server-amd64.iso&quot;,
-            &quot;https://cdimage.ubuntu.com/ubuntu-legacy-server/releases/20.04/release/ubuntu-20.04.1-legacy-server-amd64.iso&quot;
+        <span style=color:#f92672>&#34;boot_wait&#34;</span>: <span style=color:#e6db74>&#34;10s&#34;</span>,
+        <span style=color:#f92672>&#34;format&#34;</span>: <span style=color:#e6db74>&#34;ova&#34;</span>,
+        <span style=color:#f92672>&#34;disk_size&#34;</span>: <span style=color:#ae81ff>25240</span>,
+        <span style=color:#f92672>&#34;guest_additions_path&#34;</span>: <span style=color:#e6db74>&#34;VBoxGuestAdditions_{{.Version}}.iso&#34;</span>,
+        <span style=color:#f92672>&#34;guest_os_type&#34;</span>: <span style=color:#e6db74>&#34;Ubuntu_64&#34;</span>,
+        <span style=color:#f92672>&#34;headless&#34;</span>: <span style=color:#66d9ef>true</span>,
+        <span style=color:#f92672>&#34;http_directory&#34;</span>: <span style=color:#e6db74>&#34;http&#34;</span>,
+        <span style=color:#f92672>&#34;iso_checksum&#34;</span>: <span style=color:#e6db74>&#34;sha256:f11bda2f2caed8f420802b59f382c25160b114ccc665dbac9c5046e7fceaced2&#34;</span>,
+        <span style=color:#f92672>&#34;iso_urls&#34;</span>: [
+            <span style=color:#e6db74>&#34;iso/ubuntu-20.04.1-legacy-server-amd64.iso&#34;</span>,
+            <span style=color:#e6db74>&#34;https://cdimage.ubuntu.com/ubuntu-legacy-server/releases/20.04/release/ubuntu-20.04.1-legacy-server-amd64.iso&#34;</span>
         ],
-        &quot;shutdown_command&quot;: &quot;echo 'ubuntu'|sudo -S shutdown -P now&quot;,
-        &quot;ssh_password&quot;: &quot;ubuntu&quot;,
-        &quot;ssh_port&quot;: 22,
-        &quot;ssh_timeout&quot;: &quot;10000s&quot;,
-        &quot;ssh_username&quot;: &quot;ubuntu&quot;,
-        &quot;type&quot;: &quot;virtualbox-iso&quot;,
-        &quot;vboxmanage&quot;: [
+        <span style=color:#f92672>&#34;shutdown_command&#34;</span>: <span style=color:#e6db74>&#34;echo &#39;ubuntu&#39;|sudo -S shutdown -P now&#34;</span>,
+        <span style=color:#f92672>&#34;ssh_password&#34;</span>: <span style=color:#e6db74>&#34;ubuntu&#34;</span>,
+        <span style=color:#f92672>&#34;ssh_port&#34;</span>: <span style=color:#ae81ff>22</span>,
+        <span style=color:#f92672>&#34;ssh_timeout&#34;</span>: <span style=color:#e6db74>&#34;10000s&#34;</span>,
+        <span style=color:#f92672>&#34;ssh_username&#34;</span>: <span style=color:#e6db74>&#34;ubuntu&#34;</span>,
+        <span style=color:#f92672>&#34;type&#34;</span>: <span style=color:#e6db74>&#34;virtualbox-iso&#34;</span>,
+        <span style=color:#f92672>&#34;vboxmanage&#34;</span>: [
             [
-            &quot;modifyvm&quot;,
-            &quot;{{.Name}}&quot;,
-            &quot;--memory&quot;,
-            &quot;2048&quot;
+            <span style=color:#e6db74>&#34;modifyvm&#34;</span>,
+            <span style=color:#e6db74>&#34;{{.Name}}&#34;</span>,
+            <span style=color:#e6db74>&#34;--memory&#34;</span>,
+            <span style=color:#e6db74>&#34;2048&#34;</span>
             ],
             [
-            &quot;modifyvm&quot;,
-            &quot;{{.Name}}&quot;,
-            &quot;--cpus&quot;,
-            &quot;1&quot;
+            <span style=color:#e6db74>&#34;modifyvm&#34;</span>,
+            <span style=color:#e6db74>&#34;{{.Name}}&#34;</span>,
+            <span style=color:#e6db74>&#34;--cpus&#34;</span>,
+            <span style=color:#e6db74>&#34;1&#34;</span>
             ]
         ],
-        &quot;virtualbox_version_file&quot;: &quot;.vbox_version&quot;,
-        &quot;vm_name&quot;: &quot;ubuntu_vm_ubuntu_20_{{timestamp}}&quot;
+        <span style=color:#f92672>&#34;virtualbox_version_file&#34;</span>: <span style=color:#e6db74>&#34;.vbox_version&#34;</span>,
+        <span style=color:#f92672>&#34;vm_name&#34;</span>: <span style=color:#e6db74>&#34;ubuntu_vm_ubuntu_20_{{timestamp}}&#34;</span>
         }
     ],
-    &quot;provisioners&quot;: [
+    <span style=color:#f92672>&#34;provisioners&#34;</span>: [
         {
-        &quot;type&quot;: &quot;file&quot;,
-        &quot;source&quot;:&quot;uploads&quot;,
-        &quot;destination&quot;: &quot;/home/ubuntu&quot;
+        <span style=color:#f92672>&#34;type&#34;</span>: <span style=color:#e6db74>&#34;file&#34;</span>,
+        <span style=color:#f92672>&#34;source&#34;</span>:<span style=color:#e6db74>&#34;uploads&#34;</span>,
+        <span style=color:#f92672>&#34;destination&#34;</span>: <span style=color:#e6db74>&#34;/home/ubuntu&#34;</span>
         },
         {
-        &quot;execute_command&quot;: &quot;echo 'ubuntu' | {{.Vars}} sudo -S -E bash '{{.Path}}'&quot;,
-        &quot;script&quot;: &quot;scripts/install_tools.sh&quot;,
-        &quot;type&quot;: &quot;shell&quot;
+        <span style=color:#f92672>&#34;execute_command&#34;</span>: <span style=color:#e6db74>&#34;echo &#39;ubuntu&#39; | {{.Vars}} sudo -S -E bash &#39;{{.Path}}&#39;&#34;</span>,
+        <span style=color:#f92672>&#34;script&#34;</span>: <span style=color:#e6db74>&#34;scripts/install_tools.sh&#34;</span>,
+        <span style=color:#f92672>&#34;type&#34;</span>: <span style=color:#e6db74>&#34;shell&#34;</span>
         },
         {
-        &quot;execute_command&quot;: &quot;echo 'ubuntu' | {{.Vars}} sudo -S -E bash '{{.Path}}'&quot;,
-        &quot;script&quot;: &quot;scripts/setup.sh&quot;,
-        &quot;type&quot;: &quot;shell&quot;
+        <span style=color:#f92672>&#34;execute_command&#34;</span>: <span style=color:#e6db74>&#34;echo &#39;ubuntu&#39; | {{.Vars}} sudo -S -E bash &#39;{{.Path}}&#39;&#34;</span>,
+        <span style=color:#f92672>&#34;script&#34;</span>: <span style=color:#e6db74>&#34;scripts/setup.sh&#34;</span>,
+        <span style=color:#f92672>&#34;type&#34;</span>: <span style=color:#e6db74>&#34;shell&#34;</span>
         },
         {
-        &quot;execute_command&quot;: &quot;echo 'ubuntu' | {{.Vars}} sudo -S -E bash '{{.Path}}'&quot;,
-        &quot;script&quot;: &quot;scripts/cleanup.sh&quot;,
-        &quot;type&quot;: &quot;shell&quot;
+        <span style=color:#f92672>&#34;execute_command&#34;</span>: <span style=color:#e6db74>&#34;echo &#39;ubuntu&#39; | {{.Vars}} sudo -S -E bash &#39;{{.Path}}&#39;&#34;</span>,
+        <span style=color:#f92672>&#34;script&#34;</span>: <span style=color:#e6db74>&#34;scripts/cleanup.sh&#34;</span>,
+        <span style=color:#f92672>&#34;type&#34;</span>: <span style=color:#e6db74>&#34;shell&#34;</span>
         }
     ],
-    &quot;variables&quot;: {
-        &quot;version&quot;: &quot;0.1&quot;
+    <span style=color:#f92672>&#34;variables&#34;</span>: {
+        <span style=color:#f92672>&#34;version&#34;</span>: <span style=color:#e6db74>&#34;0.1&#34;</span>
     }
 }
 
-</code></pre><h2 id=how-to-run-locally>How to run locally<a hidden class=anchor aria-hidden=true href=#how-to-run-locally>#</a></h2><p>This file can be run from the place where <a href=https://github.com/mrtrkmnhub/ubuntu-packer/blob/master/on-local/ubuntu-20.04.json>ubuntu-20.04.json</a> file is located.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ packer build ubuntu-20.04.json
-</code></pre></div><p><img loading=lazy src=../../images/packer_build_on_local.png alt></p><p>It will start to build custom image by installing tools which are defined under scripts and configure username and password according to preseed.cfg and setup.sh files.</p><h1 id=build-custom-ubuntu-2004-lts-on-cloud>Build Custom Ubuntu 20.04 LTS on Cloud<a hidden class=anchor aria-hidden=true href=#build-custom-ubuntu-2004-lts-on-cloud>#</a></h1><p>It is more practical and preferrable to use if you already have an cloud option to consider. This packer configuration will create custom image directly on cloud and save it to AMIs to your AWS account.</p><p>The anatomy of packer files is similar, only section which needs to be changed compared to local one, is builders section. It is defining all required AWS variables and AMIs to customize.</p><p>As an cloud example AWS will be used to create custom image.</p><h2 id=builders-on-cloud>Builders on Cloud<a hidden class=anchor aria-hidden=true href=#builders-on-cloud>#</a></h2><pre><code class=language-raw data-lang=raw>
-&quot;builders&quot;: [
+</code></pre></div><h2 id=how-to-run-locally>How to run locally<a hidden class=anchor aria-hidden=true href=#how-to-run-locally>#</a></h2><p>This file can be run from the place where <a href=https://github.com/mrtrkmnhub/ubuntu-packer/blob/master/on-local/ubuntu-20.04.json>ubuntu-20.04.json</a> file is located.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ packer build ubuntu-20.04.json
+</code></pre></div><p><img loading=lazy src=../../images/packer_build_on_local.png alt></p><p>It will start to build custom image by installing tools which are defined under scripts and configure username and password according to preseed.cfg and setup.sh files.</p><h1 id=build-custom-ubuntu-2004-lts-on-cloud>Build Custom Ubuntu 20.04 LTS on Cloud<a hidden class=anchor aria-hidden=true href=#build-custom-ubuntu-2004-lts-on-cloud>#</a></h1><p>It is more practical and preferrable to use if you already have an cloud option to consider. This packer configuration will create custom image directly on cloud and save it to AMIs to your AWS account.</p><p>The anatomy of packer files is similar, only section which needs to be changed compared to local one, is builders section. It is defining all required AWS variables and AMIs to customize.</p><p>As an cloud example AWS will be used to create custom image.</p><h2 id=builders-on-cloud>Builders on Cloud<a hidden class=anchor aria-hidden=true href=#builders-on-cloud>#</a></h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>
+<span style=color:#e6db74>&#34;builders&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> [
         {
-            &quot;type&quot;:&quot;amazon-ebs&quot;, 
-            &quot;region&quot;: &quot;{{user `aws_region`}}&quot;, 
-            &quot;access_key&quot;: &quot;{{user `aws_access_key`}}&quot;,
-            &quot;secret_key&quot;: &quot;{{user `aws_secret_key`}}&quot;, 
-            &quot;subnet_id&quot;: &quot;{{user `aws_subnet_id`}}&quot;, 
-            &quot;security_group_id&quot;: &quot;{{user `aws_security_group`}}&quot;, 
-            &quot;source_ami_filter&quot;: {
-                &quot;filters&quot;: {
-                    &quot;virtualization-type&quot;: &quot;hvm&quot;, 
-                    &quot;name&quot;: &quot;ubuntu/images/*ubuntu-focal-20.04-amd64-server-*&quot;,
-                    &quot;root-device-type&quot;: &quot;ebs&quot;
+            <span style=color:#f92672>&#34;type&#34;</span>:<span style=color:#e6db74>&#34;amazon-ebs&#34;</span>, 
+            <span style=color:#f92672>&#34;region&#34;</span>: <span style=color:#e6db74>&#34;{{user `aws_region`}}&#34;</span>, 
+            <span style=color:#f92672>&#34;access_key&#34;</span>: <span style=color:#e6db74>&#34;{{user `aws_access_key`}}&#34;</span>,
+            <span style=color:#f92672>&#34;secret_key&#34;</span>: <span style=color:#e6db74>&#34;{{user `aws_secret_key`}}&#34;</span>, 
+            <span style=color:#f92672>&#34;subnet_id&#34;</span>: <span style=color:#e6db74>&#34;{{user `aws_subnet_id`}}&#34;</span>, 
+            <span style=color:#f92672>&#34;security_group_id&#34;</span>: <span style=color:#e6db74>&#34;{{user `aws_security_group`}}&#34;</span>, 
+            <span style=color:#f92672>&#34;source_ami_filter&#34;</span>: {
+                <span style=color:#f92672>&#34;filters&#34;</span>: {
+                    <span style=color:#f92672>&#34;virtualization-type&#34;</span>: <span style=color:#e6db74>&#34;hvm&#34;</span>, 
+                    <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;ubuntu/images/*ubuntu-focal-20.04-amd64-server-*&#34;</span>,
+                    <span style=color:#f92672>&#34;root-device-type&#34;</span>: <span style=color:#e6db74>&#34;ebs&#34;</span>
                 },
-                &quot;owners&quot;: [&quot;099720109477&quot;],
-                &quot;most_recent&quot;: true
+                <span style=color:#f92672>&#34;owners&#34;</span>: [<span style=color:#e6db74>&#34;099720109477&#34;</span>],
+                <span style=color:#f92672>&#34;most_recent&#34;</span>: <span style=color:#66d9ef>true</span>
             },
-            &quot;instance_type&quot;: &quot;{{user `instance_type`}}&quot;,
-            &quot;ssh_username&quot;:&quot;ubuntu&quot;, 
-            &quot;ami_name&quot;: &quot;ubuntu-ami-custom_{{timestamp}}&quot;
+            <span style=color:#f92672>&#34;instance_type&#34;</span>: <span style=color:#e6db74>&#34;{{user `instance_type`}}&#34;</span>,
+            <span style=color:#f92672>&#34;ssh_username&#34;</span>:<span style=color:#e6db74>&#34;ubuntu&#34;</span>, 
+            <span style=color:#f92672>&#34;ami_name&#34;</span>: <span style=color:#e6db74>&#34;ubuntu-ami-custom_{{timestamp}}&#34;</span>
         }
 
     ]
-</code></pre><p>In this configuration, all keys are important to consider, however there are some which are crucial and required to run it. More information about the keys can be found here: <a href=https://www.packer.io/docs/builders/amazon>Amazon AMI Builder</a></p><p>We would like to create a custom Ubuntu-20.04 image on cloud and save it as AMI to run it later, we are searching its pattern from available AMIs on AWS Management Console or it can be found through out this website : <a href=https://cloud-images.ubuntu.com/locator/ec2/>https://cloud-images.ubuntu.com/locator/ec2/</a></p><p>Once you have declared which AMI to customize, it needs to be located under <code>source_ami_filter</code> with wildcards and owners. Setting <code>most_recent</code> to <code>true</code> means that when this Packer JSON file is executed it will fetch and customize last updated AMI.</p><p><strong>Access Key, Secret Key</strong> are required and should not be exposed to public in any moment, if exposed, they need to be updated immediately. They will be used to communicate with AWS to fire up instances to create custom image according to given settings defined in builders and provisioners.</p><p>The values of keys are defined in <strong>variables</strong> and parsed from out of it.</p><pre><code class=language-raw data-lang=raw>
-&quot;variables&quot;: {
-        &quot;aws_access_key&quot;: &quot;&quot;,
-        &quot;aws_secret_key&quot;: &quot;&quot;,
-        &quot;aws_region&quot;: &quot;&quot;,
-        &quot;aws_vpc&quot;: &quot;&quot;,
-        &quot;aws_subnet&quot;: &quot;&quot;,
-        &quot;ami_name&quot;: &quot;&quot;,
-        &quot;ami_description&quot;: &quot;&quot;,
-        &quot;builder_name&quot;: &quot;&quot;,
-        &quot;username&quot;:&quot;ubuntu&quot;,
-        &quot;instance_type&quot;:&quot;t2.medium&quot;,
-        &quot;tarball&quot;: &quot;&quot;
-    }, 
+</code></pre></div><p>In this configuration, all keys are important to consider, however there are some which are crucial and required to run it. More information about the keys can be found here: <a href=https://www.packer.io/docs/builders/amazon>Amazon AMI Builder</a></p><p>We would like to create a custom Ubuntu-20.04 image on cloud and save it as AMI to run it later, we are searching its pattern from available AMIs on AWS Management Console or it can be found through out this website : <a href=https://cloud-images.ubuntu.com/locator/ec2/>https://cloud-images.ubuntu.com/locator/ec2/</a></p><p>Once you have declared which AMI to customize, it needs to be located under <code>source_ami_filter</code> with wildcards and owners. Setting <code>most_recent</code> to <code>true</code> means that when this Packer JSON file is executed it will fetch and customize last updated AMI.</p><p><strong>Access Key, Secret Key</strong> are required and should not be exposed to public in any moment, if exposed, they need to be updated immediately. They will be used to communicate with AWS to fire up instances to create custom image according to given settings defined in builders and provisioners.</p><p>The values of keys are defined in <strong>variables</strong> and parsed from out of it.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>
+<span style=color:#e6db74>&#34;variables&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> {
+        <span style=color:#f92672>&#34;aws_access_key&#34;</span>: <span style=color:#e6db74>&#34;&#34;</span>,
+        <span style=color:#f92672>&#34;aws_secret_key&#34;</span>: <span style=color:#e6db74>&#34;&#34;</span>,
+        <span style=color:#f92672>&#34;aws_region&#34;</span>: <span style=color:#e6db74>&#34;&#34;</span>,
+        <span style=color:#f92672>&#34;aws_vpc&#34;</span>: <span style=color:#e6db74>&#34;&#34;</span>,
+        <span style=color:#f92672>&#34;aws_subnet&#34;</span>: <span style=color:#e6db74>&#34;&#34;</span>,
+        <span style=color:#f92672>&#34;ami_name&#34;</span>: <span style=color:#e6db74>&#34;&#34;</span>,
+        <span style=color:#f92672>&#34;ami_description&#34;</span>: <span style=color:#e6db74>&#34;&#34;</span>,
+        <span style=color:#f92672>&#34;builder_name&#34;</span>: <span style=color:#e6db74>&#34;&#34;</span>,
+        <span style=color:#f92672>&#34;username&#34;</span>:<span style=color:#e6db74>&#34;ubuntu&#34;</span>,
+        <span style=color:#f92672>&#34;instance_type&#34;</span>:<span style=color:#e6db74>&#34;t2.medium&#34;</span>,
+        <span style=color:#f92672>&#34;tarball&#34;</span>: <span style=color:#e6db74>&#34;&#34;</span>
+    }<span style=color:#960050;background-color:#1e0010>,</span> 
 
-</code></pre><p>In variables section, <strong>username, instance_type, aws_access_key, aws_secret_key</strong> variables should be set correctly to create the image on cloud. Other variables are optional and variables section can be populated more.</p><h2 id=customize-settins-on-cloud>Customize settins on Cloud<a hidden class=anchor aria-hidden=true href=#customize-settins-on-cloud>#</a></h2><p>On cloud builds, cloud configuration file should be used instead of <code>preseed.cfg</code> to customize settings.
+</code></pre></div><p>In variables section, <strong>username, instance_type, aws_access_key, aws_secret_key</strong> variables should be set correctly to create the image on cloud. Other variables are optional and variables section can be populated more.</p><h2 id=customize-settins-on-cloud>Customize settins on Cloud<a hidden class=anchor aria-hidden=true href=#customize-settins-on-cloud>#</a></h2><p>On cloud builds, cloud configuration file should be used instead of <code>preseed.cfg</code> to customize settings.
 The <strong>defaults.cfg</strong> file where it contains custom settings such as default username, password, changing visudo file and more. Example <strong>defaults.cfg</strong> can be as follow:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cfg data-lang=cfg><span style=color:#75715e>#cloud-config</span>
 <span style=color:#a6e22e>system_info:</span>
   <span style=color:#a6e22e>default_user:</span>
