@@ -1,6 +1,6 @@
 ---
 title: "packer: build custom images on cloud and local "
-date: 2020-04-17T09:00:03+00:00
+date: 2021-04-17T09:00:03+00:00
 # weight: 1
 # aliases: ["/first"]
 tags: ["packer", "aws", "ubuntu", "automation"]
