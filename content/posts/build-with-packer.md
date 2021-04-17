@@ -77,7 +77,7 @@ Any packer file composed of three main components which are ;
  
  Define the desired platform and platform configurations, including API Key information and desired source images. Example snippet is given from the Packer file: 
 
- ```json
+ ```raw
 
     "builders": [
     {
@@ -153,7 +153,7 @@ Defines how to configure the image most likely by your using existing configurat
 
 In our example, bash scripts will be provided to install tools and update configuration of ubuntu image to make it customized. Provisioner section of a Packer JSON file can be seen as below: 
 
-```json
+```raw
 
  "provisioners": [
     {
@@ -194,7 +194,7 @@ How packer works on the machine image during the creation. By default it is over
 
 Over all packer file can be seen as follow: 
 
-```json 
+```raw 
 {
     "builders": [
         {
@@ -313,7 +313,7 @@ As an cloud example AWS will be used to create custom image.
 
 ## Builders on Cloud 
 
-```json
+```raw
 
 "builders": [
         {
@@ -350,7 +350,7 @@ __Access Key, Secret Key__ are required and should not be exposed to public in a
 
 The values of keys are defined in  __variables__  and  parsed from out of it. 
 
-```json
+```raw
 
 "variables": {
         "aws_access_key": "",
