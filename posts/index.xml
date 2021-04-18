@@ -11,7 +11,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 18 Apr 2021 05:30:03 +0000</lastBuildDate><atom:link href="https://mrtrkmn.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>hot config reload with os signals </title>
+      <title>hot config reload with os signal </title>
       <link>https://mrtrkmn.github.io/posts/hot-reload-with-os-signals/</link>
       <pubDate>Sun, 18 Apr 2021 05:30:03 +0000</pubDate>
       
