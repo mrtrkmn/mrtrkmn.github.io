@@ -2,183 +2,183 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mrturkmen</title>
-    <link>https://mrtrkmn.github.io/</link>
+    <link>https://mrturkmen.com/</link>
     <description>Recent content on mrturkmen</description>
     <image>
-      <url>https://mrtrkmn.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://mrtrkmn.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 18 Apr 2021 05:30:03 +0000</lastBuildDate><atom:link href="https://mrtrkmn.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Apr 2021 05:30:03 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>hot config reload with os signal </title>
-      <link>https://mrtrkmn.github.io/posts/hot-reload-with-os-signals/</link>
+      <link>https://mrturkmen.com/posts/hot-reload-with-os-signals/</link>
       <pubDate>Sun, 18 Apr 2021 05:30:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/posts/hot-reload-with-os-signals/</guid>
+      <guid>https://mrturkmen.com/posts/hot-reload-with-os-signals/</guid>
       <description>Reloading config files with OS Signal</description>
     </item>
     
     <item>
       <title>packer: build custom images on cloud and local </title>
-      <link>https://mrtrkmn.github.io/posts/build-with-packer/</link>
+      <link>https://mrturkmen.com/posts/build-with-packer/</link>
       <pubDate>Sat, 17 Apr 2021 09:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/posts/build-with-packer/</guid>
+      <guid>https://mrturkmen.com/posts/build-with-packer/</guid>
       <description>create custom images on with packer</description>
     </item>
     
     <item>
       <title>fail2ban: block ssh bruteforce attacks </title>
-      <link>https://mrtrkmn.github.io/posts/fail2ban/</link>
+      <link>https://mrturkmen.com/posts/fail2ban/</link>
       <pubDate>Wed, 24 Feb 2021 12:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/posts/fail2ban/</guid>
+      <guid>https://mrturkmen.com/posts/fail2ban/</guid>
       <description>fail2ban: ban failed attempts</description>
     </item>
     
     <item>
       <title>Deploy with Ansible on CI/CD</title>
-      <link>https://mrtrkmn.github.io/posts/deploy-with-ansible/</link>
+      <link>https://mrturkmen.com/posts/deploy-with-ansible/</link>
       <pubDate>Sat, 12 Dec 2020 17:42:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/posts/deploy-with-ansible/</guid>
+      <guid>https://mrturkmen.com/posts/deploy-with-ansible/</guid>
       <description>Deploying with Ansible on CI/CD. </description>
     </item>
     
     <item>
       <title>Introduction to Ansible - Handwritten Notes</title>
-      <link>https://mrtrkmn.github.io/posts/introduction-to-ansible-notes/</link>
+      <link>https://mrturkmen.com/posts/introduction-to-ansible-notes/</link>
       <pubDate>Sat, 05 Dec 2020 12:45:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/posts/introduction-to-ansible-notes/</guid>
+      <guid>https://mrturkmen.com/posts/introduction-to-ansible-notes/</guid>
       <description>While watching video tutorial about Ansible, I took some notes and created following PDF file.
 INTRODUCTION TO ANSIBLE HANDWRITTEN NOTES</description>
     </item>
     
     <item>
       <title>Download Youtube Playlists and Release through Github Actions [ CI/CD ]</title>
-      <link>https://mrtrkmn.github.io/posts/download-release-youtube-playlists/</link>
+      <link>https://mrturkmen.com/posts/download-release-youtube-playlists/</link>
       <pubDate>Tue, 24 Nov 2020 10:55:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/posts/download-release-youtube-playlists/</guid>
+      <guid>https://mrturkmen.com/posts/download-release-youtube-playlists/</guid>
       <description>Automated way of fetching and releasing list of playlists defined by user.</description>
     </item>
     
     <item>
       <title>Latex with Github Actions</title>
-      <link>https://mrtrkmn.github.io/posts/build-release-latex/</link>
+      <link>https://mrturkmen.com/posts/build-release-latex/</link>
       <pubDate>Mon, 26 Oct 2020 16:25:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/posts/build-release-latex/</guid>
+      <guid>https://mrturkmen.com/posts/build-release-latex/</guid>
       <description>Creating PDFs with Latex</description>
     </item>
     
     <item>
       <title>Universal gRPC client demonstration [Evans]</title>
-      <link>https://mrtrkmn.github.io/posts/grpc-calls-with-evans/</link>
+      <link>https://mrturkmen.com/posts/grpc-calls-with-evans/</link>
       <pubDate>Sat, 08 Aug 2020 09:19:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/posts/grpc-calls-with-evans/</guid>
+      <guid>https://mrturkmen.com/posts/grpc-calls-with-evans/</guid>
       <description>Mock gRPC client</description>
     </item>
     
     <item>
       <title>NGINX Ingress Controller with HAProxy for k8s cluster</title>
-      <link>https://mrtrkmn.github.io/posts/setup-ingress-controller/</link>
+      <link>https://mrturkmen.com/posts/setup-ingress-controller/</link>
       <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/posts/setup-ingress-controller/</guid>
+      <guid>https://mrturkmen.com/posts/setup-ingress-controller/</guid>
       <description>NGINX Ingress Controller Setup</description>
     </item>
     
     <item>
       <title>Setup Highly Available Kubernetes Cluster with HAProxy</title>
-      <link>https://mrtrkmn.github.io/posts/install-ha-kubernetes-cluster/</link>
+      <link>https://mrturkmen.com/posts/install-ha-kubernetes-cluster/</link>
       <pubDate>Sun, 05 Jul 2020 17:43:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/posts/install-ha-kubernetes-cluster/</guid>
+      <guid>https://mrturkmen.com/posts/install-ha-kubernetes-cluster/</guid>
       <description>Installation of Highly Available Kubernetes Cluster</description>
     </item>
     
     <item>
       <title>Kendimize özel VPN kurulumu </title>
-      <link>https://mrtrkmn.github.io/posts/vpn-kuralim/</link>
+      <link>https://mrturkmen.com/posts/vpn-kuralim/</link>
       <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/posts/vpn-kuralim/</guid>
+      <guid>https://mrturkmen.com/posts/vpn-kuralim/</guid>
       <description>Decent open source, lightweight VPN solution.</description>
     </item>
     
     <item>
       <title>Go notes (Concurrency) </title>
-      <link>https://mrtrkmn.github.io/posts/go-concur/</link>
+      <link>https://mrturkmen.com/posts/go-concur/</link>
       <pubDate>Sat, 13 Jun 2020 10:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/posts/go-concur/</guid>
+      <guid>https://mrturkmen.com/posts/go-concur/</guid>
       <description>Go Programming Language Notes.</description>
     </item>
     
     <item>
       <title>Go notes (OOP topics) </title>
-      <link>https://mrtrkmn.github.io/posts/go-notes/</link>
+      <link>https://mrturkmen.com/posts/go-notes/</link>
       <pubDate>Mon, 08 Jun 2020 10:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/posts/go-notes/</guid>
+      <guid>https://mrturkmen.com/posts/go-notes/</guid>
       <description>Go Programming Language Notes.</description>
     </item>
     
     <item>
       <title>Free VPN [WireGuard] Setup  </title>
-      <link>https://mrtrkmn.github.io/posts/setup-free-vpn/</link>
+      <link>https://mrturkmen.com/posts/setup-free-vpn/</link>
       <pubDate>Sat, 06 Jun 2020 10:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/posts/setup-free-vpn/</guid>
+      <guid>https://mrturkmen.com/posts/setup-free-vpn/</guid>
       <description>Decent open source, lightweight VPN solution.</description>
     </item>
     
     <item>
       <title>no space left on this device </title>
-      <link>https://mrtrkmn.github.io/posts/no-space-left-on-device/</link>
+      <link>https://mrturkmen.com/posts/no-space-left-on-device/</link>
       <pubDate>Mon, 18 May 2020 00:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/posts/no-space-left-on-device/</guid>
+      <guid>https://mrturkmen.com/posts/no-space-left-on-device/</guid>
       <description>How to solve issue of &amp;#39;No space left on device&amp;#39; which is caused by Docker. </description>
     </item>
     
     <item>
       <title>elasticsearch/performans </title>
-      <link>https://mrtrkmn.github.io/posts/elasticsearch-performans-art%C4%B1r%C4%B1m%C4%B1/</link>
+      <link>https://mrturkmen.com/posts/elasticsearch-performans-art%C4%B1r%C4%B1m%C4%B1/</link>
       <pubDate>Sun, 17 Feb 2019 09:04:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/posts/elasticsearch-performans-art%C4%B1r%C4%B1m%C4%B1/</guid>
+      <guid>https://mrturkmen.com/posts/elasticsearch-performans-art%C4%B1r%C4%B1m%C4%B1/</guid>
       <description>Elasticsearch ortamı performans artırımı</description>
     </item>
     
     <item>
       <title>vim </title>
-      <link>https://mrtrkmn.github.io/posts/vim/</link>
+      <link>https://mrturkmen.com/posts/vim/</link>
       <pubDate>Fri, 11 Jan 2019 09:04:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/posts/vim/</guid>
+      <guid>https://mrturkmen.com/posts/vim/</guid>
       <description>Linuxa başlamak ve basit komutları ögrenmek</description>
     </item>
     
     <item>
       <title>terminal/komut </title>
-      <link>https://mrtrkmn.github.io/posts/linux-temeller-1/</link>
+      <link>https://mrturkmen.com/posts/linux-temeller-1/</link>
       <pubDate>Thu, 10 Jan 2019 09:04:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/posts/linux-temeller-1/</guid>
+      <guid>https://mrturkmen.com/posts/linux-temeller-1/</guid>
       <description>Linuxa başlamak ve basit komutları ögrenmek</description>
     </item>
     
     <item>
       <title>cp/reboot komuları </title>
-      <link>https://mrtrkmn.github.io/posts/linux-terminalinden-basit-komutlar/</link>
+      <link>https://mrturkmen.com/posts/linux-terminalinden-basit-komutlar/</link>
       <pubDate>Wed, 09 Jan 2019 09:04:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/posts/linux-terminalinden-basit-komutlar/</guid>
+      <guid>https://mrturkmen.com/posts/linux-terminalinden-basit-komutlar/</guid>
       <description>Linuxa başlamak ve basit komutları ögrenmek</description>
     </item>
     

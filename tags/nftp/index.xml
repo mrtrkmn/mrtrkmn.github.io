@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>nftp on mrturkmen</title>
-    <link>https://mrtrkmn.github.io/tags/nftp/</link>
+    <link>https://mrturkmen.com/tags/nftp/</link>
     <description>Recent content in nftp on mrturkmen</description>
     <image>
-      <url>https://mrtrkmn.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://mrtrkmn.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 11 Jan 2019 09:04:03 +0000</lastBuildDate><atom:link href="https://mrtrkmn.github.io/tags/nftp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Jan 2019 09:04:03 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/nftp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>vim </title>
-      <link>https://mrtrkmn.github.io/posts/vim/</link>
+      <link>https://mrturkmen.com/posts/vim/</link>
       <pubDate>Fri, 11 Jan 2019 09:04:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/posts/vim/</guid>
+      <guid>https://mrturkmen.com/posts/vim/</guid>
       <description>Linuxa başlamak ve basit komutları ögrenmek</description>
     </item>
     
     <item>
       <title>terminal/komut </title>
-      <link>https://mrtrkmn.github.io/posts/linux-temeller-1/</link>
+      <link>https://mrturkmen.com/posts/linux-temeller-1/</link>
       <pubDate>Thu, 10 Jan 2019 09:04:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/posts/linux-temeller-1/</guid>
+      <guid>https://mrturkmen.com/posts/linux-temeller-1/</guid>
       <description>Linuxa başlamak ve basit komutları ögrenmek</description>
     </item>
     
     <item>
       <title>cp/reboot komuları </title>
-      <link>https://mrtrkmn.github.io/posts/linux-terminalinden-basit-komutlar/</link>
+      <link>https://mrturkmen.com/posts/linux-terminalinden-basit-komutlar/</link>
       <pubDate>Wed, 09 Jan 2019 09:04:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/posts/linux-terminalinden-basit-komutlar/</guid>
+      <guid>https://mrturkmen.com/posts/linux-terminalinden-basit-komutlar/</guid>
       <description>Linuxa başlamak ve basit komutları ögrenmek</description>
     </item>
     

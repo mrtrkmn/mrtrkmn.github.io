@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>youtubeto on mrturkmen</title>
-    <link>https://mrtrkmn.github.io/tags/youtubeto/</link>
+    <link>https://mrturkmen.com/tags/youtubeto/</link>
     <description>Recent content in youtubeto on mrturkmen</description>
     <image>
-      <url>https://mrtrkmn.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://mrtrkmn.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 24 Nov 2020 10:55:03 +0000</lastBuildDate><atom:link href="https://mrtrkmn.github.io/tags/youtubeto/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 24 Nov 2020 10:55:03 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/youtubeto/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Download Youtube Playlists and Release through Github Actions [ CI/CD ]</title>
-      <link>https://mrtrkmn.github.io/posts/download-release-youtube-playlists/</link>
+      <link>https://mrturkmen.com/posts/download-release-youtube-playlists/</link>
       <pubDate>Tue, 24 Nov 2020 10:55:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/posts/download-release-youtube-playlists/</guid>
+      <guid>https://mrturkmen.com/posts/download-release-youtube-playlists/</guid>
       <description>Automated way of fetching and releasing list of playlists defined by user.</description>
     </item>
     

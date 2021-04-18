@@ -2,587 +2,587 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on mrturkmen</title>
-    <link>https://mrtrkmn.github.io/tags/</link>
+    <link>https://mrturkmen.com/tags/</link>
     <description>Recent content in Tags on mrturkmen</description>
     <image>
-      <url>https://mrtrkmn.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://mrtrkmn.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 18 Apr 2021 05:30:03 +0000</lastBuildDate><atom:link href="https://mrtrkmn.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Apr 2021 05:30:03 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>golang</title>
-      <link>https://mrtrkmn.github.io/tags/golang/</link>
+      <link>https://mrturkmen.com/tags/golang/</link>
       <pubDate>Sun, 18 Apr 2021 05:30:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/golang/</guid>
+      <guid>https://mrturkmen.com/tags/golang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>os</title>
-      <link>https://mrtrkmn.github.io/tags/os/</link>
+      <link>https://mrturkmen.com/tags/os/</link>
       <pubDate>Sun, 18 Apr 2021 05:30:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/os/</guid>
+      <guid>https://mrturkmen.com/tags/os/</guid>
       <description></description>
     </item>
     
     <item>
       <title>programming</title>
-      <link>https://mrtrkmn.github.io/tags/programming/</link>
+      <link>https://mrturkmen.com/tags/programming/</link>
       <pubDate>Sun, 18 Apr 2021 05:30:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/programming/</guid>
+      <guid>https://mrturkmen.com/tags/programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>reload</title>
-      <link>https://mrtrkmn.github.io/tags/reload/</link>
+      <link>https://mrturkmen.com/tags/reload/</link>
       <pubDate>Sun, 18 Apr 2021 05:30:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/reload/</guid>
+      <guid>https://mrturkmen.com/tags/reload/</guid>
       <description></description>
     </item>
     
     <item>
       <title>automation</title>
-      <link>https://mrtrkmn.github.io/tags/automation/</link>
+      <link>https://mrturkmen.com/tags/automation/</link>
       <pubDate>Sat, 17 Apr 2021 09:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/automation/</guid>
+      <guid>https://mrturkmen.com/tags/automation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>aws</title>
-      <link>https://mrtrkmn.github.io/tags/aws/</link>
+      <link>https://mrturkmen.com/tags/aws/</link>
       <pubDate>Sat, 17 Apr 2021 09:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/aws/</guid>
+      <guid>https://mrturkmen.com/tags/aws/</guid>
       <description></description>
     </item>
     
     <item>
       <title>packer</title>
-      <link>https://mrtrkmn.github.io/tags/packer/</link>
+      <link>https://mrturkmen.com/tags/packer/</link>
       <pubDate>Sat, 17 Apr 2021 09:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/packer/</guid>
+      <guid>https://mrturkmen.com/tags/packer/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ubuntu</title>
-      <link>https://mrtrkmn.github.io/tags/ubuntu/</link>
+      <link>https://mrturkmen.com/tags/ubuntu/</link>
       <pubDate>Sat, 17 Apr 2021 09:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/ubuntu/</guid>
+      <guid>https://mrturkmen.com/tags/ubuntu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>attack</title>
-      <link>https://mrtrkmn.github.io/tags/attack/</link>
+      <link>https://mrturkmen.com/tags/attack/</link>
       <pubDate>Wed, 24 Feb 2021 12:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/attack/</guid>
+      <guid>https://mrturkmen.com/tags/attack/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bruteforce</title>
-      <link>https://mrtrkmn.github.io/tags/bruteforce/</link>
+      <link>https://mrturkmen.com/tags/bruteforce/</link>
       <pubDate>Wed, 24 Feb 2021 12:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/bruteforce/</guid>
+      <guid>https://mrturkmen.com/tags/bruteforce/</guid>
       <description></description>
     </item>
     
     <item>
       <title>fail2ban</title>
-      <link>https://mrtrkmn.github.io/tags/fail2ban/</link>
+      <link>https://mrturkmen.com/tags/fail2ban/</link>
       <pubDate>Wed, 24 Feb 2021 12:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/fail2ban/</guid>
+      <guid>https://mrturkmen.com/tags/fail2ban/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ssh</title>
-      <link>https://mrtrkmn.github.io/tags/ssh/</link>
+      <link>https://mrturkmen.com/tags/ssh/</link>
       <pubDate>Wed, 24 Feb 2021 12:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/ssh/</guid>
+      <guid>https://mrturkmen.com/tags/ssh/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ansible</title>
-      <link>https://mrtrkmn.github.io/tags/ansible/</link>
+      <link>https://mrturkmen.com/tags/ansible/</link>
       <pubDate>Sat, 12 Dec 2020 17:42:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/ansible/</guid>
+      <guid>https://mrturkmen.com/tags/ansible/</guid>
       <description></description>
     </item>
     
     <item>
       <title>continuous</title>
-      <link>https://mrtrkmn.github.io/tags/continuous/</link>
+      <link>https://mrturkmen.com/tags/continuous/</link>
       <pubDate>Sat, 12 Dec 2020 17:42:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/continuous/</guid>
+      <guid>https://mrturkmen.com/tags/continuous/</guid>
       <description></description>
     </item>
     
     <item>
       <title>deployment</title>
-      <link>https://mrtrkmn.github.io/tags/deployment/</link>
+      <link>https://mrturkmen.com/tags/deployment/</link>
       <pubDate>Sat, 12 Dec 2020 17:42:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/deployment/</guid>
+      <guid>https://mrturkmen.com/tags/deployment/</guid>
       <description></description>
     </item>
     
     <item>
       <title>github</title>
-      <link>https://mrtrkmn.github.io/tags/github/</link>
+      <link>https://mrturkmen.com/tags/github/</link>
       <pubDate>Sat, 12 Dec 2020 17:42:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/github/</guid>
+      <guid>https://mrturkmen.com/tags/github/</guid>
       <description></description>
     </item>
     
     <item>
       <title>download</title>
-      <link>https://mrtrkmn.github.io/tags/download/</link>
+      <link>https://mrturkmen.com/tags/download/</link>
       <pubDate>Tue, 24 Nov 2020 10:55:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/download/</guid>
+      <guid>https://mrturkmen.com/tags/download/</guid>
       <description></description>
     </item>
     
     <item>
       <title>fetch</title>
-      <link>https://mrtrkmn.github.io/tags/fetch/</link>
+      <link>https://mrturkmen.com/tags/fetch/</link>
       <pubDate>Tue, 24 Nov 2020 10:55:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/fetch/</guid>
+      <guid>https://mrturkmen.com/tags/fetch/</guid>
       <description></description>
     </item>
     
     <item>
       <title>playlist</title>
-      <link>https://mrtrkmn.github.io/tags/playlist/</link>
+      <link>https://mrturkmen.com/tags/playlist/</link>
       <pubDate>Tue, 24 Nov 2020 10:55:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/playlist/</guid>
+      <guid>https://mrturkmen.com/tags/playlist/</guid>
       <description></description>
     </item>
     
     <item>
       <title>youtube</title>
-      <link>https://mrtrkmn.github.io/tags/youtube/</link>
+      <link>https://mrturkmen.com/tags/youtube/</link>
       <pubDate>Tue, 24 Nov 2020 10:55:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/youtube/</guid>
+      <guid>https://mrturkmen.com/tags/youtube/</guid>
       <description></description>
     </item>
     
     <item>
       <title>youtubeto</title>
-      <link>https://mrtrkmn.github.io/tags/youtubeto/</link>
+      <link>https://mrturkmen.com/tags/youtubeto/</link>
       <pubDate>Tue, 24 Nov 2020 10:55:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/youtubeto/</guid>
+      <guid>https://mrturkmen.com/tags/youtubeto/</guid>
       <description></description>
     </item>
     
     <item>
       <title>latex</title>
-      <link>https://mrtrkmn.github.io/tags/latex/</link>
+      <link>https://mrturkmen.com/tags/latex/</link>
       <pubDate>Mon, 26 Oct 2020 16:25:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/latex/</guid>
+      <guid>https://mrturkmen.com/tags/latex/</guid>
       <description></description>
     </item>
     
     <item>
       <title>workflow</title>
-      <link>https://mrtrkmn.github.io/tags/workflow/</link>
+      <link>https://mrturkmen.com/tags/workflow/</link>
       <pubDate>Mon, 26 Oct 2020 16:25:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/workflow/</guid>
+      <guid>https://mrturkmen.com/tags/workflow/</guid>
       <description></description>
     </item>
     
     <item>
       <title>automated</title>
-      <link>https://mrtrkmn.github.io/tags/automated/</link>
+      <link>https://mrturkmen.com/tags/automated/</link>
       <pubDate>Sat, 08 Aug 2020 09:19:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/automated/</guid>
+      <guid>https://mrturkmen.com/tags/automated/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cli</title>
-      <link>https://mrtrkmn.github.io/tags/cli/</link>
+      <link>https://mrturkmen.com/tags/cli/</link>
       <pubDate>Sat, 08 Aug 2020 09:19:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/cli/</guid>
+      <guid>https://mrturkmen.com/tags/cli/</guid>
       <description></description>
     </item>
     
     <item>
       <title>client</title>
-      <link>https://mrtrkmn.github.io/tags/client/</link>
+      <link>https://mrturkmen.com/tags/client/</link>
       <pubDate>Sat, 08 Aug 2020 09:19:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/client/</guid>
+      <guid>https://mrturkmen.com/tags/client/</guid>
       <description></description>
     </item>
     
     <item>
       <title>go</title>
-      <link>https://mrtrkmn.github.io/tags/go/</link>
+      <link>https://mrturkmen.com/tags/go/</link>
       <pubDate>Sat, 08 Aug 2020 09:19:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/go/</guid>
+      <guid>https://mrturkmen.com/tags/go/</guid>
       <description></description>
     </item>
     
     <item>
       <title>grpc</title>
-      <link>https://mrtrkmn.github.io/tags/grpc/</link>
+      <link>https://mrturkmen.com/tags/grpc/</link>
       <pubDate>Sat, 08 Aug 2020 09:19:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/grpc/</guid>
+      <guid>https://mrturkmen.com/tags/grpc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mock-client</title>
-      <link>https://mrtrkmn.github.io/tags/mock-client/</link>
+      <link>https://mrturkmen.com/tags/mock-client/</link>
       <pubDate>Sat, 08 Aug 2020 09:19:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/mock-client/</guid>
+      <guid>https://mrturkmen.com/tags/mock-client/</guid>
       <description></description>
     </item>
     
     <item>
       <title>server</title>
-      <link>https://mrtrkmn.github.io/tags/server/</link>
+      <link>https://mrturkmen.com/tags/server/</link>
       <pubDate>Sat, 08 Aug 2020 09:19:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/server/</guid>
+      <guid>https://mrturkmen.com/tags/server/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cluster</title>
-      <link>https://mrtrkmn.github.io/tags/cluster/</link>
+      <link>https://mrturkmen.com/tags/cluster/</link>
       <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/cluster/</guid>
+      <guid>https://mrturkmen.com/tags/cluster/</guid>
       <description></description>
     </item>
     
     <item>
       <title>docker</title>
-      <link>https://mrtrkmn.github.io/tags/docker/</link>
+      <link>https://mrturkmen.com/tags/docker/</link>
       <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/docker/</guid>
+      <guid>https://mrturkmen.com/tags/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HAProxy</title>
-      <link>https://mrtrkmn.github.io/tags/haproxy/</link>
+      <link>https://mrturkmen.com/tags/haproxy/</link>
       <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/haproxy/</guid>
+      <guid>https://mrturkmen.com/tags/haproxy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ingress</title>
-      <link>https://mrtrkmn.github.io/tags/ingress/</link>
+      <link>https://mrturkmen.com/tags/ingress/</link>
       <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/ingress/</guid>
+      <guid>https://mrturkmen.com/tags/ingress/</guid>
       <description></description>
     </item>
     
     <item>
       <title>kubernetes</title>
-      <link>https://mrtrkmn.github.io/tags/kubernetes/</link>
+      <link>https://mrturkmen.com/tags/kubernetes/</link>
       <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/kubernetes/</guid>
+      <guid>https://mrturkmen.com/tags/kubernetes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>master</title>
-      <link>https://mrtrkmn.github.io/tags/master/</link>
+      <link>https://mrturkmen.com/tags/master/</link>
       <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/master/</guid>
+      <guid>https://mrturkmen.com/tags/master/</guid>
       <description></description>
     </item>
     
     <item>
       <title>nginx</title>
-      <link>https://mrtrkmn.github.io/tags/nginx/</link>
+      <link>https://mrturkmen.com/tags/nginx/</link>
       <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/nginx/</guid>
+      <guid>https://mrturkmen.com/tags/nginx/</guid>
       <description></description>
     </item>
     
     <item>
       <title>node</title>
-      <link>https://mrtrkmn.github.io/tags/node/</link>
+      <link>https://mrturkmen.com/tags/node/</link>
       <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/node/</guid>
+      <guid>https://mrturkmen.com/tags/node/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pod</title>
-      <link>https://mrtrkmn.github.io/tags/pod/</link>
+      <link>https://mrturkmen.com/tags/pod/</link>
       <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/pod/</guid>
+      <guid>https://mrturkmen.com/tags/pod/</guid>
       <description></description>
     </item>
     
     <item>
       <title>worker</title>
-      <link>https://mrtrkmn.github.io/tags/worker/</link>
+      <link>https://mrturkmen.com/tags/worker/</link>
       <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/worker/</guid>
+      <guid>https://mrturkmen.com/tags/worker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>linux</title>
-      <link>https://mrtrkmn.github.io/tags/linux/</link>
+      <link>https://mrturkmen.com/tags/linux/</link>
       <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/linux/</guid>
+      <guid>https://mrturkmen.com/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>macosx</title>
-      <link>https://mrtrkmn.github.io/tags/macosx/</link>
+      <link>https://mrturkmen.com/tags/macosx/</link>
       <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/macosx/</guid>
+      <guid>https://mrturkmen.com/tags/macosx/</guid>
       <description></description>
     </item>
     
     <item>
       <title>security</title>
-      <link>https://mrtrkmn.github.io/tags/security/</link>
+      <link>https://mrturkmen.com/tags/security/</link>
       <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/security/</guid>
+      <guid>https://mrturkmen.com/tags/security/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tunneling</title>
-      <link>https://mrtrkmn.github.io/tags/tunneling/</link>
+      <link>https://mrturkmen.com/tags/tunneling/</link>
       <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/tunneling/</guid>
+      <guid>https://mrturkmen.com/tags/tunneling/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vpn</title>
-      <link>https://mrtrkmn.github.io/tags/vpn/</link>
+      <link>https://mrturkmen.com/tags/vpn/</link>
       <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/vpn/</guid>
+      <guid>https://mrturkmen.com/tags/vpn/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vps</title>
-      <link>https://mrtrkmn.github.io/tags/vps/</link>
+      <link>https://mrturkmen.com/tags/vps/</link>
       <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/vps/</guid>
+      <guid>https://mrturkmen.com/tags/vps/</guid>
       <description></description>
     </item>
     
     <item>
       <title>wireguard</title>
-      <link>https://mrtrkmn.github.io/tags/wireguard/</link>
+      <link>https://mrturkmen.com/tags/wireguard/</link>
       <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/wireguard/</guid>
+      <guid>https://mrturkmen.com/tags/wireguard/</guid>
       <description></description>
     </item>
     
     <item>
       <title>coursera</title>
-      <link>https://mrtrkmn.github.io/tags/coursera/</link>
+      <link>https://mrturkmen.com/tags/coursera/</link>
       <pubDate>Sat, 13 Jun 2020 10:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/coursera/</guid>
+      <guid>https://mrturkmen.com/tags/coursera/</guid>
       <description></description>
     </item>
     
     <item>
       <title>examples</title>
-      <link>https://mrtrkmn.github.io/tags/examples/</link>
+      <link>https://mrturkmen.com/tags/examples/</link>
       <pubDate>Sat, 13 Jun 2020 10:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/examples/</guid>
+      <guid>https://mrturkmen.com/tags/examples/</guid>
       <description></description>
     </item>
     
     <item>
       <title>google</title>
-      <link>https://mrtrkmn.github.io/tags/google/</link>
+      <link>https://mrturkmen.com/tags/google/</link>
       <pubDate>Sat, 13 Jun 2020 10:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/google/</guid>
+      <guid>https://mrturkmen.com/tags/google/</guid>
       <description></description>
     </item>
     
     <item>
       <title>default</title>
-      <link>https://mrtrkmn.github.io/tags/default/</link>
+      <link>https://mrturkmen.com/tags/default/</link>
       <pubDate>Mon, 18 May 2020 00:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/default/</guid>
+      <guid>https://mrturkmen.com/tags/default/</guid>
       <description></description>
     </item>
     
     <item>
       <title>error</title>
-      <link>https://mrtrkmn.github.io/tags/error/</link>
+      <link>https://mrturkmen.com/tags/error/</link>
       <pubDate>Mon, 18 May 2020 00:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/error/</guid>
+      <guid>https://mrturkmen.com/tags/error/</guid>
       <description></description>
     </item>
     
     <item>
       <title>storage</title>
-      <link>https://mrtrkmn.github.io/tags/storage/</link>
+      <link>https://mrturkmen.com/tags/storage/</link>
       <pubDate>Mon, 18 May 2020 00:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/storage/</guid>
+      <guid>https://mrturkmen.com/tags/storage/</guid>
       <description></description>
     </item>
     
     <item>
       <title>terminal</title>
-      <link>https://mrtrkmn.github.io/tags/terminal/</link>
+      <link>https://mrturkmen.com/tags/terminal/</link>
       <pubDate>Mon, 18 May 2020 00:00:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/terminal/</guid>
+      <guid>https://mrturkmen.com/tags/terminal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>elasticsearch</title>
-      <link>https://mrtrkmn.github.io/tags/elasticsearch/</link>
+      <link>https://mrturkmen.com/tags/elasticsearch/</link>
       <pubDate>Sun, 17 Feb 2019 09:04:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/elasticsearch/</guid>
+      <guid>https://mrturkmen.com/tags/elasticsearch/</guid>
       <description></description>
     </item>
     
     <item>
       <title>performance</title>
-      <link>https://mrtrkmn.github.io/tags/performance/</link>
+      <link>https://mrturkmen.com/tags/performance/</link>
       <pubDate>Sun, 17 Feb 2019 09:04:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/performance/</guid>
+      <guid>https://mrturkmen.com/tags/performance/</guid>
       <description></description>
     </item>
     
     <item>
       <title>performans</title>
-      <link>https://mrtrkmn.github.io/tags/performans/</link>
+      <link>https://mrturkmen.com/tags/performans/</link>
       <pubDate>Sun, 17 Feb 2019 09:04:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/performans/</guid>
+      <guid>https://mrturkmen.com/tags/performans/</guid>
       <description></description>
     </item>
     
     <item>
       <title>html</title>
-      <link>https://mrtrkmn.github.io/tags/html/</link>
+      <link>https://mrturkmen.com/tags/html/</link>
       <pubDate>Fri, 11 Jan 2019 09:04:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/html/</guid>
+      <guid>https://mrturkmen.com/tags/html/</guid>
       <description></description>
     </item>
     
     <item>
       <title>komut</title>
-      <link>https://mrtrkmn.github.io/tags/komut/</link>
+      <link>https://mrturkmen.com/tags/komut/</link>
       <pubDate>Fri, 11 Jan 2019 09:04:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/komut/</guid>
+      <guid>https://mrturkmen.com/tags/komut/</guid>
       <description></description>
     </item>
     
     <item>
       <title>nftp</title>
-      <link>https://mrtrkmn.github.io/tags/nftp/</link>
+      <link>https://mrturkmen.com/tags/nftp/</link>
       <pubDate>Fri, 11 Jan 2019 09:04:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/nftp/</guid>
+      <guid>https://mrturkmen.com/tags/nftp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>scp</title>
-      <link>https://mrtrkmn.github.io/tags/scp/</link>
+      <link>https://mrturkmen.com/tags/scp/</link>
       <pubDate>Fri, 11 Jan 2019 09:04:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/scp/</guid>
+      <guid>https://mrturkmen.com/tags/scp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vim</title>
-      <link>https://mrtrkmn.github.io/tags/vim/</link>
+      <link>https://mrturkmen.com/tags/vim/</link>
       <pubDate>Fri, 11 Jan 2019 09:04:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/vim/</guid>
+      <guid>https://mrturkmen.com/tags/vim/</guid>
       <description></description>
     </item>
     
     <item>
       <title>wget</title>
-      <link>https://mrtrkmn.github.io/tags/wget/</link>
+      <link>https://mrturkmen.com/tags/wget/</link>
       <pubDate>Fri, 11 Jan 2019 09:04:03 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/wget/</guid>
+      <guid>https://mrturkmen.com/tags/wget/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ci/cd</title>
-      <link>https://mrtrkmn.github.io/tags/ci/cd/</link>
+      <link>https://mrturkmen.com/tags/ci/cd/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mrtrkmn.github.io/tags/ci/cd/</guid>
+      <guid>https://mrturkmen.com/tags/ci/cd/</guid>
       <description></description>
     </item>
     
