@@ -9,7 +9,16 @@
       <link>https://mrtrkmn.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 17 Apr 2021 09:00:03 +0000</lastBuildDate><atom:link href="https://mrtrkmn.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Apr 2021 05:30:03 +0000</lastBuildDate><atom:link href="https://mrtrkmn.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hot config reload with os signals </title>
+      <link>https://mrtrkmn.github.io/posts/hot-reload-with-os-signals/</link>
+      <pubDate>Sun, 18 Apr 2021 05:30:03 +0000</pubDate>
+      
+      <guid>https://mrtrkmn.github.io/posts/hot-reload-with-os-signals/</guid>
+      <description>Reloading config files with OS Signal</description>
+    </item>
+    
     <item>
       <title>packer: build custom images on cloud and local </title>
       <link>https://mrtrkmn.github.io/posts/build-with-packer/</link>
