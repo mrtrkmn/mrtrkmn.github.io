@@ -1,14 +1,14 @@
 ---
 title: "hot config reload with os signals "
-date: 2020-04-17T13:30:03+00:00
+date: 2021-04-18T05:30:03+00:00
 # weight: 1
 # aliases: ["/first"]
 tags: ["golang", "os", "programming", "reload"]
 author: "mrturkmen"
 # author: ["Me", "You"] # multiple authors
-showToc: true
+showToc: false
 TocOpen: false
-draft: true
+draft: false
 hidemeta: false
 comments: false
 description: "Reloading config files with OS Signal"
@@ -31,6 +31,7 @@ editPost:
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 ---
+
 
 Imagine a scenario where you have a monolithic application which uses a config file to store information about log directories, cert dirs and other service information. As an example to it following config file (- it is taken and modified from Haaukins project which I work on- ) can be considered:  
 
