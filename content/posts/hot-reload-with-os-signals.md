@@ -1,5 +1,5 @@
 ---
-title: "hot config reload with os signals "
+title: "hot config reload with os signal "
 date: 2021-04-18T05:30:03+00:00
 # weight: 1
 # aliases: ["/first"]
