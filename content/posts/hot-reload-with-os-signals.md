@@ -74,7 +74,7 @@ In this config file we have some set of keys which are defined to be used inside
 
 In this point, os signals can be used to update config file without restarting or closing the application. There are some other libraries which it is possible to enable watch on config file mode. It means the library will immediately notify entire application when there is change on the config file. However in this scenario, I assume that there is no such a library or framework is integrated. 
 
-Here I am considering the situation from Go language perspective, this may differ or not needed for some programming languages or freameworks. 
+Here I am considering the situation from Go language perspective, this may differ or not needed for some programming languages or frameworks. 
 
 Channel and go routine will be used to listen any SIGHUP signal to the process of the application. 
 
