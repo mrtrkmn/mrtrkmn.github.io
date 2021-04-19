@@ -222,8 +222,8 @@ params:
           url: "https://instagram.com/mr.turkmen"
         - name: gitlab
           url: "https://gitlab.com/mrturkmen"
-        - name: e-mail 
-          url: "mailto:hi@mrturkmen.com"
+        - name: medium
+          url:  "https://mrturkmen.medium.com"
         - name: RsS
           url: "index.xml"
     analytics:
