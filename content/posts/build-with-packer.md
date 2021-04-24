@@ -34,7 +34,7 @@ editPost:
 
 
 ---- 
- __THE REPOSITORY: [https://github.com/mrtrkmnhub/ubuntu-packer](https://github.com/mrtrkmnhub/ubuntu-packer)__
+ __THE REPOSITORY: [https://github.com/merkez/ubuntu-packer](https://github.com/merkez/ubuntu-packer)__
 
 
 In this blog post, provisioning and customizing images using packer will be shown with a template repository. 
@@ -290,7 +290,7 @@ Over all packer file can be seen as follow:
 
 ## How to run locally 
 
-This file can be run from the place where [ubuntu-20.04.json](https://github.com/mrtrkmnhub/ubuntu-packer/blob/master/on-local/ubuntu-20.04.json) file is located. 
+This file can be run from the place where [ubuntu-20.04.json](https://github.com/merkez/ubuntu-packer/blob/master/on-local/ubuntu-20.04.json) file is located. 
 
 ```bash 
 $ packer build ubuntu-20.04.json
@@ -401,11 +401,11 @@ $ packer build aws_packer.json
 
 
 
-Complete packer JSON file : [aws_packer.json](https://github.com/mrtrkmnhub/ubuntu-packer/blob/master/on-aws/aws-packer.json)
+Complete packer JSON file : [aws_packer.json](https://github.com/merkez/ubuntu-packer/blob/master/on-aws/aws-packer.json)
 
 As a summary, Packer is really cool tool to use to automate the process of creating custom images and it can be used for Dockers as well. For local example in this post, it will produce OVA file to import, on cloud it will generate custom AMI under your AWS account. 
 
-All scripts and config files can be found in this repository: [https://github.com/mrtrkmnhub/ubuntu-packer](https://github.com/mrtrkmnhub/ubuntu-packer)
+All scripts and config files can be found in this repository: [https://github.com/merkez/ubuntu-packer](https://github.com/merkez/ubuntu-packer)
 
 
 
