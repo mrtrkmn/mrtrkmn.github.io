@@ -135,7 +135,7 @@ Ansible playbook will contain following;
 
 The tasks can be extended according to user needs however to keep it short and show how Ansible could be used on continuous integration, I will continue to have minimal playbook. 
 
-Link to example repository: [https://github.com/mrturkmenhub/ansible-deploy](https://github.com/mrturkmenhub/ansible-deploy)
+Link to example repository: [https://github.com/merkez/ansible-deploy](https://github.com/merkez/ansible-deploy)
 
 The structure of the repository as following: 
 
@@ -143,18 +143,18 @@ The structure of the repository as following:
 <img src="../../images/deploy_with_ansible.png" alt="Deploy with Ansible" style="width:200px;"/>
 
 
-As it can be observed from the figurre above, I have only three tasks which are combined under [main.yml](https://github.com/mrturkmenhub/ansible-deploy/blob/master/main.yml). 
+As it can be observed from the figurre above, I have only three tasks which are combined under [main.yml](https://github.com/merkez/ansible-deploy/blob/master/main.yml). 
 
-Some configuration regarding to Ansible, such as private key, inventory file location declaration is saved to file [ansible.cfg](https://github.com/mrturkmenhub/ansible-deploy/blob/master/ansible.cfg) among ssh connection configuration. 
+Some configuration regarding to Ansible, such as private key, inventory file location declaration is saved to file [ansible.cfg](https://github.com/merkez/ansible-deploy/blob/master/ansible.cfg) among ssh connection configuration. 
 
-[Inventory](https://github.com/mrturkmenhub/ansible-deploy/blob/master/inventory) file contains server(s) to deploy the application. 
+[Inventory](https://github.com/merkez/ansible-deploy/blob/master/inventory) file contains server(s) to deploy the application. 
 
 This post is not about how to write ansible playbooks, hence, I am going to skip to explain it. If you would like to check and understand it you can check following repositories for examples; 
 
- - [DevOps Learning Journey](https://github.com/mrturkmenhub/DevOps-Learning-Journey)
+ - [DevOps Learning Journey](https://github.com/merkez/DevOps-Learning-Journey)
  - [Handwritten notes about Ansible](https://mrturkmen.com/assets/notes/20201205-introduction-to-ansible.pdf)
 
-[Decrypt script](https://github.com/mrturkmenhub/ansible-deploy/blob/master/.github/scripts/decrypt.sh) is crucial file which is decrypting encrypted private key to access the server. 
+[Decrypt script](https://github.com/merkez/ansible-deploy/blob/master/.github/scripts/decrypt.sh) is crucial file which is decrypting encrypted private key to access the server. 
 
 **DO NOT FORGET TO SET YOUR SECRET_PASSPHRASE TO SECRETS OF THE REPOSITORY**
 

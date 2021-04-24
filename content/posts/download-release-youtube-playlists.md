@@ -161,19 +161,19 @@ Once the playlist is downloaded and released with Github actions `playlist-list.
 
 It will give easy way of checking what has been downloaded and released. 
 
-The code for reading and writing to csv files are pretty easy, and can be checked under [main.go](https://github.com/mrturkmenhub/youtubeto/blob/master/main.go) in the repository. 
+The code for reading and writing to csv files are pretty easy, and can be checked under [main.go](https://github.com/merkez/youtubeto/blob/master/main.go) in the repository. 
 
 ## Workflow File 
 
 The workflow file will include some steps, which are; 
 
-1. [Install pigz](https://github.com/mrturkmenhub/youtubeto/blob/004330baeee663dd12a05c4b1aaa99bba5bb4f14/.github/workflows/releaseplaylists.yml#L24) : required to compress data in parallel.
-2. [Install youtube-dl](https://github.com/mrturkmenhub/youtubeto/blob/004330baeee663dd12a05c4b1aaa99bba5bb4f14/.github/workflows/releaseplaylists.yml#L29) : required to download playlist from given URL. 
-3. [Build Binary](https://github.com/mrturkmenhub/youtubeto/blob/004330baeee663dd12a05c4b1aaa99bba5bb4f14/.github/workflows/releaseplaylists.yml#L34) : required to have combined binary which handles both download and compress using pre-existing tools on the system. 
-4. [Create Release](https://github.com/mrturkmenhub/youtubeto/blob/004330baeee663dd12a05c4b1aaa99bba5bb4f14/.github/workflows/releaseplaylists.yml#L38) : the step which initializes releases. 
-5. [Run Binary](https://github.com/mrturkmenhub/youtubeto/blob/004330baeee663dd12a05c4b1aaa99bba5bb4f14/.github/workflows/releaseplaylists.yml#L51) : executes the program
-6. [Upload videos to Github releases](https://github.com/mrturkmenhub/youtubeto/blob/004330baeee663dd12a05c4b1aaa99bba5bb4f14/.github/workflows/releaseplaylists.yml#L55) : uploads downloaded content to releases.
-7. [Remove  playlist and append downloaded playlists to old list](https://github.com/mrturkmenhub/youtubeto/blob/004330baeee663dd12a05c4b1aaa99bba5bb4f14/.github/workflows/releaseplaylists.yml#L61) : updates the list inside the playlist file and commits on master branch. 
+1. [Install pigz](https://github.com/merkez/youtubeto/blob/004330baeee663dd12a05c4b1aaa99bba5bb4f14/.github/workflows/releaseplaylists.yml#L24) : required to compress data in parallel.
+2. [Install youtube-dl](https://github.com/merkez/youtubeto/blob/004330baeee663dd12a05c4b1aaa99bba5bb4f14/.github/workflows/releaseplaylists.yml#L29) : required to download playlist from given URL. 
+3. [Build Binary](https://github.com/merkez/youtubeto/blob/004330baeee663dd12a05c4b1aaa99bba5bb4f14/.github/workflows/releaseplaylists.yml#L34) : required to have combined binary which handles both download and compress using pre-existing tools on the system. 
+4. [Create Release](https://github.com/merkez/youtubeto/blob/004330baeee663dd12a05c4b1aaa99bba5bb4f14/.github/workflows/releaseplaylists.yml#L38) : the step which initializes releases. 
+5. [Run Binary](https://github.com/merkez/youtubeto/blob/004330baeee663dd12a05c4b1aaa99bba5bb4f14/.github/workflows/releaseplaylists.yml#L51) : executes the program
+6. [Upload videos to Github releases](https://github.com/merkez/youtubeto/blob/004330baeee663dd12a05c4b1aaa99bba5bb4f14/.github/workflows/releaseplaylists.yml#L55) : uploads downloaded content to releases.
+7. [Remove  playlist and append downloaded playlists to old list](https://github.com/merkez/youtubeto/blob/004330baeee663dd12a05c4b1aaa99bba5bb4f14/.github/workflows/releaseplaylists.yml#L61) : updates the list inside the playlist file and commits on master branch. 
 
 The steps given above are clickable to see inside the workflow on repository. 
 
@@ -230,7 +230,7 @@ Check out how to setup Github Actions for your server from here:
 
 ## Repository
 
-[youtubeto](https://github.com/mrturkmenhub/youtubeto): Automated Youtube PlayList Releaser 
+[youtubeto](https://github.com/merkez/youtubeto): Automated Youtube PlayList Releaser 
 
 ## Demo 
 

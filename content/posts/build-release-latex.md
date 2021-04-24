@@ -135,7 +135,7 @@ The given workflow is completed version of what you might have at the end. In su
 
 Here is example repository to check completed version. 
 
-[https://github.com/mrturkmenhub/latex-on-ci-cd](https://github.com/mrturkmenhub/latex-on-ci-cd)
+[https://github.com/merkez/latex-on-ci-cd](https://github.com/merkez/latex-on-ci-cd)
 
 
 
