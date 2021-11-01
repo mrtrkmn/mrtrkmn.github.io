@@ -24,8 +24,8 @@ params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
     title: Ahmet Turkmen
     description: "Contains notes and blog posts "
-    keywords: [Blog, Portfolio, Software]
-    author: mrrturkmen
+    keywords: [gRPC, docker, go, golang, cloud, virtualization, python]
+    author: mrturkmen
     # author: ["Me", "You"] # multiple authors
     images: ["static"]
     DateFormat: "January 2,  2006"
@@ -62,7 +62,7 @@ params:
     profileMode:
         enabled: true # needs to be explicitly set
         title: Ahmet Turkmen 
-        subtitle: "Software Engineer"
+        subtitle: "informatics (M.Sc) student at TUM"
         imageUrl: "content/images/profile.jpg"
         imageWidth: 120
         imageHeight: 120
@@ -83,6 +83,8 @@ params:
         #   url: "https://twitter.com/"
         # - name: stackoverflow
         #   url: "https://stackoverflow.com"
+        # - name: linkedin
+        #   url: "https://linkedin.com/in/mrturkmen"
         - name: github
           url: "https://github.com/mrtrkmn"
         - name: instagram
@@ -195,7 +197,7 @@ params:
     profileMode:
         enabled: true # needs to be explicitly set
         title: Ahmet Turkmen 
-        subtitle: "Software Engineer"
+        subtitle: "informatics (M.Sc) student at TUM"
         imageUrl: "profile.jpg"
         imageWidth: 120
         imageHeight: 120
