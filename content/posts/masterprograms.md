@@ -1,6 +1,6 @@
 ---
 title: "Almanya'da ki bazı yüksek lisans programlarının ön kabul koşulları."
-date: 2021-11-23T21:38:03+00:00
+date: 2021-11-22T21:38:03+00:00
 # weight: 1
 # aliases: ["/first"]
 tags: ["master", "germany", "computer","software"]
