@@ -2,28 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://mrturkmen.com/posts/masterprograms/</loc>
+    <lastmod>2021-11-22T21:38:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/computer/</loc>
+    <lastmod>2021-11-22T21:38:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/germany/</loc>
+    <lastmod>2021-11-22T21:38:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/master/</loc>
+    <lastmod>2021-11-22T21:38:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/</loc>
+    <lastmod>2021-11-22T21:38:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/posts/</loc>
+    <lastmod>2021-11-22T21:38:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/software/</loc>
+    <lastmod>2021-11-22T21:38:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/</loc>
+    <lastmod>2021-11-22T21:38:03+00:00</lastmod>
+  </url><url>
     <loc>https://mrturkmen.com/tags/golang/</loc>
     <lastmod>2021-04-18T05:30:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/posts/hot-reload-with-os-signals/</loc>
     <lastmod>2021-04-18T05:30:03+00:00</lastmod>
   </url><url>
-    <loc>https://mrturkmen.com/</loc>
-    <lastmod>2021-04-18T05:30:03+00:00</lastmod>
-  </url><url>
     <loc>https://mrturkmen.com/tags/os/</loc>
-    <lastmod>2021-04-18T05:30:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/posts/</loc>
     <lastmod>2021-04-18T05:30:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/programming/</loc>
     <lastmod>2021-04-18T05:30:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/reload/</loc>
-    <lastmod>2021-04-18T05:30:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/tags/</loc>
     <lastmod>2021-04-18T05:30:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/automation/</loc>
@@ -138,9 +153,6 @@
     <lastmod>2020-07-10T16:35:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/kubernetes/</loc>
-    <lastmod>2020-07-10T16:35:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/tags/master/</loc>
     <lastmod>2020-07-10T16:35:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/nginx/</loc>
