@@ -22,9 +22,6 @@ jobs:
           
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.5 
-      
-      - name: Install NPM  
-        run: npm install 
 
       - name: Build
         run: hugo --minify
