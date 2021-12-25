@@ -83,8 +83,8 @@ params:
         #   url: "https://twitter.com/"
         # - name: stackoverflow
         #   url: "https://stackoverflow.com"
-        # - name: linkedin
-        #   url: "https://linkedin.com/in/mrturkmen"
+        - name: linkedin
+          url: "https://linkedin.com/in/mrturkmen"
         - name: github
           url: "https://github.com/mrtrkmn"
         - name: instagram
@@ -214,12 +214,14 @@ params:
         Content: Welcome to my blog
 
     socialIcons:
-        # - name: twitter
-        #   url: "https://twitter.com/"
         # - name: stackoverflow
         #   url: "https://stackoverflow.com"
+        - name: linkedin
+          url: "https://www.linkedin.com/in/mrturkmen"
         - name: github
           url: "https://github.com/mrtrkmn"
+        - name: twitter
+          url: "https://twitter.com/mrtrkmn_"
         - name: instagram
           url: "https://instagram.com/mr.turkmen"
         - name: gitlab
