@@ -21,7 +21,7 @@ ShowReadingTime: true
 ShowBreadCrumbs: true
 ShowPostNavLinks: true
 cover:
-    image: "../../images/ansible_deployment.jpeg" # image path/url
+    image: "" # image path/url
     alt: "Worklow " # alt text
     caption: "Workflow diagram " # display caption under cover
     relative: false # when using page bundles set this to true
