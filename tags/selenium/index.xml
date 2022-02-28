@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>selenium on mrturkmen</title>
+    <link>https://mrturkmen.com/tags/selenium/</link>
+    <description>Recent content in selenium on mrturkmen</description>
+    <image>
+      <url>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 25 Feb 2022 13:53:03 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/selenium/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automated complain messages to a company !</title>
+      <link>https://mrturkmen.com/posts/automation-for-complain/</link>
+      <pubDate>Fri, 25 Feb 2022 13:53:03 +0000</pubDate>
+      
+      <guid>https://mrturkmen.com/posts/automation-for-complain/</guid>
+      <description>Complain to krc.com.tr with automation</description>
+    </item>
+    
+  </channel>
+</rss>

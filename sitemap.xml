@@ -2,28 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://mrturkmen.com/posts/automation-for-complain/</loc>
+    <lastmod>2022-02-25T13:53:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/cd/</loc>
+    <lastmod>2022-02-25T13:53:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/ci/</loc>
+    <lastmod>2022-02-25T13:53:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/github/</loc>
+    <lastmod>2022-02-25T13:53:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/karaca/</loc>
+    <lastmod>2022-02-25T13:53:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/karaca.com.tr/</loc>
+    <lastmod>2022-02-25T13:53:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/</loc>
+    <lastmod>2022-02-25T13:53:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/posts/</loc>
+    <lastmod>2022-02-25T13:53:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/python/</loc>
+    <lastmod>2022-02-25T13:53:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/selenium/</loc>
+    <lastmod>2022-02-25T13:53:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/</loc>
+    <lastmod>2022-02-25T13:53:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/workflow/</loc>
+    <lastmod>2022-02-25T13:53:03+00:00</lastmod>
+  </url><url>
     <loc>https://mrturkmen.com/tags/golang/</loc>
     <lastmod>2021-04-18T05:30:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/posts/hot-reload-with-os-signals/</loc>
     <lastmod>2021-04-18T05:30:03+00:00</lastmod>
   </url><url>
-    <loc>https://mrturkmen.com/</loc>
-    <lastmod>2021-04-18T05:30:03+00:00</lastmod>
-  </url><url>
     <loc>https://mrturkmen.com/tags/os/</loc>
-    <lastmod>2021-04-18T05:30:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/posts/</loc>
     <lastmod>2021-04-18T05:30:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/programming/</loc>
     <lastmod>2021-04-18T05:30:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/reload/</loc>
-    <lastmod>2021-04-18T05:30:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/tags/</loc>
     <lastmod>2021-04-18T05:30:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/automation/</loc>
@@ -68,9 +95,6 @@
     <loc>https://mrturkmen.com/tags/deployment/</loc>
     <lastmod>2020-12-12T17:42:03+00:00</lastmod>
   </url><url>
-    <loc>https://mrturkmen.com/tags/github/</loc>
-    <lastmod>2020-12-12T17:42:03+00:00</lastmod>
-  </url><url>
     <loc>https://mrturkmen.com/posts/introduction-to-ansible-notes/</loc>
     <lastmod>2020-12-05T12:45:03+00:00</lastmod>
   </url><url>
@@ -96,9 +120,6 @@
     <lastmod>2020-10-26T16:25:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/posts/build-release-latex/</loc>
-    <lastmod>2020-10-26T16:25:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/tags/workflow/</loc>
     <lastmod>2020-10-26T16:25:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/automated/</loc>
