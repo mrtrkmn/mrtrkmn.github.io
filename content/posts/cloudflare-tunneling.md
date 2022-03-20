@@ -33,8 +33,7 @@ editPost:
 ---
 ### Would like to see it in action right away ? 
 
-<h3> Jump to <a href="https://youtu.be/Ayjk7J_KQ8A" target="_blank">here</a></h3>
-
+[![Demonstration Video](https://img.youtube.com/vi/Ayjk7J_KQ8A/0.jpg)](https://www.youtube.com/watch?v=Ayjk7J_KQ8A)
 
 ---
 I am always amazed with Cloudflare's products, blog posts and tools that they are offering. In my spare time, I am trying to read through blog posts over here [Cloudflare Blog](https://blog.cloudflare.com/). Some of them are really easy to consume, some are not, you might need to have an idea about network related terms, or need to follow Cloudflare closely to catch on the blog posts. 
