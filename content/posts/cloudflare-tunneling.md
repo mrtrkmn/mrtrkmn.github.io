@@ -31,7 +31,10 @@ editPost:
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 ---
-### Would like to see it in action right away ? Jump to [here](#example-demonstration-video)
+### Would like to see it in action right away ? 
+
+<h3> Jump to <a href="https://youtu.be/Ayjk7J_KQ8A" target="_blank">here</a></h3>
+
 
 ---
 I am always amazed with Cloudflare's products, blog posts and tools that they are offering. In my spare time, I am trying to read through blog posts over here [Cloudflare Blog](https://blog.cloudflare.com/). Some of them are really easy to consume, some are not, you might need to have an idea about network related terms, or need to follow Cloudflare closely to catch on the blog posts. 
@@ -115,11 +118,6 @@ $ cloudflared tunnel run mrtrkmn-tunnel
 ```
 
 Now, you should be able to see, your local deployment or HTTP(s) server is available on given subdomain in routing step above. 
-
-## Example demonstration video 
----
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Ayjk7J_KQ8A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 There are other cool stuff that Cloudflare is providing even though you have free tier account. Since I am quite interested on Cloudflare tech stack and its products, I will try to test out their products and create simple blog posts.  It is now much easy to test out your local deployments with your teammates, friends and other communities. 
