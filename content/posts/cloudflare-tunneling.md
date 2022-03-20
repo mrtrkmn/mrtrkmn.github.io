@@ -33,6 +33,8 @@ editPost:
 ---
 ### Would like to see it in action right away ? 
 
+Go to demonstration video here:
+
 [![Demonstration Video](https://img.youtube.com/vi/Ayjk7J_KQ8A/0.jpg)](https://www.youtube.com/watch?v=Ayjk7J_KQ8A)
 
 ---
@@ -70,9 +72,9 @@ $ cloudflared tunnel run
 
 Cloudflared tool has a configuration option under your home directory, as shown here: 
 
-![](../../images/../static/images/cloudflared-tunneling.png)
+![](../../images/cloudflared-tunneling.png)
 
-I setup localhost:8000 to be served through mrtrkmn-tunnel (ea6cf5bf-13b4-41c5-9000-14705384d83a).
+I setup `localhost:8000` to be served through `mrtrkmn-tunnel (ea6cf5bf-13b4-41c5-9000-14705384d83a)`.
 
 Different websites can be served through different tunnels by specifying newly created tunnel IDs and corresponding URLs.
 For demonstration purposes, I will only consider one example. 
