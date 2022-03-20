@@ -2,6 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://mrturkmen.com/tags/argo/</loc>
+    <lastmod>2022-03-20T21:26:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/cloudflare/</loc>
+    <lastmod>2022-03-20T21:26:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/cloudflared/</loc>
+    <lastmod>2022-03-20T21:26:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/deployment/</loc>
+    <lastmod>2022-03-20T21:26:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/local/</loc>
+    <lastmod>2022-03-20T21:26:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/posts/cloudflare-tunneling/</loc>
+    <lastmod>2022-03-20T21:26:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/</loc>
+    <lastmod>2022-03-20T21:26:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/posts/</loc>
+    <lastmod>2022-03-20T21:26:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/</loc>
+    <lastmod>2022-03-20T21:26:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/tunneling/</loc>
+    <lastmod>2022-03-20T21:26:03+00:00</lastmod>
+  </url><url>
     <loc>https://mrturkmen.com/posts/automation-for-complain/</loc>
     <lastmod>2022-02-25T13:53:03+00:00</lastmod>
   </url><url>
@@ -20,19 +50,10 @@
     <loc>https://mrturkmen.com/tags/karaca.com.tr/</loc>
     <lastmod>2022-02-25T13:53:03+00:00</lastmod>
   </url><url>
-    <loc>https://mrturkmen.com/</loc>
-    <lastmod>2022-02-25T13:53:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/posts/</loc>
-    <lastmod>2022-02-25T13:53:03+00:00</lastmod>
-  </url><url>
     <loc>https://mrturkmen.com/tags/python/</loc>
     <lastmod>2022-02-25T13:53:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/selenium/</loc>
-    <lastmod>2022-02-25T13:53:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/tags/</loc>
     <lastmod>2022-02-25T13:53:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/workflow/</loc>
@@ -90,9 +111,6 @@
     <lastmod>2020-12-12T17:42:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/posts/deploy-with-ansible/</loc>
-    <lastmod>2020-12-12T17:42:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/tags/deployment/</loc>
     <lastmod>2020-12-12T17:42:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/posts/introduction-to-ansible-notes/</loc>
@@ -192,9 +210,6 @@
     <lastmod>2020-07-01T10:00:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/security/</loc>
-    <lastmod>2020-07-01T10:00:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/tags/tunneling/</loc>
     <lastmod>2020-07-01T10:00:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/vpn/</loc>

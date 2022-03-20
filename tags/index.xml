@@ -9,7 +9,61 @@
       <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 25 Feb 2022 13:53:03 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Mar 2022 21:26:03 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>argo</title>
+      <link>https://mrturkmen.com/tags/argo/</link>
+      <pubDate>Sun, 20 Mar 2022 21:26:03 +0000</pubDate>
+      
+      <guid>https://mrturkmen.com/tags/argo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cloudflare</title>
+      <link>https://mrturkmen.com/tags/cloudflare/</link>
+      <pubDate>Sun, 20 Mar 2022 21:26:03 +0000</pubDate>
+      
+      <guid>https://mrturkmen.com/tags/cloudflare/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cloudflared</title>
+      <link>https://mrturkmen.com/tags/cloudflared/</link>
+      <pubDate>Sun, 20 Mar 2022 21:26:03 +0000</pubDate>
+      
+      <guid>https://mrturkmen.com/tags/cloudflared/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>deployment</title>
+      <link>https://mrturkmen.com/tags/deployment/</link>
+      <pubDate>Sun, 20 Mar 2022 21:26:03 +0000</pubDate>
+      
+      <guid>https://mrturkmen.com/tags/deployment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>local</title>
+      <link>https://mrturkmen.com/tags/local/</link>
+      <pubDate>Sun, 20 Mar 2022 21:26:03 +0000</pubDate>
+      
+      <guid>https://mrturkmen.com/tags/local/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tunneling</title>
+      <link>https://mrturkmen.com/tags/tunneling/</link>
+      <pubDate>Sun, 20 Mar 2022 21:26:03 +0000</pubDate>
+      
+      <guid>https://mrturkmen.com/tags/tunneling/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>cd</title>
       <link>https://mrturkmen.com/tags/cd/</link>
@@ -205,15 +259,6 @@
       <pubDate>Sat, 12 Dec 2020 17:42:03 +0000</pubDate>
       
       <guid>https://mrturkmen.com/tags/continuous/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>deployment</title>
-      <link>https://mrturkmen.com/tags/deployment/</link>
-      <pubDate>Sat, 12 Dec 2020 17:42:03 +0000</pubDate>
-      
-      <guid>https://mrturkmen.com/tags/deployment/</guid>
       <description></description>
     </item>
     
@@ -448,15 +493,6 @@
       <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
       
       <guid>https://mrturkmen.com/tags/security/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tunneling</title>
-      <link>https://mrturkmen.com/tags/tunneling/</link>
-      <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
-      
-      <guid>https://mrturkmen.com/tags/tunneling/</guid>
       <description></description>
     </item>
     

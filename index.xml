@@ -9,7 +9,16 @@
       <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 25 Feb 2022 13:53:03 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Mar 2022 21:26:03 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Local to Global</title>
+      <link>https://mrturkmen.com/posts/cloudflare-tunneling/</link>
+      <pubDate>Sun, 20 Mar 2022 21:26:03 +0000</pubDate>
+      
+      <guid>https://mrturkmen.com/posts/cloudflare-tunneling/</guid>
+      <description>Run locally, serve globally </description>
+    </item>
+    
     <item>
       <title>Automated complain messages to a company !</title>
       <link>https://mrturkmen.com/posts/automation-for-complain/</link>
