@@ -76,7 +76,7 @@ params:
     # home-info mode
     homeInfoParams:
         Title: "Hi there \U0001F44B"
-        Content: Welcome to my blog
+        Content: "Examples from blog posts are hosted here: https://github.com/merkez"
 
     socialIcons:
         # - name: twitter
@@ -195,7 +195,7 @@ params:
 
     # profile-mode
     profileMode:
-        enabled: true # needs to be explicitly set
+        enabled: false  # needs to be explicitly set
         title: Ahmet Turkmen 
         subtitle: "informatics (M.Sc) student at TUM"
         imageUrl: "profile.jpg"
@@ -211,7 +211,7 @@ params:
     # home-info mode
     homeInfoParams:
         Title: "Hi there \U0001F44B"
-        Content: Welcome to my blog
+        Content: "Example PoCs from blog posts are hosted here: https://github.com/merkez"
 
     socialIcons:
         # - name: stackoverflow
