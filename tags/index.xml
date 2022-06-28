@@ -9,22 +9,49 @@
       <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 20 Mar 2022 21:26:03 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Jun 2022 19:29:03 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>argo</title>
-      <link>https://mrturkmen.com/tags/argo/</link>
-      <pubDate>Sun, 20 Mar 2022 21:26:03 +0000</pubDate>
+      <title>authentication</title>
+      <link>https://mrturkmen.com/tags/authentication/</link>
+      <pubDate>Tue, 28 Jun 2022 19:29:03 +0000</pubDate>
       
-      <guid>https://mrturkmen.com/tags/argo/</guid>
+      <guid>https://mrturkmen.com/tags/authentication/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cloudflare</title>
       <link>https://mrturkmen.com/tags/cloudflare/</link>
-      <pubDate>Sun, 20 Mar 2022 21:26:03 +0000</pubDate>
+      <pubDate>Tue, 28 Jun 2022 19:29:03 +0000</pubDate>
       
       <guid>https://mrturkmen.com/tags/cloudflare/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gitbook</title>
+      <link>https://mrturkmen.com/tags/gitbook/</link>
+      <pubDate>Tue, 28 Jun 2022 19:29:03 +0000</pubDate>
+      
+      <guid>https://mrturkmen.com/tags/gitbook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github</title>
+      <link>https://mrturkmen.com/tags/github/</link>
+      <pubDate>Tue, 28 Jun 2022 19:29:03 +0000</pubDate>
+      
+      <guid>https://mrturkmen.com/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>argo</title>
+      <link>https://mrturkmen.com/tags/argo/</link>
+      <pubDate>Sun, 20 Mar 2022 21:26:03 +0000</pubDate>
+      
+      <guid>https://mrturkmen.com/tags/argo/</guid>
       <description></description>
     </item>
     
@@ -79,15 +106,6 @@
       <pubDate>Fri, 25 Feb 2022 13:53:03 +0000</pubDate>
       
       <guid>https://mrturkmen.com/tags/ci/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>github</title>
-      <link>https://mrturkmen.com/tags/github/</link>
-      <pubDate>Fri, 25 Feb 2022 13:53:03 +0000</pubDate>
-      
-      <guid>https://mrturkmen.com/tags/github/</guid>
       <description></description>
     </item>
     
