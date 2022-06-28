@@ -221,7 +221,7 @@ You can follow steps given below from web dashboard of Cloudflare:
 <summary>Step 1: Create worker service</summary>
 <br><br>
 <pre>
-<img src="../../static/images/step-1.png">
+<img src="../../images/step-1.png">
 </pre>
 </details>
 
@@ -233,7 +233,7 @@ You can follow steps given below from web dashboard of Cloudflare:
 <summary>Step 2: Create trigger, add route to custom domain created for Gitbook</summary>
 <br><br>
 <pre>
-<img src="../../static/images/step-2.png">
+<img src="../../images/step-2.png">
 </pre>
 </details>
 
@@ -243,7 +243,7 @@ You can follow steps given below from web dashboard of Cloudflare:
 <summary>Step 3: Edit Service, click QUICK EDIT button </summary>
 <br><br>
 <pre>
-<img src="../../static/images/step-3-3.png">
+<img src="../../images/step-3-3.png">
 </pre>
 </details>
 
@@ -253,14 +253,14 @@ You can follow steps given below from web dashboard of Cloudflare:
 <summary>Step 4: Paste Authentication code to editor in left side and deploy </summary>
 <br><br>
 <pre>
-<img src="../../static/images/step-4.png">
+<img src="../../images/step-4.png">
 </pre>
 </details>
 
 ## Visit website
 
 
-![](../../static/images/final.png)
+![](../../images/final.png)
 
 
 The website is only accesible with provided username and password in the example code above.
