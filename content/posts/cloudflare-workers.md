@@ -217,45 +217,30 @@ You can follow steps given below from web dashboard of Cloudflare:
 
 ## Create worker service
 
-<details>
-<summary>Step 1: Create worker service</summary>
-<br><br>
-<pre>
-<img src="../../images/step-1.png">
-</pre>
-</details>
+Step 1: Create worker service
 
+
+![](../../images/step-1.png)
 
 
 ## Create trigger
 
-<details>
-<summary>Step 2: Create trigger, add route to custom domain created for Gitbook</summary>
-<br><br>
-<pre>
-<img src="../../images/step-2.png">
-</pre>
-</details>
+Step 2: Create trigger, add route to custom domain created for Gitbook
+
+![](../../images/step-2.png)
 
 ## Edit Service 
 
-<details>
-<summary>Step 3: Edit Service, click QUICK EDIT button </summary>
-<br><br>
-<pre>
-<img src="../../images/step-3-3.png">
-</pre>
-</details>
+
+Step 3: Edit Service, click QUICK EDIT button 
+
+![](../../images/step-3-3.png)
 
 ## Modify Worker Code 
 
-<details>
-<summary>Step 4: Paste Authentication code to editor in left side and deploy </summary>
-<br><br>
-<pre>
-<img src="../../images/step-4.png">
-</pre>
-</details>
+Step 4: Paste Authentication code to editor in left side and deploy 
+
+![](../../images/step-4.png)
 
 ## Visit website
 
