@@ -212,7 +212,7 @@ https://github.com/merkez/worker-gitbook
 
 
 
-You can follow steps given below from web dashboard of Cloudflare:
+You can follow the steps given below from web dashboard of Cloudflare:
 
 
 ## Create worker service
