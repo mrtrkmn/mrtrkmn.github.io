@@ -1,6 +1,6 @@
 ---
 title: "cloudflare workers: add auth to free Gitbook space"
-date: 2022-06-28T21:29:03+00:00
+date: 2022-06-28T19:29:03+00:00
 # weight: 1
 # aliases: ["/first"]
 tags: ["cloudflare", "authentication", "gitbook","github"]
