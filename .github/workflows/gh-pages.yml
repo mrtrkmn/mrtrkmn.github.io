@@ -18,6 +18,11 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v2
 
+      - name: Set Git Creds 
+        run: |
+          git config --global user.email "robotcuk@mrturkmen.com"
+          git config --global user.name "robotcuk" 
+
       - name: Get Theme
         run: git submodule update --init --recursive
 
