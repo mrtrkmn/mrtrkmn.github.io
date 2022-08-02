@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>git on mrturkmen</title>
+    <link>https://mrturkmen.com/tags/git/</link>
+    <description>Recent content in git on mrturkmen</description>
+    <image>
+      <url>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 02 Aug 2022 20:10:03 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cherry-pick: re-build git history</title>
+      <link>https://mrturkmen.com/posts/cherry-pick/</link>
+      <pubDate>Tue, 02 Aug 2022 20:10:03 +0000</pubDate>
+      
+      <guid>https://mrturkmen.com/posts/cherry-pick/</guid>
+      <description>remove any commit from git history and re-build it </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -9,7 +9,34 @@
       <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 28 Jun 2022 19:29:03 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Aug 2022 20:10:03 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cherry-pick</title>
+      <link>https://mrturkmen.com/tags/cherry-pick/</link>
+      <pubDate>Tue, 02 Aug 2022 20:10:03 +0000</pubDate>
+      
+      <guid>https://mrturkmen.com/tags/cherry-pick/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://mrturkmen.com/tags/git/</link>
+      <pubDate>Tue, 02 Aug 2022 20:10:03 +0000</pubDate>
+      
+      <guid>https://mrturkmen.com/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github</title>
+      <link>https://mrturkmen.com/tags/github/</link>
+      <pubDate>Tue, 02 Aug 2022 20:10:03 +0000</pubDate>
+      
+      <guid>https://mrturkmen.com/tags/github/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>authentication</title>
       <link>https://mrturkmen.com/tags/authentication/</link>
@@ -34,15 +61,6 @@
       <pubDate>Tue, 28 Jun 2022 19:29:03 +0000</pubDate>
       
       <guid>https://mrturkmen.com/tags/gitbook/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>github</title>
-      <link>https://mrturkmen.com/tags/github/</link>
-      <pubDate>Tue, 28 Jun 2022 19:29:03 +0000</pubDate>
-      
-      <guid>https://mrturkmen.com/tags/github/</guid>
       <description></description>
     </item>
     
