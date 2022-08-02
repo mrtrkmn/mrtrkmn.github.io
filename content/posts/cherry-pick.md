@@ -6,8 +6,8 @@ date: 2022-08-02T20:10:03+00:00
 tags: ["cherry-pick", "git", "github"]
 author: "mrturkmen"
 # author: ["Me", "You"] # multiple authors
-showToc: false
-TocOpen: true
+showToc: true
+TocOpen: false
 draft: false
 hidemeta: false
 comments: true
