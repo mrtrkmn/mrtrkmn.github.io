@@ -23,7 +23,7 @@ ShowPostNavLinks: true
 cover:
     image: "../../images/cherry-pick.png" # image path/url
     alt: "" # alt text
-    caption: "cherry-pick" # display caption under cover
+    caption: "cherry-pick (taken from: https://mattstauffer.com/assets/images/content/opengraph/cherry-pick.png)" # display caption under cover
     relative: false # when using page bundles set this to true
     hidden: false # only hide on current single page
 editPost:
