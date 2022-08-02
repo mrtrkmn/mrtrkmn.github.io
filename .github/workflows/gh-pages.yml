@@ -38,11 +38,11 @@ jobs:
         run: hugo --buildDrafts --gc --verbose --minify
         
 #  Cloudflare pages used
-#       - name: Deploy
-#         uses: peaceiris/actions-gh-pages@v3
-#         with:
-#           github_token: ${{ secrets.GITHUB_TOKEN }}
-#           publish_dir: ./public
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
   
     
       - name: Call WebHook 
