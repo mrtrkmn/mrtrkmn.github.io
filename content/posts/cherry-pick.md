@@ -54,13 +54,18 @@ The screenshot indicates which commits needs to be removed.  It is indeed easy p
 
 1. Need to create a new branch before the document is committed to main/master branch 
     - on main/master:  
-        ```git checkout -b new-main```
+
+        ```bash
+            git checkout -b new-main
+        ```
 
 2. All commits except highlighted ones needs to be cheery-picked.
 
     - cherry-pick commits, except highlighted ones : 
 
-        ```git cherry-pick <commit-id>```
+        ```bash 
+            git cherry-pick <commit-id>
+        ```
 
     - cherry-pick command will pick the commits that you select and append them to head of new branch. However, the problem is that it will **NOT** preserve timestamp information. It means that even though you made some commits months ago or a week ago, it will be replaced with the time that you cheerry-picked the commits. This behaviour breaks git history of a repository unexpectedly. The ideal scenario would be to have same information ( -timestamp-) as before. Therefore, there is one more additional step. 
 
@@ -68,7 +73,9 @@ The screenshot indicates which commits needs to be removed.  It is indeed easy p
 
     - set git committer date to author date:
     
-        ```git filter-branch --env-filter 'export GIT_COMMITTER_DATE="$GIT_AUTHOR_DATE"'```
+        ```bash 
+        git filter-branch --env-filter 'export GIT_COMMITTER_DATE="$GIT_AUTHOR_DATE"'
+        ```
 
 Finally, you can push `new-main` branch to an upstream. 
 
