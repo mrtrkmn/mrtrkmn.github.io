@@ -7,7 +7,7 @@ tags: ["cherry-pick", "git", "github"]
 author: "mrturkmen"
 # author: ["Me", "You"] # multiple authors
 showToc: false
-TocOpen: false
+TocOpen: true
 draft: false
 hidemeta: false
 comments: true
@@ -33,6 +33,8 @@ editPost:
 ---
 
 
+
+## Intro 
 
 ```git cherry-pick``` is a powerful subcommand of `git` extensive information can be found here: https://www.atlassian.com/git/tutorials/cherry-pick
 
