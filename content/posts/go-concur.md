@@ -1,5 +1,5 @@
 ---
-title: "Go notes (Concurrency) "
+title: "go: concurrency notes "
 date: 2020-06-13T10:00:03+00:00
 # weight: 1
 # aliases: ["/first"]

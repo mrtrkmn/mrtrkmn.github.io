@@ -1,5 +1,5 @@
 ---
-title: "Latex with Github Actions"
+title: "auto-latex: generate and handle latex through github actions"
 date: 2020-10-26T16:25:03+00:00
 # weight: 1
 # aliases: ["/first"]

@@ -1,5 +1,5 @@
 ---
-title: "NGINX Ingress Controller with HAProxy for k8s cluster"
+title: "haproxy-with-nginx: setting them up for k8s cluster"
 date: 2020-07-10T16:35:03+00:00
 # weight: 1
 # aliases: ["/first"]

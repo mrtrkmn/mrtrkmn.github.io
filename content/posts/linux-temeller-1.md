@@ -1,5 +1,5 @@
 ---
-title: "terminal/komut "
+title: "debian: terminal/komut "
 date: 2019-01-10T09:04:03+00:00
 # weight: 1
 # aliases: ["/first"]

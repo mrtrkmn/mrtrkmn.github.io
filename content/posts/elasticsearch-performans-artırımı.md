@@ -1,5 +1,5 @@
 ---
-title: "elasticsearch/performans "
+title: "elasticsearch: performans artırımı "
 date: 2019-02-17T09:04:03+00:00
 # weight: 1
 # aliases: ["/first"]

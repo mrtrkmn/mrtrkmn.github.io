@@ -1,5 +1,5 @@
 ---
-title: "cp/reboot komuları "
+title: "debian: cp/reboot komuları "
 date: 2019-01-09T09:04:03+00:00
 # weight: 1
 # aliases: ["/first"]

@@ -1,5 +1,5 @@
 ---
-title: "Universal gRPC client demonstration [Evans]"
+title: "evans: universal gRPC client demonstration"
 date: 2020-08-08T09:19:03+00:00
 # weight: 1
 # aliases: ["/first"]

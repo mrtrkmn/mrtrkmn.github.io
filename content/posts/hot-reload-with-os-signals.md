@@ -1,5 +1,5 @@
 ---
-title: "hot config reload with os signal "
+title: "go[channels]: hot config reload with os signal "
 date: 2021-04-18T05:30:03+00:00
 # weight: 1
 # aliases: ["/first"]

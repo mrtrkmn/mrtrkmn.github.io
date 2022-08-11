@@ -1,5 +1,5 @@
 ---
-title: "Free VPN [WireGuard] Setup  "
+title: "wireguard: set it up in few steps"
 date: 2020-06-06T10:00:03+00:00
 # weight: 1
 # aliases: ["/first"]

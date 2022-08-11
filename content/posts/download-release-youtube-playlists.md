@@ -1,5 +1,5 @@
 ---
-title: "Download Youtube Playlists and Release through Github Actions [ CI/CD ]"
+title: "youtubeto: download and save playlists to releases on Github"
 date: 2020-11-24T10:55:03+00:00
 # weight: 1
 # aliases: ["/first"]

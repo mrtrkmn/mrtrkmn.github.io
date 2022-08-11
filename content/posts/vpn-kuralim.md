@@ -1,5 +1,5 @@
 ---
-title: "Kendimize özel VPN kurulumu "
+title: "wireguard: kendimize özel vpn kurulumu "
 date: 2020-07-01T10:00:03+00:00
 # weight: 1
 # aliases: ["/first"]

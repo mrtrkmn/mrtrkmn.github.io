@@ -1,5 +1,5 @@
 ---
-title: "Go notes (OOP topics) "
+title: "go: object oriented programming notes "
 date: 2020-06-08T10:00:03+00:00
 # weight: 1
 # aliases: ["/first"]

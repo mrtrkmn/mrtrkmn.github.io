@@ -1,5 +1,5 @@
 ---
-title: "no space left on this device "
+title: "error: no space left on this device "
 date: 2020-05-18T00:00:03+00:00
 # weight: 1
 # aliases: ["/first"]

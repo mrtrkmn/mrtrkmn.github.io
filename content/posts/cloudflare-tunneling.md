@@ -1,5 +1,5 @@
 ---
-title: "Local to Global"
+title: "cloudflare tunneling: serve local like not local"
 date: 2022-03-20T21:26:03+00:00
 # weight: 1
 # aliases: ["/first"]

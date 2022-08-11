@@ -1,5 +1,5 @@
 ---
-title: "Setup Highly Available Kubernetes Cluster with HAProxy"
+title: "haproxy: setting it up for highly available k8s cluster"
 date: 2020-07-05T17:43:03+00:00
 # weight: 1
 # aliases: ["/first"]

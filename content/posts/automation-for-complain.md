@@ -1,5 +1,5 @@
 ---
-title: "Automated complain messages to a company !"
+title: "github-actions: complain messages to a company in automated way"
 date: 2022-02-25T13:53:03+00:00
 # weight: 1
 # aliases: ["/first"]

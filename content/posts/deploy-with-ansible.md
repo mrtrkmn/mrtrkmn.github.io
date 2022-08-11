@@ -1,5 +1,5 @@
 ---
-title: "Deploy with Ansible on CI/CD"
+title: "ansible: deploy easily in simple steps"
 date: 2020-12-12T17:42:03+00:00
 # weight: 1
 # aliases: ["/first"]

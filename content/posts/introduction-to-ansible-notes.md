@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Ansible - Handwritten Notes"
+title: "ansible: introductory handwritten notes"
 date: 2020-12-05T12:45:03+00:00
 # weight: 1
 # aliases: ["/first"]
