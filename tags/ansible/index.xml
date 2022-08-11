@@ -11,7 +11,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 12 Dec 2020 17:42:03 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Deploy with Ansible on CI/CD</title>
+      <title>ansible: deploy easily in simple steps</title>
       <link>https://mrturkmen.com/posts/deploy-with-ansible/</link>
       <pubDate>Sat, 12 Dec 2020 17:42:03 +0000</pubDate>
       
@@ -20,7 +20,7 @@
     </item>
     
     <item>
-      <title>Introduction to Ansible - Handwritten Notes</title>
+      <title>ansible: introductory handwritten notes</title>
       <link>https://mrturkmen.com/posts/introduction-to-ansible-notes/</link>
       <pubDate>Sat, 05 Dec 2020 12:45:03 +0000</pubDate>
       

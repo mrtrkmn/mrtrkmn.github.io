@@ -29,7 +29,7 @@
     </item>
     
     <item>
-      <title>Automated complain messages to a company !</title>
+      <title>github-actions: complain messages to a company in automated way</title>
       <link>https://mrturkmen.com/posts/automation-for-complain/</link>
       <pubDate>Fri, 25 Feb 2022 13:53:03 +0000</pubDate>
       
@@ -38,7 +38,7 @@
     </item>
     
     <item>
-      <title>Deploy with Ansible on CI/CD</title>
+      <title>ansible: deploy easily in simple steps</title>
       <link>https://mrturkmen.com/posts/deploy-with-ansible/</link>
       <pubDate>Sat, 12 Dec 2020 17:42:03 +0000</pubDate>
       
@@ -47,7 +47,7 @@
     </item>
     
     <item>
-      <title>Introduction to Ansible - Handwritten Notes</title>
+      <title>ansible: introductory handwritten notes</title>
       <link>https://mrturkmen.com/posts/introduction-to-ansible-notes/</link>
       <pubDate>Sat, 05 Dec 2020 12:45:03 +0000</pubDate>
       
@@ -57,7 +57,7 @@ INTRODUCTION TO ANSIBLE HANDWRITTEN NOTES</description>
     </item>
     
     <item>
-      <title>Latex with Github Actions</title>
+      <title>auto-latex: generate and handle latex through github actions</title>
       <link>https://mrturkmen.com/posts/build-release-latex/</link>
       <pubDate>Mon, 26 Oct 2020 16:25:03 +0000</pubDate>
       

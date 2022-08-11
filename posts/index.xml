@@ -29,7 +29,7 @@
     </item>
     
     <item>
-      <title>Local to Global</title>
+      <title>cloudflare tunneling: serve local like not local</title>
       <link>https://mrturkmen.com/posts/cloudflare-tunneling/</link>
       <pubDate>Sun, 20 Mar 2022 21:26:03 +0000</pubDate>
       
@@ -38,7 +38,7 @@
     </item>
     
     <item>
-      <title>Automated complain messages to a company !</title>
+      <title>github-actions: complain messages to a company in automated way</title>
       <link>https://mrturkmen.com/posts/automation-for-complain/</link>
       <pubDate>Fri, 25 Feb 2022 13:53:03 +0000</pubDate>
       
@@ -47,7 +47,7 @@
     </item>
     
     <item>
-      <title>hot config reload with os signal </title>
+      <title>go[channels]: hot config reload with os signal </title>
       <link>https://mrturkmen.com/posts/hot-reload-with-os-signals/</link>
       <pubDate>Sun, 18 Apr 2021 05:30:03 +0000</pubDate>
       
@@ -74,7 +74,7 @@
     </item>
     
     <item>
-      <title>Deploy with Ansible on CI/CD</title>
+      <title>ansible: deploy easily in simple steps</title>
       <link>https://mrturkmen.com/posts/deploy-with-ansible/</link>
       <pubDate>Sat, 12 Dec 2020 17:42:03 +0000</pubDate>
       
@@ -83,7 +83,7 @@
     </item>
     
     <item>
-      <title>Introduction to Ansible - Handwritten Notes</title>
+      <title>ansible: introductory handwritten notes</title>
       <link>https://mrturkmen.com/posts/introduction-to-ansible-notes/</link>
       <pubDate>Sat, 05 Dec 2020 12:45:03 +0000</pubDate>
       
@@ -93,7 +93,7 @@ INTRODUCTION TO ANSIBLE HANDWRITTEN NOTES</description>
     </item>
     
     <item>
-      <title>Download Youtube Playlists and Release through Github Actions [ CI/CD ]</title>
+      <title>youtubeto: download and save playlists to releases on Github</title>
       <link>https://mrturkmen.com/posts/download-release-youtube-playlists/</link>
       <pubDate>Tue, 24 Nov 2020 10:55:03 +0000</pubDate>
       
@@ -102,7 +102,7 @@ INTRODUCTION TO ANSIBLE HANDWRITTEN NOTES</description>
     </item>
     
     <item>
-      <title>Latex with Github Actions</title>
+      <title>auto-latex: generate and handle latex through github actions</title>
       <link>https://mrturkmen.com/posts/build-release-latex/</link>
       <pubDate>Mon, 26 Oct 2020 16:25:03 +0000</pubDate>
       
@@ -111,7 +111,7 @@ INTRODUCTION TO ANSIBLE HANDWRITTEN NOTES</description>
     </item>
     
     <item>
-      <title>Universal gRPC client demonstration [Evans]</title>
+      <title>evans: universal gRPC client demonstration</title>
       <link>https://mrturkmen.com/posts/grpc-calls-with-evans/</link>
       <pubDate>Sat, 08 Aug 2020 09:19:03 +0000</pubDate>
       
@@ -120,7 +120,7 @@ INTRODUCTION TO ANSIBLE HANDWRITTEN NOTES</description>
     </item>
     
     <item>
-      <title>NGINX Ingress Controller with HAProxy for k8s cluster</title>
+      <title>haproxy-with-nginx: setting them up for k8s cluster</title>
       <link>https://mrturkmen.com/posts/setup-ingress-controller/</link>
       <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
       
@@ -129,7 +129,7 @@ INTRODUCTION TO ANSIBLE HANDWRITTEN NOTES</description>
     </item>
     
     <item>
-      <title>Setup Highly Available Kubernetes Cluster with HAProxy</title>
+      <title>haproxy: setting it up for highly available k8s cluster</title>
       <link>https://mrturkmen.com/posts/install-ha-kubernetes-cluster/</link>
       <pubDate>Sun, 05 Jul 2020 17:43:03 +0000</pubDate>
       
@@ -138,7 +138,7 @@ INTRODUCTION TO ANSIBLE HANDWRITTEN NOTES</description>
     </item>
     
     <item>
-      <title>Kendimize özel VPN kurulumu </title>
+      <title>wireguard: kendimize özel vpn kurulumu </title>
       <link>https://mrturkmen.com/posts/vpn-kuralim/</link>
       <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
       
@@ -147,7 +147,7 @@ INTRODUCTION TO ANSIBLE HANDWRITTEN NOTES</description>
     </item>
     
     <item>
-      <title>Go notes (Concurrency) </title>
+      <title>go: concurrency notes </title>
       <link>https://mrturkmen.com/posts/go-concur/</link>
       <pubDate>Sat, 13 Jun 2020 10:00:03 +0000</pubDate>
       
@@ -156,7 +156,7 @@ INTRODUCTION TO ANSIBLE HANDWRITTEN NOTES</description>
     </item>
     
     <item>
-      <title>Go notes (OOP topics) </title>
+      <title>go: object oriented programming notes </title>
       <link>https://mrturkmen.com/posts/go-notes/</link>
       <pubDate>Mon, 08 Jun 2020 10:00:03 +0000</pubDate>
       
@@ -165,7 +165,7 @@ INTRODUCTION TO ANSIBLE HANDWRITTEN NOTES</description>
     </item>
     
     <item>
-      <title>Free VPN [WireGuard] Setup  </title>
+      <title>wireguard: set it up in few steps</title>
       <link>https://mrturkmen.com/posts/setup-free-vpn/</link>
       <pubDate>Sat, 06 Jun 2020 10:00:03 +0000</pubDate>
       
@@ -174,7 +174,7 @@ INTRODUCTION TO ANSIBLE HANDWRITTEN NOTES</description>
     </item>
     
     <item>
-      <title>no space left on this device </title>
+      <title>error: no space left on this device </title>
       <link>https://mrturkmen.com/posts/no-space-left-on-device/</link>
       <pubDate>Mon, 18 May 2020 00:00:03 +0000</pubDate>
       
@@ -183,7 +183,7 @@ INTRODUCTION TO ANSIBLE HANDWRITTEN NOTES</description>
     </item>
     
     <item>
-      <title>elasticsearch/performans </title>
+      <title>elasticsearch: performans artırımı </title>
       <link>https://mrturkmen.com/posts/elasticsearch-performans-art%C4%B1r%C4%B1m%C4%B1/</link>
       <pubDate>Sun, 17 Feb 2019 09:04:03 +0000</pubDate>
       
@@ -201,7 +201,7 @@ INTRODUCTION TO ANSIBLE HANDWRITTEN NOTES</description>
     </item>
     
     <item>
-      <title>terminal/komut </title>
+      <title>debian: terminal/komut </title>
       <link>https://mrturkmen.com/posts/linux-temeller-1/</link>
       <pubDate>Thu, 10 Jan 2019 09:04:03 +0000</pubDate>
       
@@ -210,7 +210,7 @@ INTRODUCTION TO ANSIBLE HANDWRITTEN NOTES</description>
     </item>
     
     <item>
-      <title>cp/reboot komuları </title>
+      <title>debian: cp/reboot komuları </title>
       <link>https://mrturkmen.com/posts/linux-terminalinden-basit-komutlar/</link>
       <pubDate>Wed, 09 Jan 2019 09:04:03 +0000</pubDate>
       

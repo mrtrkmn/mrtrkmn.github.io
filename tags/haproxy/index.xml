@@ -11,7 +11,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Fri, 10 Jul 2020 16:35:03 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/haproxy/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>NGINX Ingress Controller with HAProxy for k8s cluster</title>
+      <title>haproxy-with-nginx: setting them up for k8s cluster</title>
       <link>https://mrturkmen.com/posts/setup-ingress-controller/</link>
       <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
       
@@ -20,7 +20,7 @@
     </item>
     
     <item>
-      <title>Setup Highly Available Kubernetes Cluster with HAProxy</title>
+      <title>haproxy: setting it up for highly available k8s cluster</title>
       <link>https://mrturkmen.com/posts/install-ha-kubernetes-cluster/</link>
       <pubDate>Sun, 05 Jul 2020 17:43:03 +0000</pubDate>
       

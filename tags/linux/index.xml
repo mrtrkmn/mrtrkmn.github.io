@@ -11,7 +11,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 01 Jul 2020 10:00:03 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Kendimize özel VPN kurulumu </title>
+      <title>wireguard: kendimize özel vpn kurulumu </title>
       <link>https://mrturkmen.com/posts/vpn-kuralim/</link>
       <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
       
@@ -20,7 +20,7 @@
     </item>
     
     <item>
-      <title>Free VPN [WireGuard] Setup  </title>
+      <title>wireguard: set it up in few steps</title>
       <link>https://mrturkmen.com/posts/setup-free-vpn/</link>
       <pubDate>Sat, 06 Jun 2020 10:00:03 +0000</pubDate>
       
@@ -29,7 +29,7 @@
     </item>
     
     <item>
-      <title>no space left on this device </title>
+      <title>error: no space left on this device </title>
       <link>https://mrturkmen.com/posts/no-space-left-on-device/</link>
       <pubDate>Mon, 18 May 2020 00:00:03 +0000</pubDate>
       
@@ -47,7 +47,7 @@
     </item>
     
     <item>
-      <title>terminal/komut </title>
+      <title>debian: terminal/komut </title>
       <link>https://mrturkmen.com/posts/linux-temeller-1/</link>
       <pubDate>Thu, 10 Jan 2019 09:04:03 +0000</pubDate>
       
@@ -56,7 +56,7 @@
     </item>
     
     <item>
-      <title>cp/reboot komuları </title>
+      <title>debian: cp/reboot komuları </title>
       <link>https://mrturkmen.com/posts/linux-terminalinden-basit-komutlar/</link>
       <pubDate>Wed, 09 Jan 2019 09:04:03 +0000</pubDate>
       

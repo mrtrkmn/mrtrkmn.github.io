@@ -11,7 +11,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Tue, 24 Nov 2020 10:55:03 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/download/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Download Youtube Playlists and Release through Github Actions [ CI/CD ]</title>
+      <title>youtubeto: download and save playlists to releases on Github</title>
       <link>https://mrturkmen.com/posts/download-release-youtube-playlists/</link>
       <pubDate>Tue, 24 Nov 2020 10:55:03 +0000</pubDate>
       

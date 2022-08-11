@@ -10,7 +10,7 @@
     </image>
     <generator>Hugo -- gohugo.io</generator><atom:link href="https://mrturkmen.com/tags/ci/cd/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Deploy with Ansible on CI/CD</title>
+      <title>ansible: deploy easily in simple steps</title>
       <link>https://mrturkmen.com/posts/deploy-with-ansible/</link>
       <pubDate>Sat, 12 Dec 2020 17:42:03 +0000</pubDate>
       
@@ -19,7 +19,7 @@
     </item>
     
     <item>
-      <title>Introduction to Ansible - Handwritten Notes</title>
+      <title>ansible: introductory handwritten notes</title>
       <link>https://mrturkmen.com/posts/introduction-to-ansible-notes/</link>
       <pubDate>Sat, 05 Dec 2020 12:45:03 +0000</pubDate>
       
@@ -29,7 +29,7 @@ INTRODUCTION TO ANSIBLE HANDWRITTEN NOTES</description>
     </item>
     
     <item>
-      <title>Download Youtube Playlists and Release through Github Actions [ CI/CD ]</title>
+      <title>youtubeto: download and save playlists to releases on Github</title>
       <link>https://mrturkmen.com/posts/download-release-youtube-playlists/</link>
       <pubDate>Tue, 24 Nov 2020 10:55:03 +0000</pubDate>
       
@@ -38,7 +38,7 @@ INTRODUCTION TO ANSIBLE HANDWRITTEN NOTES</description>
     </item>
     
     <item>
-      <title>Latex with Github Actions</title>
+      <title>auto-latex: generate and handle latex through github actions</title>
       <link>https://mrturkmen.com/posts/build-release-latex/</link>
       <pubDate>Mon, 26 Oct 2020 16:25:03 +0000</pubDate>
       

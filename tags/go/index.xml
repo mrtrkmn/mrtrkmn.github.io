@@ -11,7 +11,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 08 Aug 2020 09:19:03 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/go/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Universal gRPC client demonstration [Evans]</title>
+      <title>evans: universal gRPC client demonstration</title>
       <link>https://mrturkmen.com/posts/grpc-calls-with-evans/</link>
       <pubDate>Sat, 08 Aug 2020 09:19:03 +0000</pubDate>
       
@@ -20,7 +20,7 @@
     </item>
     
     <item>
-      <title>Go notes (Concurrency) </title>
+      <title>go: concurrency notes </title>
       <link>https://mrturkmen.com/posts/go-concur/</link>
       <pubDate>Sat, 13 Jun 2020 10:00:03 +0000</pubDate>
       
@@ -29,7 +29,7 @@
     </item>
     
     <item>
-      <title>Go notes (OOP topics) </title>
+      <title>go: object oriented programming notes </title>
       <link>https://mrturkmen.com/posts/go-notes/</link>
       <pubDate>Mon, 08 Jun 2020 10:00:03 +0000</pubDate>
       

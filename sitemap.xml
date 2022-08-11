@@ -38,6 +38,9 @@
     <loc>https://mrturkmen.com/tags/argo/</loc>
     <lastmod>2022-03-20T21:26:03+00:00</lastmod>
   </url><url>
+    <loc>https://mrturkmen.com/posts/cloudflare-tunneling/</loc>
+    <lastmod>2022-03-20T21:26:03+00:00</lastmod>
+  </url><url>
     <loc>https://mrturkmen.com/tags/cloudflared/</loc>
     <lastmod>2022-03-20T21:26:03+00:00</lastmod>
   </url><url>
@@ -47,19 +50,16 @@
     <loc>https://mrturkmen.com/tags/local/</loc>
     <lastmod>2022-03-20T21:26:03+00:00</lastmod>
   </url><url>
-    <loc>https://mrturkmen.com/posts/cloudflare-tunneling/</loc>
-    <lastmod>2022-03-20T21:26:03+00:00</lastmod>
-  </url><url>
     <loc>https://mrturkmen.com/tags/tunneling/</loc>
     <lastmod>2022-03-20T21:26:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/posts/automation-for-complain/</loc>
-    <lastmod>2022-02-25T13:53:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/cd/</loc>
     <lastmod>2022-02-25T13:53:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/ci/</loc>
+    <lastmod>2022-02-25T13:53:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/posts/automation-for-complain/</loc>
     <lastmod>2022-02-25T13:53:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/karaca/</loc>
@@ -77,10 +77,10 @@
     <loc>https://mrturkmen.com/tags/workflow/</loc>
     <lastmod>2022-02-25T13:53:03+00:00</lastmod>
   </url><url>
-    <loc>https://mrturkmen.com/tags/golang/</loc>
+    <loc>https://mrturkmen.com/posts/hot-reload-with-os-signals/</loc>
     <lastmod>2021-04-18T05:30:03+00:00</lastmod>
   </url><url>
-    <loc>https://mrturkmen.com/posts/hot-reload-with-os-signals/</loc>
+    <loc>https://mrturkmen.com/tags/golang/</loc>
     <lastmod>2021-04-18T05:30:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/os/</loc>
@@ -125,19 +125,16 @@
     <loc>https://mrturkmen.com/tags/ansible/</loc>
     <lastmod>2020-12-12T17:42:03+00:00</lastmod>
   </url><url>
-    <loc>https://mrturkmen.com/tags/continuous/</loc>
+    <loc>https://mrturkmen.com/posts/deploy-with-ansible/</loc>
     <lastmod>2020-12-12T17:42:03+00:00</lastmod>
   </url><url>
-    <loc>https://mrturkmen.com/posts/deploy-with-ansible/</loc>
+    <loc>https://mrturkmen.com/tags/continuous/</loc>
     <lastmod>2020-12-12T17:42:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/posts/introduction-to-ansible-notes/</loc>
     <lastmod>2020-12-05T12:45:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/download/</loc>
-    <lastmod>2020-11-24T10:55:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/posts/download-release-youtube-playlists/</loc>
     <lastmod>2020-11-24T10:55:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/fetch/</loc>
@@ -152,10 +149,13 @@
     <loc>https://mrturkmen.com/tags/youtubeto/</loc>
     <lastmod>2020-11-24T10:55:03+00:00</lastmod>
   </url><url>
-    <loc>https://mrturkmen.com/tags/latex/</loc>
-    <lastmod>2020-10-26T16:25:03+00:00</lastmod>
+    <loc>https://mrturkmen.com/posts/download-release-youtube-playlists/</loc>
+    <lastmod>2020-11-24T10:55:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/posts/build-release-latex/</loc>
+    <lastmod>2020-10-26T16:25:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/latex/</loc>
     <lastmod>2020-10-26T16:25:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/automated/</loc>
@@ -165,6 +165,9 @@
     <lastmod>2020-08-08T09:19:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/client/</loc>
+    <lastmod>2020-08-08T09:19:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/posts/grpc-calls-with-evans/</loc>
     <lastmod>2020-08-08T09:19:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/go/</loc>
@@ -179,9 +182,6 @@
     <loc>https://mrturkmen.com/tags/server/</loc>
     <lastmod>2020-08-08T09:19:03+00:00</lastmod>
   </url><url>
-    <loc>https://mrturkmen.com/posts/grpc-calls-with-evans/</loc>
-    <lastmod>2020-08-08T09:19:03+00:00</lastmod>
-  </url><url>
     <loc>https://mrturkmen.com/tags/cluster/</loc>
     <lastmod>2020-07-10T16:35:03+00:00</lastmod>
   </url><url>
@@ -189,6 +189,9 @@
     <lastmod>2020-07-10T16:35:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/haproxy/</loc>
+    <lastmod>2020-07-10T16:35:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/posts/setup-ingress-controller/</loc>
     <lastmod>2020-07-10T16:35:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/ingress/</loc>
@@ -203,9 +206,6 @@
     <loc>https://mrturkmen.com/tags/nginx/</loc>
     <lastmod>2020-07-10T16:35:03+00:00</lastmod>
   </url><url>
-    <loc>https://mrturkmen.com/posts/setup-ingress-controller/</loc>
-    <lastmod>2020-07-10T16:35:03+00:00</lastmod>
-  </url><url>
     <loc>https://mrturkmen.com/tags/node/</loc>
     <lastmod>2020-07-10T16:35:03+00:00</lastmod>
   </url><url>
@@ -217,9 +217,6 @@
   </url><url>
     <loc>https://mrturkmen.com/posts/install-ha-kubernetes-cluster/</loc>
     <lastmod>2020-07-05T17:43:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/posts/vpn-kuralim/</loc>
-    <lastmod>2020-07-01T10:00:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/linux/</loc>
     <lastmod>2020-07-01T10:00:03+00:00</lastmod>
@@ -237,6 +234,9 @@
     <lastmod>2020-07-01T10:00:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/wireguard/</loc>
+    <lastmod>2020-07-01T10:00:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/posts/vpn-kuralim/</loc>
     <lastmod>2020-07-01T10:00:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/coursera/</loc>

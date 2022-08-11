@@ -11,7 +11,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 01 Jul 2020 10:00:03 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/vps/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Kendimize özel VPN kurulumu </title>
+      <title>wireguard: kendimize özel vpn kurulumu </title>
       <link>https://mrturkmen.com/posts/vpn-kuralim/</link>
       <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
       
@@ -20,7 +20,7 @@
     </item>
     
     <item>
-      <title>Free VPN [WireGuard] Setup  </title>
+      <title>wireguard: set it up in few steps</title>
       <link>https://mrturkmen.com/posts/setup-free-vpn/</link>
       <pubDate>Sat, 06 Jun 2020 10:00:03 +0000</pubDate>
       
