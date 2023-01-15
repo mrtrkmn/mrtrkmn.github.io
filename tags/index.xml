@@ -9,7 +9,61 @@
       <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 02 Aug 2022 20:10:03 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Jan 2023 01:20:00 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>api</title>
+      <link>https://mrturkmen.com/tags/api/</link>
+      <pubDate>Sun, 15 Jan 2023 01:20:00 +0000</pubDate>
+      
+      <guid>https://mrturkmen.com/tags/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>automate</title>
+      <link>https://mrturkmen.com/tags/automate/</link>
+      <pubDate>Sun, 15 Jan 2023 01:20:00 +0000</pubDate>
+      
+      <guid>https://mrturkmen.com/tags/automate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aws</title>
+      <link>https://mrturkmen.com/tags/aws/</link>
+      <pubDate>Sun, 15 Jan 2023 01:20:00 +0000</pubDate>
+      
+      <guid>https://mrturkmen.com/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gateway</title>
+      <link>https://mrturkmen.com/tags/gateway/</link>
+      <pubDate>Sun, 15 Jan 2023 01:20:00 +0000</pubDate>
+      
+      <guid>https://mrturkmen.com/tags/gateway/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github</title>
+      <link>https://mrturkmen.com/tags/github/</link>
+      <pubDate>Sun, 15 Jan 2023 01:20:00 +0000</pubDate>
+      
+      <guid>https://mrturkmen.com/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>slack</title>
+      <link>https://mrturkmen.com/tags/slack/</link>
+      <pubDate>Sun, 15 Jan 2023 01:20:00 +0000</pubDate>
+      
+      <guid>https://mrturkmen.com/tags/slack/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>cherry-pick</title>
       <link>https://mrturkmen.com/tags/cherry-pick/</link>
@@ -25,15 +79,6 @@
       <pubDate>Tue, 02 Aug 2022 20:10:03 +0000</pubDate>
       
       <guid>https://mrturkmen.com/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>github</title>
-      <link>https://mrturkmen.com/tags/github/</link>
-      <pubDate>Tue, 02 Aug 2022 20:10:03 +0000</pubDate>
-      
-      <guid>https://mrturkmen.com/tags/github/</guid>
       <description></description>
     </item>
     
@@ -214,15 +259,6 @@
       <pubDate>Sat, 17 Apr 2021 09:00:03 +0000</pubDate>
       
       <guid>https://mrturkmen.com/tags/automation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>aws</title>
-      <link>https://mrturkmen.com/tags/aws/</link>
-      <pubDate>Sat, 17 Apr 2021 09:00:03 +0000</pubDate>
-      
-      <guid>https://mrturkmen.com/tags/aws/</guid>
       <description></description>
     </item>
     

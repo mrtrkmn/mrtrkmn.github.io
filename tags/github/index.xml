@@ -9,7 +9,16 @@
       <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 02 Aug 2022 20:10:03 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Jan 2023 01:20:00 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>automate: run github ci/cd through slack slash command</title>
+      <link>https://mrturkmen.com/posts/automate-ci-cd-with-slack-command/</link>
+      <pubDate>Sun, 15 Jan 2023 01:20:00 +0000</pubDate>
+      
+      <guid>https://mrturkmen.com/posts/automate-ci-cd-with-slack-command/</guid>
+      <description>Easy integration for running Github workflow files through Slack slash command</description>
+    </item>
+    
     <item>
       <title>cherry-pick: re-build git history</title>
       <link>https://mrturkmen.com/posts/cherry-pick/</link>

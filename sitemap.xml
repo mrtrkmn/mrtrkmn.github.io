@@ -2,6 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://mrturkmen.com/tags/api/</loc>
+    <lastmod>2023-01-15T01:20:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/automate/</loc>
+    <lastmod>2023-01-15T01:20:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/posts/automate-ci-cd-with-slack-command/</loc>
+    <lastmod>2023-01-15T01:20:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/aws/</loc>
+    <lastmod>2023-01-15T01:20:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/gateway/</loc>
+    <lastmod>2023-01-15T01:20:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/github/</loc>
+    <lastmod>2023-01-15T01:20:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/</loc>
+    <lastmod>2023-01-15T01:20:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/posts/</loc>
+    <lastmod>2023-01-15T01:20:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/slack/</loc>
+    <lastmod>2023-01-15T01:20:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/</loc>
+    <lastmod>2023-01-15T01:20:00+00:00</lastmod>
+  </url><url>
     <loc>https://mrturkmen.com/tags/cherry-pick/</loc>
     <lastmod>2022-08-02T20:10:03+00:00</lastmod>
   </url><url>
@@ -9,18 +39,6 @@
     <lastmod>2022-08-02T20:10:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/git/</loc>
-    <lastmod>2022-08-02T20:10:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/tags/github/</loc>
-    <lastmod>2022-08-02T20:10:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/</loc>
-    <lastmod>2022-08-02T20:10:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/posts/</loc>
-    <lastmod>2022-08-02T20:10:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/tags/</loc>
     <lastmod>2022-08-02T20:10:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/authentication/</loc>
@@ -93,9 +111,6 @@
     <lastmod>2021-04-18T05:30:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/automation/</loc>
-    <lastmod>2021-04-17T09:00:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/tags/aws/</loc>
     <lastmod>2021-04-17T09:00:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/packer/</loc>
