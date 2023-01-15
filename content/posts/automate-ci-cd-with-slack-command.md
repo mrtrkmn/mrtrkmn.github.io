@@ -33,14 +33,12 @@ editPost:
 ---
 
 
-In this post, I will create a simple command to run a workflow on Github. This will be done with help of AWS Gateway. 
-AWS Gateway provides 1 million API calls per month for 12 months at the time of writing this post. 
-
+In this post, I will create a simple command to run a workflow on Github using AWS Gateway service. This post was written when AWS offered 1 million free API calls per month for a 12-month period.
 
 ## Setup Github 
 
-On Github side, there is not much to setup other than adding a line to a workflow. For demonstration purposes, I will go use one of the repository from [merkez](https://github.com/merkez). 
-Let's choose [insthat](https://github.com/merkez/insthat) repository for this occurence. 
+The setup on the Github side is minimal and only requires adding a line to the existing workflow file. For demonstration purposes, I will go use one of the repository from [merkez](https://github.com/merkez). Let's choose [insthat](https://github.com/merkez/insthat) repository for this occurence. 
+
 When we check its existing workflow file, it looks like as follows: 
 
 ```yaml
@@ -70,29 +68,25 @@ jobs:
           sudo bash install-tools.sh --random
 ```
 
-It is, may be the simplest workflow file that you can see. After `workflow_dispatch`, we need to add `repository_dispatch`. For more about `repository_dispatch` checkout here: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#repository_dispatch
+The workflow file for the insthat repository is likely one of the simplest you can find. In order to trigger the workflow using an API call, we will need to add `repository_dispatch` after `workflow_dispatch`. For more information on `repository_dispatch`, please check out the following link: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#repository_dispatch
 
-Let's add following lines after `workflow_dispatch`. 
+Here are the lines that should be added after `workflow_dispatch`:
 
 ```yaml
 repository_dispatch:
     types: on-demand-run
 ```
 
-Final workflow file: https://github.com/merkez/insthat/blob/main/.github/workflows/test-script.yml 
+The final workflow file for the insthat repository can be found at this link: https://github.com/merkez/insthat/blob/main/.github/workflows/test-script.yml
 
+In order to make an API call to trigger the workflow, you will need to generate a Personal Access Token (PAT) with the necessary permissions, at a minimum the "Repo" option needs to be selected. More information on how to generate a PAT can be found here: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
 
-Generate PAT (Personal Access Token) with required permission; at least Repo option needs to be selected. 
-
-More information about how to generate PAT can be found here: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
-
-This is the only things to be done on Github side, nothing else. 
+These are the only steps required on the Github side, no other setup is necessary.
 
 
 ## Setup AWS Gateway API
 
-
-Navigate to AWS Console then API Gateway and click build Rest API option from list of options you see. Afterwards select Rest and New API options as shown below. 
+To set up the API Gateway on AWS, you will need to log in to the AWS Console, navigate to the API Gateway service, and select the "Build REST API" option from the list of options available. Once you are in the "Build REST API" page, select the "Rest API" and "New API" options as shown in the screenshot.
 
 ![](../../images/aws-gateway.png)
 
@@ -102,8 +96,7 @@ In opened window, click "Create Resource" and fill out input fields according to
 
 ![](../../images/create-resource-aws.png)
 
-Under resource, create a POST method from Actions button again. It will open a window as given below, here select HTTP as `Integration Type` and in order to call workflow on Github, we need to construct the link. 
-The template for the Github link that we will use is **https://api.github.com/repos/{owner}/{repository}/dispatches**, when we insert our values it is: **https://api.github.com/repos/merkez/insthat/dispatches**
+Under the "Resources" section, you will need to create a new POST method by clicking on the "Actions" button. This will open a new window, in this window you need to select HTTP as Integration Type. To call the workflow on Github, you need to construct the link. The template for the Github link that we will use is **https://api.github.com/repos/{owner}/{repository}/dispatches**. In this demonstration, the link will be **https://api.github.com/repos/merkez/insthat/dispatches** after inserting the specific values.
 
 ![](../../images/post-setup.png)
 
@@ -112,9 +105,8 @@ When we applied save, we should be able to see following page:
 ![](../../images/aws-gateway-post-method-exe.png)
 
 
-From there, navigate to Integration Request box to setup authentication keys and request body to Github. 
-
-For authentication, following headers are required to be set. 
+After setting the HTTP link, you will need to navigate to the "Integration Request" box in order to set up the authentication keys and request body for the Github API.
+To authenticate the request, the following headers need to be set:
 
 | **Key**       	| **Value**                         	|
 |---------------	|-----------------------------------	|
@@ -153,17 +145,16 @@ We can now setup Slack command and give a try through Slack.
 
 ## Setup Slack App
 
-In order to create slash commands, we need to create a slack application on the workspace that we have permissions. For this demonstration, I will use https://mrkzi.slack.com workspace. 
+To create a Slash command, you need to create a Slack application on the workspace that you have permissions to. For the purpose of this demonstration, I will use the https://mrkzi.slack.com workspace.
 
 ![Create Slack App](../../images/create_slack_app.png)
 
-Afterwards, go to slash commands option in application page of Slack and click "Create New Command", following information will be asked. Feel free to choose any command that you want to use.
-The most important section in this fields is `Request URL`, retrieve it from AWS Gateway (Invoke URL), as explained in setting up AWS Gateway step. 
+Once you have created the Slack application, you will need to go to the "Slash Commands" option in the application page of Slack and click on "Create New Command". Slack will ask for some information, you can choose any command name you want to use. The most important field in this section is the Request URL, which should be retrieved from the AWS Gateway (Invoke URL) as explained in the previous step when setting up the AWS Gateway.
 
 ![](../../images/slack-command.png)
 
 
-Once this is done, install the app you created to the workspace from basic information section of the app. 
+After you have completed the steps above, you will need to install the app you have created to the workspace by going to the "Basic Information" section of the app.
 
 ![](../../images/install-app-slack.png)
 
@@ -179,6 +170,10 @@ Once the command `/run-insthat` is executed on Slack, workflow will automaticall
 
 ![](../../images/running-workflow.png)
 
-Now, we can start the workflow through Slack whether through Phone, Tablet or PC, does not matter, as long as you have access to Slack app. Its flexibility boosts level of confident. 
+
+With this setup, you will be able to trigger the workflow on Github through Slack from any device that has the Slack app, such as a phone, tablet, or PC. This flexibility increases the level of convenience and ease of use, making it a more efficient and effective way to manage workflows.
+
+
+
 
 [Automate the boring stuff  🤌🏻 ]  
