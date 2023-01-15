@@ -32,7 +32,6 @@ editPost:
     appendFilePath: true # to append file path to Edit link
 ---
 
-# Run Github Actions CI/CD through Slack command
 
 In this post, I will create a simple command to run a workflow on Github. This will be done with help of AWS Gateway. 
 AWS Gateway provides 1 million API calls per month for 12 months at the time of writing this post. 
