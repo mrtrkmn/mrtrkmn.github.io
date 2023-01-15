@@ -1,6 +1,6 @@
 ---
 title: "automate: run github ci/cd through slack slash command"
-date: 2023-01-15T04:20:00+00:00
+date: 2023-01-15T01:20:00+00:00 # actually 04:20 CEST
 # weight: 1
 # aliases: ["/first"]
 tags: ["github", "aws", "gateway","api","automate", "slack"]
