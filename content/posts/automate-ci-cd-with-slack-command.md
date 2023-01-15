@@ -21,11 +21,11 @@ ShowReadingTime: true
 ShowBreadCrumbs: true
 ShowPostNavLinks: true
 cover:
-    image: "" # image path/url
+    image: "../../images/workflow" # image path/url
     alt: " " # alt text
-    caption: "" # display caption under cover
+    caption: "Flow of action" # display caption under cover
     relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
+    hidden: false # only hide on current single page
 editPost:
     URL: "https://github.com/mrtrkmn/mrtrkmn.github.io/edit/master/content"
     Text: "Suggest Changes" # edit text
