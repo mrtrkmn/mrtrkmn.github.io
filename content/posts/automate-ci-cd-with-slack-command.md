@@ -21,7 +21,7 @@ ShowReadingTime: true
 ShowBreadCrumbs: true
 ShowPostNavLinks: true
 cover:
-    image: "../../images/workflow" # image path/url
+    image: "../../images/workflow.png" # image path/url
     alt: " " # alt text
     caption: "Flow of action" # display caption under cover
     relative: false # when using page bundles set this to true
