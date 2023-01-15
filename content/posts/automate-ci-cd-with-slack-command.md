@@ -176,4 +176,4 @@ With this setup, you will be able to trigger the workflow on Github through Slac
 
 ![Retrieved fromm https://xkcd.com/2268](https://imgs.xkcd.com/comics/further_research_is_needed.png)
 
-
+(from https://xkcd.com/2268)
