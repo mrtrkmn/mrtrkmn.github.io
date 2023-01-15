@@ -179,4 +179,6 @@ Once the command `/run-insthat` is executed on Slack, workflow will automaticall
 
 ![](../../images/running-workflow.png)
 
-Automate the boring stuff  🤌🏻 ... 
+Now, we can start the workflow through Slack whether through Phone, Tablet or PC, does not matter, as long as you have access to Slack app. Its flexibility boosts level of confident. 
+
+[Automate the boring stuff  🤌🏻 ]  
