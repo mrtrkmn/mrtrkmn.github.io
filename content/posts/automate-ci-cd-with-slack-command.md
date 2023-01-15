@@ -174,6 +174,6 @@ Once the command `/run-insthat` is executed on Slack, workflow will automaticall
 With this setup, you will be able to trigger the workflow on Github through Slack from any device that has the Slack app, such as a phone, tablet, or PC. This flexibility increases the level of convenience and ease of use, making it a more efficient and effective way to manage workflows.
 
 
-<p align="center">
-  <img src="https://imgs.xkcd.com/comics/further_research_is_needed.png" alt="Retrieved fromm https://xkcd.com/2268"/>
-</p>
+![Retrieved fromm https://xkcd.com/2268](https://imgs.xkcd.com/comics/further_research_is_needed.png)
+
+(from https://xkcd.com/2268)
