@@ -94,22 +94,22 @@ This is the only things to be done on Github side, nothing else.
 
 Navigate to AWS Console then API Gateway and click build Rest API option from list of options you see. Afterwards select Rest and New API options as shown below. 
 
-![](../../aws-gateway.png)
+![](../../images/aws-gateway.png)
 
 Fill out API name and description (optional) and click Create. 
 
 In opened window, click "Create Resource" and fill out input fields according to your preference and create it. 
 
-![](../../create-resource-aws.png)
+![](../../images/create-resource-aws.png)
 
 Under resource, create a POST method from Actions button again. It will open a window as given below, here select HTTP as `Integration Type` and in order to call workflow on Github, we need to construct the link. 
 The template for the Github link that we will use is **https://api.github.com/repos/{owner}/{repository}/dispatches**, when we insert our values it is: **https://api.github.com/repos/merkez/insthat/dispatches**
 
-![](../../post-setup.png)
+![](../../images/post-setup.png)
 
 When we applied save, we should be able to see following page: 
 
-![](../../aws-gateway-post-method-exe.png)
+![](../../images/aws-gateway-post-method-exe.png)
 
 
 From there, navigate to Integration Request box to setup authentication keys and request body to Github. 
@@ -125,7 +125,7 @@ For authentication, following headers are required to be set.
 Adjust "Mapping Templates" section with Slack's content type, which is `application/x-www-form-urlencoded`. 
 
 
-![](../../post-setup-aws-integration-request.png)
+![](../../images/post-setup-aws-integration-request.png)
 
 
 The body, `{"event_type":"on-demand-run"}` should match what you had in `repository_dispath` types. 
@@ -133,16 +133,16 @@ The body, `{"event_type":"on-demand-run"}` should match what you had in `reposit
 Lastly, deploy API on AWS Gateway. 
 https://t76xrsn8z6.execute-api.us-east-1.amazonaws.com/execute-workflow
 
-![](../../deploy-aws-gw-api.png)
+![](../../images/deploy-aws-gw-api.png)
 
 Set stage input fields. 
 
-![](../../deploy-2.png)
+![](../../images/deploy-2.png)
 
 After deployment, navigate to Stages, and check full "Invoke URL" as shown below: 
 
 
-![](../../stages.png)
+![](../../images/stages.png)
 
 For our case Invoke URL is: https://t76xrsn8z6.execute-api.us-east-1.amazonaws.com/execute-workflow/runner-api
 
@@ -155,28 +155,28 @@ We can now setup Slack command and give a try through Slack.
 
 In order to create slash commands, we need to create a slack application on the workspace that we have permissions. For this demonstration, I will use https://mrkzi.slack.com workspace. 
 
-![Create Slack App](../../create_slack_app.png)
+![Create Slack App](../../images/create_slack_app.png)
 
 Afterwards, go to slash commands option in application page of Slack and click "Create New Command", following information will be asked. Feel free to choose any command that you want to use.
 The most important section in this fields is `Request URL`, retrieve it from AWS Gateway (Invoke URL), as explained in setting up AWS Gateway step. 
 
-![](../../slack-command.png)
+![](../../images/slack-command.png)
 
 
 Once this is done, install the app you created to the workspace from basic information section of the app. 
 
-![](../../install-app-slack.png)
+![](../../images/install-app-slack.png)
 
 
 When it is done, you can go to Slack desktop application or on web, open workspace, you should be able to see `autobot-runner` or whatever you call it under apps of the workspace. 
 
 Then, type the command you generated, for this demonstration it is, `/run-insthat`, when it is typed following option will appear. Execute it and let Github execute the workflow :) 
 
-![](../../on-slack-exec-cmd.png)
+![](../../images/on-slack-exec-cmd.png)
 
 Once the command `/run-insthat` is executed on Slack, workflow will automatically run. 
 
 
-![](../../running-workflow.png)
+![](../../images/running-workflow.png)
 
 Automate the boring stuff  🤌🏻 ... 
