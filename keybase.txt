@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/mrturkmen
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://mrturkmen.com
+  * I am mrturkmen (https://keybase.io/mrturkmen) on keybase.
+  * I have a public key ASCh_rJjFqHsM4GM749LtG3NFd1Ol4dx_ydVTks25sQXlgo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120a1feb26316a1ec33818cef8f4bb46dcd15dd4e978771ff27554e4b36e6c417960a",
+      "host": "keybase.io",
+      "kid": "0120a1feb26316a1ec33818cef8f4bb46dcd15dd4e978771ff27554e4b36e6c417960a",
+      "uid": "46e9ece264235474640d386bd923ba19",
+      "username": "mrturkmen"
+    },
+    "merkle_root": {
+      "ctime": 1674125408,
+      "hash": "16991718d6810a2310dd03f1d07ce58b300f307f66b05a42426bb2028c06acd47f230fae20d831bdb88838f1297e32247e20341ae16bb5b77fd8e8070ea6280e",
+      "hash_meta": "aa087605523a699e1bffee71c23b01e7b6dc7a32c4c5ccb412888399510a9dd3",
+      "seqno": 23895255
+    },
+    "service": {
+      "entropy": "hi2YxQSWq0xNatIK69HCexXa",
+      "hostname": "mrturkmen.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.0.4"
+  },
+  "ctime": 1674125444,
+  "expire_in": 504576000,
+  "prev": "9699a10ed66d0382ea13d188093bda17e5c296ffa667afc1493c7cf1b4e9b18e",
+  "seqno": 14,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgof6yYxah7DOBjO+PS7RtzRXdTpeHcf8nVU5LNubEF5YKp3BheWxvYWTESpcCDsQglpmhDtZtA4LqE9GICTvaF+XClv+mZ6/BSTx88bTpsY7EIDzxHBroCq8uALWR2fLOdVLlfALvoniy9ZnjRCQIgdxoAgHCo3NpZ8RAc+xVXkBOSDPt9+i6/qjtFcu8ztlllUh/wk2/TDY0l0glYuMCGTMPzwq3xw6sOfOYFW2vgnkMgaRudOYVkDVUD6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIMn44YkWnrfH1QpQkvJsE/DvaHVd08wTPCeyhNmW5iAXo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/mrturkmen
+
+==================================================================
