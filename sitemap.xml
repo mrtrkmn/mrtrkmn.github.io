@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://mrturkmen.com/posts/tunnelling-to-local-ssh-service/</loc>
-    <lastmod>2023-03-05T14:01:03+00:00</lastmod>
-  </url><url>
     <loc>https://mrturkmen.com/tags/argo/</loc>
     <lastmod>2023-03-05T14:01:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/cloudflare/</loc>
+    <lastmod>2023-03-05T14:01:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/posts/tunnelling-to-local-ssh-service/</loc>
     <lastmod>2023-03-05T14:01:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/cloudflared/</loc>
