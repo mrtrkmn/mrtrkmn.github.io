@@ -1,5 +1,5 @@
 ---
-title: "Access local SSH service without need of PUBLIC IP"
+title: "cloudflare tunneling: serve local SSH service without PUBLIC IP"
 date: 2023-03-05T14:01:03+00:00
 # weight: 1
 # aliases: ["/first"]
@@ -11,7 +11,7 @@ TocOpen: false
 draft: false
 hidemeta: false
 comments: true
-description: "Access local PC/Server without exposing it to the world"
+description: "Access local PC/Server through Cloudflare tunneling"
 disableHLJS: true # to disable highlightjs
 disableShare: false
 disableHLJS: false
@@ -34,7 +34,7 @@ editPost:
 
 It is always been fun to access a local machine that is running at your home or at university or somewhere which does not have a public IP address or you do not have control over the network. 
 
-I already wrote a post about [cloudflare tunneling](./cloudflare-tunneling.md) however it was about serving local web applications. This time I will show you how to access local SSH service without exposing it to the world.
+I already wrote a post about [cloudflare tunneling](https://mrturkmen.com/posts/cloudflare-tunneling/) however it was about serving local web applications. This time I will show you how to access local SSH service without exposing it to the world.
 
 
 I was not thinking to write a post about this, however, before knowing cloudflare tunneling, I was considering renting a static IP address from my ISP. However, it costs some money, and also from a security point of view, it is not a good idea to expose your local machine to the world. ( somehow we do already but that's a different topic :) )
@@ -117,10 +117,10 @@ Add the following lines to the file `~/.ssh/config`.
 
 ```config
 Host myhost 
- HostName remote.mydomain.com
- IdentityFile ~/.ssh/id_rsa
- ProxyCommand cloudflared access ssh --hostname %h
- User awesomeuser
+  HostName remote.mydomain.com
+  IdentityFile ~/.ssh/id_rsa
+  ProxyCommand cloudflared access ssh --hostname %h
+  User awesomeuser
 ```
 
 I assumed that you already shared keys with your remote machine. 
