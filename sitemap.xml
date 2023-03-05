@@ -2,6 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://mrturkmen.com/posts/tunnelling-to-local-ssh-service/</loc>
+    <lastmod>2023-03-05T14:01:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/argo/</loc>
+    <lastmod>2023-03-05T14:01:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/cloudflare/</loc>
+    <lastmod>2023-03-05T14:01:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/cloudflared/</loc>
+    <lastmod>2023-03-05T14:01:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/deployment/</loc>
+    <lastmod>2023-03-05T14:01:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/local/</loc>
+    <lastmod>2023-03-05T14:01:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/</loc>
+    <lastmod>2023-03-05T14:01:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/posts/</loc>
+    <lastmod>2023-03-05T14:01:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/</loc>
+    <lastmod>2023-03-05T14:01:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/tunneling/</loc>
+    <lastmod>2023-03-05T14:01:03+00:00</lastmod>
+  </url><url>
     <loc>https://mrturkmen.com/tags/api/</loc>
     <lastmod>2023-01-15T01:20:00+00:00</lastmod>
   </url><url>
@@ -20,16 +50,7 @@
     <loc>https://mrturkmen.com/tags/github/</loc>
     <lastmod>2023-01-15T01:20:00+00:00</lastmod>
   </url><url>
-    <loc>https://mrturkmen.com/</loc>
-    <lastmod>2023-01-15T01:20:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/posts/</loc>
-    <lastmod>2023-01-15T01:20:00+00:00</lastmod>
-  </url><url>
     <loc>https://mrturkmen.com/tags/slack/</loc>
-    <lastmod>2023-01-15T01:20:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/tags/</loc>
     <lastmod>2023-01-15T01:20:00+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/cherry-pick/</loc>
@@ -44,31 +65,13 @@
     <loc>https://mrturkmen.com/tags/authentication/</loc>
     <lastmod>2022-06-28T19:29:03+00:00</lastmod>
   </url><url>
-    <loc>https://mrturkmen.com/tags/cloudflare/</loc>
-    <lastmod>2022-06-28T19:29:03+00:00</lastmod>
-  </url><url>
     <loc>https://mrturkmen.com/posts/cloudflare-workers/</loc>
     <lastmod>2022-06-28T19:29:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/gitbook/</loc>
     <lastmod>2022-06-28T19:29:03+00:00</lastmod>
   </url><url>
-    <loc>https://mrturkmen.com/tags/argo/</loc>
-    <lastmod>2022-03-20T21:26:03+00:00</lastmod>
-  </url><url>
     <loc>https://mrturkmen.com/posts/cloudflare-tunneling/</loc>
-    <lastmod>2022-03-20T21:26:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/tags/cloudflared/</loc>
-    <lastmod>2022-03-20T21:26:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/tags/deployment/</loc>
-    <lastmod>2022-03-20T21:26:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/tags/local/</loc>
-    <lastmod>2022-03-20T21:26:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/tags/tunneling/</loc>
     <lastmod>2022-03-20T21:26:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/cd/</loc>
