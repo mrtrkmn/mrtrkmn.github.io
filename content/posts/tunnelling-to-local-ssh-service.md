@@ -32,22 +32,22 @@ editPost:
     appendFilePath: true # to append file path to Edit link
 ---
 
-It is always been a fun to access a local machine which is running at your home or at university or somewhere which does not have a public IP address or you do not have control over the network. 
+It is always been fun to access a local machine that is running at your home or at university or somewhere which does not have a public IP address or you do not have control over the network. 
 
-I already wrote a post about [cloudflare tunnelling](./cloudflare-tunneling.md) however it was about serving local web application. This time I will show you how to access local SSH service without exposing it to the world.
+I already wrote a post about [cloudflare tunneling](./cloudflare-tunneling.md) however it was about serving local web applications. This time I will show you how to access local SSH service without exposing it to the world.
 
 
-I was not thinking to write a post about this, however, before knowing cloudflare tunneling, I was considering to rent static IP address from my ISP. However, it costs some money and also in security point of view, it is not a good idea to expose your local machine to the world. ( somehow we do already but that's different topic :) )
+I was not thinking to write a post about this, however, before knowing cloudflare tunneling, I was considering renting a static IP address from my ISP. However, it costs some money, and also from a security point of view, it is not a good idea to expose your local machine to the world. ( somehow we do already but that's a different topic :) )
 
 ## Prerequisites
 
 - A domain managed by Cloudflare *(free tier is enough)*
-  - You can checkout how to add your domain to cloudflare [here](https://developers.cloudflare.com/fundamentals/get-started/setup/add-site/)
+ - You can check out how to add your domain to Cloudflare [here](https://developers.cloudflare.com/fundamentals/get-started/setup/add-site/)
 
 
-## Steps to be followed on remote machine 
+## Steps to be followed on the remote machine 
 
-Once you have a domain managed by cloudflare, you can start to configure your remote machine. You need to install `cloudflared` cli. (**The machine that you want to access remotely through SSH**).
+Once you have a domain managed by Cloudflare, you can start to configure your remote machine. You need to install `cloudflared` cli. (**The machine that you want to access remotely through SSH**).
 
 Installation and configuring clouflared tool is very well explained in Cloudlfare's [documentation](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/installation).
 
@@ -64,7 +64,7 @@ $ cloudflared tunnel create my-tunnel
 
 You will get a tunnel ID. You will need this ID to configure your local machine.
 
-Now you need to create a route to the tunnel. (The domain is the domain that you have added to cloudflare.)
+Now you need to create a route to the tunnel. (The domain is the domain that you have added to Cloudflare.)
 
 ```bash
 # create a route
@@ -85,14 +85,14 @@ url: ssh://localhost:22
 You can find the full documentation [https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/tunnel-guide/local/local-management/configuration-file/](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/tunnel-guide/local/local-management/configuration-file/).
 
 
-Once you created configuration file (config.yml), then you can execute install command to serve your local SSH service through cloudflare tunnel. 
+Once you created the configuration file (config.yml), then you can execute the install command to serve your local SSH service through the Cloudflare tunnel. 
 
 
 ```bash
-$ cloudflared --config ~/.cloudflared/config.yml tunnel  service install
+$ cloudflared --config ~/.cloudflared/config.yml tunnel service install
 ```
 
-Apart from tunneling, since we are exposing SSH service, it is a rule of thumb to use SSH keys instead of password.
+Apart from tunneling, since we are exposing SSH service, it is a rule of thumb to use SSH keys instead of a password.
 
 ```bash 
 # change PasswordAuthentication value in /etc/ssh/sshd_config file and restart SSH service 
@@ -104,23 +104,23 @@ These are the steps that you need to follow on the machine that you would like t
 
 
 
-## Steps to be followed on client machine 
+## Steps to be followed on the client machine 
 
 
-Once you have configured your remote machine, you need to install `cloudflared` cli on your client machine too. (The machine which you use to access remote machine through SSH)
+Once you have configured your remote machine, you need to install `cloudflared` cli on your client machine too. (The machine which you use to access the remote machine through SSH)
 
-You can follow same installation instructions from [https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/installation](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/installation).
+You can follow the same installation instructions from [https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/installation](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/installation).
 
-On client side, you need to configure SSH for the host which uses cloudflare tunnel. 
+On the client side, you need to configure SSH for the host which uses cloudflare tunnel. 
 
 Add the following lines to the file `~/.ssh/config`. 
 
 ```config
 Host myhost 
-  HostName remote.mydomain.com
-  IdentityFile ~/.ssh/id_rsa
-  ProxyCommand cloudflared access ssh --hostname %h
-  User awesomeuser
+ HostName remote.mydomain.com
+ IdentityFile ~/.ssh/id_rsa
+ ProxyCommand cloudflared access ssh --hostname %h
+ User awesomeuser
 ```
 
 I assumed that you already shared keys with your remote machine. 
@@ -135,8 +135,7 @@ Now you can access your remote machine through SSH.
 $ ssh myhost
 ```
 
-That's it. You can acccess your remote machine from anywhere in the world. No need to have a public IP address or move your machine with you when travelling. 
-
+That's it. You can access your remote machine from anywhere in the world. No need to have a public IP address or move your machine with you when traveling. 
 
 
 
