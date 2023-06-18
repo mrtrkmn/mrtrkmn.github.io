@@ -3,9 +3,9 @@ name: Build GH-Pages
 on:
   push:
     paths-ignore:
-      - 'images/**'
-      - 'LICENSE'
-      - 'README.md'
+      - "images/**"
+      - "LICENSE"
+      - "README.md"
     branches:
       - master
   workflow_dispatch:
@@ -18,10 +18,10 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v2
 
-      - name: Set Git Creds 
+      - name: Set Git Creds
         run: |
           git config --global user.email "robotcuk@mrturkmen.com"
-          git config --global user.name "robotcuk" 
+          git config --global user.name "robotcuk"
 
       - name: Get Theme
         run: git submodule update --init --recursive
@@ -32,21 +32,20 @@ jobs:
       - name: Setup hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.83.0'
+          hugo-version: "latest"
 
       - name: Build
         run: hugo --buildDrafts --gc --verbose --minify
-        
-#  Cloudflare pages used
+
+      #  Cloudflare pages used
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-  
-    
-      - name: Call WebHook 
+
+      - name: Call WebHook
         run: |
           curl -X POST "$WEBHOOK"
         env:
-         WEBHOOK: ${{ secrets.CALL_WEBHOOK }}
+          WEBHOOK: ${{ secrets.CALL_WEBHOOK }}
