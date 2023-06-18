@@ -117,6 +117,12 @@ print("Current Time:", current_time)
 
 In the given piece of code, we have a metaclass called `TimeGetter` that adds a method called `get_current_time` to the class. We can see that we create a class called `DynamicClass` dynamically using the `TimeGetter` metaclass. When we create an instance of `DynamicClass`, we can see that we have a method called `get_current_time` that returns the current time. 
 
+The output of the above code is ( time will be different of course):
+
+```bash
+Current Time: 2023-06-18 12:20:00.000000
+```
+
 The power of metaclasses is astonishing. You can create classes on the fly, you can add functionality to all methods of a class, you can do many things with metaclasses. Although metaclasses are powerful, they are not used very often. You can use metaclasses to create following features with a super effective way;
 
  -  DSL (Domain Specific Language) 
