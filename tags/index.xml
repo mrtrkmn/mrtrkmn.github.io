@@ -10,7 +10,44 @@
       <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 05 Mar 2023 14:01:03 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sun, 18 Jun 2023 10:20:00 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>interview</title>
+      <link>https://mrturkmen.com/tags/interview/</link>
+      <pubDate>Sun, 18 Jun 2023 10:20:00 +0000</pubDate>
+      
+      <guid>https://mrturkmen.com/tags/interview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>job</title>
+      <link>https://mrturkmen.com/tags/job/</link>
+      <pubDate>Sun, 18 Jun 2023 10:20:00 +0000</pubDate>
+      
+      <guid>https://mrturkmen.com/tags/job/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>metaclasses</title>
+      <link>https://mrturkmen.com/tags/metaclasses/</link>
+      <pubDate>Sun, 18 Jun 2023 10:20:00 +0000</pubDate>
+      
+      <guid>https://mrturkmen.com/tags/metaclasses/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://mrturkmen.com/tags/python/</link>
+      <pubDate>Sun, 18 Jun 2023 10:20:00 +0000</pubDate>
+      
+      <guid>https://mrturkmen.com/tags/python/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>argo</title>
       <link>https://mrturkmen.com/tags/argo/</link>
@@ -188,15 +225,6 @@
       <pubDate>Fri, 25 Feb 2022 13:53:03 +0000</pubDate>
       
       <guid>https://mrturkmen.com/tags/karaca.com.tr/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://mrturkmen.com/tags/python/</link>
-      <pubDate>Fri, 25 Feb 2022 13:53:03 +0000</pubDate>
-      
-      <guid>https://mrturkmen.com/tags/python/</guid>
       <description></description>
     </item>
     

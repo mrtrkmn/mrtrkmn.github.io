@@ -2,6 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://mrturkmen.com/posts/metaclasses-python/</loc>
+    <lastmod>2023-06-18T10:20:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/interview/</loc>
+    <lastmod>2023-06-18T10:20:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/job/</loc>
+    <lastmod>2023-06-18T10:20:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/metaclasses/</loc>
+    <lastmod>2023-06-18T10:20:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/</loc>
+    <lastmod>2023-06-18T10:20:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/posts/</loc>
+    <lastmod>2023-06-18T10:20:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/python/</loc>
+    <lastmod>2023-06-18T10:20:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/</loc>
+    <lastmod>2023-06-18T10:20:00+00:00</lastmod>
+  </url><url>
     <loc>https://mrturkmen.com/tags/argo/</loc>
     <lastmod>2023-03-05T14:01:03+00:00</lastmod>
   </url><url>
@@ -18,15 +42,6 @@
     <lastmod>2023-03-05T14:01:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/local/</loc>
-    <lastmod>2023-03-05T14:01:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/</loc>
-    <lastmod>2023-03-05T14:01:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/posts/</loc>
-    <lastmod>2023-03-05T14:01:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/tags/</loc>
     <lastmod>2023-03-05T14:01:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/tunneling/</loc>
@@ -87,9 +102,6 @@
     <lastmod>2022-02-25T13:53:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/karaca.com.tr/</loc>
-    <lastmod>2022-02-25T13:53:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/tags/python/</loc>
     <lastmod>2022-02-25T13:53:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/selenium/</loc>
