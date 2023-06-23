@@ -11,7 +11,25 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 18 Jun 2023 10:20:00 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Jun 2023 17:05:00 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>decorators</title>
+      <link>https://mrturkmen.com/tags/decorators/</link>
+      <pubDate>Fri, 23 Jun 2023 17:05:00 +0000</pubDate>
+      
+      <guid>https://mrturkmen.com/tags/decorators/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://mrturkmen.com/tags/python/</link>
+      <pubDate>Fri, 23 Jun 2023 17:05:00 +0000</pubDate>
+      
+      <guid>https://mrturkmen.com/tags/python/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>interview</title>
       <link>https://mrturkmen.com/tags/interview/</link>
@@ -36,15 +54,6 @@
       <pubDate>Sun, 18 Jun 2023 10:20:00 +0000</pubDate>
       
       <guid>https://mrturkmen.com/tags/metaclasses/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://mrturkmen.com/tags/python/</link>
-      <pubDate>Sun, 18 Jun 2023 10:20:00 +0000</pubDate>
-      
-      <guid>https://mrturkmen.com/tags/python/</guid>
       <description></description>
     </item>
     

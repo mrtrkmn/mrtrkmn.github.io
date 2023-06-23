@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://mrturkmen.com/tags/decorators/</loc>
+    <lastmod>2023-06-23T17:05:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/posts/decorators-in-python/</loc>
+    <lastmod>2023-06-23T17:05:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/</loc>
+    <lastmod>2023-06-23T17:05:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/posts/</loc>
+    <lastmod>2023-06-23T17:05:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/python/</loc>
+    <lastmod>2023-06-23T17:05:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/</loc>
+    <lastmod>2023-06-23T17:05:00+00:00</lastmod>
+  </url><url>
     <loc>https://mrturkmen.com/posts/metaclasses-python/</loc>
     <lastmod>2023-06-18T10:20:00+00:00</lastmod>
   </url><url>
@@ -12,18 +30,6 @@
     <lastmod>2023-06-18T10:20:00+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/metaclasses/</loc>
-    <lastmod>2023-06-18T10:20:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/</loc>
-    <lastmod>2023-06-18T10:20:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/posts/</loc>
-    <lastmod>2023-06-18T10:20:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/tags/python/</loc>
-    <lastmod>2023-06-18T10:20:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/tags/</loc>
     <lastmod>2023-06-18T10:20:00+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/argo/</loc>
