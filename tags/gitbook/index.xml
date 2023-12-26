@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>gitbook on mrturkmen</title>
     <link>https://mrturkmen.com/tags/gitbook/</link>
@@ -11,15 +11,14 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 28 Jun 2022 19:29:03 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/gitbook/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Jun 2022 19:29:03 +0000</lastBuildDate>
+    <atom:link href="https://mrturkmen.com/tags/gitbook/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>cloudflare workers: add auth to free Gitbook space</title>
       <link>https://mrturkmen.com/posts/cloudflare-workers/</link>
       <pubDate>Tue, 28 Jun 2022 19:29:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/posts/cloudflare-workers/</guid>
       <description>protect gitbook pages with cloudflare workers</description>
     </item>
-    
   </channel>
 </rss>

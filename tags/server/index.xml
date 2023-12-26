@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>server on mrturkmen</title>
     <link>https://mrturkmen.com/tags/server/</link>
@@ -11,15 +11,14 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 08 Aug 2020 09:19:03 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/server/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Aug 2020 09:19:03 +0000</lastBuildDate>
+    <atom:link href="https://mrturkmen.com/tags/server/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>evans: universal gRPC client demonstration</title>
       <link>https://mrturkmen.com/posts/grpc-calls-with-evans/</link>
       <pubDate>Sat, 08 Aug 2020 09:19:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/posts/grpc-calls-with-evans/</guid>
       <description>Mock gRPC client</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>python on mrturkmen</title>
     <link>https://mrturkmen.com/tags/python/</link>
@@ -11,33 +11,28 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 23 Jun 2023 17:05:00 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Jun 2023 17:05:00 +0000</lastBuildDate>
+    <atom:link href="https://mrturkmen.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>decorators in python with examples</title>
       <link>https://mrturkmen.com/posts/decorators-in-python/</link>
       <pubDate>Fri, 23 Jun 2023 17:05:00 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/posts/decorators-in-python/</guid>
       <description>decorators in python</description>
     </item>
-    
     <item>
       <title>from interview question to enlightenment: metaclasses in python </title>
       <link>https://mrturkmen.com/posts/metaclasses-python/</link>
       <pubDate>Sun, 18 Jun 2023 10:20:00 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/posts/metaclasses-python/</guid>
       <description>metaclasses in python</description>
     </item>
-    
     <item>
       <title>github-actions: complain messages to a company in automated way</title>
       <link>https://mrturkmen.com/posts/automation-for-complain/</link>
       <pubDate>Fri, 25 Feb 2022 13:53:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/posts/automation-for-complain/</guid>
       <description>Complain to krc.com.tr with automation</description>
     </item>
-    
   </channel>
 </rss>

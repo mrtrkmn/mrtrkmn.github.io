@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tunneling on mrturkmen</title>
     <link>https://mrturkmen.com/tags/tunneling/</link>
@@ -11,42 +11,35 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 05 Mar 2023 14:01:03 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/tunneling/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Mar 2023 14:01:03 +0000</lastBuildDate>
+    <atom:link href="https://mrturkmen.com/tags/tunneling/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>cloudflare tunneling: serve local SSH service without PUBLIC IP</title>
       <link>https://mrturkmen.com/posts/tunnelling-to-local-ssh-service/</link>
       <pubDate>Sun, 05 Mar 2023 14:01:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/posts/tunnelling-to-local-ssh-service/</guid>
       <description>Access local PC/Server through Cloudflare tunneling</description>
     </item>
-    
     <item>
       <title>cloudflare tunneling: serve local like not local</title>
       <link>https://mrturkmen.com/posts/cloudflare-tunneling/</link>
       <pubDate>Sun, 20 Mar 2022 21:26:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/posts/cloudflare-tunneling/</guid>
       <description>Run locally, serve globally </description>
     </item>
-    
     <item>
       <title>wireguard: kendimize özel vpn kurulumu </title>
       <link>https://mrturkmen.com/posts/vpn-kuralim/</link>
       <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/posts/vpn-kuralim/</guid>
       <description>Decent open source, lightweight VPN solution.</description>
     </item>
-    
     <item>
       <title>wireguard: set it up in few steps</title>
       <link>https://mrturkmen.com/posts/setup-free-vpn/</link>
       <pubDate>Sat, 06 Jun 2020 10:00:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/posts/setup-free-vpn/</guid>
       <description>Decent open source, lightweight VPN solution.</description>
     </item>
-    
   </channel>
 </rss>

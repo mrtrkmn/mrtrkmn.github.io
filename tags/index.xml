@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on mrturkmen</title>
     <link>https://mrturkmen.com/tags/</link>
@@ -11,780 +11,609 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 23 Jun 2023 17:05:00 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Jun 2023 17:05:00 +0000</lastBuildDate>
+    <atom:link href="https://mrturkmen.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>decorators</title>
       <link>https://mrturkmen.com/tags/decorators/</link>
       <pubDate>Fri, 23 Jun 2023 17:05:00 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/decorators/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>python</title>
       <link>https://mrturkmen.com/tags/python/</link>
       <pubDate>Fri, 23 Jun 2023 17:05:00 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/python/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>interview</title>
       <link>https://mrturkmen.com/tags/interview/</link>
       <pubDate>Sun, 18 Jun 2023 10:20:00 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/interview/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>job</title>
       <link>https://mrturkmen.com/tags/job/</link>
       <pubDate>Sun, 18 Jun 2023 10:20:00 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/job/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>metaclasses</title>
       <link>https://mrturkmen.com/tags/metaclasses/</link>
       <pubDate>Sun, 18 Jun 2023 10:20:00 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/metaclasses/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>argo</title>
       <link>https://mrturkmen.com/tags/argo/</link>
       <pubDate>Sun, 05 Mar 2023 14:01:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/argo/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>cloudflare</title>
       <link>https://mrturkmen.com/tags/cloudflare/</link>
       <pubDate>Sun, 05 Mar 2023 14:01:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/cloudflare/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>cloudflared</title>
       <link>https://mrturkmen.com/tags/cloudflared/</link>
       <pubDate>Sun, 05 Mar 2023 14:01:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/cloudflared/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>deployment</title>
       <link>https://mrturkmen.com/tags/deployment/</link>
       <pubDate>Sun, 05 Mar 2023 14:01:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/deployment/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>local</title>
       <link>https://mrturkmen.com/tags/local/</link>
       <pubDate>Sun, 05 Mar 2023 14:01:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/local/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>tunneling</title>
       <link>https://mrturkmen.com/tags/tunneling/</link>
       <pubDate>Sun, 05 Mar 2023 14:01:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/tunneling/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>api</title>
       <link>https://mrturkmen.com/tags/api/</link>
       <pubDate>Sun, 15 Jan 2023 01:20:00 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/api/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>automate</title>
       <link>https://mrturkmen.com/tags/automate/</link>
       <pubDate>Sun, 15 Jan 2023 01:20:00 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/automate/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>aws</title>
       <link>https://mrturkmen.com/tags/aws/</link>
       <pubDate>Sun, 15 Jan 2023 01:20:00 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/aws/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>gateway</title>
       <link>https://mrturkmen.com/tags/gateway/</link>
       <pubDate>Sun, 15 Jan 2023 01:20:00 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/gateway/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>github</title>
       <link>https://mrturkmen.com/tags/github/</link>
       <pubDate>Sun, 15 Jan 2023 01:20:00 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/github/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>slack</title>
       <link>https://mrturkmen.com/tags/slack/</link>
       <pubDate>Sun, 15 Jan 2023 01:20:00 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/slack/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>cherry-pick</title>
       <link>https://mrturkmen.com/tags/cherry-pick/</link>
       <pubDate>Tue, 02 Aug 2022 20:10:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/cherry-pick/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>git</title>
       <link>https://mrturkmen.com/tags/git/</link>
       <pubDate>Tue, 02 Aug 2022 20:10:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/git/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>authentication</title>
       <link>https://mrturkmen.com/tags/authentication/</link>
       <pubDate>Tue, 28 Jun 2022 19:29:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/authentication/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>gitbook</title>
       <link>https://mrturkmen.com/tags/gitbook/</link>
       <pubDate>Tue, 28 Jun 2022 19:29:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/gitbook/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>cd</title>
       <link>https://mrturkmen.com/tags/cd/</link>
       <pubDate>Fri, 25 Feb 2022 13:53:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/cd/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>ci</title>
       <link>https://mrturkmen.com/tags/ci/</link>
       <pubDate>Fri, 25 Feb 2022 13:53:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/ci/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>karaca</title>
       <link>https://mrturkmen.com/tags/karaca/</link>
       <pubDate>Fri, 25 Feb 2022 13:53:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/karaca/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>karaca.com.tr</title>
       <link>https://mrturkmen.com/tags/karaca.com.tr/</link>
       <pubDate>Fri, 25 Feb 2022 13:53:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/karaca.com.tr/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>selenium</title>
       <link>https://mrturkmen.com/tags/selenium/</link>
       <pubDate>Fri, 25 Feb 2022 13:53:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/selenium/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>workflow</title>
       <link>https://mrturkmen.com/tags/workflow/</link>
       <pubDate>Fri, 25 Feb 2022 13:53:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/workflow/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>golang</title>
       <link>https://mrturkmen.com/tags/golang/</link>
       <pubDate>Sun, 18 Apr 2021 05:30:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/golang/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>os</title>
       <link>https://mrturkmen.com/tags/os/</link>
       <pubDate>Sun, 18 Apr 2021 05:30:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/os/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>programming</title>
       <link>https://mrturkmen.com/tags/programming/</link>
       <pubDate>Sun, 18 Apr 2021 05:30:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/programming/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>reload</title>
       <link>https://mrturkmen.com/tags/reload/</link>
       <pubDate>Sun, 18 Apr 2021 05:30:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/reload/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>automation</title>
       <link>https://mrturkmen.com/tags/automation/</link>
       <pubDate>Sat, 17 Apr 2021 09:00:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/automation/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>packer</title>
       <link>https://mrturkmen.com/tags/packer/</link>
       <pubDate>Sat, 17 Apr 2021 09:00:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/packer/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>ubuntu</title>
       <link>https://mrturkmen.com/tags/ubuntu/</link>
       <pubDate>Sat, 17 Apr 2021 09:00:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/ubuntu/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>attack</title>
       <link>https://mrturkmen.com/tags/attack/</link>
       <pubDate>Wed, 24 Feb 2021 12:00:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/attack/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>bruteforce</title>
       <link>https://mrturkmen.com/tags/bruteforce/</link>
       <pubDate>Wed, 24 Feb 2021 12:00:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/bruteforce/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>fail2ban</title>
       <link>https://mrturkmen.com/tags/fail2ban/</link>
       <pubDate>Wed, 24 Feb 2021 12:00:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/fail2ban/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>ssh</title>
       <link>https://mrturkmen.com/tags/ssh/</link>
       <pubDate>Wed, 24 Feb 2021 12:00:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/ssh/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>ansible</title>
       <link>https://mrturkmen.com/tags/ansible/</link>
       <pubDate>Sat, 12 Dec 2020 17:42:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/ansible/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>continuous</title>
       <link>https://mrturkmen.com/tags/continuous/</link>
       <pubDate>Sat, 12 Dec 2020 17:42:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/continuous/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>download</title>
       <link>https://mrturkmen.com/tags/download/</link>
       <pubDate>Tue, 24 Nov 2020 10:55:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/download/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>fetch</title>
       <link>https://mrturkmen.com/tags/fetch/</link>
       <pubDate>Tue, 24 Nov 2020 10:55:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/fetch/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>playlist</title>
       <link>https://mrturkmen.com/tags/playlist/</link>
       <pubDate>Tue, 24 Nov 2020 10:55:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/playlist/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>youtube</title>
       <link>https://mrturkmen.com/tags/youtube/</link>
       <pubDate>Tue, 24 Nov 2020 10:55:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/youtube/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>youtubeto</title>
       <link>https://mrturkmen.com/tags/youtubeto/</link>
       <pubDate>Tue, 24 Nov 2020 10:55:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/youtubeto/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>latex</title>
       <link>https://mrturkmen.com/tags/latex/</link>
       <pubDate>Mon, 26 Oct 2020 16:25:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/latex/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>automated</title>
       <link>https://mrturkmen.com/tags/automated/</link>
       <pubDate>Sat, 08 Aug 2020 09:19:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/automated/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>cli</title>
       <link>https://mrturkmen.com/tags/cli/</link>
       <pubDate>Sat, 08 Aug 2020 09:19:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/cli/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>client</title>
       <link>https://mrturkmen.com/tags/client/</link>
       <pubDate>Sat, 08 Aug 2020 09:19:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/client/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>go</title>
       <link>https://mrturkmen.com/tags/go/</link>
       <pubDate>Sat, 08 Aug 2020 09:19:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/go/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>grpc</title>
       <link>https://mrturkmen.com/tags/grpc/</link>
       <pubDate>Sat, 08 Aug 2020 09:19:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/grpc/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>mock-client</title>
       <link>https://mrturkmen.com/tags/mock-client/</link>
       <pubDate>Sat, 08 Aug 2020 09:19:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/mock-client/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>server</title>
       <link>https://mrturkmen.com/tags/server/</link>
       <pubDate>Sat, 08 Aug 2020 09:19:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/server/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>cluster</title>
       <link>https://mrturkmen.com/tags/cluster/</link>
       <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/cluster/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>docker</title>
       <link>https://mrturkmen.com/tags/docker/</link>
       <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/docker/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>HAProxy</title>
       <link>https://mrturkmen.com/tags/haproxy/</link>
       <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/haproxy/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>ingress</title>
       <link>https://mrturkmen.com/tags/ingress/</link>
       <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/ingress/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>kubernetes</title>
       <link>https://mrturkmen.com/tags/kubernetes/</link>
       <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/kubernetes/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>master</title>
       <link>https://mrturkmen.com/tags/master/</link>
       <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/master/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>nginx</title>
       <link>https://mrturkmen.com/tags/nginx/</link>
       <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/nginx/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>node</title>
       <link>https://mrturkmen.com/tags/node/</link>
       <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/node/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>pod</title>
       <link>https://mrturkmen.com/tags/pod/</link>
       <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/pod/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>worker</title>
       <link>https://mrturkmen.com/tags/worker/</link>
       <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/worker/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>linux</title>
       <link>https://mrturkmen.com/tags/linux/</link>
       <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/linux/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>macosx</title>
       <link>https://mrturkmen.com/tags/macosx/</link>
       <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/macosx/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>security</title>
       <link>https://mrturkmen.com/tags/security/</link>
       <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/security/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>vpn</title>
       <link>https://mrturkmen.com/tags/vpn/</link>
       <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/vpn/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>vps</title>
       <link>https://mrturkmen.com/tags/vps/</link>
       <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/vps/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>wireguard</title>
       <link>https://mrturkmen.com/tags/wireguard/</link>
       <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/wireguard/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>coursera</title>
       <link>https://mrturkmen.com/tags/coursera/</link>
       <pubDate>Sat, 13 Jun 2020 10:00:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/coursera/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>examples</title>
       <link>https://mrturkmen.com/tags/examples/</link>
       <pubDate>Sat, 13 Jun 2020 10:00:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/examples/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>google</title>
       <link>https://mrturkmen.com/tags/google/</link>
       <pubDate>Sat, 13 Jun 2020 10:00:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/google/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>default</title>
       <link>https://mrturkmen.com/tags/default/</link>
       <pubDate>Mon, 18 May 2020 00:00:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/default/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>error</title>
       <link>https://mrturkmen.com/tags/error/</link>
       <pubDate>Mon, 18 May 2020 00:00:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/error/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>storage</title>
       <link>https://mrturkmen.com/tags/storage/</link>
       <pubDate>Mon, 18 May 2020 00:00:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/storage/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>terminal</title>
       <link>https://mrturkmen.com/tags/terminal/</link>
       <pubDate>Mon, 18 May 2020 00:00:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/terminal/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>elasticsearch</title>
       <link>https://mrturkmen.com/tags/elasticsearch/</link>
       <pubDate>Sun, 17 Feb 2019 09:04:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/elasticsearch/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>performance</title>
       <link>https://mrturkmen.com/tags/performance/</link>
       <pubDate>Sun, 17 Feb 2019 09:04:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/performance/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>performans</title>
       <link>https://mrturkmen.com/tags/performans/</link>
       <pubDate>Sun, 17 Feb 2019 09:04:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/performans/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>html</title>
       <link>https://mrturkmen.com/tags/html/</link>
       <pubDate>Fri, 11 Jan 2019 09:04:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/html/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>komut</title>
       <link>https://mrturkmen.com/tags/komut/</link>
       <pubDate>Fri, 11 Jan 2019 09:04:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/komut/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>nftp</title>
       <link>https://mrturkmen.com/tags/nftp/</link>
       <pubDate>Fri, 11 Jan 2019 09:04:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/nftp/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>scp</title>
       <link>https://mrturkmen.com/tags/scp/</link>
       <pubDate>Fri, 11 Jan 2019 09:04:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/scp/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>vim</title>
       <link>https://mrturkmen.com/tags/vim/</link>
       <pubDate>Fri, 11 Jan 2019 09:04:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/vim/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>wget</title>
       <link>https://mrturkmen.com/tags/wget/</link>
       <pubDate>Fri, 11 Jan 2019 09:04:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/wget/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>ci/cd</title>
       <link>https://mrturkmen.com/tags/ci/cd/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/tags/ci/cd/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

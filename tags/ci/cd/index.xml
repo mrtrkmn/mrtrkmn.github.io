@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ci/cd on mrturkmen</title>
     <link>https://mrturkmen.com/tags/ci/cd/</link>
@@ -10,80 +10,65 @@
       <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://mrturkmen.com/tags/ci/cd/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <atom:link href="https://mrturkmen.com/tags/ci/cd/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ansible: deploy easily in simple steps</title>
       <link>https://mrturkmen.com/posts/deploy-with-ansible/</link>
       <pubDate>Sat, 12 Dec 2020 17:42:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/posts/deploy-with-ansible/</guid>
       <description>Deploying with Ansible on CI/CD. </description>
     </item>
-    
     <item>
       <title>ansible: deploy easily in simple steps</title>
       <link>https://mrturkmen.com/posts/deploy-with-ansible/</link>
       <pubDate>Sat, 12 Dec 2020 17:42:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/posts/deploy-with-ansible/</guid>
       <description>Deploying with Ansible on CI/CD. </description>
     </item>
-    
     <item>
       <title>ansible: introductory handwritten notes</title>
       <link>https://mrturkmen.com/posts/introduction-to-ansible-notes/</link>
       <pubDate>Sat, 05 Dec 2020 12:45:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/posts/introduction-to-ansible-notes/</guid>
       <description>While watching video tutorial about Ansible, I took some notes and created following PDF file.
 INTRODUCTION TO ANSIBLE HANDWRITTEN NOTES</description>
     </item>
-    
     <item>
       <title>ansible: introductory handwritten notes</title>
       <link>https://mrturkmen.com/posts/introduction-to-ansible-notes/</link>
       <pubDate>Sat, 05 Dec 2020 12:45:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/posts/introduction-to-ansible-notes/</guid>
       <description>While watching video tutorial about Ansible, I took some notes and created following PDF file.
 INTRODUCTION TO ANSIBLE HANDWRITTEN NOTES</description>
     </item>
-    
     <item>
       <title>youtubeto: download and save playlists to releases on Github</title>
       <link>https://mrturkmen.com/posts/download-release-youtube-playlists/</link>
       <pubDate>Tue, 24 Nov 2020 10:55:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/posts/download-release-youtube-playlists/</guid>
       <description>Automated way of fetching and releasing list of playlists defined by user.</description>
     </item>
-    
     <item>
       <title>youtubeto: download and save playlists to releases on Github</title>
       <link>https://mrturkmen.com/posts/download-release-youtube-playlists/</link>
       <pubDate>Tue, 24 Nov 2020 10:55:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/posts/download-release-youtube-playlists/</guid>
       <description>Automated way of fetching and releasing list of playlists defined by user.</description>
     </item>
-    
     <item>
       <title>auto-latex: generate and handle latex through github actions</title>
       <link>https://mrturkmen.com/posts/build-release-latex/</link>
       <pubDate>Mon, 26 Oct 2020 16:25:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/posts/build-release-latex/</guid>
       <description>Creating PDFs with Latex</description>
     </item>
-    
     <item>
       <title>auto-latex: generate and handle latex through github actions</title>
       <link>https://mrturkmen.com/posts/build-release-latex/</link>
       <pubDate>Mon, 26 Oct 2020 16:25:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/posts/build-release-latex/</guid>
       <description>Creating PDFs with Latex</description>
     </item>
-    
   </channel>
 </rss>

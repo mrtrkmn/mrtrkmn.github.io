@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>golang on mrturkmen</title>
     <link>https://mrturkmen.com/tags/golang/</link>
@@ -11,33 +11,28 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 18 Apr 2021 05:30:03 +0000</lastBuildDate><atom:link href="https://mrturkmen.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Apr 2021 05:30:03 +0000</lastBuildDate>
+    <atom:link href="https://mrturkmen.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>go[channels]: hot config reload with os signal </title>
       <link>https://mrturkmen.com/posts/hot-reload-with-os-signals/</link>
       <pubDate>Sun, 18 Apr 2021 05:30:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/posts/hot-reload-with-os-signals/</guid>
       <description>Reloading config files with OS Signal</description>
     </item>
-    
     <item>
       <title>go: concurrency notes </title>
       <link>https://mrturkmen.com/posts/go-concur/</link>
       <pubDate>Sat, 13 Jun 2020 10:00:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/posts/go-concur/</guid>
       <description>Go Programming Language Notes.</description>
     </item>
-    
     <item>
       <title>go: object oriented programming notes </title>
       <link>https://mrturkmen.com/posts/go-notes/</link>
       <pubDate>Mon, 08 Jun 2020 10:00:03 +0000</pubDate>
-      
       <guid>https://mrturkmen.com/posts/go-notes/</guid>
       <description>Go Programming Language Notes.</description>
     </item>
-    
   </channel>
 </rss>
