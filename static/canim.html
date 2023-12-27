@@ -9,12 +9,36 @@
         body {
             font-family: 'Arial', sans-serif;
             text-align: center;
+            padding-top: 30%;
             margin: 50px;
+            background-color: #f5f5f5;
+        }
+
+        /* #countdown-container {
+            background-color: #3498db;
+            padding: 20px;
+        } */
+        #message-box {
+            /* background-color: #fbfbfb; */
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+            color: #f4431f;
+            font-size: 2em;
         }
 
         #countdown {
             font-size: 2em;
             font-weight: bold;
+            color: #080606;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #e74c3c;
+            margin-bottom: 10px;
+            animation: heartBeat 1s infinite;
         }
 
         .animated {
@@ -31,17 +55,42 @@
                 opacity: 1;
             }
         }
+
+        @keyframes heartBeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
     </style>
 </head>
 
 <body>
-    <h1>❤️</h1>
-    <div id="countdown" class="animated"></div>
+    <div id="countdown-container" class="animated fadeIn">
+        <h1>❤️</h1>
+        <div id="countdown" class="animated"></div>
+        <div id="message-box" class="animated"></div>
+
+    </div>
 
     <script>
         // Set the countdown date (format: year, month (0-indexed), day, hour, minute, second)
         const countdownDate = new Date('2024-04-03T08:00:00').getTime();
-
+        const messages = [
+            "Aynen kanka ajsjxjsjjsjxhzu",
+            "abi şaka gibi ya",
+            "Abi cok sacma ya",
+            "hiç çalışmak istemiyorum",
+            "abi çok iyi ya",
+            "yooo askfjskfjsdkfj",
+            "Nasil ya saka gibu",
+            "abi şehre bak sadece bir şeyler yiyip içebiliyorsun"
+        ];
         function updateCountdown() {
             const currentDate = new Date().getTime();
             const timeDifference = countdownDate - currentDate;
@@ -58,6 +107,10 @@
                 // Add fade-in animation class
                 countdownElement.classList.add('animated');
                 countdownElement.classList.add('fadeIn');
+                // Update message box every 10 seconds
+                const messageBox = document.getElementById('message-box');
+                const index = Math.floor(currentDate / 10000) % messages.length;
+                messageBox.textContent = messages[index];
             } else {
                 document.getElementById('countdown').textContent = 'Countdown expired!';
             }
