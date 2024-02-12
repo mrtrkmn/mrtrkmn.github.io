@@ -2,22 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://mrturkmen.com/tags/aviation/</loc>
+    <lastmod>2024-02-12T00:00:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/posts/safety-critical-software/</loc>
+    <lastmod>2024-02-12T00:00:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/certification/</loc>
+    <lastmod>2024-02-12T00:00:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/critical/</loc>
+    <lastmod>2024-02-12T00:00:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/do-178/</loc>
+    <lastmod>2024-02-12T00:00:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/</loc>
+    <lastmod>2024-02-12T00:00:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/posts/</loc>
+    <lastmod>2024-02-12T00:00:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/safety/</loc>
+    <lastmod>2024-02-12T00:00:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/software/</loc>
+    <lastmod>2024-02-12T00:00:03+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/</loc>
+    <lastmod>2024-02-12T00:00:03+00:00</lastmod>
+  </url><url>
     <loc>https://mrturkmen.com/tags/decorators/</loc>
     <lastmod>2023-06-23T17:05:00+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/posts/decorators-in-python/</loc>
     <lastmod>2023-06-23T17:05:00+00:00</lastmod>
   </url><url>
-    <loc>https://mrturkmen.com/</loc>
-    <lastmod>2023-06-23T17:05:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/posts/</loc>
-    <lastmod>2023-06-23T17:05:00+00:00</lastmod>
-  </url><url>
     <loc>https://mrturkmen.com/tags/python/</loc>
-    <lastmod>2023-06-23T17:05:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/tags/</loc>
     <lastmod>2023-06-23T17:05:00+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/posts/metaclasses-python/</loc>

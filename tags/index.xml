@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on mrturkmen</title>
     <link>https://mrturkmen.com/tags/</link>
@@ -11,8 +11,50 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 23 Jun 2023 17:05:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Feb 2024 00:00:03 +0000</lastBuildDate>
     <atom:link href="https://mrturkmen.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>aviation</title>
+      <link>https://mrturkmen.com/tags/aviation/</link>
+      <pubDate>Mon, 12 Feb 2024 00:00:03 +0000</pubDate>
+      <guid>https://mrturkmen.com/tags/aviation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>certification</title>
+      <link>https://mrturkmen.com/tags/certification/</link>
+      <pubDate>Mon, 12 Feb 2024 00:00:03 +0000</pubDate>
+      <guid>https://mrturkmen.com/tags/certification/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>critical</title>
+      <link>https://mrturkmen.com/tags/critical/</link>
+      <pubDate>Mon, 12 Feb 2024 00:00:03 +0000</pubDate>
+      <guid>https://mrturkmen.com/tags/critical/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>do-178</title>
+      <link>https://mrturkmen.com/tags/do-178/</link>
+      <pubDate>Mon, 12 Feb 2024 00:00:03 +0000</pubDate>
+      <guid>https://mrturkmen.com/tags/do-178/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>safety</title>
+      <link>https://mrturkmen.com/tags/safety/</link>
+      <pubDate>Mon, 12 Feb 2024 00:00:03 +0000</pubDate>
+      <guid>https://mrturkmen.com/tags/safety/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>software</title>
+      <link>https://mrturkmen.com/tags/software/</link>
+      <pubDate>Mon, 12 Feb 2024 00:00:03 +0000</pubDate>
+      <guid>https://mrturkmen.com/tags/software/</guid>
+      <description></description>
+    </item>
     <item>
       <title>decorators</title>
       <link>https://mrturkmen.com/tags/decorators/</link>
