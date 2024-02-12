@@ -58,7 +58,8 @@ In the industry, applying all the steps takes tremendous amount of time at the e
 
 The Table 1 shows, overview of DO-178C processes and sub-processes.
 
-![overview of DO-178C processes and sub-processes](../../images/do-178-table1.png)
+<!-- ![overview of DO-178C processes and sub-processes](../../images/do-178-table1.png) -->
+<img src="../../images/do-178-table1.png" width=936 height=406 alt="overview of DO-178C processes and sub-processes">
 
 As it is mentioned earlier, there are levels from A to E, and they are categorizes with their failure condition category, number of objectives and w. independence.
 
