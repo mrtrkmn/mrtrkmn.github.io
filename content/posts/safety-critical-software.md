@@ -58,11 +58,17 @@ In the industry, applying all the steps takes tremendous amount of time at the e
 
 The Table 1 shows, overview of DO-178C processes and sub-processes.
 
-![overview of DO-178C processes and sub-processes](../../images/Overview-of-DO-178C-processes-and-sub-processes.ppm)
+![overview of DO-178C processes and sub-processes](../../images/do-178-table1.png)
 
 As it is mentioned earlier, there are levels from A to E, and they are categorizes with their failure condition category, number of objectives and w. independence.
 
-![DO-178C levels](../../images/do-178-table2.png)
+| Software Level | Failure Condition Category | Objectives | w. Independence |
+|----------------|----------------------------|------------|----------------|
+| A              | Catastrophic               | 71         | 30             |
+| B              | Hazardous                  | 69         | 18             |
+| C              | Major                      | 62         | 5              |
+| D              | Minor                      | 26         | 2              |
+| E              | No Safety Effect           |0 | 0||
 
 In the end, it is a very challenging and time-consuming process to develop software under DO-178C standardization. However, it is a must for the safety-critical software development in the aerospace domain.
 
