@@ -58,11 +58,11 @@ In the industry, applying all the steps takes tremendous amount of time at the e
 
 The Table 1 shows, overview of DO-178C processes and sub-processes.
 
-![overview of DO-178C processes and sub-processes](../../do-178-table1.png)
+![overview of DO-178C processes and sub-processes](../../images/do-178-table1.png)
 
 As it is mentioned earlier, there are levels from A to E, and they are categorizes with their failure condition category, number of objectives and w. independence.
 
-![DO-178C levels](../../do-178-table2.png)
+![DO-178C levels](../../images/do-178-table2.png)
 
 In the end, it is a very challenging and time-consuming process to develop software under DO-178C standardization. However, it is a must for the safety-critical software development in the aerospace domain.
 
