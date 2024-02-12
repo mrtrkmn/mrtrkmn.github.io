@@ -88,3 +88,8 @@ The aviation industry constitutes a realm of unparalleled complexity, innovation
 As baby steps, I started to learn and wanted to put what I read and summarized, here, this might not be interesting information for all however it is just a note to myself.
 
 Oh, before forgetting, military and civil aviation industries have completely different procedures and approaches to develop an aircraft. Indeed, there are some common points where both should obey, for instance flight operations in for military based aircrafts are often conducted in dynamic and potentially hostile environments. In civil aviation industry, flight operations are typically conducted in a more predictable and controlled environment. There are many other points which they differ a lot, but it is obvious.
+
+References:
+
+- A Practical Guide for Aviation Software and DO-178C Compliance, by Leanna Rierson
+- Christoph Torens. "Safety Versus Security in Aviation, Comparing DO-178C with Security Standards," AIAA 2020-0242. AIAA Scitech 2020 Forum. January 2020.
