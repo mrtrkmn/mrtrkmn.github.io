@@ -21,9 +21,9 @@ ShowReadingTime: true
 ShowBreadCrumbs: true
 ShowPostNavLinks: true
 cover:
-    image: "../../images/docker_logo.png" # image path/url
+    image: "../../images/eurofigher.jpg" # image path/url
     alt: "<alt text>" # alt text
-    caption: "<text>" # display caption under cover
+    caption: "Eurofighter" # display caption under cover
     relative: false # when using page bundles set this to true
     hidden: false # only hide on current single page
 editPost:
