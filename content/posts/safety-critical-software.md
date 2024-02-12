@@ -53,7 +53,7 @@ In the book of “A Practical Guide for Aviation Software and 00-178C Compliance
   - perfectionists who strive for 100% on every task.
 - Thorough testing at all levels
 
-Back to the standardization DO-178, it defines five levels A to E. Level A is where no objectives have to be met, and from E to A it increases objectives, eventually Level A has to met all objectives. When DO-178C is checked focus area is mainly lifecycle of processes; software planning, software development, software verification, software quality assurance, software configuration management and certification liaison.
+Back to the standardization DO-178, it defines five levels A to E. Level E is where no objectives have to be met, and from E to A it increases objectives, eventually Level A has to met all objectives. When DO-178C is checked focus area is mainly lifecycle of processes; software planning, software development, software verification, software quality assurance, software configuration management and certification liaison.
 In the industry, applying all the steps takes tremendous amount of time at the end, despite of developing and completing it. There is still too much bureaucratic steps to apply in order to have certification for the software which is developed under the standardization.
 
 The Table 1 shows, overview of DO-178C processes and sub-processes.
