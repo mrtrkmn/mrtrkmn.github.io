@@ -185,6 +185,9 @@
     <loc>https://mrturkmen.com/posts/deploy-with-ansible/</loc>
     <lastmod>2020-12-12T17:42:03+00:00</lastmod>
   </url><url>
+    <loc>https://mrturkmen.com/tags/ci/cd/</loc>
+    <lastmod>2020-12-12T17:42:03+00:00</lastmod>
+  </url><url>
     <loc>https://mrturkmen.com/tags/continuous/</loc>
     <lastmod>2020-12-12T17:42:03+00:00</lastmod>
   </url><url>
@@ -371,8 +374,6 @@
     <loc>https://mrturkmen.com/archives/</loc>
   </url><url>
     <loc>https://mrturkmen.com/categories/</loc>
-  </url><url>
-    <loc>https://mrturkmen.com/tags/ci/cd/</loc>
   </url><url>
     <loc>https://mrturkmen.com/search/</loc>
   </url>
