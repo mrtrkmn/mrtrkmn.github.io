@@ -210,8 +210,8 @@ params:
 
     # home-info mode
     homeInfoParams:
-        Title: "Hi there \U0001F44B, about me > https://linkedin.com/in/mrturkmen"
-        Content: "Example PoCs from blog posts are hosted here: https://github.com/merkez"
+        Title: "Hi there \U0001F44B"
+        Content: "Example PoCs from blog posts are hosted here: https://github.com/merkez \nabout me > https://linkedin.com/in/mrturkmen"
 
     socialIcons:
         # - name: stackoverflow
