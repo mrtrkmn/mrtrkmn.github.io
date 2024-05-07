@@ -211,7 +211,7 @@ params:
     # home-info mode
     homeInfoParams:
         Title: "Hi there \U0001F44B"
-        Content: "Example PoCs from blog posts are hosted here: https://github.com/merkez \nabout me > https://linkedin.com/in/mrturkmen"
+        Content: "about me > https://linkedin.com/in/mrturkmen"
 
     socialIcons:
         # - name: stackoverflow
@@ -277,6 +277,10 @@ menu:
         #   weight: 30
         - name: Search
           url: search/
+          weight: 10
+
+        - name: Merkez
+          url: https://github.com/merkez
           weight: 10
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 # pygmentsUseClasses: true
