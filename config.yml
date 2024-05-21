@@ -129,6 +129,9 @@ menu:
        - name: Search
          url: search/
          weight: 10
+       - name: Merkez
+         url: https://github.com/merkez
+         weight: 10
     
 
        
@@ -277,10 +280,6 @@ menu:
         #   weight: 30
         - name: Search
           url: search/
-          weight: 10
-
-        - name: Merkez
-          url: https://github.com/merkez
           weight: 10
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 # pygmentsUseClasses: true
