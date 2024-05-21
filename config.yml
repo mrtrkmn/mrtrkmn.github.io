@@ -129,10 +129,6 @@ menu:
        - name: Search
          url: search/
          weight: 10
-       - name: Merkez
-         url: https://github.com/merkez
-         weight: 10
-    
 
        
         # - identifier: categories
