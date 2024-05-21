@@ -87,8 +87,7 @@ params:
           url: "https://linkedin.com/in/mrturkmen"
         - name: github
           url: "https://github.com/mrtrkmn"
-        - name: instagram
-          url: "https://instagram.com/mr.turkmen"
+
         - name: gitlab
           url: "https://gitlab.com/mrturkmen"
         - name: mail 
@@ -221,8 +220,7 @@ params:
           url: "https://github.com/mrtrkmn"
    #     - name: twitter
    #       url: "https://twitter.com/mrtrkmn_"
-       - name: instagram
-         url: "https://instagram.com/mr.turkmen"
+
         - name: gitlab
           url: "https://gitlab.com/mrturkmen"
    #     - name: medium
