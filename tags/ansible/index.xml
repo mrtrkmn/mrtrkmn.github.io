@@ -9,7 +9,7 @@
       <url>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
-    <generator>Hugo -- 0.129.0</generator>
+    <generator>Hugo -- 0.135.0</generator>
     <language>en</language>
     <lastBuildDate>Sat, 12 Dec 2020 17:42:03 +0000</lastBuildDate>
     <atom:link href="https://mrturkmen.com/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
@@ -25,8 +25,10 @@
       <link>https://mrturkmen.com/posts/introduction-to-ansible-notes/</link>
       <pubDate>Sat, 05 Dec 2020 12:45:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/introduction-to-ansible-notes/</guid>
-      <description>While watching video tutorial about Ansible, I took some notes and created following PDF file.
-INTRODUCTION TO ANSIBLE HANDWRITTEN NOTES</description>
+      <description>&lt;p&gt;While watching video tutorial about Ansible, I took some notes and created following PDF file.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../../pdfs/20201205-introduction-to-ansible.pdf&#34;&gt;INTRODUCTION TO ANSIBLE HANDWRITTEN NOTES&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;../../images/ansible_hand_written_notes.png&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
