@@ -41,10 +41,6 @@ I recently had an  interview at one of the MAANG companies. I can say that I rea
 
 Except for the unexpected, I have seen a discussion on quota and I would like to quote an argument from there, I totally agree on this argument. 
 
-
-Except for the unexpected, I have seen a discussion on quota and I would like to quote an argument from there, I totally agree on this argument. 
-
-
 ![MAANG](../../images/interviewing-is-fun.png)
 
 
