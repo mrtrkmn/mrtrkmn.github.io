@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo -- 0.135.0</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 12 Feb 2024 00:00:03 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Dec 2024 09:00:03 +0000</lastBuildDate>
     <atom:link href="https://mrturkmen.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rejection </title>
+      <link>https://mrturkmen.com/posts/rejection/</link>
+      <pubDate>Sun, 08 Dec 2024 09:00:03 +0000</pubDate>
+      <guid>https://mrturkmen.com/posts/rejection/</guid>
+      <description>Failures bring success</description>
+    </item>
     <item>
       <title>brief intro on DO-178; safety critical software development</title>
       <link>https://mrturkmen.com/posts/safety-critical-software/</link>
@@ -111,8 +118,7 @@
       <guid>https://mrturkmen.com/posts/introduction-to-ansible-notes/</guid>
       <description>&lt;p&gt;While watching video tutorial about Ansible, I took some notes and created following PDF file.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../../pdfs/20201205-introduction-to-ansible.pdf&#34;&gt;INTRODUCTION TO ANSIBLE HANDWRITTEN NOTES&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;../../images/ansible_hand_written_notes.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;../../images/ansible_hand_written_notes.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>youtubeto: download and save playlists to releases on Github</title>

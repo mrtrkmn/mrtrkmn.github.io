@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo -- 0.135.0</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 18 Jun 2023 10:20:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Dec 2024 09:00:03 +0000</lastBuildDate>
     <atom:link href="https://mrturkmen.com/tags/interview/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rejection </title>
+      <link>https://mrturkmen.com/posts/rejection/</link>
+      <pubDate>Sun, 08 Dec 2024 09:00:03 +0000</pubDate>
+      <guid>https://mrturkmen.com/posts/rejection/</guid>
+      <description>Failures bring success</description>
+    </item>
     <item>
       <title>from interview question to enlightenment: metaclasses in python </title>
       <link>https://mrturkmen.com/posts/metaclasses-python/</link>
