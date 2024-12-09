@@ -1,6 +1,6 @@
 ---
 title: "rejection "
-date: 2024-12-09T00:00:03+00:00
+date: 2024-12-09T09:00:03+00:00
 # weight: 1
 # aliases: ["/first"]
 tags: ["interview", "maang", "technical","python","programming","error"]
