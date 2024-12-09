@@ -45,7 +45,7 @@ Except for the unexpected, I have seen a discussion on quota and I would like to
 Except for the unexpected, I have seen a discussion on quota and I would like to quote an argument from there, I totally agree on this argument. 
 
 
-![MAANG](../../images/1684471555110.jpeg)
+![MAANG](../../images/interviewing-is-fun.png)
 
 
 
