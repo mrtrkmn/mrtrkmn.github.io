@@ -50,7 +50,7 @@ The last interview was composed of all areas in computer science; architecturing
 
 The outcomes from the failures that I experienced; invest in education,  keep trying, work, work, work, no easy solution.
 
-- Kept reading technical blogs and books 
+- Keep reading technical blogs and books 
 - Practicing coding exercises ( even though for some cases this is not that critical) 
 - Review code, check on popular Github repositories 
 - Understand the details, focus on small points
