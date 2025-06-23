@@ -1,6 +1,6 @@
 baseURL: "https://mrturkmen.com/"
 title: mrturkmen
-paginate: 10
+pagerSize: 10
 theme: PaperMod
 
 enableRobotsTXT: true
