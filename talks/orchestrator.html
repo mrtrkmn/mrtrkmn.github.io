@@ -737,15 +737,12 @@ func uint32ToIP(n uint32) net.IP {
 func maskToUint32(m net.IPMask) uint32 {
     return binary.BigEndian.Uint32(m)
 }</code></pre>
-                    <div class="sketch-box" style="text-align:center">
-                        10.42.0.0/16 örneği:
-                        base = 0x0A2A_0000 → 10.42.0.0
-                        bcast = 0x0A2A_FFFF → 10.42.255.255
-                        start = base + 30 → 10.42.0.30
-                        end = bcast - 1 → 10.42.255.254
-
-                        Aralık kontrolü: sadece <strong>uint32 karşılaştırması</strong>
-                        addr &lt;= base || addr &gt;= bcast → "IP subnet dışında"
+                    <div class="highlight-box" style="font-size:0.68em">
+                        <strong>Neden uint32?</strong> — IP adreslerini sayıya çevirince aralık kontrolü
+                        basit matematik olur:<br/>
+                        <code>10.42.0.0</code> → <code>175_046_656</code> &nbsp;|&nbsp;
+                        <code>10.42.255.255</code> → <code>175_112_191</code><br/>
+                        Adres bu iki sayı arasında mı? → Tek bir <code>if</code> yeter.
                     </div>
                 </section>
                 <section>
