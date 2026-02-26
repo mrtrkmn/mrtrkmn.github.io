@@ -1,2 +1,5 @@
 .DS_Store
 static/.DS_Store
+public/
+resources/
+.hugo_build.lock

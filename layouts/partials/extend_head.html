@@ -1,0 +1,87 @@
+{{- /* Head custom content area start */ -}}
+{{- /*     Insert any custom code (web-analytics, resources, etc.) - it will appear in the <head></head> section of every page. */ -}}
+{{- /*     Can be overwritten by partial with the same name in the global layouts. */ -}}
+<style>
+    .homepage-container {
+        display: flex;
+        gap: 2rem;
+        align-items: flex-start;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    .homepage-main {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .homepage-sidebar {
+        width: 300px;
+        flex-shrink: 0;
+        padding-top: 2rem;
+    }
+
+    .sidebar-section {
+        margin-bottom: 2rem;
+        padding: 1rem;
+        border-radius: 8px;
+        background: var(--entry);
+    }
+
+    .sidebar-section h3 {
+        margin: 0 0 0.75rem 0;
+        font-size: 1rem;
+        color: var(--primary);
+    }
+
+    .github-chart {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+    }
+
+    .pinned-repos {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .pinned-repos li {
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .pinned-repos li:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    .pinned-repos a {
+        color: var(--primary);
+        text-decoration: none;
+    }
+
+    .pinned-repos a:hover {
+        text-decoration: underline;
+    }
+
+    .pinned-repos p {
+        margin: 0.25rem 0 0 0;
+        font-size: 0.85rem;
+        color: var(--secondary);
+    }
+
+    @media (max-width: 768px) {
+        .homepage-container {
+            flex-direction: column;
+        }
+
+        .homepage-sidebar {
+            width: 100%;
+        }
+    }
+</style>
+{{- /* Head custom content area end */ -}}
