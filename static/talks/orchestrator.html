@@ -251,7 +251,7 @@
      SLIDE 3 — AGENDA
      ═══════════════════════════════════════════════════════════════ -->
             <section>
-                <h2>Gündem <span class="small dimmed">(~45 dk)</span></h2>
+                <h2>Gündem <span class="small dimmed">(~35 dk)</span></h2>
                 <ol style="font-size:0.75em">
                     <li>Neden Go? — Orkestrasyon için Go'nun avantajları</li>
                     <li>Go ekosistemi — Kubernetes'ten Terraform'a</li>
@@ -1319,6 +1319,44 @@ for res := range results {
                 <section>
                     <h2 class="go-feature-header"><span class="feature-tag">os/exec</span> Altyapı Uyumluluğu</h2>
                     <p class="go-blue">virsh, dosya sistemi, kriptografi — hepsi stdlib'de</p>
+                </section>
+                <section>
+                    <h3>Neden libvirt / virsh?</h3>
+                    <table style="font-size:0.65em">
+                        <thead>
+                            <tr>
+                                <th>Neden</th>
+                                <th>Açıklama</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Soyutlama</strong></td>
+                                <td>KVM, QEMU, Xen — tek API, standart XML</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CGo yok</strong></td>
+                                <td><code>virsh</code> CLI → statik binary korunur, C bağımlılığı sıfır</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Zarif geri çekilme</strong></td>
+                                <td><code>/dev/kvm</code> varsa <code>type='kvm'</code>, yoksa <code>type='qemu'</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cloud-init</strong></td>
+                                <td>ISO'yu CD-ROM olarak bağla → VM ilk açılışta otomatik yapılandırılır</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hibrit ağ</strong></td>
+                                <td>VM + container <em>aynı bridge ağında</em> — gerçek kernel izolasyonu</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="highlight-box" style="font-size:0.65em; margin-top:0.5em">
+                        Docker container'ları <strong>namespace</strong> ile izole eder, libvirt VM'leri
+                        <strong>ayrı kernel</strong> ile — ikisini birleştirmek bu projenin temel değeri.
+                    </div>
                 </section>
                 <section>
                     <h3>os/exec — Sistem Komutlarını Yönetmek</h3>
