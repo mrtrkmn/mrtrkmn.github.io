@@ -1797,125 +1797,16 @@ wireguard:
             </section>
 
             <!-- ═══════════════════════════════════════════════════════════════
-     APPENDIX — BONUS SLAYTLAR
+     XKCD
      ═══════════════════════════════════════════════════════════════ -->
             <section>
-                <section>
-                    <h2>Ek Slaytlar</h2>
-                    <p class="small dimmed">Detaylı sorular için bonus içerik</p>
-                </section>
-                <section>
-                    <h3>Üstel Geri Çekilme ile Image Çekme</h3>
-                    <p class="file-ref">📁 orch/dockerctl/client.go</p>
-                    <pre style="font-size:0.40em"><code class="language-go">func (c *Client) pullImageWithRetries(image string, retry int) error {
-    var lastErr error
-    for i := 0; i < retry; i++ {
-        err := c.c.PullImage(docker.PullImageOptions{
-            Repository:   image,
-            OutputStream: io.Discard,
-        }, docker.AuthConfiguration{})
-        if err == nil {
-            return nil
-        }
-        lastErr = err
-        time.Sleep(time.Duration(2<<i) * time.Second) // 2, 4, 8 sn
-    }
-    return fmt.Errorf("image çekme %s başarısız: %w", image, lastErr)
-}</code></pre>
-                    <p class="small dimmed">Bit kaydırma ile üstel gecikme: <code>2&lt;&lt;0=2</code>,
-                        <code>2&lt;&lt;1=4</code>, <code>2&lt;&lt;2=8</code>
-                    </p>
-                </section>
-                <section>
-                    <h3>Durum Yönetimi — JSON Dosyası</h3>
-                    <p class="file-ref">📁 orch/orchestrator.go</p>
-                    <pre style="font-size:0.38em"><code class="language-go">type state struct {
-    Network        string `json:"network"`
-    CreatedNetwork bool   `json:"created_network"`
-    DHCPContainer  string `json:"dhcp_container"`
-    DNSContainer   string `json:"dns_container"`
-    TempDir        string `json:"temp_dir"`
-    ContainerLabel string `json:"container_label"`
-}
-
-func writeState(s *state) error {
-    b, _ := json.MarshalIndent(s, "", "  ")
-    return os.WriteFile("orch-state.json", b, 0644)
-}
-
-// `down` komutu tam olarak `up`'ın oluşturduğunu temizler
-func readState() (*state, error) {
-    b, err := os.ReadFile("orch-state.json")
-    if err != nil { return nil, err }
-    var s state
-    json.Unmarshal(b, &s)
-    return &s, nil
-}</code></pre>
-                </section>
-                <section>
-                    <h3>VM XML Şablonu — Koşullu CD-ROM</h3>
-                    <p class="file-ref">📁 orch/libvirtctl/libvirt.go</p>
-                    <pre style="font-size:0.34em"><code class="language-go">// Cloud-init ISO varsa CD-ROM ekle, yoksa atla
-cdromXML := ""
-if cloudInitISO != "" {
-    cdromXML = fmt.Sprintf(`
-    &lt;disk type='file' device='cdrom'&gt;
-      &lt;driver name='qemu' type='raw'/&gt;
-      &lt;source file='%s'/&gt;
-      &lt;target dev='sdb' bus='sata'/&gt;
-      &lt;readonly/&gt;
-    &lt;/disk&gt;`, cloudInitISO)
-}
-
-xml := fmt.Sprintf(`&lt;domain type='%s'&gt;
-  &lt;name&gt;%s&lt;/name&gt;
-  &lt;memory unit='MiB'&gt;%d&lt;/memory&gt;
-  &lt;vcpu&gt;%d&lt;/vcpu&gt;
-  &lt;devices&gt;
-    &lt;disk type='file' device='disk'&gt;
-      &lt;source file='%s'/&gt;
-      &lt;target dev='vda' bus='virtio'/&gt;
-    &lt;/disk&gt;%s
-    &lt;interface type='bridge'&gt;
-      &lt;source bridge='%s'/&gt;
-    &lt;/interface&gt;
-  &lt;/devices&gt;
-&lt;/domain&gt;`, virtType(), name, memoryMB, vcpus,
-    imagePath, cdromXML, network)</code></pre>
-                    <div class="highlight-box" style="font-size:0.58em">
-                        <strong>Koşullu şablon:</strong> <code>cloudInitISO</code> boşsa CD-ROM XML'i atlanır →
-                        aynı fonksiyon hem ilk kurulum hem de sonraki başlatmalar için çalışır.
-                    </div>
-                </section>
-                <section>
-                    <h3>Go Struct Tag'leri — YAML ↔ Go</h3>
-                    <p class="file-ref">📁 config/config.go</p>
-                    <pre style="font-size:0.38em"><code class="language-go">type Config struct {
-    NetworkName string         `yaml:"network_name"`
-    Subnet      string         `yaml:"subnet"`
-    Containers  []ContainerCfg `yaml:"containers"`
-    VMs         []VMCfg        `yaml:"vms"`
-    Wireguard   struct {
-        Enabled  bool   `yaml:"enabled"`
-        PeerName string `yaml:"peer_name"`
-        Address  string `yaml:"address"`
-    } `yaml:"wireguard"`
-}
-
-func LoadConfig(path string) (*Config, error) {
-    data, err := os.ReadFile(path)
-    if err != nil { return nil, err }
-    var cfg Config
-    if err := yaml.Unmarshal(data, &cfg); err != nil {
-        return nil, err
-    }
-    return &cfg, nil
-}</code></pre>
-                    <div class="highlight-box" style="font-size:0.58em">
-                        <strong>Struct tag'leri</strong> = Go'nun deklaratif serileştirme yaklaşımı.
-                        <code>yaml.Unmarshal</code> tag'leri okuyarak YAML anahtarlarını doğrudan struct alanlarına eşler.
-                    </div>
-                </section>
+                <img src="https://imgs.xkcd.com/comics/containers.png"
+                     alt="xkcd #1988 — Containers"
+                     style="max-height:480px; border-radius:8px; background:#fff; padding:0.3em;" />
+                <p style="margin-top:0.6em; font-size:0.65em; color:#888;">
+                    <a href="https://xkcd.com/1988/" style="color:#5DC9E2;" target="_blank">xkcd.com/1988</a>
+                    — "Containers"
+                </p>
             </section>
 
         </div><!-- /slides -->
