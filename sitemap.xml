@@ -2,11 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://mrturkmen.com/tags/conference/</loc>
+    <lastmod>2026-02-26T20:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/docker/</loc>
+    <lastmod>2026-02-26T20:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/go/</loc>
+    <lastmod>2026-02-26T20:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/goroutine/</loc>
+    <lastmod>2026-02-26T20:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/infrastructure/</loc>
+    <lastmod>2026-02-26T20:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/libvirt/</loc>
+    <lastmod>2026-02-26T20:00:00+01:00</lastmod>
+  </url><url>
     <loc>https://mrturkmen.com/</loc>
-    <lastmod>2026-02-26T20:00:00+00:00</lastmod>
+    <lastmod>2026-02-26T20:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/networking/</loc>
+    <lastmod>2026-02-26T20:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/posts/orchestrating-virtual-hub-in-go/</loc>
+    <lastmod>2026-02-26T20:00:00+01:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/posts/</loc>
-    <lastmod>2026-02-26T20:00:00+00:00</lastmod>
+    <lastmod>2026-02-26T20:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/</loc>
+    <lastmod>2026-02-26T20:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/wireguard/</loc>
+    <lastmod>2026-02-26T20:00:00+01:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/error/</loc>
     <lastmod>2024-12-09T09:00:03+00:00</lastmod>
@@ -24,9 +54,6 @@
     <lastmod>2024-12-09T09:00:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/posts/rejection/</loc>
-    <lastmod>2024-12-09T09:00:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/tags/</loc>
     <lastmod>2024-12-09T09:00:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/technical/</loc>
@@ -242,9 +269,6 @@
     <loc>https://mrturkmen.com/posts/grpc-calls-with-evans/</loc>
     <lastmod>2020-08-08T09:19:03+00:00</lastmod>
   </url><url>
-    <loc>https://mrturkmen.com/tags/go/</loc>
-    <lastmod>2020-08-08T09:19:03+00:00</lastmod>
-  </url><url>
     <loc>https://mrturkmen.com/tags/grpc/</loc>
     <lastmod>2020-08-08T09:19:03+00:00</lastmod>
   </url><url>
@@ -255,9 +279,6 @@
     <lastmod>2020-08-08T09:19:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/cluster/</loc>
-    <lastmod>2020-07-10T16:35:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/tags/docker/</loc>
     <lastmod>2020-07-10T16:35:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/haproxy/</loc>
@@ -303,9 +324,6 @@
     <lastmod>2020-07-01T10:00:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/vps/</loc>
-    <lastmod>2020-07-01T10:00:03+00:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/tags/wireguard/</loc>
     <lastmod>2020-07-01T10:00:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/posts/vpn-kuralim/</loc>

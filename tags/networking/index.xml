@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Wireguard on mrturkmen</title>
-    <link>https://mrturkmen.com/tags/wireguard/</link>
-    <description>Recent content in Wireguard on mrturkmen</description>
+    <title>Networking on mrturkmen</title>
+    <link>https://mrturkmen.com/tags/networking/</link>
+    <description>Recent content in Networking on mrturkmen</description>
     <image>
       <title>mrturkmen</title>
       <url>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
@@ -12,27 +12,13 @@
     <generator>Hugo -- 0.146.0</generator>
     <language>en</language>
     <lastBuildDate>Thu, 26 Feb 2026 20:00:00 +0100</lastBuildDate>
-    <atom:link href="https://mrturkmen.com/tags/wireguard/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://mrturkmen.com/tags/networking/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Orchestrating a Virtual Hub in Go</title>
       <link>https://mrturkmen.com/posts/orchestrating-virtual-hub-in-go/</link>
       <pubDate>Thu, 26 Feb 2026 20:00:00 +0100</pubDate>
       <guid>https://mrturkmen.com/posts/orchestrating-virtual-hub-in-go/</guid>
       <description>Building a single Go binary to spin up containers, VMs, networking, and VPN from one YAML file — why it exists, where it fits, and what&amp;#39;s still missing.</description>
-    </item>
-    <item>
-      <title>wireguard: kendimize özel vpn kurulumu </title>
-      <link>https://mrturkmen.com/posts/vpn-kuralim/</link>
-      <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
-      <guid>https://mrturkmen.com/posts/vpn-kuralim/</guid>
-      <description>Decent open source, lightweight VPN solution.</description>
-    </item>
-    <item>
-      <title>wireguard: set it up in few steps</title>
-      <link>https://mrturkmen.com/posts/setup-free-vpn/</link>
-      <pubDate>Sat, 06 Jun 2020 10:00:03 +0000</pubDate>
-      <guid>https://mrturkmen.com/posts/setup-free-vpn/</guid>
-      <description>Decent open source, lightweight VPN solution.</description>
     </item>
   </channel>
 </rss>
