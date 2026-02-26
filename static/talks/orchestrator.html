@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orchestrating a Virtual Hub in Go — Ahmet Türkmen</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css" />
+    <style>
+        :root {
+            --r-heading-color: #00ADD8;
+            --r-link-color: #CE3263;
+            --r-selection-background-color: #00ADD8;
+        }
+
+        .reveal {
+            font-size: 32px;
+        }
+
+        .reveal h1,
+        .reveal h2,
+        .reveal h3 {
+            text-transform: none;
+        }
+
+        .reveal h1 {
+            font-size: 1.8em;
+        }
+
+        .reveal h2 {
+            font-size: 1.4em;
+        }
+
+        .reveal h3 {
+            font-size: 1.1em;
+            color: #5DC9E2;
+        }
+
+        .reveal pre {
+            font-size: 0.52em;
+            width: 95%;
+        }
+
+        .reveal pre code {
+            max-height: 520px;
+        }
+
+        .reveal ul,
+        .reveal ol {
+            font-size: 0.85em;
+        }
+
+        .reveal .small {
+            font-size: 0.7em;
+        }
+
+        .reveal .dimmed {
+            opacity: 0.6;
+        }
+
+        .reveal .go-blue {
+            color: #00ADD8;
+        }
+
+        .reveal .go-magenta {
+            color: #CE3263;
+        }
+
+        .reveal .highlight-box {
+            background: rgba(0, 173, 216, 0.1);
+            border-left: 4px solid #00ADD8;
+            padding: 0.5em 1em;
+            margin: 0.5em 0;
+            text-align: left;
+        }
+
+        .reveal .warn-box {
+            background: rgba(206, 50, 99, 0.1);
+            border-left: 4px solid #CE3263;
+            padding: 0.5em 1em;
+            margin: 0.5em 0;
+            text-align: left;
+        }
+
+        .reveal .columns {
+            display: flex;
+            gap: 2em;
+            align-items: flex-start;
+        }
+
+        .reveal .columns>* {
+            flex: 1;
+        }
+
+        .reveal table {
+            font-size: 0.72em;
+        }
+
+        .reveal table th {
+            color: #00ADD8;
+        }
+
+        .arch-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 173, 216, 0.4);
+            border-radius: 8px;
+            padding: 0.6em;
+            margin: 0.3em;
+            text-align: center;
+            font-size: 0.7em;
+        }
+
+        .flow-arrow {
+            font-size: 1.5em;
+            color: #00ADD8;
+        }
+
+        .feature-tag {
+            display: inline-block;
+            background: #00ADD8;
+            color: #000;
+            padding: 0.15em 0.6em;
+            border-radius: 4px;
+            font-size: 0.65em;
+            font-weight: bold;
+            margin-right: 0.3em;
+            vertical-align: middle;
+        }
+
+        .sketch-box {
+            border: 2px dashed rgba(0, 173, 216, 0.5);
+            border-radius: 12px;
+            padding: 1em;
+            margin: 0.5em auto;
+            font-family: monospace;
+            font-size: 0.6em;
+            text-align: left;
+            line-height: 1.6;
+            background: rgba(0, 0, 0, 0.3);
+            max-width: 90%;
+        }
+
+        .go-feature-header {
+            font-size: 1.3em;
+            margin-bottom: 0.3em;
+        }
+
+        .go-feature-header .feature-tag {
+            font-size: 0.5em;
+            vertical-align: middle;
+        }
+
+        .file-ref {
+            color: #888;
+            font-size: 0.6em;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- ═══════════════════════════════════════════════════════════════
+     SLIDE 1 — TITLE
+     ═══════════════════════════════════════════════════════════════ -->
+            <section>
+                <h1 style="margin-bottom:0.1em">Orchestrating a<br />Virtual Hub in Go</h1>
+                <p class="go-blue" style="font-size:0.9em">Container · VM · Ağ · VPN — tek bir binary</p>
+                <br />
+                <p><strong>Ahmet Türkmen</strong></p>
+                <p class="small dimmed">Systems Development Engineer — AWS<br />
+                    <a href="https://www.linkedin.com/in/mrturkmen/" style="color:#0A66C2">linkedin.com/in/mrturkmen</a>
+                    · <a href="https://github.com/mrtrkmn" style="color:#ccc">github.com/mrtrkmn</a><br />
+                    Gophers İstanbul · 2026
+                </p>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+     SLIDE 2 — ABOUT ME
+     ═══════════════════════════════════════════════════════════════ -->
+            <section>
+                <h2>$ whoami</h2>
+                <ul>
+                    <li>Systems Development Engineer @ <strong>AWS</strong></li>
+                    <li>Altyapı, otomasyon, dağıtık sistemler</li>
+                    <li>Go tutkunu — günlük araç ve servislerde Go kullanıyorum</li>
+                    <li><a href="https://www.linkedin.com/in/mrturkmen/" style="color:#0A66C2">LinkedIn: mrturkmen</a>
+                    </li>
+                    <li><span class="go-blue">github.com/mrtrkmn</span></li>
+                </ul>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+     SLIDE 3 — AGENDA
+     ═══════════════════════════════════════════════════════════════ -->
+            <section>
+                <h2>Gündem <span class="small dimmed">(~35 dk)</span></h2>
+                <ol style="font-size:0.75em">
+                    <li>Problem — neden kendi orkestratörümüzü yazalım?</li>
+                    <li>Go ekosistemi — Kubernetes'ten Terraform'a</li>
+                    <li>Mimari genel bakış</li>
+                    <li><span class="feature-tag">net</span> Go'nun ağ (networking) süper gücü</li>
+                    <li><span class="feature-tag">goroutine</span> Ucuz paralellik ile fan-out</li>
+                    <li><span class="feature-tag">channel</span> Güvenli iletişim ve hata toplama</li>
+                    <li><span class="feature-tag">os/exec</span> Altyapı uyumluluğu — virsh, crypto, static binary</li>
+                    <li><span class="feature-tag">sync</span> Thread-safe veri yapıları</li>
+                    <li>Demo &amp; Soru-Cevap</li>
+                </ol>
+                <br />
+                <div class="highlight-box" style="font-size:0.7em">
+                    Odak: Go <em>nasıl yazılır</em> değil — Go'nun <strong>hangi özellikleri</strong> altyapı yazılımını
+                    doğal ve güçlü kılıyor.
+                </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+     SECTION 1 — PROBLEM
+     ═══════════════════════════════════════════════════════════════ -->
+            <section>
+                <section>
+                    <h2>1 — Problem</h2>
+                    <p class="go-blue">Neden kendi orkestratörümüzü yazalım?</p>
+                </section>
+                <section>
+                    <h3>Demo / Lab Ortamları Zordur</h3>
+                    <div class="sketch-box" style="text-align:left; font-size:0.58em; line-height:1.5">
+                        <pre style="margin:0; background:transparent; font-size:1em; padding:0">
+┌─── Sunucu (tek makine) ───────────────────────────────────────────────┐
+│                                                                       │
+│   ┌──────────┐  ┌──────────┐  ┌──────────┐      ┌──────────────┐     │
+│   │  nginx   │  │  whoami  │  │ DHCP/DNS │      │   Debian VM  │     │
+│   │ :alpine  │  │  :latest │  │ container│      │  cloud-init  │     │
+│   │ .5.10    │  │ .5.11    │  │ .5.2/.3  │      │  1024MB RAM  │     │
+│   └────┬─────┘  └────┬─────┘  └────┬─────┘      └──────┬───────┘     │
+│        │             │             │                    │             │
+│   ─────┴─────────────┴─────────────┴────────────────────┴──────────   │
+│                Docker Bridge Ağı: 172.19.5.0/24                      │
+│                (subnet · gateway .5.1 · DHCP · DNS)                  │
+│   ────────────────────────────────────────────────────────────────    │
+│        │                                                             │
+│   ┌────┴──────────────────┐                                          │
+│   │  WireGuard VPN Tüneli │                                          │
+│   │  10.10.0.0/24         │                                          │
+│   │  X25519 anahtar çifti │                                          │
+│   └────┬──────────────────┘                                          │
+│        │                                                             │
+└────────┼─────────────────────────────────────────────────────────────┘
+         │
+    ┌────┴────┐
+    │ Uzak    │
+    │ İstemci │
+    └─────────┘
+</pre>
+                    </div>
+                    <div class="highlight-box">
+                        Hedef: <strong>tek bir komut</strong> ile eksiksiz bir hibrit ortam —
+                        <em>tekrarlanabilir</em>, <em>deklaratif</em>, <em>hızlı</em>.
+                    </div>
+                </section>
+                <section>
+                    <h3>Ne İstiyoruz?</h3>
+                    <pre><code class="language-bash">$ orchestrator up -c config.yaml
+# → Docker ağı oluşturuldu      (172.19.5.0/24)
+# → DHCP & DNS container'ları çalışıyor
+# → nginx, whoami container'ları çalışıyor
+# → Debian VM cloud-init ile boot edildi
+# → WireGuard istemci yapılandırması üretildi
+
+$ orchestrator status    # durum kontrolü
+$ orchestrator ssh demo-vm   # VM'e otomatik SSH
+$ orchestrator down      # temizleme</code></pre>
+                    <p class="small dimmed">Tek binary, sıfır bağımlılık, YAML ile tanımlanmış altyapı.</p>
+                </section>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+     SECTION 2 — GO EKOSİSTEMİ
+     ═══════════════════════════════════════════════════════════════ -->
+            <section>
+                <section>
+                    <h2>2 — Go Ekosistemi</h2>
+                    <p class="go-blue">Bulut altyapısının fiili dili</p>
+                </section>
+                <section>
+                    <h3>Go ile Yazılmış Kritik Projeler</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Proje</th>
+                                <th>Alan</th>
+                                <th>Neden Go?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Kubernetes</strong></td>
+                                <td>Orkestrasyon</td>
+                                <td>Goroutine'ler ile binlerce pod yönetimi</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Docker / containerd</strong></td>
+                                <td>Container</td>
+                                <td>OS syscall'larına doğrudan erişim</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Terraform</strong></td>
+                                <td>IaC</td>
+                                <td>Plugin mimarisi, statik binary dağıtımı</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Prometheus</strong></td>
+                                <td>İzleme</td>
+                                <td>Yüksek throughput metrik toplama</td>
+                            </tr>
+                            <tr>
+                                <td><strong>etcd</strong></td>
+                                <td>KV Store</td>
+                                <td>Raft consensus, net/rpc</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CockroachDB</strong></td>
+                                <td>Veritabanı</td>
+                                <td>Dağıtık SQL, channel ile koordinasyon</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Caddy</strong></td>
+                                <td>Web Server</td>
+                                <td>Otomatik TLS, net/http stdlib</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CoreDNS</strong></td>
+                                <td>DNS</td>
+                                <td>Plugin chain mimarisi</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <div class="highlight-box" style="font-size:0.75em">
+                        Ortak tema: hepsi <strong>ağ yoğun</strong>, <strong>eşzamanlı</strong> ve <strong>statik
+                            binary</strong> olarak dağıtılıyor.
+                    </div>
+                </section>
+                <section>
+                    <h3>Kubernetes Her Zaman Cevap Değildir</h3>
+                    <ul>
+                        <li>Bazen tek bir sunucuda <strong>VM + container</strong> birlikte gerekir</li>
+                        <li>Kubernetes <code>virsh</code> domain'lerini doğrudan yönetemez</li>
+                        <li><strong>~15 MB</strong> Go binary vs. tam bir k8s kümesi</li>
+                        <li><strong>Edge / lab / demo</strong> senaryoları için biçilmiş kaftan</li>
+                    </ul>
+                    <br />
+                    <pre><code class="language-bash"># Tek komut ile derleme — bağımlılık yok
+$ go build -o orchestrator .
+$ ls -lh orchestrator
+-rwxr-xr-x 1 user user 14M Feb 26 20:00 orchestrator
+
+# İstediğin platforma çapraz derleme
+$ GOOS=linux GOARCH=arm64 go build -o orchestrator-arm .</code></pre>
+                </section>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+     SECTION 3 — MİMARİ
+     ═══════════════════════════════════════════════════════════════ -->
+            <section>
+                <section>
+                    <h2>3 — Mimari Genel Bakış</h2>
+                </section>
+                <section>
+                    <h3>Paket Yapısı</h3>
+                    <pre><code class="language-text">orchestrator/
+├── main.go                # giriş noktası
+├── cmd/                   # CLI komutları (cobra)
+│   ├── root.go            # flag'ler, log ayarları
+│   ├── up.go / down.go    # yaşam döngüsü
+│   ├── ssh.go             # VM'e interaktif SSH
+│   └── log_hook.go        # goroutine-ID loglama
+├── config/                # YAML ayrıştırıcı
+├── orch/                  # çekirdek orkestratör
+│   ├── orchestrator.go    # Up / Down / Status
+│   ├── dockerctl/         # Docker API sarıcısı
+│   ├── libvirtctl/        # virsh CLI sarıcısı
+│   ├── imagebuilder/      # özel VM imaj oluşturucu
+│   └── ipool/             # thread-safe IP havuzu
+└── wg/                    # WireGuard yapılandırma üretici</code></pre>
+                </section>
+                <section>
+                    <h3>Bileşen Akışı</h3>
+                    <div style="display:flex; flex-direction:column; align-items:center; gap:0.3em;">
+                        <div class="arch-box" style="width:50%"><strong>CLI (Cobra)</strong><br />up · down · status ·
+                            ssh</div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="arch-box" style="width:60%"><strong>Orchestrator</strong><br />config · state · hata
+                            birleştirme</div>
+                        <div class="flow-arrow">↓</div>
+                        <div style="display:flex; gap:0.8em; width:90%; justify-content:center;">
+                            <div class="arch-box"><strong>dockerctl</strong><br />Docker API<br />container ·
+                                ağ<br />DHCP · DNS</div>
+                            <div class="arch-box"><strong>libvirtctl</strong><br />virsh CLI<br />VM ·
+                                cloud-init<br />KVM / QEMU</div>
+                            <div class="arch-box"><strong>ipool</strong><br />IP tahsisi<br />/8 → /30<br />thread-safe
+                            </div>
+                            <div class="arch-box"><strong>wg</strong><br />WireGuard<br />X25519 anahtar<br />config
+                                üretimi</div>
+                        </div>
+                    </div>
+                    <p class="small dimmed" style="margin-top:0.5em">Her kutu bağımsız bir Go paketi — açık
+                        bağımlılıklar, kolay test.</p>
+                </section>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+     SECTION 4 — GO ÖZELLİĞİ: NET PAKETİ
+     ═══════════════════════════════════════════════════════════════ -->
+            <section>
+                <section>
+                    <h2 class="go-feature-header"><span class="feature-tag">net</span> Go'nun Ağ Süper Gücü</h2>
+                    <p class="go-blue">IPv4 aritmetiği, CIDR ayrıştırma, broadcast hesaplama</p>
+                </section>
+                <section>
+                    <h3>CIDR Nedir?</h3>
+                    <div class="highlight-box" style="font-size:0.75em">
+                        <strong>CIDR</strong> (Classless Inter-Domain Routing) — IP adreslerini ve alt ağları
+                        tanımlamak için kullanılan bir gösterim biçimidir.
+                    </div>
+                    <div class="sketch-box" style="text-align:center; font-size:0.7em">
+                        172.19.5.0 / 24
+                        ────────── ──
+                        │ └── Ağ maskesi: ilk 24 bit ağ, kalan 8 bit host
+                        │ → 2⁸ - 2 = 254 kullanılabilir host adresi
+                        └── Ağ adresi (network address)
+
+                        Örnekler:
+                        ┌──────────────────┬─────────┬──────────────────────┐
+                        │ CIDR │ Maske │ Kullanılabilir Host │
+                        ├──────────────────┼─────────┼──────────────────────┤
+                        │ 192.168.1.0/24 │ /24 │ 254 │
+                        │ 10.42.0.0/16 │ /16 │ 65.534 │
+                        │ 10.0.0.0/8 │ /8 │ 16.777.214 │
+                        └──────────────────┴─────────┴──────────────────────┘
+                    </div>
+                    <p class="small dimmed">Nerede kullanılır? Ağ segmentasyonu, IP havuzu yönetimi, DHCP aralık
+                        tanımlama,
+                        firewall kuralları, routing tabloları — ağ programlamasının temel yapı taşı.</p>
+                </section>
+                <section>
+                    <h3>net.ParseCIDR — Subnet'i Anlamak</h3>
+                    <p class="file-ref">📁 orch/ipool/ipool.go — NewIPPool()</p>
+                    <pre><code class="language-go">func NewIPPool(cidr string) (*IPPool, error) {
+    ip, ipnet, err := net.ParseCIDR(cidr)
+    if err != nil {
+        return nil, err
+    }
+    ip4 := ip.To4()
+    if ip4 == nil {
+        return nil, errors.New("only IPv4 addresses are supported")
+    }
+
+    ones, bits := ipnet.Mask.Size()
+    if bits != 32 || ones > 30 {
+        return nil, errors.New("only IPv4 with prefix length /8 to /30 is supported")
+    }
+
+    netIP := ipnet.IP.To4()
+    base := ipToUint32(netIP)                  // ağ adresi → uint32
+    bcast := base | ^maskToUint32(ipnet.Mask)  // broadcast hesaplama
+
+    start := base + 30   // ilk 29 IP altyapıya ayrılmış
+    end   := bcast - 1   // son kullanılabilir host
+    // ...
+}</code></pre>
+                    <div class="highlight-box" style="font-size:0.75em">
+                        <code>net.ParseCIDR("172.19.5.0/24")</code> → üç değer döndürür:<br />
+                        <strong>1.</strong> IP adresi (<code>172.19.5.0</code>),
+                        <strong>2.</strong> Ağ bilgisi — ağ adresi + maske (<code>172.19.5.0/24</code>),
+                        <strong>3.</strong> Hata (geçersiz CIDR ise).<br />
+                        Tek satırda tüm subnet bilgisine sahip olursunuz.
+                    </div>
+                </section>
+                <section>
+                    <h3>IPv4 = uint32 — Anahtar İçgörü</h3>
+                    <p class="file-ref">📁 orch/ipool/ipool.go — yardımcı fonksiyonlar</p>
+                    <pre><code class="language-go">// Her IPv4 adresi aslında 32-bit'lik bir tam sayıdır
+func ipToUint32(ip net.IP) uint32 {
+    return binary.BigEndian.Uint32(ip.To4())
+}
+
+func uint32ToIP(n uint32) net.IP {
+    ip := make(net.IP, 4)
+    binary.BigEndian.PutUint32(ip, n)
+    return ip
+}
+
+func maskToUint32(m net.IPMask) uint32 {
+    return binary.BigEndian.Uint32(m)
+}</code></pre>
+                    <div class="sketch-box" style="text-align:center">
+                        10.42.0.0/16 örneği:
+                        base = 0x0A2A_0000 → 10.42.0.0
+                        bcast = 0x0A2A_FFFF → 10.42.255.255
+                        start = base + 30 → 10.42.0.30
+                        end = bcast - 1 → 10.42.255.254
+
+                        Aralık kontrolü: sadece <strong>uint32 karşılaştırması</strong>
+                        addr &lt;= base || addr &gt;= bcast → "IP subnet dışında"
+                    </div>
+                </section>
+                <section>
+                    <h3>Broadcast Hesaplama — Gerçek Kod</h3>
+                    <p class="file-ref">📁 orch/dockerctl/client.go — EnsureDHCPAndDNS()</p>
+                    <pre><code class="language-go">_, ipNet, err := net.ParseCIDR(pool.Subnet())
+// ...
+netIP := ipNet.IP.To4()
+mask := ipNet.Mask
+
+// Broadcast = ağ adresi OR (NOT maske)
+broadcastBytes := make([]byte, 4)
+for i := 0; i < 4; i++ {
+    broadcastBytes[i] = netIP[i] | ^mask[i]
+}
+broadcast := net.IP(broadcastBytes).String()
+
+// Subnet bilgisinden DHCP yapılandırması üret
+maskStr := fmt.Sprintf("%d.%d.%d.%d", mask[0], mask[1], mask[2], mask[3])
+dhcpIP    := pool.FormatIP(2)    // x.x.x.2  → DHCP sunucu
+dnsIP     := pool.FormatIP(3)    // x.x.x.3  → DNS sunucu
+minRange  := pool.FormatIP(4)    // x.x.x.4  → DHCP aralık başı
+maxRange  := pool.FormatIP(pool.BroadcastOffset() - 1)</code></pre>
+                    <div class="highlight-box" style="font-size:0.7em">
+                        <strong>Ne yapıyor bu kod?</strong> Subnet CIDR'ından (ör: <code>172.19.5.0/24</code>)
+                        DHCP sunucusunun ihtiyaç duyduğu tüm bilgileri çıkartıyor:<br />
+                        <strong>1.</strong> Broadcast adresini hesapla → <code>172.19.5.255</code> (ağa yayın
+                        adresi)<br />
+                        <strong>2.</strong> Maske string'e çevir → <code>255.255.255.0</code> (DHCP config'e
+                        yazılacak)<br />
+                        <strong>3.</strong> Sabit IP'leri ata → <code>.2</code> = DHCP sunucu, <code>.3</code> = DNS
+                        sunucu<br />
+                        <strong>4.</strong> Dinamik aralığı belirle → <code>.4</code> ile <code>.254</code> arası
+                        istemcilere verilecek<br />
+                        Tüm bu hesaplamalar Go'nun <code>net</code> + <code>encoding/binary</code> paketleri ile —
+                        harici kütüphane sıfır.
+                    </div>
+                </section>
+                <section>
+                    <h3>DHCP Config Üretimi — fmt.Sprintf ile Şablon</h3>
+                    <p class="file-ref">📁 orch/dockerctl/client.go</p>
+                    <pre><code class="language-go">dhcpConf := fmt.Sprintf(`default-lease-time 600;
+max-lease-time 7200;
+authoritative;
+option domain-name-servers %s;
+option routers %s;
+
+subnet %s netmask %s {
+  range %s %s;
+  option subnet-mask %s;
+  option broadcast-address %s;
+}
+`, dnsIP, gatewayIP, networkAddr, maskStr,
+   minRange, maxRange, maskStr, broadcast)
+
+if err := os.WriteFile(dhcpConfPath, []byte(dhcpConf), 0o644); err != nil {
+    return "", "", "", err
+}</code></pre>
+                    <p class="small dimmed">Harici şablon motoru yok — Go'nun backtick string'leri +
+                        <code>fmt.Sprintf</code> yeterli.
+                    </p>
+                </section>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+     SECTION 5 — GO ÖZELLİĞİ: GOROUTINE'LER
+     ═══════════════════════════════════════════════════════════════ -->
+            <section>
+                <section>
+                    <h2 class="go-feature-header"><span class="feature-tag">goroutine</span> Ucuz Paralellik</h2>
+                    <p class="go-blue">Container + VM'leri eşzamanlı provizyon etmek</p>
+                </section>
+                <section>
+                    <h3>Neden Goroutine?</h3>
+                    <div class="columns">
+                        <div>
+                            <p style="color:#CE3263; font-weight:bold">Sıralı (Yavaş)</p>
+                            <div class="sketch-box">
+                                Container 1 ═══►
+                                Container 2 ═══►
+                                (bekle)
+                                VM 1 ═══════►
+                                VM 2 ═══════►
+                                (bekle)
+                                ──────────────────
+                                Toplam: Σ hepsi
+                            </div>
+                        </div>
+                        <div>
+                            <p style="color:#00ADD8; font-weight:bold">Paralel (Hızlı)</p>
+                            <div class="sketch-box">
+                                Container 1 ═══► ┐
+                                Container 2 ═══► ┤ paralel
+                                VM 1 ═══════► ┤
+                                VM 2 ═══════► ┘
+                                ──────────────────
+                                Toplam: max(hepsi)
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="highlight-box" style="font-size:0.75em">
+                        Goroutine başlangıç maliyeti: <strong>~2 KB</strong> yığın belleği. Thread: <strong>~1
+                            MB</strong>.<br />
+                        10.000 goroutine ≈ 20 MB. 10.000 thread ≈ 10 GB.
+                    </div>
+                </section>
+                <section>
+                    <h3>İki Seviyeli Fan-Out — Gerçek Kod</h3>
+                    <div class="highlight-box" style="font-size:0.7em">
+                        <strong>"İki seviyeli fan-out" ne demek?</strong><br />
+                        <strong>Fan-out</strong> = tek bir noktadan birden fazla paralel işe dallanma (yelpaze gibi
+                        açılma).<br />
+                        <strong>Seviye 1:</strong> Ana goroutine → 2 gözetici goroutine başlatır: biri <em>tüm
+                            container'lar</em>, diğeri <em>tüm VM'ler</em> için.<br />
+                        <strong>Seviye 2:</strong> Her gözetici kendi içinde → her container/VM için ayrı bir goroutine
+                        daha başlatır.<br />
+                        Neden? Container'lar <em>birbirini beklemesin</em>, VM'ler de <em>container'ları
+                            beklemesin</em>.
+                        İki seviye sayesinde hem <strong>türler arası</strong> hem <strong>tür içi</strong> paralellik
+                        sağlanır.
+                    </div>
+                    <p class="file-ref">📁 orch/orchestrator.go — Up() metodu</p>
+                    <pre style="font-size:0.48em"><code class="language-go">// ── Container ve VM'leri eşzamanlı başlat ──
+var (
+    topWG   sync.WaitGroup
+    topErrs []error
+    topMu   sync.Mutex        // topErrs'i korur
+)
+
+// Seviye 1: Container'lar ‖ VM'ler (iki üst-seviye goroutine)
+topWG.Add(1)
+go func() {                                    // ── Container gözetici ──
+    defer topWG.Done()
+    var wg sync.WaitGroup
+    errChan := make(chan error, len(o.cfg.Containers))
+    for _, c := range o.cfg.Containers {
+        wg.Add(1)
+        go func(container config.ContainerCfg) { // Seviye 2: her container
+            defer wg.Done()
+            // IP tahsis et, container başlat...
+        }(c)
+    }
+    wg.Wait()
+    close(errChan)
+    // hataları topla → topErrs
+}()
+
+topWG.Add(1)
+go func() {                                    // ── VM gözetici ──
+    defer topWG.Done()
+    // aynı kalıp: her VM için goroutine
+}()
+
+topWG.Wait()                                   // bariyer — hepsi bitene kadar bekle</code></pre>
+                </section>
+                <section>
+                    <h3>Goroutine İçinde Goroutine — Detay</h3>
+                    <p class="file-ref">📁 orch/orchestrator.go — container goroutine'leri</p>
+                    <pre><code class="language-go">for _, c := range o.cfg.Containers {
+    wg.Add(1)
+    go func(container config.ContainerCfg) {
+        defer wg.Done()
+
+        entry := o.log.WithField("container", container.Name)
+
+        // Statik IP varsa rezerve et, yoksa rastgele tahsis et
+        var usedIP string
+        if container.IP != "" {
+            usedIP = container.IP
+            if err := o.pool.ReserveIP(usedIP); err != nil {
+                entry.WithError(err).Warn("statik IP rezerve edilemedi")
+            }
+        } else {
+            ip, err := o.pool.RandomIP()
+            if err != nil {
+                errChan <- fmt.Errorf("IP tahsisi %s: %w", container.Name, err)
+                return
+            }
+            usedIP = ip
+        }
+
+        if err := o.dc.RunContainer(ctx, container.Name,
+            container.Image, container.Cmd, container.Env,
+            label, usedIP, netName); err != nil {
+            errChan <- fmt.Errorf("container %s: %w", container.Name, err)
+            return
+        }
+        entry.Info("container başlatıldı")
+    }(c)   // ← closure tuzağını önlemek için parametre olarak geç
+}</code></pre>
+                    <div class="warn-box" style="font-size:0.68em">
+                        ⚠️ <strong>Closure tuzağı nedir?</strong><br />
+                        Bir <code>for</code> döngüsü içinde <code>go func() { ... }()</code> başlattığınızda,
+                        fonksiyon dıştaki <code>c</code> değişkenine <em>referansla</em> bağlanır ("closure" =
+                        kapanış).<br />
+                        Sorun: goroutine çalışmaya başladığında döngü çoktan ilerlemiştir,
+                        tüm goroutine'ler <strong>son değeri</strong> görür — yanlış container başlatılır!<br /><br />
+                        <strong>Çözüm:</strong>
+                        <code>go func(<span style="color:#00ADD8">container</span> ContainerCfg) { ... }(<span style="color:#00ADD8">c</span>)</code><br />
+                        Döngü değişkenini <strong>parametre olarak geçirince</strong> o anki değer kopyalanır,
+                        her goroutine kendi bağımsız kopyasıyla çalışır.
+                        <br /><br />
+                        <em>Not: Go 1.22+ bu sorunu otomatik çözer, ancak eski sürümlerle uyumluluk için bu kalıp hâlâ
+                            önerilir.</em>
+                    </div>
+                </section>
+                <section>
+                    <h3>sync.WaitGroup — Bariyer Kalıbı</h3>
+                    <div class="sketch-box" style="text-align:left; font-size:0.6em; line-height:1.5">
+                        <pre style="margin:0; background:transparent; font-size:1em; padding:0">
+  main goroutine                   sayaç = 0
+       │
+       ├── wg.Add(1) ──────────────sayaç = 1
+       │   └── go func A()
+       │
+       ├── wg.Add(1) ──────────────sayaç = 2
+       │   └── go func B()
+       │
+       ├── wg.Add(1) ──────────────sayaç = 3
+       │   └── go func C()
+       │
+       ▼
+   wg.Wait()  ◄── blokla ─────────sayaç &gt; 0 olduğu sürece bekle
+       ·
+       ·  (A bitti → wg.Done()) ───sayaç = 2
+       ·  (C bitti → wg.Done()) ───sayaç = 1
+       ·  (B bitti → wg.Done()) ───sayaç = 0  ✓
+       ·
+       ▼
+   devam et!  ◄── sayaç = 0 ───── bariyer açıldı
+</pre>
+                    </div>
+                    <div class="highlight-box" style="font-size:0.7em">
+                        <strong>Bariyer kalıbı:</strong> <code>WaitGroup</code> dahili bir sayaç tutar.
+                        <code>Add(1)</code> artırır, <code>Done()</code> azaltır, <code>Wait()</code> sayaç sıfıra
+                        düşene kadar bloklar.
+                        Goroutine'ler hangi sırayla biterse bitsin — önemli olan hepsinin bitmesi.
+                    </div>
+                    <pre><code class="language-go">var wg sync.WaitGroup
+wg.Add(len(services))          // sayacı artır
+for _, svc := range services {
+    go func() {
+        defer wg.Done()        // bitince sayacı azalt
+        // iş yap...
+    }()
+}
+wg.Wait()                      // sayaç 0 olana kadar bekle</code></pre>
+                </section>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+     SECTION 6 — GO ÖZELLİĞİ: CHANNEL'LAR
+     ═══════════════════════════════════════════════════════════════ -->
+            <section>
+                <section>
+                    <h2 class="go-feature-header"><span class="feature-tag">channel</span> Güvenli İletişim</h2>
+                    <p class="go-blue">Goroutine'ler arası hata toplama ve senkronizasyon</p>
+                </section>
+                <section>
+                    <h3>Buffered Error Channel — Gerçek Kod</h3>
+                    <p class="file-ref">📁 orch/orchestrator.go</p>
+                    <pre><code class="language-go">// Tamponlu kanal: her goroutine kendi hatasını bloklanmadan gönderir
+errChan := make(chan error, len(o.cfg.Containers))
+
+go func(container config.ContainerCfg) {
+    defer wg.Done()
+    if err := o.dc.RunContainer(ctx, ...); err != nil {
+        errChan <- fmt.Errorf("container %s: %w", container.Name, err)
+        return      // ← kanal tamponlu olduğu için bloklanmaz
+    }
+}(c)
+
+// Tüm goroutine'ler bittikten sonra kanalı kapat
+wg.Wait()
+close(errChan)
+
+// range ile tüm hataları topla
+var errs []error
+for err := range errChan {        // kanal kapanana kadar oku
+    errs = append(errs, err)
+}
+if len(errs) > 0 {
+    return errors.Join(errs...)   // Go 1.20+ — birden fazla hatayı birleştir
+}</code></pre>
+                </section>
+                <section>
+                    <h3>Channel Akışı — Görsel</h3>
+                    <div class="sketch-box" style="text-align:center; font-size:0.65em">
+                        goroutine-1 ──errChan<──── goroutine-2 │ │ ▼ ▼ errChan <- err₁ errChan <- err₂ │ │
+                            └──────────┬───────────────┘ ▼ wg.Wait() close(errChan) │ ▼ for err :=range errChan {
+                            errs=append(errs, err) } │ ▼ errors.Join(errs...) </div>
+                            <div class="highlight-box" style="font-size:0.7em">
+                                <strong>Neden buffered?</strong> — <code>make(chan error, N)</code> ile N goroutine hata
+                                gönderebilir
+                                ve hiçbiri bloklanmaz. Unbuffered olsaydı her gönderim bir alıcı beklerdi.
+                            </div>
+                </section>
+                <section>
+                    <h3>select — Üç Yollu Bekleme</h3>
+                    <p class="file-ref">📁 orch/dockerctl/client.go — waitForRunning()</p>
+                    <pre><code class="language-go">func (c *Client) waitForRunning(ctx context.Context,
+    containerID string, timeout time.Duration) error {
+
+    timer := time.NewTimer(timeout)
+    defer timer.Stop()
+
+    ticker := time.NewTicker(500 * time.Millisecond)
+    defer ticker.Stop()
+
+    for {
+        select {
+        case <-ctx.Done():                              // ① iptal
+            return ctx.Err()
+        case <-timer.C:                                 // ② zaman aşımı
+            return errors.New("container başlatma zaman aşımı")
+        case <-ticker.C:                                // ③ yoklama
+            ins, err := c.c.InspectContainer(containerID)
+            if err != nil { continue }
+            if ins.State.Running { return nil }
+        }
+    }
+}</code></pre>
+                    <div class="highlight-box" style="font-size:0.7em">
+                        <code>select</code> = Go'nun multiplexer'ı. Birden fazla channel'ı aynı anda dinler,
+                        hangisi hazırsa o dalı çalıştırır. <strong>Context iptali</strong> ücretsiz gelir.
+                    </div>
+                </section>
+                <section>
+                    <h3>DHCP + DNS — Paralel Servis Başlatma</h3>
+                    <p class="file-ref">📁 orch/dockerctl/client.go — EnsureDHCPAndDNS()</p>
+                    <pre><code class="language-go">type serviceResult struct {
+    name string
+    id   string
+    err  error
+}
+
+results := make(chan serviceResult, len(services))
+var wg sync.WaitGroup
+wg.Add(len(services))
+for _, svc := range services {
+    svcCopy := svc
+    go func() {
+        defer wg.Done()
+        id, svcErr := c.createStartAndWait(ctx, svcCopy.opts, 30*time.Second)
+        results <- serviceResult{name: svcCopy.name, id: id, err: svcErr}
+    }()
+}
+wg.Wait()
+close(results)
+
+// Sonuçları topla — başarılı ve başarısız olanları ayır
+for res := range results {
+    if res.err != nil {
+        errs = append(errs, fmt.Errorf("%s: %w", res.name, res.err))
+    }
+}</code></pre>
+                    <p class="small dimmed">Channel struct göndermek — sadece error değil, zengin sonuç nesneleri taşır.
+                    </p>
+                </section>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+     SECTION 7 — GO ÖZELLİĞİ: ALTYAPI UYUMLULUĞU
+     ═══════════════════════════════════════════════════════════════ -->
+            <section>
+                <section>
+                    <h2 class="go-feature-header"><span class="feature-tag">os/exec</span> Altyapı Uyumluluğu</h2>
+                    <p class="go-blue">virsh, dosya sistemi, kriptografi — hepsi stdlib'de</p>
+                </section>
+                <section>
+                    <h3>os/exec — Sistem Komutlarını Yönetmek</h3>
+                    <p class="file-ref">📁 orch/libvirtctl/libvirt.go — DefineVM()</p>
+                    <pre><code class="language-go">func (c *Client) DefineVM(name, imagePath, cloudInitISO,
+    network string, memoryMB, vcpus int) error {
+
+    // XML şablonunu Go string'i olarak oluştur
+    xml := fmt.Sprintf(`&lt;domain type='%s'&gt;
+  &lt;name&gt;%s&lt;/name&gt;
+  &lt;memory unit='MiB'&gt;%d&lt;/memory&gt;
+  &lt;vcpu&gt;%d&lt;/vcpu&gt;
+  ...
+&lt;/domain&gt;`, virtType(), name, memoryMB, vcpus, ...)
+
+    // virsh'e stdin üzerinden XML gönder
+    cmd := exec.Command("virsh", "define", "/dev/stdin")
+    cmd.Stdin = strings.NewReader(xml)   // ← string → io.Reader
+    output, err := cmd.CombinedOutput()
+    if err != nil {
+        return fmt.Errorf("VM tanımla: %w, çıktı: %s", err, output)
+    }
+    return nil
+}</code></pre>
+                    <div class="highlight-box" style="font-size:0.7em">
+                        <code>exec.Command</code> + <code>cmd.Stdin</code> = harici araca veri boru hattı.
+                        Geçici dosya yok, pipe yönetimi yok.
+                    </div>
+                </section>
+                <section>
+                    <h3>os.Stat — Ortam Algılama</h3>
+                    <p class="file-ref">📁 orch/libvirtctl/libvirt.go</p>
+                    <pre><code class="language-go">// KVMAvailable — donanım sanallaştırma desteğini kontrol et
+func KVMAvailable() bool {
+    _, err := os.Stat("/dev/kvm")
+    return err == nil              // dosya varsa KVM kullanılabilir
+}
+
+// Çalışma ortamına göre otomatik strateji seçimi
+func virtType() string {
+    if KVMAvailable() {
+        return "kvm"               // donanım hızlandırma ✓
+    }
+    return "qemu"                  // yazılım emülasyonu (örn: AWS EC2)
+}</code></pre>
+                    <p class="file-ref">📁 orch/orchestrator.go — cloud-init ISO algılama</p>
+                    <pre><code class="language-go">// Dosya var mı kontrol et — yoksa CD-ROM ekleme
+cloudInitISO := filepath.Join(
+    filepath.Dir(vm.Image), "..", "cloud-init", "cloud-init.iso",
+)
+if _, err := os.Stat(cloudInitISO); err != nil {
+    cloudInitISO = ""   // cloud-init bulunamadı → CD-ROM'u atla
+}</code></pre>
+                    <div class="warn-box" style="font-size:0.7em">
+                        ⚠️ Bulut VM'lerinin çoğunda <code>/dev/kvm</code> yoktur — aracınız çökmek yerine
+                        <strong>zarif bir şekilde geri çekilmelidir</strong>.
+                    </div>
+                </section>
+                <section>
+                    <h3>crypto — Saf Go ile WireGuard Anahtarları</h3>
+                    <p class="file-ref">📁 wg/wg.go — GenerateClientConfig()</p>
+                    <pre><code class="language-go">func GenerateClientConfig(peerName, address string) error {
+    // 32 rastgele byte üret — Go'nun crypto/rand paketi
+    var priv [32]byte
+    if _, err := rand.Read(priv[:]); err != nil {
+        return fmt.Errorf("rastgele okuma: %w", err)
+    }
+
+    // RFC 7748'e göre clamp — X25519 için gerekli
+    priv[0] &= 248
+    priv[31] &= 127
+    priv[31] |= 64
+
+    // Genel anahtarı hesapla — saf Go, CGo yok, wg CLI yok
+    var pub [32]byte
+    curve25519.ScalarBaseMult(&pub, &priv)
+
+    privEncoded := base64.StdEncoding.EncodeToString(priv[:])
+    pubEncoded  := base64.StdEncoding.EncodeToString(pub[:])
+
+    // Yapılandırma dosyası yaz — 0600 izinleri ile
+    return os.WriteFile(
+        fmt.Sprintf("wg-client-%s.conf", peerName),
+        []byte(conf), 0600)
+}</code></pre>
+                    <div class="highlight-box" style="font-size:0.7em">
+                        <code>crypto/rand</code> + <code>golang.org/x/crypto/curve25519</code> =
+                        harici araç olmadan VPN anahtar üretimi. Static binary'de her şey dahil.
+                    </div>
+                </section>
+                <section>
+                    <h3>fmt.Errorf("%w") — Hata Sarmalama Zinciri</h3>
+                    <p class="file-ref">📁 Tüm paketlerde kullanılan kalıp</p>
+                    <pre><code class="language-go">// Her katmanda bağlam ekle
+if err := o.dc.CreateNetwork(name, subnet, driver); err != nil {
+    return fmt.Errorf("ağ oluştur: %w", err)
+}
+
+// Çağıran hata zincirini inceleyebilir
+if errors.Is(err, os.ErrPermission) {
+    // izin hatası — özel işlem
+}
+
+// Belirli bir tipe unwrap et
+var netErr *net.OpError
+if errors.As(err, &netErr) {
+    // ağ hatası — özel işlem
+}
+
+// Go 1.20+: birden fazla hatayı birleştir
+return errors.Join(err1, err2, err3)</code></pre>
+                    <p class="small dimmed">Her hata çağrı yığınının <em>hikayesini</em> taşır:
+                        <code>"provizyon başarısız: container nginx: ağa bağlan: connection refused"</code>
+                    </p>
+                </section>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+     SECTION 8 — GO ÖZELLİĞİ: SYNC & THREAD SAFETY
+     ═══════════════════════════════════════════════════════════════ -->
+            <section>
+                <section>
+                    <h2 class="go-feature-header"><span class="feature-tag">sync</span> Thread-Safe Veri Yapıları</h2>
+                    <p class="go-blue">Mutex ile IP havuzu, ikili strateji</p>
+                </section>
+                <section>
+                    <h3>sync.Mutex — IP Havuzunu Korumak</h3>
+                    <p class="file-ref">📁 orch/ipool/ipool.go</p>
+                    <pre><code class="language-go">type IPPool struct {
+    subnet string
+    base   uint32
+    bcast  uint32
+    start  uint32
+    end    uint32
+    mutex  sync.Mutex              // ← tüm erişimi seri hale getirir
+
+    avail  map[uint32]struct{}     // küçük subnet (≤1024): hazır küme
+    used   map[uint32]struct{}     // büyük subnet: sadece kullanılanlar
+    lazy   bool                    // host sayısı > 1024 ise true
+    rand   *rand.Rand
+}
+
+func (p *IPPool) RandomIP() (string, error) {
+    p.mutex.Lock()                 // kilitle
+    defer p.mutex.Unlock()         // ne olursa olsun kilidi bırak
+
+    if p.lazy {
+        return p.randomIPLazy()    // büyük havuz: rastgele deneme
+    }
+    return p.randomIPEager()       // küçük havuz: hazır kümeden seç
+}</code></pre>
+                </section>
+                <section>
+                    <h3>İkili Strateji — Neden?</h3>
+                    <div class="highlight-box" style="font-size:0.7em">
+                        <strong>İkili strateji ne demek?</strong> IP havuzunun büyüklüğüne göre farklı veri yapısı
+                        kullanmak:<br />
+                        <strong>Eager (hevesli):</strong> Küçük subnet'lerde (≤1024 host) tüm IP'leri baştan bir
+                        <code>map</code>'e doldur.
+                        Tahsis = map'ten rastgele sil. Hızlı, çünkü az eleman.<br />
+                        <strong>Lazy (tembel):</strong> Büyük subnet'lerde (>1024 host) map'e <em>sadece
+                            kullanılanları</em> yaz.
+                        Tahsis = rastgele bir IP üret, kullanılmış mı kontrol et, değilse al.
+                        16 milyon IP'yi baştan belleğe yüklemek yerine ihtiyaç oldukça çalışır.<br />
+                        <em>Veri yapısını probleme uyarla — one size fits all yerine akıllı seçim.</em>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>CIDR</th>
+                                <th>Host Sayısı</th>
+                                <th>Naif map yaklaşımı</th>
+                                <th>Strateji</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>192.168.1.0<strong>/24</strong></td>
+                                <td>224</td>
+                                <td>✅ sorun yok</td>
+                                <td>Eager (hazır küme)</td>
+                            </tr>
+                            <tr>
+                                <td>10.42.0.0<strong>/16</strong></td>
+                                <td>65.505</td>
+                                <td>⚠️ 65K giriş</td>
+                                <td>Lazy (deneme-yanılma)</td>
+                            </tr>
+                            <tr>
+                                <td>10.0.0.0<strong>/8</strong></td>
+                                <td>16.777.185</td>
+                                <td>❌ 5 sn, ~1 GB</td>
+                                <td>Lazy (deneme-yanılma)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <pre><code class="language-go">// Lazy strateji: rastgele başla, doğrusal tara
+func (p *IPPool) randomIPLazy() (string, error) {
+    total := p.end - p.start + 1
+    if uint32(len(p.used)) >= total {
+        return "", errors.New("IP kalmadı")
+    }
+    offset := uint32(p.rand.Int63n(int64(total)))
+    for i := uint32(0); i < total; i++ {
+        candidate := p.start + (offset+i)%total
+        if _, taken := p.used[candidate]; !taken {
+            p.used[candidate] = struct{}{}
+            return uint32ToIP(candidate).String(), nil
+        }
+    }
+    return "", errors.New("IP kalmadı")
+}</code></pre>
+                    <div class="highlight-box" style="font-size:0.7em">
+                        10.0.0.0/8 havuz oluşturma: <strong>5.1 sn → 0.004 sn</strong> (1275× hızlanma)
+                    </div>
+                </section>
+                <section>
+                    <h3>Eşzamanlılık Testi — 100 Goroutine</h3>
+                    <p class="file-ref">📁 orch/ipool/ipool_test.go</p>
+                    <pre><code class="language-go">func TestPool_ConcurrentAccess(t *testing.T) {
+    p, err := NewIPPool("172.18.5.0/24")
+    if err != nil {
+        t.Fatalf("havuz oluştur: %v", err)
+    }
+
+    var wg sync.WaitGroup
+    errs := make(chan error, 100)
+
+    for i := 0; i < 100; i++ {
+        wg.Add(1)
+        go func() {
+            defer wg.Done()
+            ip, err := p.RandomIP()    // eşzamanlı tahsis
+            if err != nil {
+                errs <- err
+                return
+            }
+            if err := p.ReleaseIP(ip); err != nil {  // eşzamanlı bırakma
+                errs <- err
+            }
+        }()
+    }
+
+    wg.Wait()
+    close(errs)
+    for err := range errs {
+        t.Errorf("eşzamanlılık hatası: %v", err)
+    }
+}</code></pre>
+                    <p class="small dimmed"><code>go test -race ./orch/ipool/</code> — race detector ile doğrula.</p>
+                </section>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+     SECTION 9 — GOROUTINE LOGLAMA
+     ═══════════════════════════════════════════════════════════════ -->
+            <section>
+                <section>
+                    <h2>Bonus: Goroutine-ID ile Loglama</h2>
+                    <p class="go-blue">Paralel çalışmayı gözlemlemek</p>
+                </section>
+                <section>
+                    <h3>runtime.Stack ile Goroutine ID Çıkarmak</h3>
+                    <p class="file-ref">📁 cmd/log_hook.go</p>
+                    <pre><code class="language-go">// goroutineHook — logrus'a goroutine ID ekleyen hook
+type goroutineHook struct{}
+
+func (h *goroutineHook) Levels() []log.Level { return log.AllLevels }
+
+func (h *goroutineHook) Fire(entry *log.Entry) error {
+    entry.Data["goroutine"] = goID()
+    return nil
+}
+
+func goID() string {
+    var buf [64]byte
+    // runtime.Stack: "goroutine 42 [running]:\n..." yazar
+    n := runtime.Stack(buf[:], false)
+    s := string(buf[:n])
+
+    const prefix = "goroutine "
+    s = s[len(prefix):]
+    for i := 0; i < len(s); i++ {
+        if s[i] == ' ' {
+            if _, err := strconv.Atoi(s[:i]); err == nil {
+                return s[:i]          // "42"
+            }
+            break
+        }
+    }
+    return "?"
+}</code></pre>
+                </section>
+                <section>
+                    <h3>Log Çıktısı — Paralelliğin Kanıtı</h3>
+                    <pre><code class="language-text">INFO[0001] container başlatılıyor  container=nginx    goroutine=34
+INFO[0001] VM tanımlanıyor         vm=demo-vm         goroutine=38
+INFO[0001] container başlatılıyor  container=whoami   goroutine=36
+INFO[0002] container başlatıldı    container=nginx    goroutine=34
+INFO[0002] VM başlatılıyor         vm=demo-vm         goroutine=38
+INFO[0003] container başlatıldı    container=whoami   goroutine=36
+INFO[0004] VM başlatıldı           vm=demo-vm         goroutine=38</code></pre>
+                    <div class="highlight-box" style="font-size:0.7em">
+                        Farklı goroutine ID'leri = gerçek paralel çalışma. Aynı zaman damgası = eşzamanlı başlangıç.
+                    </div>
+                    <p class="file-ref">📁 cmd/root.go — hook'u kaydet</p>
+                    <pre><code class="language-go">RootCmd.PersistentPreRunE = func(cmd *cobra.Command, args []string) error {
+    lvl, _ := log.ParseLevel(logLevel)
+    log.SetLevel(lvl)
+    log.SetFormatter(&log.TextFormatter{FullTimestamp: true})
+    log.AddHook(&goroutineHook{})     // ← her log satırına goroutine ID
+    return nil
+}</code></pre>
+                </section>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+     SECTION 10 — DEMO
+     ═══════════════════════════════════════════════════════════════ -->
+            <section>
+                <section>
+                    <h2>Demo</h2>
+                    <p class="go-blue">Hepsini bir arada görelim 🚀</p>
+                </section>
+                <section>
+                    <h3>Demo Akışı</h3>
+                    <pre><code class="language-bash"># Tek komut ile derle
+$ go build -o orchestrator .
+
+# Ortamı ayağa kaldır
+$ sudo ./orchestrator up -c config/example.yaml --log-level debug
+
+# Durumu kontrol et
+$ sudo ./orchestrator status
+
+# VM'e SSH — IP otomatik algılanır
+$ sudo ./orchestrator ssh demo-vm
+
+# Her şeyi temizle
+$ sudo ./orchestrator down</code></pre>
+                </section>
+                <section>
+                    <h3><code>orchestrator up</code> sırasında ne olur?</h3>
+                    <pre><code class="language-text">1. YAML yapılandırmayı ayrıştır
+2. Docker bridge ağı oluştur (172.19.5.0/24)
+3. IP Havuzu başlat (/8 → /30 desteği)
+4. DHCP (.2) ve DNS (.3) IP'lerini rezerve et
+5. DHCP + DNS container'larını başlat (paralel)
+6. ┌── Container'ları başlat (paralel)        ←  goroutine
+   │   ├── nginx:alpine     → 172.19.5.10
+   │   └── whoami           → 172.19.5.11
+   └── VM'leri başlat (paralel)               ←  goroutine
+       └── demo-vm          → DHCP ile atanmış
+7. WireGuard istemci yapılandırması üret       ←  crypto
+8. Durum dosyası yaz (JSON)</code></pre>
+                </section>
+                <section>
+                    <h3>Deklaratif Yapılandırma</h3>
+                    <pre><code class="language-yaml">network_name: demo-net
+subnet: 172.19.5.0/24
+network_type: bridge
+
+containers:
+  - name: web-demo
+    image: nginx:alpine
+    ip: 172.19.5.10
+
+  - name: whoami
+    image: containous/whoami:latest
+    ip: 172.19.5.11
+
+vms:
+  - name: demo-vm
+    image: ./images/debian-12.qcow2
+    memory_mb: 1024
+    vcpus: 2
+    packages: [curl, wget, vim, htop, net-tools, nmap]
+
+wireguard:
+  enabled: true
+  peer_name: demo-client
+  address: 10.10.0.2/24</code></pre>
+                </section>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+     SECTION 11 — ÇIKARIMLAR
+     ═══════════════════════════════════════════════════════════════ -->
+            <section>
+                <section>
+                    <h2>Çıkarımlar</h2>
+                </section>
+                <section>
+                    <h3>Go'nun Altyapı İçin Kazandırdıkları</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Go Özelliği</th>
+                                <th>Projede Kullanımı</th>
+                                <th>Alternatif Maliyet</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="feature-tag">net</span></td>
+                                <td>CIDR ayrıştırma, IP aritmetiği, broadcast</td>
+                                <td>Python: ipaddress + 3. parti</td>
+                            </tr>
+                            <tr>
+                                <td><span class="feature-tag">goroutine</span></td>
+                                <td>Container + VM paralel provizyon</td>
+                                <td>Thread havuzu + karmaşık senkronizasyon</td>
+                            </tr>
+                            <tr>
+                                <td><span class="feature-tag">channel</span></td>
+                                <td>Hata toplama, servis koordinasyonu</td>
+                                <td>Callback cehennem veya mutex gürültüsü</td>
+                            </tr>
+                            <tr>
+                                <td><span class="feature-tag">os/exec</span></td>
+                                <td>virsh, brctl, ip komutu yönetimi</td>
+                                <td>Shell script sarmalama / subprocess</td>
+                            </tr>
+                            <tr>
+                                <td><span class="feature-tag">sync</span></td>
+                                <td>Thread-safe IP havuzu, hata listesi</td>
+                                <td>Lock kütüphanesi + race debugging</td>
+                            </tr>
+                            <tr>
+                                <td><span class="feature-tag">crypto</span></td>
+                                <td>WireGuard X25519 anahtar üretimi</td>
+                                <td>OpenSSL bağımlılığı / CGo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h3>Önemli Tasarım Kararları</h3>
+                    <ul>
+                        <li><strong>Zarif geri çekilme</strong> — KVM yoksa QEMU, cloud-init yoksa CD-ROM'u atla</li>
+                        <li><strong>uint32 ile düşün</strong> — IPv4 aritmetiği tam sayı karşılaştırmasına dönüşür</li>
+                        <li><strong>İkili strateji</strong> — veri yapısını girdi boyutuna uyarla (eager vs. lazy)</li>
+                        <li><strong>Hata zinciri</strong> — <code>%w</code> ile her katmanda bağlam ekle</li>
+                        <li><strong>Fan-out + channel</strong> — Go'nun eşzamanlılık ilkelleri doğal olarak birleşir
+                        </li>
+                        <li><strong>Eşzamanlılığı test et</strong> — 100 goroutine + race detector = güven</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Sonraki Adımlar</h3>
+                    <ul>
+                        <li>Context tabanlı iptal ve zarif kapatma</li>
+                        <li>gRPC API ile uzaktan orkestrasyon</li>
+                        <li>Prometheus metrikleri (container sayısı, IP kullanımı, …)</li>
+                        <li>VM snapshot ve geri yükleme</li>
+                        <li>WireGuard mesh ile çoklu sunucu desteği</li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+     SECTION — SORULAR
+     ═══════════════════════════════════════════════════════════════ -->
+            <section>
+                <h1>Sorular?</h1>
+                <p class="go-blue" style="font-size:1.1em">Soru &amp; Cevap</p>
+                <br /><br />
+                <p>
+                    <strong>Ahmet Türkmen</strong><br />
+                    <a href="https://www.linkedin.com/in/mrturkmen/"
+                        style="color:#0A66C2">linkedin.com/in/mrturkmen</a><br />
+                    <a href="https://github.com/mrtrkmn" style="color:#ccc">github.com/mrtrkmn</a><br />
+                    <span class="small dimmed">Systems Development Engineer — AWS</span>
+                </p>
+                <br />
+                <p class="small dimmed">Teşekkürler! 🙏</p>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+     APPENDIX — BONUS SLAYTLAR
+     ═══════════════════════════════════════════════════════════════ -->
+            <section>
+                <section>
+                    <h2>Ek Slaytlar</h2>
+                    <p class="small dimmed">Detaylı sorular için bonus içerik</p>
+                </section>
+                <section>
+                    <h3>Üstel Geri Çekilme ile Image Çekme</h3>
+                    <p class="file-ref">📁 orch/dockerctl/client.go</p>
+                    <pre><code class="language-go">func (c *Client) pullImageWithRetries(image string, retry int) error {
+    var lastErr error
+    for i := 0; i < retry; i++ {
+        err := c.c.PullImage(docker.PullImageOptions{
+            Repository:   image,
+            OutputStream: io.Discard,
+        }, docker.AuthConfiguration{})
+        if err == nil {
+            return nil
+        }
+        lastErr = err
+        time.Sleep(time.Duration(2<<i) * time.Second) // 2, 4, 8 sn
+    }
+    return fmt.Errorf("image çekme %s başarısız: %w", image, lastErr)
+}</code></pre>
+                    <p class="small dimmed">Bit kaydırma ile üstel gecikme: <code>2&lt;&lt;0=2</code>,
+                        <code>2&lt;&lt;1=4</code>, <code>2&lt;&lt;2=8</code>
+                    </p>
+                </section>
+                <section>
+                    <h3>Durum Yönetimi — JSON Dosyası</h3>
+                    <p class="file-ref">📁 orch/orchestrator.go</p>
+                    <pre><code class="language-go">type state struct {
+    Network        string `json:"network"`
+    CreatedNetwork bool   `json:"created_network"`
+    DHCPContainer  string `json:"dhcp_container"`
+    DNSContainer   string `json:"dns_container"`
+    TempDir        string `json:"temp_dir"`
+    ContainerLabel string `json:"container_label"`
+}
+
+func writeState(s *state) error {
+    b, _ := json.MarshalIndent(s, "", "  ")
+    return os.WriteFile("orch-state.json", b, 0644)
+}
+
+// `down` komutu tam olarak `up`'ın oluşturduğunu temizler
+func readState() (*state, error) {
+    b, err := os.ReadFile("orch-state.json")
+    if err != nil { return nil, err }
+    var s state
+    json.Unmarshal(b, &s)
+    return &s, nil
+}</code></pre>
+                </section>
+                <section>
+                    <h3>VM XML Şablonu — Koşullu CD-ROM</h3>
+                    <p class="file-ref">📁 orch/libvirtctl/libvirt.go</p>
+                    <pre><code class="language-go">// Cloud-init ISO varsa CD-ROM ekle, yoksa atla
+cdromXML := ""
+if cloudInitISO != "" {
+    cdromXML = fmt.Sprintf(`
+    &lt;disk type='file' device='cdrom'&gt;
+      &lt;driver name='qemu' type='raw'/&gt;
+      &lt;source file='%s'/&gt;
+      &lt;target dev='sdb' bus='sata'/&gt;
+      &lt;readonly/&gt;
+    &lt;/disk&gt;`, cloudInitISO)
+}
+
+xml := fmt.Sprintf(`&lt;domain type='%s'&gt;
+  &lt;name&gt;%s&lt;/name&gt;
+  &lt;memory unit='MiB'&gt;%d&lt;/memory&gt;
+  &lt;vcpu&gt;%d&lt;/vcpu&gt;
+  &lt;devices&gt;
+    &lt;disk type='file' device='disk'&gt;
+      &lt;source file='%s'/&gt;
+      &lt;target dev='vda' bus='virtio'/&gt;
+    &lt;/disk&gt;%s
+    &lt;interface type='bridge'&gt;
+      &lt;source bridge='%s'/&gt;
+    &lt;/interface&gt;
+  &lt;/devices&gt;
+&lt;/domain&gt;`, virtType(), name, memoryMB, vcpus,
+    imagePath, cdromXML, network)</code></pre>
+                </section>
+                <section>
+                    <h3>Go Struct Tag'leri — YAML ↔ Go</h3>
+                    <pre><code class="language-go">type Config struct {
+    NetworkName string         `yaml:"network_name"`
+    Subnet      string         `yaml:"subnet"`
+    Containers  []ContainerCfg `yaml:"containers"`
+    VMs         []VMCfg        `yaml:"vms"`
+    Wireguard   struct {
+        Enabled  bool   `yaml:"enabled"`
+        PeerName string `yaml:"peer_name"`
+        Address  string `yaml:"address"`
+    } `yaml:"wireguard"`
+}
+
+func LoadConfig(path string) (*Config, error) {
+    data, err := os.ReadFile(path)
+    if err != nil { return nil, err }
+    var cfg Config
+    if err := yaml.Unmarshal(data, &cfg); err != nil {
+        return nil, err
+    }
+    return &cfg, nil
+}</code></pre>
+                    <p class="small dimmed">Struct tag'leri = Go'nun deklaratif serileştirme yaklaşımı. Ayrı schema
+                        dosyası gereksiz.</p>
+                </section>
+            </section>
+
+        </div><!-- /slides -->
+    </div><!-- /reveal -->
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: true,
+            transition: 'slide',
+            plugins: [RevealHighlight, RevealNotes],
+            keyboard: {
+                70: function () { document.documentElement.requestFullscreen(); }
+            }
+        });
+    </script>
+</body>
+
+</html>
