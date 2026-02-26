@@ -1,5 +1,5 @@
 ---
-title: "Orchestrating a Virtual Hub in Go"
+title: "Go ile Sanal Ortam Orkestrasyonu"
 date: 2026-02-26T15:00:00+01:00
 tags: ["go", "infrastructure", "docker", "libvirt", "wireguard", "conference", "goroutine", "networking"]
 author: "mrturkmen"
@@ -8,7 +8,7 @@ TocOpen: false
 draft: false
 hidemeta: false
 comments: true
-description: "Building a single Go binary to spin up containers, VMs, networking, and VPN from one YAML file — why it exists, where it fits, and what's still missing."
+description: "Tek bir Go binary'si ile container, VM, ağ ve VPN'i ayağa kaldırmak — neden var, nerede işe yarar, neleri eksik."
 disableHLJS: true
 disableShare: false
 hideSummary: false
@@ -18,34 +18,34 @@ ShowBreadCrumbs: true
 ShowPostNavLinks: true
 ---
 
-I recently gave a talk at **Gophers İstanbul 2026** about a tool I built — a single Go binary that spins up Docker containers, libvirt/KVM virtual machines, a full DHCP+DNS stack, and a WireGuard VPN tunnel, all declared in one YAML file. The slides are heavy on code snippets and Go internals. This post is *not* that. Instead, I want to talk about the messy real-world problem behind the tool, where I think something like this is actually useful, what's still broken, and some ideas I haven't had time to explore.
+Geçtiğimiz günlerde **Gophers İstanbul 2026**'da bir sunum yaptım. Konu: tek bir Go binary'si ile Docker container'ları, libvirt/KVM sanal makineleri, DHCP+DNS altyapısını ve WireGuard VPN tünelini — hepsini bir YAML dosyasından ayağa kaldıran bir araç. Sunumda bol bol kod parçacıkları ve Go'nun iç yapısı var. Bu yazı *o değil*. Burada daha çok aracın arkasındaki dağınık gerçek-dünya probleminden, nerelerde gerçekten işe yaradığını düşündüğümden, nelerin hâlâ eksik olduğundan ve vakit bulursam denemek istediğim fikirlerden bahsetmek istiyorum.
 
-**[📊 Slides from the talk](/talks/orchestrator.html)** · **[💻 Source code](https://github.com/mrtrkmn/orchestrator)**
+**[📊 Sunum slaytları](/talks/orchestrator.html)** · **[💻 Kaynak kod](https://github.com/mrtrkmn/orchestrator)**
 
 ---
 
-## The Itch
+## Kaşıntı
 
-If you've ever needed to demo a multi-tier setup with both containers *and* VMs on a single machine, you know the drill. You write a shell script that calls `docker network create`, then another that generates `dhcpd.conf`, then you manually craft `virsh` XML, then you realize the VM doesn't get an IP because the bridge isn't in promiscuous mode, then you add an `ip link set` call, then someone asks you to reproduce it on a different machine and you discover half of it was hardcoded to your laptop.
+Eğer bir gün tek bir makinede hem container'lar hem de VM'ler içeren çok katmanlı bir demo ortamı kurmak zorunda kaldıysanız, hikayeyi biliyorsunuzdur. Önce `docker network create` çağıran bir shell script yazarsınız. Sonra `dhcpd.conf` üreten bir tane daha. Sonra elle `virsh` XML tanımı hazırlarsınız. Sonra VM'in IP alamadığını fark edersiniz — çünkü bridge promiscuous modda değildir. Bir `ip link set` komutu eklersiniz. Sonra birisi bunu başka bir makinede tekrarlamanızı ister ve yarısının dizüstü bilgisayarınıza hardcoded olduğunu keşfedersiniz.
 
-I had this exact problem at work. We needed isolated hybrid environments — some services ran in containers, but certain workloads genuinely required a real VM with its own kernel. Setting it up manually took 15-20 minutes and rarely worked the same way twice. Tearing it down was worse. Some containers would linger, the bridge network would survive reboots, and leftover VM definitions would conflict with the next run.
+İş yerinde tam olarak bu sorunla karşılaştım. İzole hibrit ortamlara ihtiyacımız vardı — bazı servisler container'da koşuyordu, ama bazı iş yükleri gerçekten kendi kernel'ine sahip bir VM gerektiriyordu. Manuel kurulum 15-20 dakika sürüyordu ve neredeyse hiçbir zaman aynı şekilde çalışmıyordu. Ortamı kaldırmak daha da kötüydü. Bazı container'lar geride kalıyordu, bridge ağı yeniden başlatmalara dayanıyordu ve artık VM tanımları bir sonraki çalıştırmayla çakışıyordu.
 
-So I built a tool to do it in one shot:
+Bu yüzden tek seferde hallettiren bir araç yazdım:
 
 ```bash
-orchestrator up -c config.yaml    # everything comes up
-orchestrator status               # see what's running
-orchestrator ssh demo-vm          # SSH in (IP auto-detected)
-orchestrator down                 # clean teardown
+orchestrator up -c config.yaml    # her şey ayağa kalkar
+orchestrator status               # nelerin çalıştığını gör
+orchestrator ssh demo-vm          # VM'e SSH (IP otomatik algılanır)
+orchestrator down                 # temiz kaldırma
 ```
 
-The whole thing compiles into a ~15 MB static binary with no runtime dependencies — you just `scp` it to a server and go.
+Tamamı ~15 MB'lık statik bir binary'ye derleniyor, çalışma zamanı bağımlılığı yok — sunucuya `scp` ile atıp çalıştırıyorsunuz.
 
 ---
 
-## What It Actually Does
+## Gerçekte Ne Yapıyor?
 
-Here's the architecture. One server, one binary, one config file:
+Mimari şu şekilde. Bir sunucu, bir binary, bir config dosyası:
 
 <svg viewBox="0 0 760 480" xmlns="http://www.w3.org/2000/svg" style="max-width:720px;margin:1.5em auto;display:block;font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;">
   <defs>
@@ -101,41 +101,41 @@ Here's the architecture. One server, one binary, one config file:
   <text x="618" y="460" fill="#94a3b8" font-size="10">VPN Tunnel</text>
 </svg>
 
-When you run `orchestrator up`, it creates a Docker bridge, starts DHCP and DNS containers, spins up your application containers and VMs simultaneously (using goroutines — everything runs in parallel), generates WireGuard client configs, and writes a state file so `orchestrator down` can reverse it all cleanly.
+`orchestrator up` çalıştırdığınızda sırasıyla bir Docker bridge oluşturur, DHCP ve DNS container'larını başlatır, uygulama container'larınızı ve VM'lerinizi eşzamanlı olarak ayağa kaldırır (goroutine'ler sayesinde her şey paralel koşar), WireGuard istemci yapılandırması üretir ve `orchestrator down`'ın her şeyi temizce geri alabilmesi için bir durum dosyası yazar.
 
-The key thing Docker gives you is namespace-isolated containers. The key thing libvirt gives you is a *separate kernel*. Putting both on the same Layer 2 bridge, served by the same DHCP, is the value proposition. A remote client connects over WireGuard and can reach any service — container or VM — transparently.
-
----
-
-## Where This Is Actually Useful
-
-I haven't built a Kubernetes replacement. This tool is intentionally small and opinionated, and it's genuinely useful for a narrow set of scenarios:
-
-### Training and Workshop Environments
-
-Imagine you're running a 2-day security workshop and every participant needs an isolated network with a web app (container), a vulnerable VM to practice on, and DNS that resolves internal names. Right now you'd either use a cloud provider and spin up per-student VPCs (expensive), or hand everyone a Vagrant setup and pray their laptops can handle it (unreliable). With a beefy shared server, each student gets their own YAML config and a WireGuard tunnel in.
-
-### Edge / IoT Prototyping
-
-When you're prototyping at the edge — maybe a gateway device that needs to run some services in containers but also host a full Linux VM for testing firmware — you don't want to deploy Kubernetes. You want to `scp` a binary, drop a YAML file, and run one command. The cross-compile story makes this trivial: `GOOS=linux GOARCH=arm64 go build -o orchestrator .`
-
-### CI Integration Tests That Need VMs
-
-Some software genuinely can't be tested in a container. Kernel modules, custom networking stacks, anything that needs a real boot sequence. Today, most CI pipelines just skip these tests or use expensive nested virtualization. A tool like this could set up the hybrid environment at the start of a pipeline and tear it down at the end. The idempotent `up`/`down` semantics are designed for exactly this.
-
-### Quick Demo Environments
-
-Sales engineers, solutions architects, support teams — anyone who needs to show a multi-service setup working together on a single machine. Instead of maintaining a fragile demo VM image, you define the environment in a version-controlled YAML file and bring it up in seconds.
-
-### Homelab Orchestration
-
-For the people running Proxmox or bare-metal servers at home — this is a lighter alternative when you have a single node and just want reproducible stacks of containers and VMs without the overhead of a full hyperconverged setup.
+Docker size namespace ile izole edilmiş container'lar verir. Libvirt ise *ayrı bir kernel'e* sahip sanal makineler. İkisini aynı Layer 2 bridge üzerinde, aynı DHCP sunucusuyla buluşturmak — işte aracın asıl değer önerisi bu. Uzak istemci WireGuard üzerinden bağlanır ve container ya da VM fark etmeksizin her servise şeffaf şekilde erişir.
 
 ---
 
-## How to Leverage It
+## Gerçekten Nerelerde İşe Yarar?
 
-The config file is where all the thinking happens:
+Bir Kubernetes alternatifi yapmadım. Bu araç bilinçli olarak küçük ve fikirli tasarlandı ve dar bir senaryo kümesinde gerçekten işe yarıyor:
+
+### Eğitim ve Workshop Ortamları
+
+İki günlük bir güvenlik workshop'u düzenlediğinizi düşünün. Her katılımcının izole bir ağa, içinde bir web uygulaması (container), üzerinde pratik yapılacak savunmasız bir VM'e ve dahili isimleri çözen DNS'e ihtiyacı var. Bugün ya bir bulut sağlayıcı kullanıp öğrenci başına VPC açarsınız (pahalı), ya da herkese bir Vagrant kurulumu verip dizüstü bilgisayarlarının kaldırmasını dua edersiniz (güvenilmez). Güçlü paylaşımlı bir sunucuda her öğrenci kendi YAML config'ini ve bir WireGuard tünelini alır.
+
+### Edge / IoT Prototipleme
+
+Edge'de prototipleme yapıyorsanız — belki bazı servisleri container'da çalıştırması ama firmware test etmek için tam bir Linux VM barındırması gereken bir gateway cihazı — Kubernetes deploy etmek istemezsiniz. Binary'yi `scp` ile atıp, bir YAML dosyası bırakıp, tek komut çalıştırmak istersiniz. Cross-compile hikayesi bunu kolaylaştırır: `GOOS=linux GOARCH=arm64 go build -o orchestrator .`
+
+### VM Gerektiren CI Entegrasyon Testleri
+
+Bazı yazılımlar gerçekten container'da test edilemez. Kernel modülleri, özel ağ yığınları, gerçek bir boot sırası gerektiren her şey. Bugün çoğu CI pipeline'ı bu testleri ya atlar ya da pahalı iç içe sanallaştırma kullanır. Böyle bir araç, pipeline'ın başında hibrit ortamı kurup sonunda yıkabilir. İdempotent `up`/`down` semantiği tam olarak bunun için tasarlandı.
+
+### Hızlı Demo Ortamları
+
+Satış mühendisleri, çözüm mimarları, destek ekipleri — tek bir makinede çoklu servis kurulumunu çalışır halde göstermesi gereken herkes. Kırılgan bir demo VM imajı bakımı yerine, ortamı versiyon kontrollü bir YAML dosyasında tanımlayıp saniyeler içinde ayağa kaldırırsınız.
+
+### Homelab Orkestrasyonu
+
+Evde Proxmox veya bare-metal sunucu çalıştıran insanlar için — tek bir node olduğunda ve tam bir hyperconverged kurulumun yükü olmadan tekrarlanabilir container+VM yığınları istediğinizde daha hafif bir alternatif.
+
+---
+
+## Nasıl Kullanılır?
+
+Config dosyası tüm düşünmenin yapıldığı yer:
 
 ```yaml
 network_name: demo-net
@@ -164,88 +164,88 @@ wireguard:
   address: 10.10.0.2/24
 ```
 
-A few things worth noting about how to get the most out of it:
+En iyi şekilde nasıl kullanılacağına dair birkaç not:
 
-**Version-control the config, not the environment.** The whole point is that the config file *is* the environment. Check it into Git. When someone asks "what was the demo setup last quarter?", you `git log` rather than trying to remember which containers you ran.
+**Config'i versiyonlayın, ortamı değil.** Tüm mesele config dosyasının ortamın *kendisi* olması. Git'e commit'leyin. Birisi "geçen çeyrekteki demo kurulumu nasıldı?" diye sorduğunda, hangi container'ları çalıştırdığınızı hatırlamaya çalışmak yerine `git log` bakarsınız.
 
-**Use static IPs for services you need to reference.** Containers that other services depend on (your web frontend, your API gateway) should get pinned IPs. The tool supports both static assignment and random allocation from the pool — use randomness for things like worker nodes that nobody addresses directly.
+**Referans etmeniz gereken servisler için statik IP kullanın.** Diğer servislerin bağımlı olduğu container'lar (web frontend'iniz, API gateway'iniz) sabit IP almalı. Araç hem statik atama hem de havuzdan rastgele tahsis destekler — kimsenin doğrudan adresleme yapmadığı worker node'lar gibi şeyler için rastgeleliği kullanın.
 
-**The VMs get packages baked in.** The `packages` list in the VM config triggers a custom image build — the tool uses cloud-init to install those packages on first boot. This means your VM starts with `curl`, `nmap`, etc. already available, which is a big deal for offline or air-gapped environments.
+**VM'lere paketler önceden yüklenir.** VM config'indeki `packages` listesi özel bir imaj derlemesi tetikler — araç cloud-init ile bu paketleri ilk boot'ta yükler. Yani VM'iniz `curl`, `nmap` vb. zaten yüklü şekilde başlar; bu özellikle çevrimdışı veya air-gapped ortamlar için büyük avantaj.
 
-**WireGuard configs are generated as client-ready files.** After `orchestrator up`, you'll find a `wg-client-<name>.conf` file that you can hand directly to someone. They import it into their WireGuard client and they're in — no manual key exchange.
-
----
-
-## What's Missing (Honestly)
-
-I presented this at a conference, so naturally I showed the polished bits. Here's what's rough:
-
-### No Graceful Shutdown Chain
-
-Right now, `orchestrator down` stops and removes everything, but there's no ordered shutdown. If your VM needs to flush data before the DHCP container disappears, tough luck. A proper implementation would need dependency ordering — maybe a reverse of the startup DAG. The building blocks are there (context cancellation, WaitGroups), but the sequencing logic isn't.
-
-### Single-Host Only
-
-The tool assumes everything runs on one server. There's no concept of distributing VMs across multiple hosts or federating networks. For many use cases this is fine — it's *supposed* to be a single-host tool — but it limits some of the CI/CD and training scenarios where you'd want to scale out.
-
-### No Health Checks Beyond "Is It Running?"
-
-The `select`-based polling loop checks whether a container has reached "running" state, but that's it. There's no application-level health checking — no HTTP probes, no TCP checks, no readiness gates. If your nginx container is running but misconfigured and returning 502s, `orchestrator status` will happily report everything is fine.
-
-### VM Networking Is Fragile
-
-Getting a VM onto a Docker bridge requires some non-obvious plumbing — putting the bridge in promiscuous mode, using `brctl` to verify the connection, ensuring the bridge helper is configured. The tool handles this, but it's one bad kernel update away from breaking. A more robust approach might use macvlan or a dedicated OVS bridge.
-
-### No Multi-Tenancy
-
-Every run shares the same namespace. If two users run `orchestrator up` with different configs on the same host, they'll conflict on container names, network names, and port bindings. Adding per-user or per-session namespacing (prefixed container names, isolated subnets) would make the training/workshop use case much more practical.
-
-### State Management Is Primitive
-
-The state file is a flat JSON blob. If the binary crashes mid-provisioning, the state file might not reflect reality. There's no reconciliation loop that checks "what's *actually* running?" against "what *should* be running?" — it's fire-and-forget. Compare this to Terraform's state management, and you'll see how much more could be done here.
+**WireGuard config'leri istemciye hazır dosya olarak üretilir.** `orchestrator up` sonrasında, birine doğrudan verebileceğiniz bir `wg-client-<isim>.conf` dosyası bulursunuz. WireGuard istemcisine import ederler ve içerdeler — elle anahtar değişimi yok.
 
 ---
 
-## Interesting Technical Bits
+## Neleri Eksik? (Dürüst Olmak Gerekirse)
 
-I don't want to rehash every slide (that's what the [presentation](/talks/orchestrator.html) is for), but a few design choices are worth calling out because they surprised me:
+Bir konferansta sundum, dolayısıyla parlak kısımları gösterdim. İşte pürüzlü taraflar:
 
-**Treating IPv4 addresses as `uint32` changes everything.** Once you represent `172.19.5.10` as a single 32-bit integer, IP pool management becomes arithmetic: range checks are comparisons, broadcast calculation is a bitwise OR, and iterating a subnet is just incrementing. Go's `encoding/binary` and `net` packages make this trivial — no third-party IP manipulation library needed.
+### Düzgün Kapanış Zinciri Yok
 
-**The IP pool's dual strategy is a good example of "know your data."** For a `/24` subnet (254 hosts), you can afford to pre-build a map of all available IPs. For a `/8` (16 million hosts), that's insane — it takes 5 seconds and ~1 GB of memory just to initialize. The pool transparently switches to a lazy strategy for large subnets: only track *used* IPs, generate random candidates, and probe. Result: `/8` initialization went from 5.1 seconds to 0.004 seconds.
+Şu anda `orchestrator down` her şeyi durdurur ve kaldırır, ancak sıralı kapanış yok. VM'inizin DHCP container'ı kaybolmadan önce veri flush etmesi gerekiyorsa, şansınız yok. Düzgün bir uygulama bağımlılık sıralaması gerektirir — belki başlatma DAG'ının tersi. Yapı taşları mevcut (context iptali, WaitGroup'lar), ama sıralama mantığı yok.
 
-**No CGo was a hard constraint.** The main Go libvirt binding (`libvirt-go`) wraps the C library, which means you need `libvirt-dev` installed and lose the static binary. Using `virsh` CLI via `os/exec` is admittedly more fragile (you're parsing text output), but it keeps the binary portable. Same reasoning for WireGuard key generation — `golang.org/x/crypto/curve25519` replaces any need for OpenSSL or `wg genkey`.
+### Yalnızca Tek Sunucu
 
-**Goroutine-ID logging was a debugging hack that became a feature.** When 6 goroutines are all writing logs simultaneously, it's impossible to tell what's happening without some correlation. Extracting the goroutine ID from `runtime.Stack` output is hacky (you're parsing a debug string), but it works and makes the parallel execution visible in log output. Different IDs + overlapping timestamps = proof that things are actually concurrent, not just concurrent-looking.
+Araç her şeyin tek bir sunucuda çalıştığını varsayar. VM'leri birden fazla sunucuya dağıtma veya ağları federasyon yapma kavramı yok. Birçok kullanım senaryosu için bu sorun değil — *zaten* tek sunucu aracı olması amaçlanıyor — ama ölçekleme ihtiyacı olan CI/CD ve eğitim senaryolarını sınırlıyor.
 
----
+### "Çalışıyor mu?" Ötesinde Sağlık Kontrolü Yok
 
-## Ideas I Haven't Explored Yet
+`select` tabanlı polling döngüsü container'ın "running" durumuna ulaşıp ulaşmadığını kontrol eder, o kadar. Uygulama seviyesinde sağlık kontrolü yok — HTTP probe yok, TCP kontrolü yok, readiness gate yok. nginx container'ınız çalışıyor ama yanlış yapılandırılmış ve 502 döndürüyorsa, `orchestrator status` mutlu bir şekilde her şeyin yolunda olduğunu rapor eder.
 
-These are things I'd build if I had more time or if someone told me they needed them:
+### VM Ağ Yapılandırması Kırılgan
 
-**A `plan` command (like Terraform).** Before `up`, show exactly what will be created — "will create network X, will start containers A, B, C, will define VM D." Let the user review and confirm. Especially useful in production-adjacent scenarios.
+Bir VM'i Docker bridge'e bağlamak, aşikâr olmayan bir dizi adım gerektirir — bridge'i promiscuous moda almak, bağlantıyı doğrulamak için `brctl` kullanmak, bridge helper'ın yapılandırıldığından emin olmak. Araç bunu halleder, ama bir kötü kernel güncellemesiyle bozulabilir. Daha sağlam bir yaklaşım macvlan ya da ayrılmış bir OVS bridge kullanabilir.
 
-**Live reload on config change.** Watch the YAML file and reconcile the running state. Added a new container to the config? Bring it up without tearing down the rest. Removed a VM? Shut it down. This is essentially a control loop, and Go's `fsnotify` + goroutines make it natural to build.
+### Çok Kiracılık (Multi-Tenancy) Yok
 
-**Plugin system for workload types.** Right now the tool knows about exactly two kinds of workloads: Docker containers and libvirt VMs. But the pattern generalizes — you could imagine plugins for Podman, Firecracker, or even Kata Containers. A `WorkloadDriver` interface with `Start()`, `Stop()`, `Status()` would be a clean abstraction.
+Her çalıştırma aynı namespace'i paylaşır. İki kullanıcı aynı sunucuda farklı config'lerle `orchestrator up` çalıştırırsa, container adları, ağ adları ve port bağlamaları çakışır. Kullanıcı veya oturum başına namespace'leme (önek eklenmiş container adları, izole alt ağlar) eklemek, eğitim/workshop kullanım senaryosunu çok daha pratik hale getirirdi.
 
-**Prometheus metrics endpoint.** Expose current container count, VM count, IP pool utilization, provisioning latency. For a long-running lab server, this would be genuinely useful for capacity planning.
+### Durum Yönetimi İlkel
 
-**Snapshot and rollback for VMs.** Define a checkpoint, let students/testers mess things up, then roll back to the known-good state. Libvirt supports snapshots natively — the plumbing is straightforward, it's just not wired up.
-
-**gRPC API.** The CLI is fine for interactive use, but if you want to integrate this into a larger system (a training platform, a CI controller), a gRPC API would let remote clients orchestrate environments programmatically. The Cobra CLI and the `Orchestrator` struct are already cleanly separated, so wrapping `Up()`, `Down()`, and `Status()` in gRPC handlers would be mechanical.
-
-**WireGuard mesh for multi-server.** Instead of a single star topology, allow multiple orchestrator instances to form a mesh. Each generates keys, they exchange public keys and endpoints, and you get a flat network across servers. This is the path toward the distributed version, if it ever makes sense to go there.
+Durum dosyası düz bir JSON blob. Binary provisioning ortasında çökerse, durum dosyası gerçeği yansıtmayabilir. "Gerçekte ne çalışıyor?" ile "Ne çalışıyor olmalı?" arasını kontrol eden bir uzlaşma döngüsü yok — tek seferlik ateşle-unut yaklaşımı. Bunu Terraform'un durum yönetimiyle karşılaştırırsanız, burada ne kadar çok şey yapılabileceğini görürsünüz.
 
 ---
 
-## Closing Thoughts
+## İlginç Teknik Detaylar
 
-This tool exists because Kubernetes is overkill for a single server and shell scripts are undermaintained. The sweet spot is a boring Go binary that does one thing well: bring up a reproducible hybrid environment and tear it down cleanly.
+Her slaydı tekrarlamak istemiyorum (bunun için [sunum](/talks/orchestrator.html) var), ama birkaç tasarım kararı beni şaşırttığı için bahsetmeye değer:
 
-Go turned out to be the right language for this — not because of any single feature, but because infrastructure tooling *wants* the combination of static binaries, cheap concurrency, first-class networking, and a strong standard library. Every major infrastructure project in the ecosystem (Docker, Kubernetes, Terraform, Prometheus) made the same bet.
+**IPv4 adreslerini `uint32` olarak temsil etmek her şeyi değiştiriyor.** `172.19.5.10`'u tek bir 32-bit tam sayı olarak ifade ettiğinizde, IP havuzu yönetimi aritmetiğe dönüşür: aralık kontrolleri karşılaştırmadır, broadcast hesaplaması bitwise OR'dur ve bir alt ağı dolaşmak sadece artırmaktır. Go'nun `encoding/binary` ve `net` paketleri bunu kolaylaştırır — üçüncü parti IP manipülasyon kütüphanesine gerek yok.
 
-If any of this sounds useful for your workflow, the code is open and the binary is self-contained. Try it, break it, and tell me what's missing.
+**IP havuzunun çift stratejisi "verini tanı" ilkesinin güzel bir örneği.** Bir `/24` alt ağ (254 host) için tüm mevcut IP'lerin bir haritasını önceden oluşturmayı göze alabilirsiniz. Bir `/8` (16 milyon host) için bu çılgınlık — sadece başlatmak 5 saniye ve ~1 GB bellek alır. Havuz büyük alt ağlarda şeffaf şekilde tembel stratejiye geçer: yalnızca *kullanılmış* IP'leri takip et, rastgele adaylar üret ve dene. Sonuç: `/8` başlatma 5,1 saniyeden 0,004 saniyeye düştü.
 
-**[📊 Talk slides](/talks/orchestrator.html)** · **[💻 GitHub](https://github.com/mrtrkmn/orchestrator)** · **[LinkedIn](https://www.linkedin.com/in/mrturkmen/)**
+**CGo kullanmamak kesin bir kısıttı.** Ana Go libvirt binding'i (`libvirt-go`) C kütüphanesini sarar, yani `libvirt-dev` yüklü olması gerekir ve statik binary'den vazgeçersiniz. `virsh` CLI'ı `os/exec` üzerinden kullanmak kuşkusuz daha kırılgan (metin çıktısını parse ediyorsunuz), ama binary'yi taşınabilir tutar. WireGuard anahtar üretimi için aynı mantık — `golang.org/x/crypto/curve25519`, OpenSSL veya `wg genkey` ihtiyacını ortadan kaldırır.
+
+**Goroutine-ID log'lama, bir debug hack'iydi ve özelliğe dönüştü.** 6 goroutine aynı anda log yazarken, bir korelasyon olmadan neler olduğunu anlamak imkânsız. `runtime.Stack` çıktısından goroutine ID'sini çıkarmak hack'çe (bir debug string parse ediyorsunuz), ama işe yarıyor ve paralel yürütmeyi log çıktısında görünür kılıyor. Farklı ID'ler + örtüşen zaman damgaları = işlerin sadece eşzamanlı *görünmediğinin*, gerçekten eşzamanlı olduğunun kanıtı.
+
+---
+
+## Henüz Keşfetmediğim Fikirler
+
+Bunlar daha fazla zamanım olsa veya birisi ihtiyaç duyduğunu söylese yapacağım şeyler:
+
+**Bir `plan` komutu (Terraform gibi).** `up`'tan önce tam olarak nelerin oluşturulacağını göster — "X ağı oluşturulacak, A, B, C container'ları başlatılacak, D VM'i tanımlanacak." Kullanıcı inceleyip onaylasın. Özellikle prodüksiyona yakın senaryolarda kullanışlı.
+
+**Config değişikliğinde canlı yeniden yükleme.** YAML dosyasını izle ve çalışan durumu uzlaştır. Config'e yeni bir container mi eklendi? Geri kalanı yıkmadan ayağa kaldır. Bir VM mi kaldırıldı? Kapat. Bu özünde bir kontrol döngüsü ve Go'nun `fsnotify` + goroutine'leri bunu doğal olarak inşa etmeye uygun.
+
+**İş yükü türleri için plugin sistemi.** Şu anda araç tam olarak iki tür iş yükü biliyor: Docker container'ları ve libvirt VM'leri. Ama kalıp genelleştirilebilir — Podman, Firecracker veya hatta Kata Containers için plugin'ler düşünülebilir. `Start()`, `Stop()`, `Status()` metodları olan bir `WorkloadDriver` arayüzü temiz bir soyutlama olurdu.
+
+**Prometheus metrik endpoint'i.** Mevcut container sayısı, VM sayısı, IP havuzu kullanım oranı, provisioning gecikmesi bilgilerini dışa aç. Uzun süre çalışan bir lab sunucusu için kapasite planlaması açısından gerçekten yararlı olurdu.
+
+**VM'ler için snapshot ve rollback.** Bir checkpoint tanımla, öğrencilerin/test edenlerin her şeyi bozmasına izin ver, sonra bilinen iyi duruma geri dön. Libvirt snapshot'ları doğal olarak destekler — tesisat basit, sadece bağlanmamış.
+
+**gRPC API.** CLI interaktif kullanım için iyi, ama bunu daha büyük bir sisteme (bir eğitim platformuna, bir CI kontrolcüsüne) entegre etmek istiyorsanız, gRPC API uzak istemcilerin ortamları programatik olarak orkestre etmesini sağlar. Cobra CLI ve `Orchestrator` struct'ı zaten temiz bir şekilde ayrılmış durumda, dolayısıyla `Up()`, `Down()` ve `Status()`'u gRPC handler'larına sarmak mekanik bir iş.
+
+**Çoklu sunucu için WireGuard mesh.** Tek yıldız topolojisi yerine, birden fazla orchestrator örneğinin mesh oluşturmasına izin ver. Her biri anahtar üretir, public key'lerini ve endpoint'lerini değiştirir ve sunucular arasında düz bir ağ elde edersiniz. Eğer bir gün mantıklı olursa, dağıtık versiyona giden yol bu.
+
+---
+
+## Son Düşünceler
+
+Bu araç, Kubernetes'in tek sunucu için fazla olması ve shell script'lerinin bakımsız kalması yüzünden var. Tatlı nokta, tek bir işi iyi yapan sıkıcı bir Go binary'si: tekrarlanabilir bir hibrit ortamı ayağa kaldırmak ve temizce kapatmak.
+
+Go bu iş için doğru dil çıktı — tek bir özellik yüzünden değil, altyapı araçlarının statik binary, ucuz eşzamanlılık, birinci sınıf ağ desteği ve güçlü standart kütüphane *kombinasyonunu* istemesi yüzünden. Ekosistemdeki her büyük altyapı projesi (Docker, Kubernetes, Terraform, Prometheus) aynı bahsi yaptı.
+
+Bunlardan herhangi biri iş akışınız için kullanışlı geliyorsa, kod açık ve binary kendi kendine yeterli. Deneyin, kırın ve nelerin eksik olduğunu söyleyin.
+
+**[📊 Sunum slaytları](/talks/orchestrator.html)** · **[💻 GitHub](https://github.com/mrtrkmn/orchestrator)** · **[LinkedIn](https://www.linkedin.com/in/mrturkmen/)**
