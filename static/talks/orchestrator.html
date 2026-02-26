@@ -427,22 +427,113 @@ $ GOOS=linux GOARCH=arm64 go build -o orchestrator-arm .</code></pre>
                         <strong>CIDR</strong> (Classless Inter-Domain Routing) — IP adreslerini ve alt ağları
                         tanımlamak için kullanılan bir gösterim biçimidir.
                     </div>
-                    <div class="sketch-box" style="text-align:center; font-size:0.7em">
-                        172.19.5.0 / 24
-                        ────────── ──
-                        │ └── Ağ maskesi: ilk 24 bit ağ, kalan 8 bit host
-                        │ → 2⁸ - 2 = 254 kullanılabilir host adresi
-                        └── Ağ adresi (network address)
+                    <svg viewBox="0 0 720 370" xmlns="http://www.w3.org/2000/svg"
+                        style="max-width:680px;margin:0.4em auto;display:block;font-family:'Courier New',monospace;">
+                        <!-- background -->
+                        <rect width="720" height="370" rx="12" fill="rgba(0,0,0,0.35)" stroke="rgba(0,173,216,0.5)"
+                            stroke-width="2" stroke-dasharray="8 4" />
 
-                        Örnekler:
-                        ┌──────────────────┬─────────┬──────────────────────┐
-                        │ CIDR │ Maske │ Kullanılabilir Host │
-                        ├──────────────────┼─────────┼──────────────────────┤
-                        │ 192.168.1.0/24 │ /24 │ 254 │
-                        │ 10.42.0.0/16 │ /16 │ 65.534 │
-                        │ 10.0.0.0/8 │ /8 │ 16.777.214 │
-                        └──────────────────┴─────────┴──────────────────────┘
-                    </div>
+                        <!-- title IP -->
+                        <text x="360" y="38" text-anchor="middle" fill="#5DC9E2" font-size="15" font-weight="bold">CIDR
+                            Gösterimi</text>
+
+                        <!-- IP address octets -->
+                        <rect x="115" y="52" width="60" height="34" rx="5" fill="rgba(0,173,216,0.18)"
+                            stroke="#00ADD8" />
+                        <text x="145" y="74" text-anchor="middle" fill="#fff" font-size="16"
+                            font-weight="bold">172</text>
+
+                        <text x="180" y="74" text-anchor="middle" fill="#555" font-size="18">.</text>
+
+                        <rect x="190" y="52" width="50" height="34" rx="5" fill="rgba(0,173,216,0.18)"
+                            stroke="#00ADD8" />
+                        <text x="215" y="74" text-anchor="middle" fill="#fff" font-size="16"
+                            font-weight="bold">19</text>
+
+                        <text x="245" y="74" text-anchor="middle" fill="#555" font-size="18">.</text>
+
+                        <rect x="255" y="52" width="40" height="34" rx="5" fill="rgba(0,173,216,0.18)"
+                            stroke="#00ADD8" />
+                        <text x="275" y="74" text-anchor="middle" fill="#fff" font-size="16" font-weight="bold">5</text>
+
+                        <text x="300" y="74" text-anchor="middle" fill="#555" font-size="18">.</text>
+
+                        <rect x="310" y="52" width="40" height="34" rx="5" fill="rgba(0,173,216,0.18)"
+                            stroke="#00ADD8" />
+                        <text x="330" y="74" text-anchor="middle" fill="#fff" font-size="16" font-weight="bold">0</text>
+
+                        <!-- slash -->
+                        <text x="365" y="74" text-anchor="middle" fill="#CE3263" font-size="20"
+                            font-weight="bold">/</text>
+
+                        <!-- prefix length -->
+                        <rect x="380" y="52" width="50" height="34" rx="5" fill="rgba(206,50,99,0.18)"
+                            stroke="#CE3263" />
+                        <text x="405" y="74" text-anchor="middle" fill="#CE3263" font-size="16"
+                            font-weight="bold">24</text>
+
+                        <!-- bit ruler -->
+                        <text x="60" y="114" fill="#777" font-size="10">bit</text>
+                        <rect x="80" y="102" width="288" height="18" rx="3" fill="rgba(0,173,216,0.22)" stroke="#00ADD8"
+                            stroke-width="1" />
+                        <text x="224" y="115" text-anchor="middle" fill="#00ADD8" font-size="11">← 24 bit ağ
+                            (network) →</text>
+
+                        <rect x="368" y="102" width="96" height="18" rx="3" fill="rgba(206,50,99,0.22)" stroke="#CE3263"
+                            stroke-width="1" />
+                        <text x="416" y="115" text-anchor="middle" fill="#CE3263" font-size="11">8 bit host</text>
+
+                        <!-- brace / annotation -->
+                        <line x1="80" y1="126" x2="464" y2="126" stroke="#555" stroke-width="1"
+                            stroke-dasharray="3 3" />
+
+                        <!-- left label -->
+                        <text x="80" y="148" fill="#aaa" font-size="12">Ağ adresi (network address)</text>
+                        <text x="80" y="163" fill="#5DC9E2" font-size="11">İlk 24 bit sabit → tüm
+                            host'lar aynı ağda</text>
+
+                        <!-- right label -->
+                        <text x="368" y="148" fill="#aaa" font-size="12">Host kısmı</text>
+                        <text x="368" y="163" fill="#CE3263" font-size="11">2⁸ − 2 = 254 kullanılabilir
+                            adres</text>
+
+                        <!-- table header -->
+                        <rect x="60" y="185" width="600" height="26" rx="4" fill="rgba(0,173,216,0.15)" />
+                        <text x="170" y="203" text-anchor="middle" fill="#00ADD8" font-size="13"
+                            font-weight="bold">CIDR</text>
+                        <text x="340" y="203" text-anchor="middle" fill="#00ADD8" font-size="13" font-weight="bold">Ağ
+                            Maskesi</text>
+                        <text x="530" y="203" text-anchor="middle" fill="#00ADD8" font-size="13"
+                            font-weight="bold">Kullanılabilir Host</text>
+
+                        <!-- row 1 -->
+                        <line x1="60" y1="215" x2="660" y2="215" stroke="#333" stroke-width="1" />
+                        <text x="170" y="237" text-anchor="middle" fill="#fff" font-size="13">192.168.1.0/24</text>
+                        <text x="340" y="237" text-anchor="middle" fill="#aaa" font-size="13">255.255.255.0</text>
+                        <text x="530" y="237" text-anchor="middle" fill="#5DC9E2" font-size="14"
+                            font-weight="bold">254</text>
+
+                        <!-- row 2 -->
+                        <line x1="60" y1="249" x2="660" y2="249" stroke="#333" stroke-width="1" />
+                        <text x="170" y="271" text-anchor="middle" fill="#fff" font-size="13">10.42.0.0/16</text>
+                        <text x="340" y="271" text-anchor="middle" fill="#aaa" font-size="13">255.255.0.0</text>
+                        <text x="530" y="271" text-anchor="middle" fill="#5DC9E2" font-size="14" font-weight="bold">65
+                            534</text>
+
+                        <!-- row 3 -->
+                        <line x1="60" y1="283" x2="660" y2="283" stroke="#333" stroke-width="1" />
+                        <text x="170" y="305" text-anchor="middle" fill="#fff" font-size="13">10.0.0.0/8</text>
+                        <text x="340" y="305" text-anchor="middle" fill="#aaa" font-size="13">255.0.0.0</text>
+                        <text x="530" y="305" text-anchor="middle" fill="#5DC9E2" font-size="14" font-weight="bold">16
+                            777 214</text>
+
+                        <!-- bottom border -->
+                        <line x1="60" y1="317" x2="660" y2="317" stroke="#333" stroke-width="1" />
+
+                        <!-- footer note -->
+                        <text x="360" y="348" text-anchor="middle" fill="#777" font-size="11">Host sayısı =
+                            2^(32 − prefix) − 2 (ağ adresi ve broadcast hariç)</text>
+                    </svg>
                     <p class="small dimmed">Nerede kullanılır? Ağ segmentasyonu, IP havuzu yönetimi, DHCP aralık
                         tanımlama,
                         firewall kuralları, routing tabloları — ağ programlamasının temel yapı taşı.</p>
@@ -581,32 +672,149 @@ if err := os.WriteFile(dhcpConfPath, []byte(dhcpConf), 0o644); err != nil {
                 </section>
                 <section>
                     <h3>Neden Goroutine?</h3>
-                    <div class="columns">
-                        <div>
-                            <p style="color:#CE3263; font-weight:bold">Sıralı (Yavaş)</p>
-                            <div class="sketch-box">
-                                Container 1 ═══►
-                                Container 2 ═══►
-                                (bekle)
-                                VM 1 ═══════►
-                                VM 2 ═══════►
-                                (bekle)
-                                ──────────────────
-                                Toplam: Σ hepsi
-                            </div>
-                        </div>
-                        <div>
-                            <p style="color:#00ADD8; font-weight:bold">Paralel (Hızlı)</p>
-                            <div class="sketch-box">
-                                Container 1 ═══► ┐
-                                Container 2 ═══► ┤ paralel
-                                VM 1 ═══════► ┤
-                                VM 2 ═══════► ┘
-                                ──────────────────
-                                Toplam: max(hepsi)
-                            </div>
-                        </div>
-                    </div>
+                    <svg viewBox="0 0 780 340" xmlns="http://www.w3.org/2000/svg"
+                        style="max-width:740px;margin:0 auto;display:block;font-family:'Courier New',monospace;">
+                        <!-- background -->
+                        <rect width="780" height="340" rx="12" fill="rgba(0,0,0,0.35)" stroke="rgba(0,173,216,0.5)"
+                            stroke-width="2" stroke-dasharray="8 4" />
+
+                        <!-- ==================== LEFT: Sequential ==================== -->
+                        <text x="195" y="28" text-anchor="middle" fill="#CE3263" font-size="14"
+                            font-weight="bold">Sıralı (Yavaş)</text>
+
+                        <!-- time axis left -->
+                        <line x1="30" y1="310" x2="370" y2="310" stroke="#555" stroke-width="1" />
+                        <text x="200" y="330" text-anchor="middle" fill="#777" font-size="10">zaman →</text>
+                        <!-- tick marks -->
+                        <line x1="120" y1="308" x2="120" y2="312" stroke="#555" />
+                        <line x1="200" y1="308" x2="200" y2="312" stroke="#555" />
+                        <line x1="280" y1="308" x2="280" y2="312" stroke="#555" />
+                        <line x1="360" y1="308" x2="360" y2="312" stroke="#555" />
+
+                        <!-- row labels -->
+                        <text x="26" y="62" fill="#aaa" font-size="11" text-anchor="end">C1</text>
+                        <text x="26" y="102" fill="#aaa" font-size="11" text-anchor="end">C2</text>
+                        <text x="26" y="162" fill="#aaa" font-size="11" text-anchor="end">VM1</text>
+                        <text x="26" y="222" fill="#aaa" font-size="11" text-anchor="end">VM2</text>
+
+                        <!-- C1 bar -->
+                        <rect x="30" y="48" width="90" height="22" rx="4" fill="rgba(206,50,99,0.35)" stroke="#CE3263"
+                            stroke-width="1.5" />
+                        <text x="75" y="63" text-anchor="middle" fill="#fff" font-size="10">3s</text>
+                        <!-- wait dot between C1–C2 -->
+                        <text x="125" y="62" fill="#CE3263" font-size="12">⏳</text>
+
+                        <!-- C2 bar -->
+                        <rect x="120" y="88" width="75" height="22" rx="4" fill="rgba(206,50,99,0.35)" stroke="#CE3263"
+                            stroke-width="1.5" />
+                        <text x="158" y="103" text-anchor="middle" fill="#fff" font-size="10">2s</text>
+                        <!-- separator line -->
+                        <line x1="30" y1="125" x2="370" y2="125" stroke="#444" stroke-dasharray="4 3" />
+                        <text x="200" y="139" text-anchor="middle" fill="#777" font-size="9">container'lar bitti →
+                            VM'ler başlar</text>
+                        <!-- wait dot between C2–VM1 -->
+                        <text x="200" y="162" fill="#CE3263" font-size="12">⏳</text>
+
+                        <!-- VM1 bar -->
+                        <rect x="195" y="148" width="120" height="22" rx="4" fill="rgba(206,50,99,0.25)"
+                            stroke="#CE3263" stroke-width="1.5" />
+                        <text x="255" y="163" text-anchor="middle" fill="#fff" font-size="10">8s</text>
+
+                        <!-- VM2 bar -->
+                        <rect x="315" y="208" width="50" height="22" rx="4" fill="rgba(206,50,99,0.25)" stroke="#CE3263"
+                            stroke-width="1.5" />
+                        <text x="340" y="223" text-anchor="middle" fill="#fff" font-size="10">5s</text>
+
+                        <!-- total bracket -->
+                        <line x1="30" y1="250" x2="365" y2="250" stroke="#CE3263" stroke-width="2" />
+                        <line x1="30" y1="245" x2="30" y2="255" stroke="#CE3263" stroke-width="2" />
+                        <line x1="365" y1="245" x2="365" y2="255" stroke="#CE3263" stroke-width="2" />
+                        <text x="200" y="270" text-anchor="middle" fill="#CE3263" font-size="13"
+                            font-weight="bold">Toplam = Σ hepsi = 18s</text>
+                        <text x="200" y="288" text-anchor="middle" fill="#CE3263" font-size="11">3 + 2 + 8 + 5</text>
+
+                        <!-- ==================== DIVIDER ==================== -->
+                        <line x1="395" y1="20" x2="395" y2="300" stroke="#555" stroke-width="1"
+                            stroke-dasharray="6 4" />
+
+                        <!-- ==================== RIGHT: Parallel ==================== -->
+                        <text x="585" y="28" text-anchor="middle" fill="#00ADD8" font-size="14"
+                            font-weight="bold">Paralel (Goroutine)</text>
+
+                        <!-- time axis right -->
+                        <line x1="410" y1="310" x2="750" y2="310" stroke="#555" stroke-width="1" />
+                        <text x="580" y="330" text-anchor="middle" fill="#777" font-size="10">zaman →</text>
+                        <line x1="490" y1="308" x2="490" y2="312" stroke="#555" />
+                        <line x1="570" y1="308" x2="570" y2="312" stroke="#555" />
+                        <line x1="650" y1="308" x2="650" y2="312" stroke="#555" />
+
+                        <!-- fan-out arrows from "go" -->
+                        <rect x="410" y="90" width="32" height="80" rx="6" fill="rgba(0,173,216,0.15)" stroke="#00ADD8"
+                            stroke-width="1" />
+                        <text x="426" y="123" text-anchor="middle" fill="#00ADD8" font-size="9" font-weight="bold"
+                            transform="rotate(-90,426,123)">go func</text>
+
+                        <line x1="442" y1="100" x2="458" y2="55" stroke="#00ADD8" stroke-width="1.2"
+                            marker-end="url(#arrowBlue)" />
+                        <line x1="442" y1="112" x2="458" y2="95" stroke="#00ADD8" stroke-width="1.2"
+                            marker-end="url(#arrowBlue)" />
+                        <line x1="442" y1="130" x2="458" y2="155" stroke="#00ADD8" stroke-width="1.2"
+                            marker-end="url(#arrowBlue)" />
+                        <line x1="442" y1="145" x2="458" y2="215" stroke="#00ADD8" stroke-width="1.2"
+                            marker-end="url(#arrowBlue)" />
+
+                        <!-- arrow marker -->
+                        <defs>
+                            <marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                                <path d="M0,0 L8,3 L0,6" fill="#00ADD8" />
+                            </marker>
+                        </defs>
+
+                        <!-- row labels right -->
+                        <text x="474" y="55" fill="#aaa" font-size="11">C1</text>
+                        <text x="474" y="95" fill="#aaa" font-size="11">C2</text>
+                        <text x="474" y="163" fill="#aaa" font-size="11">VM1</text>
+                        <text x="474" y="223" fill="#aaa" font-size="11">VM2</text>
+
+                        <!-- C1 bar — 3s -->
+                        <rect x="496" y="42" width="90" height="20" rx="4" fill="rgba(0,173,216,0.35)" stroke="#00ADD8"
+                            stroke-width="1.5" />
+                        <text x="541" y="56" text-anchor="middle" fill="#fff" font-size="10">3s</text>
+                        <!-- checkmark -->
+                        <text x="592" y="57" fill="#5DC9E2" font-size="12">✓</text>
+
+                        <!-- C2 bar — 2s -->
+                        <rect x="496" y="82" width="75" height="20" rx="4" fill="rgba(0,173,216,0.35)" stroke="#00ADD8"
+                            stroke-width="1.5" />
+                        <text x="534" y="96" text-anchor="middle" fill="#fff" font-size="10">2s</text>
+                        <text x="577" y="97" fill="#5DC9E2" font-size="12">✓</text>
+
+                        <!-- VM1 bar — 8s (longest!) -->
+                        <rect x="496" y="150" width="160" height="20" rx="4" fill="rgba(93,201,226,0.25)"
+                            stroke="#5DC9E2" stroke-width="1.5" />
+                        <text x="576" y="164" text-anchor="middle" fill="#fff" font-size="10">8s</text>
+                        <text x="662" y="165" fill="#5DC9E2" font-size="12">✓</text>
+
+                        <!-- VM2 bar — 5s -->
+                        <rect x="496" y="210" width="110" height="20" rx="4" fill="rgba(93,201,226,0.25)"
+                            stroke="#5DC9E2" stroke-width="1.5" />
+                        <text x="551" y="224" text-anchor="middle" fill="#fff" font-size="10">5s</text>
+                        <text x="612" y="225" fill="#5DC9E2" font-size="12">✓</text>
+
+                        <!-- finish line at longest (VM1 end) -->
+                        <line x1="656" y1="38" x2="656" y2="240" stroke="#00ADD8" stroke-width="1.5"
+                            stroke-dasharray="5 3" />
+                        <text x="660" y="35" fill="#00ADD8" font-size="9">done</text>
+
+                        <!-- total bracket -->
+                        <line x1="496" y1="250" x2="656" y2="250" stroke="#00ADD8" stroke-width="2" />
+                        <line x1="496" y1="245" x2="496" y2="255" stroke="#00ADD8" stroke-width="2" />
+                        <line x1="656" y1="245" x2="656" y2="255" stroke="#00ADD8" stroke-width="2" />
+                        <text x="576" y="270" text-anchor="middle" fill="#00ADD8" font-size="13"
+                            font-weight="bold">Toplam = max(hepsi) = 8s</text>
+                        <text x="576" y="288" text-anchor="middle" fill="#5DC9E2" font-size="11">max(3, 2, 8, 5) — 2.25×
+                            daha hızlı</text>
+                    </svg>
                     <br />
                     <div class="highlight-box" style="font-size:0.75em">
                         Goroutine başlangıç maliyeti: <strong>~2 KB</strong> yığın belleği. Thread: <strong>~1
@@ -1072,6 +1280,10 @@ func (p *IPPool) RandomIP() (string, error) {
                             </tr>
                         </tbody>
                     </table>
+                </section>
+                <section>
+                    <h3>Lazy Strateji — Kod</h3>
+                    <p class="file-ref">📁 orch/ipool/ipool.go — randomIPLazy()</p>
                     <pre><code class="language-go">// Lazy strateji: rastgele başla, doğrusal tara
 func (p *IPPool) randomIPLazy() (string, error) {
     total := p.end - p.start + 1
@@ -1413,7 +1625,7 @@ func readState() (*state, error) {
                 <section>
                     <h3>VM XML Şablonu — Koşullu CD-ROM</h3>
                     <p class="file-ref">📁 orch/libvirtctl/libvirt.go</p>
-                    <pre><code class="language-go">// Cloud-init ISO varsa CD-ROM ekle, yoksa atla
+                    <pre style="font-size:0.45em"><code class="language-go">// Cloud-init ISO varsa CD-ROM ekle, yoksa atla
 cdromXML := ""
 if cloudInitISO != "" {
     cdromXML = fmt.Sprintf(`
@@ -1440,10 +1652,15 @@ xml := fmt.Sprintf(`&lt;domain type='%s'&gt;
   &lt;/devices&gt;
 &lt;/domain&gt;`, virtType(), name, memoryMB, vcpus,
     imagePath, cdromXML, network)</code></pre>
+                    <div class="highlight-box" style="font-size:0.65em">
+                        <strong>Koşullu şablon:</strong> <code>cloudInitISO</code> boşsa CD-ROM XML'i atlanır →
+                        aynı fonksiyon hem ilk kurulum hem de sonraki başlatmalar için çalışır.
+                    </div>
                 </section>
                 <section>
                     <h3>Go Struct Tag'leri — YAML ↔ Go</h3>
-                    <pre><code class="language-go">type Config struct {
+                    <p class="file-ref">📁 config/config.go</p>
+                    <pre style="font-size:0.48em"><code class="language-go">type Config struct {
     NetworkName string         `yaml:"network_name"`
     Subnet      string         `yaml:"subnet"`
     Containers  []ContainerCfg `yaml:"containers"`
@@ -1464,8 +1681,11 @@ func LoadConfig(path string) (*Config, error) {
     }
     return &cfg, nil
 }</code></pre>
-                    <p class="small dimmed">Struct tag'leri = Go'nun deklaratif serileştirme yaklaşımı. Ayrı schema
-                        dosyası gereksiz.</p>
+                    <div class="highlight-box" style="font-size:0.65em">
+                        <strong>Struct tag'leri</strong> = Go'nun deklaratif serileştirme yaklaşımı.
+                        Ayrı schema dosyası gereksiz — <code>yaml.Unmarshal</code> tag'leri okuyarak
+                        YAML anahtarlarını doğrudan struct alanlarına eşler.
+                    </div>
                 </section>
             </section>
 
