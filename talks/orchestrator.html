@@ -678,7 +678,7 @@ $ GOOS=linux GOARCH=arm64 go build -o orchestrator-arm .</code></pre>
                 <section>
                     <h3>net.ParseCIDR — Subnet'i Anlamak</h3>
                     <p class="file-ref">📁 orch/ipool/ipool.go — NewIPPool()</p>
-                    <pre><code class="language-go">func NewIPPool(cidr string) (*IPPool, error) {
+                    <pre style="font-size:0.46em"><code class="language-go">func NewIPPool(cidr string) (*IPPool, error) {
     ip, ipnet, err := net.ParseCIDR(cidr)
     if err != nil {
         return nil, err
@@ -712,7 +712,7 @@ $ GOOS=linux GOARCH=arm64 go build -o orchestrator-arm .</code></pre>
                 <section>
                     <h3>IPv4 = uint32 — Anahtar İçgörü</h3>
                     <p class="file-ref">📁 orch/ipool/ipool.go — yardımcı fonksiyonlar</p>
-                    <pre><code class="language-go">// Her IPv4 adresi aslında 32-bit'lik bir tam sayıdır
+                    <pre style="font-size:0.46em"><code class="language-go">// Her IPv4 adresi aslında 32-bit'lik bir tam sayıdır
 func ipToUint32(ip net.IP) uint32 {
     return binary.BigEndian.Uint32(ip.To4())
 }
@@ -740,7 +740,7 @@ func maskToUint32(m net.IPMask) uint32 {
                 <section>
                     <h3>Broadcast Hesaplama — Gerçek Kod</h3>
                     <p class="file-ref">📁 orch/dockerctl/client.go — EnsureDHCPAndDNS()</p>
-                    <pre><code class="language-go">_, ipNet, err := net.ParseCIDR(pool.Subnet())
+                    <pre style="font-size:0.46em"><code class="language-go">_, ipNet, err := net.ParseCIDR(pool.Subnet())
 // ...
 netIP := ipNet.IP.To4()
 mask := ipNet.Mask
@@ -776,7 +776,7 @@ maxRange  := pool.FormatIP(pool.BroadcastOffset() - 1)</code></pre>
                 <section>
                     <h3>DHCP Config Üretimi — fmt.Sprintf ile Şablon</h3>
                     <p class="file-ref">📁 orch/dockerctl/client.go</p>
-                    <pre><code class="language-go">dhcpConf := fmt.Sprintf(`default-lease-time 600;
+                    <pre style="font-size:0.46em"><code class="language-go">dhcpConf := fmt.Sprintf(`default-lease-time 600;
 max-lease-time 7200;
 authoritative;
 option domain-name-servers %s;
@@ -1011,7 +1011,7 @@ topWG.Wait()                                   // bariyer — hepsi bitene kadar
                 <section>
                     <h3>Goroutine İçinde Goroutine — Detay</h3>
                     <p class="file-ref">📁 orch/orchestrator.go — container goroutine'leri</p>
-                    <pre><code class="language-go">for _, c := range o.cfg.Containers {
+                    <pre style="font-size:0.44em"><code class="language-go">for _, c := range o.cfg.Containers {
     wg.Add(1)
     go func(container config.ContainerCfg) {
         defer wg.Done()
@@ -1043,21 +1043,26 @@ topWG.Wait()                                   // bariyer — hepsi bitene kadar
         entry.Info("container başlatıldı")
     }(c)   // ← closure tuzağını önlemek için parametre olarak geç
 }</code></pre>
-                    <div class="warn-box" style="font-size:0.68em">
-                        ⚠️ <strong>Closure tuzağı nedir?</strong><br />
-                        Bir <code>for</code> döngüsü içinde <code>go func() { ... }()</code> başlattığınızda,
+                </section>
+                <section>
+                    <h3>Closure Tuzağı Nedir?</h3>
+                    <div class="warn-box" style="font-size:0.72em">
+                        ⚠️ Bir <code>for</code> döngüsü içinde <code>go func() { ... }()</code> başlattığınızda,
                         fonksiyon dıştaki <code>c</code> değişkenine <em>referansla</em> bağlanır ("closure" =
-                        kapanış).<br />
-                        Sorun: goroutine çalışmaya başladığında döngü çoktan ilerlemiştir,
-                        tüm goroutine'ler <strong>son değeri</strong> görür — yanlış container başlatılır!<br /><br />
+                        kapanış).<br /><br />
+                        <strong>Sorun:</strong> goroutine çalışmaya başladığında döngü çoktan ilerlemiştir,
+                        tüm goroutine'ler <strong>son değeri</strong> görür — yanlış container başlatılır!
+                    </div>
+                    <div class="highlight-box" style="font-size:0.72em; margin-top:0.6em">
                         <strong>Çözüm:</strong>
                         <code>go func(<span style="color:#00ADD8">container</span> ContainerCfg) { ... }(<span style="color:#00ADD8">c</span>)</code><br />
                         Döngü değişkenini <strong>parametre olarak geçirince</strong> o anki değer kopyalanır,
                         her goroutine kendi bağımsız kopyasıyla çalışır.
-                        <br /><br />
+                    </div>
+                    <p class="small dimmed" style="margin-top:0.8em">
                         <em>Not: Go 1.22+ bu sorunu otomatik çözer, ancak eski sürümlerle uyumluluk için bu kalıp hâlâ
                             önerilir.</em>
-                    </div>
+                    </p>
                 </section>
                 <section>
                     <h3>sync.WaitGroup — Bariyer Kalıbı</h3>
@@ -1091,7 +1096,7 @@ topWG.Wait()                                   // bariyer — hepsi bitene kadar
                         düşene kadar bloklar.
                         Goroutine'ler hangi sırayla biterse bitsin — önemli olan hepsinin bitmesi.
                     </div>
-                    <pre><code class="language-go">var wg sync.WaitGroup
+                    <pre style="font-size:0.48em"><code class="language-go">var wg sync.WaitGroup
 wg.Add(len(services))          // sayacı artır
 for _, svc := range services {
     go func() {
@@ -1114,7 +1119,7 @@ wg.Wait()                      // sayaç 0 olana kadar bekle</code></pre>
                 <section>
                     <h3>Buffered Error Channel — Gerçek Kod</h3>
                     <p class="file-ref">📁 orch/orchestrator.go</p>
-                    <pre><code class="language-go">// Tamponlu kanal: her goroutine kendi hatasını bloklanmadan gönderir
+                    <pre style="font-size:0.46em"><code class="language-go">// Tamponlu kanal: her goroutine kendi hatasını bloklanmadan gönderir
 errChan := make(chan error, len(o.cfg.Containers))
 
 go func(container config.ContainerCfg) {
@@ -1253,7 +1258,7 @@ if len(errs) > 0 {
                 <section>
                     <h3>select — Üç Yollu Bekleme</h3>
                     <p class="file-ref">📁 orch/dockerctl/client.go — waitForRunning()</p>
-                    <pre><code class="language-go">func (c *Client) waitForRunning(ctx context.Context,
+                    <pre style="font-size:0.46em"><code class="language-go">func (c *Client) waitForRunning(ctx context.Context,
     containerID string, timeout time.Duration) error {
 
     timer := time.NewTimer(timeout)
@@ -1283,7 +1288,7 @@ if len(errs) > 0 {
                 <section>
                     <h3>DHCP + DNS — Paralel Servis Başlatma</h3>
                     <p class="file-ref">📁 orch/dockerctl/client.go — EnsureDHCPAndDNS()</p>
-                    <pre><code class="language-go">type serviceResult struct {
+                    <pre style="font-size:0.46em"><code class="language-go">type serviceResult struct {
     name string
     id   string
     err  error
@@ -1325,7 +1330,7 @@ for res := range results {
                 <section>
                     <h3>os/exec — Sistem Komutlarını Yönetmek</h3>
                     <p class="file-ref">📁 orch/libvirtctl/libvirt.go — DefineVM()</p>
-                    <pre><code class="language-go">func (c *Client) DefineVM(name, imagePath, cloudInitISO,
+                    <pre style="font-size:0.46em"><code class="language-go">func (c *Client) DefineVM(name, imagePath, cloudInitISO,
     network string, memoryMB, vcpus int) error {
 
     // XML şablonunu Go string'i olarak oluştur
@@ -1353,7 +1358,7 @@ for res := range results {
                 <section>
                     <h3>os.Stat — Ortam Algılama</h3>
                     <p class="file-ref">📁 orch/libvirtctl/libvirt.go</p>
-                    <pre><code class="language-go">// KVMAvailable — donanım sanallaştırma desteğini kontrol et
+                    <pre style="font-size:0.46em"><code class="language-go">// KVMAvailable — donanım sanallaştırma desteğini kontrol et
 func KVMAvailable() bool {
     _, err := os.Stat("/dev/kvm")
     return err == nil              // dosya varsa KVM kullanılabilir
@@ -1367,14 +1372,14 @@ func virtType() string {
     return "qemu"                  // yazılım emülasyonu (örn: AWS EC2)
 }</code></pre>
                     <p class="file-ref">📁 orch/orchestrator.go — cloud-init ISO algılama</p>
-                    <pre><code class="language-go">// Dosya var mı kontrol et — yoksa CD-ROM ekleme
+                    <pre style="font-size:0.46em"><code class="language-go">// Dosya var mı kontrol et — yoksa CD-ROM ekleme
 cloudInitISO := filepath.Join(
     filepath.Dir(vm.Image), "..", "cloud-init", "cloud-init.iso",
 )
 if _, err := os.Stat(cloudInitISO); err != nil {
     cloudInitISO = ""   // cloud-init bulunamadı → CD-ROM'u atla
 }</code></pre>
-                    <div class="warn-box" style="font-size:0.7em">
+                    <div class="warn-box" style="font-size:0.65em">
                         ⚠️ Bulut VM'lerinin çoğunda <code>/dev/kvm</code> yoktur — aracınız çökmek yerine
                         <strong>zarif bir şekilde geri çekilmelidir</strong>.
                     </div>
@@ -1382,7 +1387,7 @@ if _, err := os.Stat(cloudInitISO); err != nil {
                 <section>
                     <h3>crypto — Saf Go ile WireGuard Anahtarları</h3>
                     <p class="file-ref">📁 wg/wg.go — GenerateClientConfig()</p>
-                    <pre><code class="language-go">func GenerateClientConfig(peerName, address string) error {
+                    <pre style="font-size:0.46em"><code class="language-go">func GenerateClientConfig(peerName, address string) error {
     // 32 rastgele byte üret — Go'nun crypto/rand paketi
     var priv [32]byte
     if _, err := rand.Read(priv[:]); err != nil {
@@ -1414,7 +1419,7 @@ if _, err := os.Stat(cloudInitISO); err != nil {
                 <section>
                     <h3>fmt.Errorf("%w") — Hata Sarmalama Zinciri</h3>
                     <p class="file-ref">📁 Tüm paketlerde kullanılan kalıp</p>
-                    <pre><code class="language-go">// Her katmanda bağlam ekle
+                    <pre style="font-size:0.46em"><code class="language-go">// Her katmanda bağlam ekle
 if err := o.dc.CreateNetwork(name, subnet, driver); err != nil {
     return fmt.Errorf("ağ oluştur: %w", err)
 }
@@ -1449,7 +1454,7 @@ return errors.Join(err1, err2, err3)</code></pre>
                 <section>
                     <h3>sync.Mutex — IP Havuzunu Korumak</h3>
                     <p class="file-ref">📁 orch/ipool/ipool.go</p>
-                    <pre><code class="language-go">type IPPool struct {
+                    <pre style="font-size:0.46em"><code class="language-go">type IPPool struct {
     subnet string
     base   uint32
     bcast  uint32
@@ -1521,7 +1526,7 @@ func (p *IPPool) RandomIP() (string, error) {
                 <section>
                     <h3>Lazy Strateji — Kod</h3>
                     <p class="file-ref">📁 orch/ipool/ipool.go — randomIPLazy()</p>
-                    <pre><code class="language-go">// Lazy strateji: rastgele başla, doğrusal tara
+                    <pre style="font-size:0.46em"><code class="language-go">// Lazy strateji: rastgele başla, doğrusal tara
 func (p *IPPool) randomIPLazy() (string, error) {
     total := p.end - p.start + 1
     if uint32(len(p.used)) >= total {
@@ -1544,7 +1549,7 @@ func (p *IPPool) randomIPLazy() (string, error) {
                 <section>
                     <h3>Eşzamanlılık Testi — 100 Goroutine</h3>
                     <p class="file-ref">📁 orch/ipool/ipool_test.go</p>
-                    <pre><code class="language-go">func TestPool_ConcurrentAccess(t *testing.T) {
+                    <pre style="font-size:0.46em"><code class="language-go">func TestPool_ConcurrentAccess(t *testing.T) {
     p, err := NewIPPool("172.18.5.0/24")
     if err != nil {
         t.Fatalf("havuz oluştur: %v", err)
@@ -1589,7 +1594,7 @@ func (p *IPPool) randomIPLazy() (string, error) {
                 <section>
                     <h3>runtime.Stack ile Goroutine ID Çıkarmak</h3>
                     <p class="file-ref">📁 cmd/log_hook.go</p>
-                    <pre><code class="language-go">// goroutineHook — logrus'a goroutine ID ekleyen hook
+                    <pre style="font-size:0.44em"><code class="language-go">// goroutineHook — logrus'a goroutine ID ekleyen hook
 type goroutineHook struct{}
 
 func (h *goroutineHook) Levels() []log.Level { return log.AllLevels }
@@ -1620,7 +1625,7 @@ func goID() string {
                 </section>
                 <section>
                     <h3>Log Çıktısı — Paralelliğin Kanıtı</h3>
-                    <pre><code class="language-text">INFO[0001] container başlatılıyor  container=nginx    goroutine=34
+                    <pre style="font-size:0.46em"><code class="language-text">INFO[0001] container başlatılıyor  container=nginx    goroutine=34
 INFO[0001] VM tanımlanıyor         vm=demo-vm         goroutine=38
 INFO[0001] container başlatılıyor  container=whoami   goroutine=36
 INFO[0002] container başlatıldı    container=nginx    goroutine=34
@@ -1631,7 +1636,7 @@ INFO[0004] VM başlatıldı           vm=demo-vm         goroutine=38</code></pr
                         Farklı goroutine ID'leri = gerçek paralel çalışma. Aynı zaman damgası = eşzamanlı başlangıç.
                     </div>
                     <p class="file-ref">📁 cmd/root.go — hook'u kaydet</p>
-                    <pre><code class="language-go">RootCmd.PersistentPreRunE = func(cmd *cobra.Command, args []string) error {
+                    <pre style="font-size:0.46em"><code class="language-go">RootCmd.PersistentPreRunE = func(cmd *cobra.Command, args []string) error {
     lvl, _ := log.ParseLevel(logLevel)
     log.SetLevel(lvl)
     log.SetFormatter(&log.TextFormatter{FullTimestamp: true})
@@ -1814,7 +1819,7 @@ wireguard:
                 <section>
                     <h3>Üstel Geri Çekilme ile Image Çekme</h3>
                     <p class="file-ref">📁 orch/dockerctl/client.go</p>
-                    <pre><code class="language-go">func (c *Client) pullImageWithRetries(image string, retry int) error {
+                    <pre style="font-size:0.46em"><code class="language-go">func (c *Client) pullImageWithRetries(image string, retry int) error {
     var lastErr error
     for i := 0; i < retry; i++ {
         err := c.c.PullImage(docker.PullImageOptions{
