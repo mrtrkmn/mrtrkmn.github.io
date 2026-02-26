@@ -44,7 +44,18 @@
         }
 
         .reveal pre code {
-            max-height: 520px;
+            max-height: 380px;
+            overflow-y: auto;
+        }
+
+        /* Prevent slide content from bleeding into adjacent slides */
+        .reveal .slides>section>section {
+            overflow-y: auto !important;
+            box-sizing: border-box;
+        }
+
+        .reveal .slides>section {
+            overflow-y: auto !important;
         }
 
         .reveal ul,
@@ -168,30 +179,72 @@
      SLIDE 1 — TITLE
      ═══════════════════════════════════════════════════════════════ -->
             <section>
-                <h1 style="margin-bottom:0.1em">Orchestrating a<br />Virtual Hub in Go</h1>
-                <p class="go-blue" style="font-size:0.9em">Container · VM · Ağ · VPN — tek bir binary</p>
-                <br />
-                <p><strong>Ahmet Türkmen</strong></p>
-                <p class="small dimmed">Systems Development Engineer — AWS<br />
-                    <a href="https://www.linkedin.com/in/mrturkmen/" style="color:#0A66C2">linkedin.com/in/mrturkmen</a>
-                    · <a href="https://github.com/mrtrkmn" style="color:#ccc">github.com/mrtrkmn</a><br />
-                    Gophers İstanbul · 2026
-                </p>
+                <h1 style="margin-bottom:0.2em">Orchestrating a<br />Virtual Hub in Go</h1>
+                <p class="go-blue" style="font-size:0.9em; margin-bottom:1.2em">Container · VM · Ağ · VPN — tek bir
+                    binary</p>
+
+                <div style="display:flex; flex-direction:column; align-items:center; gap:0.5em;">
+                    <p style="font-size:1.05em; margin:0"><strong>Ahmet Türkmen</strong></p>
+                    <p style="font-size:0.7em; opacity:0.6; margin:0">Systems Development Engineer — AWS</p>
+
+                    <div style="display:flex; gap:1.4em; margin-top:0.6em; align-items:center;">
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/in/mrturkmen/"
+                            style="text-decoration:none; display:flex; align-items:center; gap:0.4em; background:rgba(10,102,194,0.12); border:1px solid rgba(10,102,194,0.4); border-radius:8px; padding:0.35em 0.9em;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#0A66C2"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                            <span
+                                style="color:#0A66C2; font-size:0.6em; font-weight:500;">linkedin.com/in/mrturkmen</span>
+                        </a>
+                        <!-- GitHub -->
+                        <a href="https://github.com/mrtrkmn"
+                            style="text-decoration:none; display:flex; align-items:center; gap:0.4em; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.2); border-radius:8px; padding:0.35em 0.9em;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#ccc"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                            </svg>
+                            <span style="color:#ccc; font-size:0.6em; font-weight:500;">github.com/mrtrkmn</span>
+                        </a>
+                    </div>
+
+                    <p style="font-size:0.6em; opacity:0.4; margin-top:0.6em;">Gophers İstanbul · 2026</p>
+                </div>
             </section>
 
             <!-- ═══════════════════════════════════════════════════════════════
      SLIDE 2 — ABOUT ME
      ═══════════════════════════════════════════════════════════════ -->
             <section>
-                <h2>$ whoami</h2>
-                <ul>
-                    <li>Systems Development Engineer @ <strong>AWS</strong></li>
-                    <li>Altyapı, otomasyon, dağıtık sistemler</li>
-                    <li>Go tutkunu — günlük araç ve servislerde Go kullanıyorum</li>
-                    <li><a href="https://www.linkedin.com/in/mrturkmen/" style="color:#0A66C2">LinkedIn: mrturkmen</a>
-                    </li>
-                    <li><span class="go-blue">github.com/mrtrkmn</span></li>
-                </ul>
+                <h2 style="margin-bottom:0.5em">$ whoami</h2>
+                <p style="font-size:1.1em; margin:0;"><strong>Ahmet Türkmen</strong></p>
+                <p style="font-size:0.7em; opacity:0.55; margin:0.15em 0 0.7em 0;">Systems Development Engineer — AWS
+                </p>
+                <p style="font-size:0.78em; margin:0.3em 0;">Altyapı, otomasyon, dağıtık sistemler</p>
+                <p style="font-size:0.78em; margin:0.3em 0;">Go ile günlük araç ve servis geliştirme</p>
+                <p style="font-size:0.78em; margin:0.3em 0;">Container, VM ve ağ otomasyonu</p>
+                <div style="display:flex; gap:1.2em; justify-content:center; margin-top:1em;">
+                    <a href="https://www.linkedin.com/in/mrturkmen/"
+                        style="text-decoration:none; display:flex; align-items:center; gap:0.4em; background:rgba(10,102,194,0.12); border:1px solid rgba(10,102,194,0.4); border-radius:8px; padding:0.35em 0.9em;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#0A66C2"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                        <span style="color:#0A66C2; font-size:0.65em;">linkedin.com/in/mrturkmen</span>
+                    </a>
+                    <a href="https://github.com/mrtrkmn"
+                        style="text-decoration:none; display:flex; align-items:center; gap:0.4em; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.2); border-radius:8px; padding:0.35em 0.9em;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#ccc" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                        <span style="color:#ccc; font-size:0.65em;">github.com/mrtrkmn</span>
+                    </a>
+                </div>
             </section>
 
             <!-- ═══════════════════════════════════════════════════════════════
@@ -227,35 +280,130 @@
                 </section>
                 <section>
                     <h3>Demo / Lab Ortamları Zordur</h3>
-                    <div class="sketch-box" style="text-align:left; font-size:0.58em; line-height:1.5">
-                        <pre style="margin:0; background:transparent; font-size:1em; padding:0">
-┌─── Sunucu (tek makine) ───────────────────────────────────────────────┐
-│                                                                       │
-│   ┌──────────┐  ┌──────────┐  ┌──────────┐      ┌──────────────┐     │
-│   │  nginx   │  │  whoami  │  │ DHCP/DNS │      │   Debian VM  │     │
-│   │ :alpine  │  │  :latest │  │ container│      │  cloud-init  │     │
-│   │ .5.10    │  │ .5.11    │  │ .5.2/.3  │      │  1024MB RAM  │     │
-│   └────┬─────┘  └────┬─────┘  └────┬─────┘      └──────┬───────┘     │
-│        │             │             │                    │             │
-│   ─────┴─────────────┴─────────────┴────────────────────┴──────────   │
-│                Docker Bridge Ağı: 172.19.5.0/24                      │
-│                (subnet · gateway .5.1 · DHCP · DNS)                  │
-│   ────────────────────────────────────────────────────────────────    │
-│        │                                                             │
-│   ┌────┴──────────────────┐                                          │
-│   │  WireGuard VPN Tüneli │                                          │
-│   │  10.10.0.0/24         │                                          │
-│   │  X25519 anahtar çifti │                                          │
-│   └────┬──────────────────┘                                          │
-│        │                                                             │
-└────────┼─────────────────────────────────────────────────────────────┘
-         │
-    ┌────┴────┐
-    │ Uzak    │
-    │ İstemci │
-    └─────────┘
-</pre>
-                    </div>
+                    <svg viewBox="0 0 760 420" xmlns="http://www.w3.org/2000/svg"
+                        style="max-width:720px;margin:0.3em auto;display:block;font-family:'Courier New',monospace;">
+                        <defs>
+                            <marker id="arrDown" markerWidth="8" markerHeight="6" refX="4" refY="6" orient="auto">
+                                <path d="M0,0 L4,6 L8,0" fill="#00ADD8" />
+                            </marker>
+                            <marker id="arrUp" markerWidth="8" markerHeight="6" refX="4" refY="0" orient="auto">
+                                <path d="M0,6 L4,0 L8,6" fill="#00ADD8" />
+                            </marker>
+                            <linearGradient id="bridgeGrad" x1="0" y1="0" x2="1" y2="0">
+                                <stop offset="0%" stop-color="rgba(0,173,216,0.15)" />
+                                <stop offset="50%" stop-color="rgba(0,173,216,0.3)" />
+                                <stop offset="100%" stop-color="rgba(0,173,216,0.15)" />
+                            </linearGradient>
+                        </defs>
+
+                        <!-- Server boundary -->
+                        <rect x="4" y="4" width="752" height="340" rx="14" fill="rgba(255,255,255,0.03)"
+                            stroke="rgba(255,255,255,0.15)" stroke-width="1.5" />
+                        <text x="20" y="26" fill="#777" font-size="11" font-weight="bold">SUNUCU (tek makine)</text>
+
+                        <!-- ====== Container row ====== -->
+                        <!-- nginx -->
+                        <rect x="30" y="46" width="120" height="72" rx="8" fill="rgba(0,173,216,0.1)" stroke="#00ADD8"
+                            stroke-width="1.5" />
+                        <text x="90" y="67" text-anchor="middle" fill="#00ADD8" font-size="11"
+                            font-weight="bold">nginx:alpine</text>
+                        <text x="90" y="83" text-anchor="middle" fill="#aaa" font-size="10">container</text>
+                        <text x="90" y="108" text-anchor="middle" fill="#5DC9E2" font-size="12"
+                            font-weight="bold">.5.10</text>
+
+                        <!-- whoami -->
+                        <rect x="170" y="46" width="120" height="72" rx="8" fill="rgba(0,173,216,0.1)" stroke="#00ADD8"
+                            stroke-width="1.5" />
+                        <text x="230" y="67" text-anchor="middle" fill="#00ADD8" font-size="11"
+                            font-weight="bold">whoami</text>
+                        <text x="230" y="83" text-anchor="middle" fill="#aaa" font-size="10">container</text>
+                        <text x="230" y="108" text-anchor="middle" fill="#5DC9E2" font-size="12"
+                            font-weight="bold">.5.11</text>
+
+                        <!-- DHCP/DNS -->
+                        <rect x="310" y="46" width="120" height="72" rx="8" fill="rgba(0,173,216,0.1)" stroke="#00ADD8"
+                            stroke-width="1.5" />
+                        <text x="370" y="63" text-anchor="middle" fill="#00ADD8" font-size="11"
+                            font-weight="bold">DHCP</text>
+                        <text x="370" y="78" text-anchor="middle" fill="#00ADD8" font-size="11"
+                            font-weight="bold">DNS</text>
+                        <text x="370" y="94" text-anchor="middle" fill="#aaa" font-size="10">container</text>
+                        <text x="370" y="108" text-anchor="middle" fill="#5DC9E2" font-size="12" font-weight="bold">.5.2
+                            / .5.3</text>
+
+                        <!-- VM box -->
+                        <rect x="490" y="40" width="240" height="84" rx="10" fill="rgba(206,50,99,0.08)"
+                            stroke="#CE3263" stroke-width="1.5" stroke-dasharray="6 3" />
+                        <text x="526" y="62" fill="#CE3263" font-size="11" font-weight="bold">Debian VM</text>
+                        <text x="526" y="78" fill="#aaa" font-size="10">cloud-init · 1024 MB · 2 vCPU</text>
+                        <text x="526" y="96" fill="#aaa" font-size="10">curl, wget, vim, htop, nmap</text>
+                        <text x="526" y="112" fill="#CE3263" font-size="11">DHCP ile IP atanır</text>
+
+                        <!-- ====== Bridge network bar ====== -->
+                        <rect x="20" y="140" width="720" height="36" rx="6" fill="url(#bridgeGrad)" stroke="#00ADD8"
+                            stroke-width="1.5" />
+                        <text x="380" y="163" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">Docker
+                            Bridge Ağı — 172.19.5.0/24</text>
+
+                        <!-- vertical connectors from containers/VM to bridge -->
+                        <line x1="90" y1="118" x2="90" y2="140" stroke="#00ADD8" stroke-width="1.2"
+                            marker-end="url(#arrDown)" />
+                        <line x1="230" y1="118" x2="230" y2="140" stroke="#00ADD8" stroke-width="1.2"
+                            marker-end="url(#arrDown)" />
+                        <line x1="370" y1="118" x2="370" y2="140" stroke="#00ADD8" stroke-width="1.2"
+                            marker-end="url(#arrDown)" />
+                        <line x1="610" y1="124" x2="610" y2="140" stroke="#CE3263" stroke-width="1.2"
+                            stroke-dasharray="4 3" marker-end="url(#arrDown)" />
+
+                        <!-- ====== Network detail labels ====== -->
+                        <text x="380" y="198" text-anchor="middle" fill="#777" font-size="10">gateway .5.1 · subnet
+                            mask 255.255.255.0 · DHCP range .5.4–.5.254</text>
+
+                        <!-- ====== WireGuard tunnel ====== -->
+                        <rect x="200" y="218" width="360" height="56" rx="10" fill="rgba(93,201,226,0.08)"
+                            stroke="#5DC9E2" stroke-width="1.5" />
+                        <!-- lock icon (simple) -->
+                        <rect x="222" y="232" width="14" height="10" rx="2" fill="none" stroke="#5DC9E2"
+                            stroke-width="1.5" />
+                        <path d="M225,232 L225,228 a4,4 0 0,1 8,0 L233,232" fill="none" stroke="#5DC9E2"
+                            stroke-width="1.5" />
+                        <text x="248" y="245" fill="#5DC9E2" font-size="12" font-weight="bold">WireGuard VPN Tüneli
+                        </text>
+                        <text x="248" y="262" fill="#aaa" font-size="10">10.10.0.0/24 · X25519 anahtar çifti · wg-quick
+                            uyumlu</text>
+
+                        <!-- connector bridge → WG -->
+                        <line x1="380" y1="176" x2="380" y2="218" stroke="#5DC9E2" stroke-width="1.2"
+                            marker-end="url(#arrDown)" />
+
+                        <!-- connector WG → outside -->
+                        <line x1="380" y1="274" x2="380" y2="310" stroke="#5DC9E2" stroke-width="1.2"
+                            marker-end="url(#arrDown)" />
+
+                        <!-- Server boundary bottom -->
+
+                        <!-- ====== Remote client ====== -->
+                        <rect x="310" y="360" width="140" height="48" rx="10" fill="rgba(206,50,99,0.1)"
+                            stroke="#CE3263" stroke-width="1.5" />
+                        <text x="380" y="383" text-anchor="middle" fill="#CE3263" font-size="12" font-weight="bold">Uzak
+                            İstemci</text>
+                        <text x="380" y="398" text-anchor="middle" fill="#aaa" font-size="10">wg-client.conf</text>
+
+                        <!-- connector through server boundary -->
+                        <line x1="380" y1="344" x2="380" y2="360" stroke="#CE3263" stroke-width="1.2"
+                            stroke-dasharray="4 3" marker-end="url(#arrDown)" />
+
+                        <!-- Legend -->
+                        <rect x="600" y="360" width="10" height="10" rx="2" fill="rgba(0,173,216,0.3)"
+                            stroke="#00ADD8" />
+                        <text x="616" y="369" fill="#aaa" font-size="9">Container</text>
+                        <rect x="600" y="378" width="10" height="10" rx="2" fill="rgba(206,50,99,0.2)" stroke="#CE3263"
+                            stroke-dasharray="3 2" />
+                        <text x="616" y="387" fill="#aaa" font-size="9">VM (libvirt/KVM)</text>
+                        <rect x="600" y="396" width="10" height="10" rx="2" fill="rgba(93,201,226,0.2)"
+                            stroke="#5DC9E2" />
+                        <text x="616" y="405" fill="#aaa" font-size="9">VPN Tünel</text>
+                    </svg>
                     <div class="highlight-box">
                         Hedef: <strong>tek bir komut</strong> ile eksiksiz bir hibrit ortam —
                         <em>tekrarlanabilir</em>, <em>deklaratif</em>, <em>hızlı</em>.
@@ -287,7 +435,7 @@ $ orchestrator down      # temizleme</code></pre>
                 </section>
                 <section>
                     <h3>Go ile Yazılmış Kritik Projeler</h3>
-                    <table>
+                    <table style="font-size:0.63em">
                         <thead>
                             <tr>
                                 <th>Proje</th>
@@ -423,95 +571,125 @@ $ GOOS=linux GOARCH=arm64 go build -o orchestrator-arm .</code></pre>
                 </section>
                 <section>
                     <h3>CIDR Nedir?</h3>
-
-                    <!-- Visual CIDR breakdown -->
-                    <svg viewBox="0 0 760 340" xmlns="http://www.w3.org/2000/svg"
-                        style="max-width:720px;margin:0.2em auto;display:block;font-family:'Courier New',monospace;">
-
+                    <div class="highlight-box" style="font-size:0.75em">
+                        <strong>CIDR</strong> (Classless Inter-Domain Routing) — IP adreslerini ve alt ağları
+                        tanımlamak için kullanılan bir gösterim biçimidir.
+                    </div>
+                    <svg viewBox="0 0 720 370" xmlns="http://www.w3.org/2000/svg"
+                        style="max-width:680px;margin:0.4em auto;display:block;font-family:'Courier New',monospace;">
                         <!-- background -->
-                        <rect width="760" height="340" rx="12" fill="rgba(0,0,0,0.35)"
-                            stroke="rgba(0,173,216,0.4)" stroke-width="1.5" />
+                        <rect width="720" height="370" rx="12" fill="rgba(0,0,0,0.35)" stroke="rgba(0,173,216,0.5)"
+                            stroke-width="2" stroke-dasharray="8 4" />
 
-                        <!-- Title badge -->
-                        <text x="380" y="28" text-anchor="middle" fill="#aaa" font-size="11"
-                            font-style="italic">Classless Inter-Domain Routing</text>
+                        <!-- title IP -->
+                        <text x="360" y="38" text-anchor="middle" fill="#5DC9E2" font-size="15" font-weight="bold">CIDR
+                            Gösterimi</text>
 
-                        <!-- ══ IP address with octet boxes ══ -->
-                        <rect x="80"  y="42" width="110" height="40" rx="6" fill="rgba(0,173,216,0.18)" stroke="#00ADD8" stroke-width="1.5"/>
-                        <rect x="200" y="42" width="110" height="40" rx="6" fill="rgba(0,173,216,0.18)" stroke="#00ADD8" stroke-width="1.5"/>
-                        <rect x="320" y="42" width="110" height="40" rx="6" fill="rgba(0,173,216,0.18)" stroke="#00ADD8" stroke-width="1.5"/>
-                        <rect x="440" y="42" width="110" height="40" rx="6" fill="rgba(206,50,99,0.15)" stroke="#CE3263" stroke-width="1.5"/>
+                        <!-- IP address octets -->
+                        <rect x="115" y="52" width="60" height="34" rx="5" fill="rgba(0,173,216,0.18)"
+                            stroke="#00ADD8" />
+                        <text x="145" y="74" text-anchor="middle" fill="#fff" font-size="16"
+                            font-weight="bold">172</text>
 
-                        <text x="135" y="68" text-anchor="middle" fill="#00ADD8" font-size="20" font-weight="bold">172</text>
-                        <text x="255" y="68" text-anchor="middle" fill="#00ADD8" font-size="20" font-weight="bold">19</text>
-                        <text x="375" y="68" text-anchor="middle" fill="#00ADD8" font-size="20" font-weight="bold">5</text>
-                        <text x="495" y="68" text-anchor="middle" fill="#CE3263" font-size="20" font-weight="bold">0</text>
+                        <text x="180" y="74" text-anchor="middle" fill="#555" font-size="18">.</text>
 
-                        <!-- dots between octets -->
-                        <text x="193" y="68" text-anchor="middle" fill="#666" font-size="22" font-weight="bold">.</text>
-                        <text x="313" y="68" text-anchor="middle" fill="#666" font-size="22" font-weight="bold">.</text>
-                        <text x="433" y="68" text-anchor="middle" fill="#666" font-size="22" font-weight="bold">.</text>
+                        <rect x="190" y="52" width="50" height="34" rx="5" fill="rgba(0,173,216,0.18)"
+                            stroke="#00ADD8" />
+                        <text x="215" y="74" text-anchor="middle" fill="#fff" font-size="16"
+                            font-weight="bold">19</text>
 
-                        <!-- /24 label -->
-                        <text x="580" y="68" text-anchor="start" fill="#fff" font-size="22" font-weight="bold">/ 24</text>
+                        <text x="245" y="74" text-anchor="middle" fill="#555" font-size="18">.</text>
 
-                        <!-- Bit ruler -->
-                        <line x1="80" y1="95" x2="550" y2="95" stroke="#555" stroke-width="1"/>
-                        <text x="80"  y="110" fill="#888" font-size="9">bit 0</text>
-                        <text x="190" y="110" fill="#888" font-size="9">bit 8</text>
-                        <text x="310" y="110" fill="#888" font-size="9">bit 16</text>
-                        <text x="430" y="110" fill="#888" font-size="9">bit 24</text>
-                        <text x="540" y="110" fill="#888" font-size="9">bit 31</text>
+                        <rect x="255" y="52" width="40" height="34" rx="5" fill="rgba(0,173,216,0.18)"
+                            stroke="#00ADD8" />
+                        <text x="275" y="74" text-anchor="middle" fill="#fff" font-size="16" font-weight="bold">5</text>
 
-                        <!-- Network / Host labels with braces -->
-                        <line x1="80"  y1="118" x2="430" y2="118" stroke="#00ADD8" stroke-width="2"/>
-                        <line x1="430" y1="118" x2="550" y2="118" stroke="#CE3263" stroke-width="2"/>
-                        <text x="255" y="133" text-anchor="middle" fill="#00ADD8" font-size="12" font-weight="bold">Ağ bölümü (24 bit)</text>
-                        <text x="490" y="133" text-anchor="middle" fill="#CE3263" font-size="12" font-weight="bold">Host (8 bit)</text>
+                        <text x="300" y="74" text-anchor="middle" fill="#555" font-size="18">.</text>
 
-                        <!-- Arrow to host count -->
-                        <text x="490" y="150" text-anchor="middle" fill="#CE3263" font-size="11">2⁸ − 2 = <tspan font-weight="bold">254</tspan> host</text>
+                        <rect x="310" y="52" width="40" height="34" rx="5" fill="rgba(0,173,216,0.18)"
+                            stroke="#00ADD8" />
+                        <text x="330" y="74" text-anchor="middle" fill="#fff" font-size="16" font-weight="bold">0</text>
 
-                        <!-- ══ Examples table ══ -->
-                        <rect x="60" y="168" width="640" height="28" rx="4" fill="rgba(0,173,216,0.15)"/>
-                        <text x="170" y="186" text-anchor="middle" fill="#00ADD8" font-size="12" font-weight="bold">CIDR</text>
-                        <text x="340" y="186" text-anchor="middle" fill="#00ADD8" font-size="12" font-weight="bold">Subnet Mask</text>
-                        <text x="530" y="186" text-anchor="middle" fill="#00ADD8" font-size="12" font-weight="bold">Kullanılabilir Host</text>
+                        <!-- slash -->
+                        <text x="365" y="74" text-anchor="middle" fill="#CE3263" font-size="20"
+                            font-weight="bold">/</text>
+
+                        <!-- prefix length -->
+                        <rect x="380" y="52" width="50" height="34" rx="5" fill="rgba(206,50,99,0.18)"
+                            stroke="#CE3263" />
+                        <text x="405" y="74" text-anchor="middle" fill="#CE3263" font-size="16"
+                            font-weight="bold">24</text>
+
+                        <!-- bit ruler -->
+                        <text x="60" y="114" fill="#777" font-size="10">bit</text>
+                        <rect x="80" y="102" width="288" height="18" rx="3" fill="rgba(0,173,216,0.22)" stroke="#00ADD8"
+                            stroke-width="1" />
+                        <text x="224" y="115" text-anchor="middle" fill="#00ADD8" font-size="11">← 24 bit ağ
+                            (network) →</text>
+
+                        <rect x="368" y="102" width="96" height="18" rx="3" fill="rgba(206,50,99,0.22)" stroke="#CE3263"
+                            stroke-width="1" />
+                        <text x="416" y="115" text-anchor="middle" fill="#CE3263" font-size="11">8 bit host</text>
+
+                        <!-- brace / annotation -->
+                        <line x1="80" y1="126" x2="464" y2="126" stroke="#555" stroke-width="1"
+                            stroke-dasharray="3 3" />
+
+                        <!-- left label -->
+                        <text x="80" y="148" fill="#aaa" font-size="12">Ağ adresi (network address)</text>
+                        <text x="80" y="163" fill="#5DC9E2" font-size="11">İlk 24 bit sabit → tüm
+                            host'lar aynı ağda</text>
+
+                        <!-- right label -->
+                        <text x="368" y="148" fill="#aaa" font-size="12">Host kısmı</text>
+                        <text x="368" y="163" fill="#CE3263" font-size="11">2⁸ − 2 = 254 kullanılabilir
+                            adres</text>
+
+                        <!-- table header -->
+                        <rect x="60" y="185" width="600" height="26" rx="4" fill="rgba(0,173,216,0.15)" />
+                        <text x="170" y="203" text-anchor="middle" fill="#00ADD8" font-size="13"
+                            font-weight="bold">CIDR</text>
+                        <text x="340" y="203" text-anchor="middle" fill="#00ADD8" font-size="13" font-weight="bold">Ağ
+                            Maskesi</text>
+                        <text x="530" y="203" text-anchor="middle" fill="#00ADD8" font-size="13"
+                            font-weight="bold">Kullanılabilir Host</text>
 
                         <!-- row 1 -->
-                        <line x1="60" y1="196" x2="700" y2="196" stroke="#333" stroke-width="1"/>
-                        <text x="170" y="216" text-anchor="middle" fill="#fff" font-size="13">192.168.1.0<tspan font-weight="bold" fill="#5DC9E2">/24</tspan></text>
-                        <text x="340" y="216" text-anchor="middle" fill="#aaa" font-size="13">255.255.255.0</text>
-                        <text x="530" y="216" text-anchor="middle" fill="#5DC9E2" font-size="14" font-weight="bold">254</text>
+                        <line x1="60" y1="215" x2="660" y2="215" stroke="#333" stroke-width="1" />
+                        <text x="170" y="237" text-anchor="middle" fill="#fff" font-size="13">192.168.1.0/24</text>
+                        <text x="340" y="237" text-anchor="middle" fill="#aaa" font-size="13">255.255.255.0</text>
+                        <text x="530" y="237" text-anchor="middle" fill="#5DC9E2" font-size="14"
+                            font-weight="bold">254</text>
 
                         <!-- row 2 -->
-                        <line x1="60" y1="228" x2="700" y2="228" stroke="#333" stroke-width="1"/>
-                        <text x="170" y="248" text-anchor="middle" fill="#fff" font-size="13">10.42.0.0<tspan font-weight="bold" fill="#5DC9E2">/16</tspan></text>
-                        <text x="340" y="248" text-anchor="middle" fill="#aaa" font-size="13">255.255.0.0</text>
-                        <text x="530" y="248" text-anchor="middle" fill="#5DC9E2" font-size="14" font-weight="bold">65 534</text>
+                        <line x1="60" y1="249" x2="660" y2="249" stroke="#333" stroke-width="1" />
+                        <text x="170" y="271" text-anchor="middle" fill="#fff" font-size="13">10.42.0.0/16</text>
+                        <text x="340" y="271" text-anchor="middle" fill="#aaa" font-size="13">255.255.0.0</text>
+                        <text x="530" y="271" text-anchor="middle" fill="#5DC9E2" font-size="14" font-weight="bold">65
+                            534</text>
 
                         <!-- row 3 -->
-                        <line x1="60" y1="260" x2="700" y2="260" stroke="#333" stroke-width="1"/>
-                        <text x="170" y="280" text-anchor="middle" fill="#fff" font-size="13">10.0.0.0<tspan font-weight="bold" fill="#5DC9E2">/8</tspan></text>
-                        <text x="340" y="280" text-anchor="middle" fill="#aaa" font-size="13">255.0.0.0</text>
-                        <text x="530" y="280" text-anchor="middle" fill="#5DC9E2" font-size="14" font-weight="bold">16 777 214</text>
+                        <line x1="60" y1="283" x2="660" y2="283" stroke="#333" stroke-width="1" />
+                        <text x="170" y="305" text-anchor="middle" fill="#fff" font-size="13">10.0.0.0/8</text>
+                        <text x="340" y="305" text-anchor="middle" fill="#aaa" font-size="13">255.0.0.0</text>
+                        <text x="530" y="305" text-anchor="middle" fill="#5DC9E2" font-size="14" font-weight="bold">16
+                            777 214</text>
 
                         <!-- bottom border -->
-                        <line x1="60" y1="292" x2="700" y2="292" stroke="#333" stroke-width="1"/>
+                        <line x1="60" y1="317" x2="660" y2="317" stroke="#333" stroke-width="1" />
 
-                        <!-- formula -->
-                        <text x="380" y="316" text-anchor="middle" fill="#888" font-size="11">
-                            Host sayısı = 2^(32 − prefix) − 2 &nbsp; (ağ adresi + broadcast hariç)
-                        </text>
-                        <text x="380" y="335" text-anchor="middle" fill="#666" font-size="10">
-                            Kullanım: IP havuzu · DHCP aralığı · firewall kuralları · routing tabloları
-                        </text>
+                        <!-- footer note -->
+                        <text x="360" y="348" text-anchor="middle" fill="#777" font-size="11">Host sayısı =
+                            2^(32 − prefix) − 2 (ağ adresi ve broadcast hariç)</text>
                     </svg>
+                    <p class="small dimmed">Nerede kullanılır? Ağ segmentasyonu, IP havuzu yönetimi, DHCP aralık
+                        tanımlama,
+                        firewall kuralları, routing tabloları — ağ programlamasının temel yapı taşı.</p>
                 </section>
                 <section>
                     <h3>net.ParseCIDR — Subnet'i Anlamak</h3>
                     <p class="file-ref">📁 orch/ipool/ipool.go — NewIPPool()</p>
-                    <pre><code class="language-go">func NewIPPool(cidr string) (*IPPool, error) {
+                    <pre style="font-size:0.46em"><code class="language-go">func NewIPPool(cidr string) (*IPPool, error) {
     ip, ipnet, err := net.ParseCIDR(cidr)
     if err != nil {
         return nil, err
@@ -545,7 +723,7 @@ $ GOOS=linux GOARCH=arm64 go build -o orchestrator-arm .</code></pre>
                 <section>
                     <h3>IPv4 = uint32 — Anahtar İçgörü</h3>
                     <p class="file-ref">📁 orch/ipool/ipool.go — yardımcı fonksiyonlar</p>
-                    <pre><code class="language-go">// Her IPv4 adresi aslında 32-bit'lik bir tam sayıdır
+                    <pre style="font-size:0.46em"><code class="language-go">// Her IPv4 adresi aslında 32-bit'lik bir tam sayıdır
 func ipToUint32(ip net.IP) uint32 {
     return binary.BigEndian.Uint32(ip.To4())
 }
@@ -573,7 +751,7 @@ func maskToUint32(m net.IPMask) uint32 {
                 <section>
                     <h3>Broadcast Hesaplama — Gerçek Kod</h3>
                     <p class="file-ref">📁 orch/dockerctl/client.go — EnsureDHCPAndDNS()</p>
-                    <pre><code class="language-go">_, ipNet, err := net.ParseCIDR(pool.Subnet())
+                    <pre style="font-size:0.46em"><code class="language-go">_, ipNet, err := net.ParseCIDR(pool.Subnet())
 // ...
 netIP := ipNet.IP.To4()
 mask := ipNet.Mask
@@ -591,25 +769,19 @@ dhcpIP    := pool.FormatIP(2)    // x.x.x.2  → DHCP sunucu
 dnsIP     := pool.FormatIP(3)    // x.x.x.3  → DNS sunucu
 minRange  := pool.FormatIP(4)    // x.x.x.4  → DHCP aralık başı
 maxRange  := pool.FormatIP(pool.BroadcastOffset() - 1)</code></pre>
-                    <div class="highlight-box" style="font-size:0.7em">
-                        <strong>Ne yapıyor bu kod?</strong> Subnet CIDR'ından (ör: <code>172.19.5.0/24</code>)
-                        DHCP sunucusunun ihtiyaç duyduğu tüm bilgileri çıkartıyor:<br />
-                        <strong>1.</strong> Broadcast adresini hesapla → <code>172.19.5.255</code> (ağa yayın
-                        adresi)<br />
-                        <strong>2.</strong> Maske string'e çevir → <code>255.255.255.0</code> (DHCP config'e
-                        yazılacak)<br />
-                        <strong>3.</strong> Sabit IP'leri ata → <code>.2</code> = DHCP sunucu, <code>.3</code> = DNS
-                        sunucu<br />
-                        <strong>4.</strong> Dinamik aralığı belirle → <code>.4</code> ile <code>.254</code> arası
-                        istemcilere verilecek<br />
-                        Tüm bu hesaplamalar Go'nun <code>net</code> + <code>encoding/binary</code> paketleri ile —
-                        harici kütüphane sıfır.
+                    <div class="highlight-box" style="font-size:0.6em">
+                        <strong>Ne yapıyor?</strong> Subnet CIDR'ından DHCP'nin tüm bilgilerini çıkartıyor:<br />
+                        <strong>1.</strong> Broadcast hesapla → <code>172.19.5.255</code>
+                        <strong>2.</strong> Maske → <code>255.255.255.0</code>
+                        <strong>3.</strong> Sabit IP: <code>.2</code> = DHCP, <code>.3</code> = DNS
+                        <strong>4.</strong> Aralık: <code>.4</code> – <code>.254</code> istemcilere<br />
+                        Go'nun <code>net</code> + <code>encoding/binary</code> ile — harici kütüphane sıfır.
                     </div>
                 </section>
                 <section>
                     <h3>DHCP Config Üretimi — fmt.Sprintf ile Şablon</h3>
                     <p class="file-ref">📁 orch/dockerctl/client.go</p>
-                    <pre><code class="language-go">dhcpConf := fmt.Sprintf(`default-lease-time 600;
+                    <pre style="font-size:0.46em"><code class="language-go">dhcpConf := fmt.Sprintf(`default-lease-time 600;
 max-lease-time 7200;
 authoritative;
 option domain-name-servers %s;
@@ -642,32 +814,149 @@ if err := os.WriteFile(dhcpConfPath, []byte(dhcpConf), 0o644); err != nil {
                 </section>
                 <section>
                     <h3>Neden Goroutine?</h3>
-                    <div class="columns">
-                        <div>
-                            <p style="color:#CE3263; font-weight:bold">Sıralı (Yavaş)</p>
-                            <div class="sketch-box">
-                                Container 1 ═══►
-                                Container 2 ═══►
-                                (bekle)
-                                VM 1 ═══════►
-                                VM 2 ═══════►
-                                (bekle)
-                                ──────────────────
-                                Toplam: Σ hepsi
-                            </div>
-                        </div>
-                        <div>
-                            <p style="color:#00ADD8; font-weight:bold">Paralel (Hızlı)</p>
-                            <div class="sketch-box">
-                                Container 1 ═══► ┐
-                                Container 2 ═══► ┤ paralel
-                                VM 1 ═══════► ┤
-                                VM 2 ═══════► ┘
-                                ──────────────────
-                                Toplam: max(hepsi)
-                            </div>
-                        </div>
-                    </div>
+                    <svg viewBox="0 0 780 340" xmlns="http://www.w3.org/2000/svg"
+                        style="max-width:740px;margin:0 auto;display:block;font-family:'Courier New',monospace;">
+                        <!-- background -->
+                        <rect width="780" height="340" rx="12" fill="rgba(0,0,0,0.35)" stroke="rgba(0,173,216,0.5)"
+                            stroke-width="2" stroke-dasharray="8 4" />
+
+                        <!-- ==================== LEFT: Sequential ==================== -->
+                        <text x="195" y="28" text-anchor="middle" fill="#CE3263" font-size="14"
+                            font-weight="bold">Sıralı (Yavaş)</text>
+
+                        <!-- time axis left -->
+                        <line x1="30" y1="310" x2="370" y2="310" stroke="#555" stroke-width="1" />
+                        <text x="200" y="330" text-anchor="middle" fill="#777" font-size="10">zaman →</text>
+                        <!-- tick marks -->
+                        <line x1="120" y1="308" x2="120" y2="312" stroke="#555" />
+                        <line x1="200" y1="308" x2="200" y2="312" stroke="#555" />
+                        <line x1="280" y1="308" x2="280" y2="312" stroke="#555" />
+                        <line x1="360" y1="308" x2="360" y2="312" stroke="#555" />
+
+                        <!-- row labels -->
+                        <text x="26" y="62" fill="#aaa" font-size="11" text-anchor="end">C1</text>
+                        <text x="26" y="102" fill="#aaa" font-size="11" text-anchor="end">C2</text>
+                        <text x="26" y="162" fill="#aaa" font-size="11" text-anchor="end">VM1</text>
+                        <text x="26" y="222" fill="#aaa" font-size="11" text-anchor="end">VM2</text>
+
+                        <!-- C1 bar -->
+                        <rect x="30" y="48" width="90" height="22" rx="4" fill="rgba(206,50,99,0.35)" stroke="#CE3263"
+                            stroke-width="1.5" />
+                        <text x="75" y="63" text-anchor="middle" fill="#fff" font-size="10">3s</text>
+                        <!-- wait dot between C1–C2 -->
+                        <text x="125" y="62" fill="#CE3263" font-size="12">⏳</text>
+
+                        <!-- C2 bar -->
+                        <rect x="120" y="88" width="75" height="22" rx="4" fill="rgba(206,50,99,0.35)" stroke="#CE3263"
+                            stroke-width="1.5" />
+                        <text x="158" y="103" text-anchor="middle" fill="#fff" font-size="10">2s</text>
+                        <!-- separator line -->
+                        <line x1="30" y1="125" x2="370" y2="125" stroke="#444" stroke-dasharray="4 3" />
+                        <text x="200" y="139" text-anchor="middle" fill="#777" font-size="9">container'lar bitti →
+                            VM'ler başlar</text>
+                        <!-- wait dot between C2–VM1 -->
+                        <text x="200" y="162" fill="#CE3263" font-size="12">⏳</text>
+
+                        <!-- VM1 bar -->
+                        <rect x="195" y="148" width="120" height="22" rx="4" fill="rgba(206,50,99,0.25)"
+                            stroke="#CE3263" stroke-width="1.5" />
+                        <text x="255" y="163" text-anchor="middle" fill="#fff" font-size="10">8s</text>
+
+                        <!-- VM2 bar -->
+                        <rect x="315" y="208" width="50" height="22" rx="4" fill="rgba(206,50,99,0.25)" stroke="#CE3263"
+                            stroke-width="1.5" />
+                        <text x="340" y="223" text-anchor="middle" fill="#fff" font-size="10">5s</text>
+
+                        <!-- total bracket -->
+                        <line x1="30" y1="250" x2="365" y2="250" stroke="#CE3263" stroke-width="2" />
+                        <line x1="30" y1="245" x2="30" y2="255" stroke="#CE3263" stroke-width="2" />
+                        <line x1="365" y1="245" x2="365" y2="255" stroke="#CE3263" stroke-width="2" />
+                        <text x="200" y="270" text-anchor="middle" fill="#CE3263" font-size="13"
+                            font-weight="bold">Toplam = Σ hepsi = 18s</text>
+                        <text x="200" y="288" text-anchor="middle" fill="#CE3263" font-size="11">3 + 2 + 8 + 5</text>
+
+                        <!-- ==================== DIVIDER ==================== -->
+                        <line x1="395" y1="20" x2="395" y2="300" stroke="#555" stroke-width="1"
+                            stroke-dasharray="6 4" />
+
+                        <!-- ==================== RIGHT: Parallel ==================== -->
+                        <text x="585" y="28" text-anchor="middle" fill="#00ADD8" font-size="14"
+                            font-weight="bold">Paralel (Goroutine)</text>
+
+                        <!-- time axis right -->
+                        <line x1="410" y1="310" x2="750" y2="310" stroke="#555" stroke-width="1" />
+                        <text x="580" y="330" text-anchor="middle" fill="#777" font-size="10">zaman →</text>
+                        <line x1="490" y1="308" x2="490" y2="312" stroke="#555" />
+                        <line x1="570" y1="308" x2="570" y2="312" stroke="#555" />
+                        <line x1="650" y1="308" x2="650" y2="312" stroke="#555" />
+
+                        <!-- fan-out arrows from "go" -->
+                        <rect x="410" y="90" width="32" height="80" rx="6" fill="rgba(0,173,216,0.15)" stroke="#00ADD8"
+                            stroke-width="1" />
+                        <text x="426" y="123" text-anchor="middle" fill="#00ADD8" font-size="9" font-weight="bold"
+                            transform="rotate(-90,426,123)">go func</text>
+
+                        <line x1="442" y1="100" x2="458" y2="55" stroke="#00ADD8" stroke-width="1.2"
+                            marker-end="url(#arrowBlue)" />
+                        <line x1="442" y1="112" x2="458" y2="95" stroke="#00ADD8" stroke-width="1.2"
+                            marker-end="url(#arrowBlue)" />
+                        <line x1="442" y1="130" x2="458" y2="155" stroke="#00ADD8" stroke-width="1.2"
+                            marker-end="url(#arrowBlue)" />
+                        <line x1="442" y1="145" x2="458" y2="215" stroke="#00ADD8" stroke-width="1.2"
+                            marker-end="url(#arrowBlue)" />
+
+                        <!-- arrow marker -->
+                        <defs>
+                            <marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                                <path d="M0,0 L8,3 L0,6" fill="#00ADD8" />
+                            </marker>
+                        </defs>
+
+                        <!-- row labels right -->
+                        <text x="474" y="55" fill="#aaa" font-size="11">C1</text>
+                        <text x="474" y="95" fill="#aaa" font-size="11">C2</text>
+                        <text x="474" y="163" fill="#aaa" font-size="11">VM1</text>
+                        <text x="474" y="223" fill="#aaa" font-size="11">VM2</text>
+
+                        <!-- C1 bar — 3s -->
+                        <rect x="496" y="42" width="90" height="20" rx="4" fill="rgba(0,173,216,0.35)" stroke="#00ADD8"
+                            stroke-width="1.5" />
+                        <text x="541" y="56" text-anchor="middle" fill="#fff" font-size="10">3s</text>
+                        <!-- checkmark -->
+                        <text x="592" y="57" fill="#5DC9E2" font-size="12">✓</text>
+
+                        <!-- C2 bar — 2s -->
+                        <rect x="496" y="82" width="75" height="20" rx="4" fill="rgba(0,173,216,0.35)" stroke="#00ADD8"
+                            stroke-width="1.5" />
+                        <text x="534" y="96" text-anchor="middle" fill="#fff" font-size="10">2s</text>
+                        <text x="577" y="97" fill="#5DC9E2" font-size="12">✓</text>
+
+                        <!-- VM1 bar — 8s (longest!) -->
+                        <rect x="496" y="150" width="160" height="20" rx="4" fill="rgba(93,201,226,0.25)"
+                            stroke="#5DC9E2" stroke-width="1.5" />
+                        <text x="576" y="164" text-anchor="middle" fill="#fff" font-size="10">8s</text>
+                        <text x="662" y="165" fill="#5DC9E2" font-size="12">✓</text>
+
+                        <!-- VM2 bar — 5s -->
+                        <rect x="496" y="210" width="110" height="20" rx="4" fill="rgba(93,201,226,0.25)"
+                            stroke="#5DC9E2" stroke-width="1.5" />
+                        <text x="551" y="224" text-anchor="middle" fill="#fff" font-size="10">5s</text>
+                        <text x="612" y="225" fill="#5DC9E2" font-size="12">✓</text>
+
+                        <!-- finish line at longest (VM1 end) -->
+                        <line x1="656" y1="38" x2="656" y2="240" stroke="#00ADD8" stroke-width="1.5"
+                            stroke-dasharray="5 3" />
+                        <text x="660" y="35" fill="#00ADD8" font-size="9">done</text>
+
+                        <!-- total bracket -->
+                        <line x1="496" y1="250" x2="656" y2="250" stroke="#00ADD8" stroke-width="2" />
+                        <line x1="496" y1="245" x2="496" y2="255" stroke="#00ADD8" stroke-width="2" />
+                        <line x1="656" y1="245" x2="656" y2="255" stroke="#00ADD8" stroke-width="2" />
+                        <text x="576" y="270" text-anchor="middle" fill="#00ADD8" font-size="13"
+                            font-weight="bold">Toplam = max(hepsi) = 8s</text>
+                        <text x="576" y="288" text-anchor="middle" fill="#5DC9E2" font-size="11">max(3, 2, 8, 5) — 2.25×
+                            daha hızlı</text>
+                    </svg>
                     <br />
                     <div class="highlight-box" style="font-size:0.75em">
                         Goroutine başlangıç maliyeti: <strong>~2 KB</strong> yığın belleği. Thread: <strong>~1
@@ -677,18 +966,13 @@ if err := os.WriteFile(dhcpConfPath, []byte(dhcpConf), 0o644); err != nil {
                 </section>
                 <section>
                     <h3>İki Seviyeli Fan-Out — Gerçek Kod</h3>
-                    <div class="highlight-box" style="font-size:0.7em">
-                        <strong>"İki seviyeli fan-out" ne demek?</strong><br />
-                        <strong>Fan-out</strong> = tek bir noktadan birden fazla paralel işe dallanma (yelpaze gibi
-                        açılma).<br />
-                        <strong>Seviye 1:</strong> Ana goroutine → 2 gözetici goroutine başlatır: biri <em>tüm
-                            container'lar</em>, diğeri <em>tüm VM'ler</em> için.<br />
-                        <strong>Seviye 2:</strong> Her gözetici kendi içinde → her container/VM için ayrı bir goroutine
-                        daha başlatır.<br />
-                        Neden? Container'lar <em>birbirini beklemesin</em>, VM'ler de <em>container'ları
-                            beklemesin</em>.
-                        İki seviye sayesinde hem <strong>türler arası</strong> hem <strong>tür içi</strong> paralellik
-                        sağlanır.
+                    <div class="highlight-box" style="font-size:0.6em">
+                        <strong>"İki seviyeli fan-out" ne demek?</strong>
+                        <strong>Fan-out</strong> = tek noktadan birden fazla paralel işe dallanma.
+                        <strong>Seviye 1:</strong> Ana goroutine → 2 gözetici goroutine: biri <em>container'lar</em>,
+                        diğeri <em>VM'ler</em> için.
+                        <strong>Seviye 2:</strong> Her gözetici → her container/VM için ayrı goroutine.
+                        İki seviye = hem <strong>türler arası</strong> hem <strong>tür içi</strong> paralellik.
                     </div>
                     <p class="file-ref">📁 orch/orchestrator.go — Up() metodu</p>
                     <pre style="font-size:0.48em"><code class="language-go">// ── Container ve VM'leri eşzamanlı başlat ──
@@ -727,7 +1011,7 @@ topWG.Wait()                                   // bariyer — hepsi bitene kadar
                 <section>
                     <h3>Goroutine İçinde Goroutine — Detay</h3>
                     <p class="file-ref">📁 orch/orchestrator.go — container goroutine'leri</p>
-                    <pre><code class="language-go">for _, c := range o.cfg.Containers {
+                    <pre style="font-size:0.44em"><code class="language-go">for _, c := range o.cfg.Containers {
     wg.Add(1)
     go func(container config.ContainerCfg) {
         defer wg.Done()
@@ -759,55 +1043,53 @@ topWG.Wait()                                   // bariyer — hepsi bitene kadar
         entry.Info("container başlatıldı")
     }(c)   // ← closure tuzağını önlemek için parametre olarak geç
 }</code></pre>
-                    <div class="warn-box" style="font-size:0.68em">
-                        ⚠️ <strong>Closure tuzağı nedir?</strong><br />
-                        Bir <code>for</code> döngüsü içinde <code>go func() { ... }()</code> başlattığınızda,
+                </section>
+                <section>
+                    <h3>Closure Tuzağı Nedir?</h3>
+                    <div class="warn-box" style="font-size:0.72em">
+                        ⚠️ Bir <code>for</code> döngüsü içinde <code>go func() { ... }()</code> başlattığınızda,
                         fonksiyon dıştaki <code>c</code> değişkenine <em>referansla</em> bağlanır ("closure" =
-                        kapanış).<br />
-                        Sorun: goroutine çalışmaya başladığında döngü çoktan ilerlemiştir,
-                        tüm goroutine'ler <strong>son değeri</strong> görür — yanlış container başlatılır!<br /><br />
+                        kapanış).<br /><br />
+                        <strong>Sorun:</strong> goroutine çalışmaya başladığında döngü çoktan ilerlemiştir,
+                        tüm goroutine'ler <strong>son değeri</strong> görür — yanlış container başlatılır!
+                    </div>
+                    <div class="highlight-box" style="font-size:0.72em; margin-top:0.6em">
                         <strong>Çözüm:</strong>
                         <code>go func(<span style="color:#00ADD8">container</span> ContainerCfg) { ... }(<span style="color:#00ADD8">c</span>)</code><br />
                         Döngü değişkenini <strong>parametre olarak geçirince</strong> o anki değer kopyalanır,
                         her goroutine kendi bağımsız kopyasıyla çalışır.
-                        <br /><br />
+                    </div>
+                    <p class="small dimmed" style="margin-top:0.8em">
                         <em>Not: Go 1.22+ bu sorunu otomatik çözer, ancak eski sürümlerle uyumluluk için bu kalıp hâlâ
                             önerilir.</em>
-                    </div>
+                    </p>
                 </section>
                 <section>
                     <h3>sync.WaitGroup — Bariyer Kalıbı</h3>
-                    <div class="sketch-box" style="text-align:left; font-size:0.6em; line-height:1.5">
+                    <div class="sketch-box" style="text-align:left; font-size:0.48em; line-height:1.4">
                         <pre style="margin:0; background:transparent; font-size:1em; padding:0">
   main goroutine                   sayaç = 0
-       │
        ├── wg.Add(1) ──────────────sayaç = 1
        │   └── go func A()
-       │
        ├── wg.Add(1) ──────────────sayaç = 2
        │   └── go func B()
-       │
        ├── wg.Add(1) ──────────────sayaç = 3
        │   └── go func C()
-       │
        ▼
-   wg.Wait()  ◄── blokla ─────────sayaç &gt; 0 olduğu sürece bekle
-       ·
+   wg.Wait()  ◄── blokla ─────────sayaç &gt; 0
        ·  (A bitti → wg.Done()) ───sayaç = 2
        ·  (C bitti → wg.Done()) ───sayaç = 1
        ·  (B bitti → wg.Done()) ───sayaç = 0  ✓
-       ·
        ▼
-   devam et!  ◄── sayaç = 0 ───── bariyer açıldı
+   devam et!  ◄── bariyer açıldı
 </pre>
                     </div>
-                    <div class="highlight-box" style="font-size:0.7em">
-                        <strong>Bariyer kalıbı:</strong> <code>WaitGroup</code> dahili bir sayaç tutar.
-                        <code>Add(1)</code> artırır, <code>Done()</code> azaltır, <code>Wait()</code> sayaç sıfıra
+                    <div class="highlight-box" style="font-size:0.6em">
+                        <strong>Bariyer kalıbı:</strong> <code>WaitGroup</code> sayaç tutar.
+                        <code>Add(1)</code> artırır, <code>Done()</code> azaltır, <code>Wait()</code> sıfıra
                         düşene kadar bloklar.
-                        Goroutine'ler hangi sırayla biterse bitsin — önemli olan hepsinin bitmesi.
                     </div>
-                    <pre><code class="language-go">var wg sync.WaitGroup
+                    <pre style="font-size:0.48em"><code class="language-go">var wg sync.WaitGroup
 wg.Add(len(services))          // sayacı artır
 for _, svc := range services {
     go func() {
@@ -830,7 +1112,7 @@ wg.Wait()                      // sayaç 0 olana kadar bekle</code></pre>
                 <section>
                     <h3>Buffered Error Channel — Gerçek Kod</h3>
                     <p class="file-ref">📁 orch/orchestrator.go</p>
-                    <pre><code class="language-go">// Tamponlu kanal: her goroutine kendi hatasını bloklanmadan gönderir
+                    <pre style="font-size:0.46em"><code class="language-go">// Tamponlu kanal: her goroutine kendi hatasını bloklanmadan gönderir
 errChan := make(chan error, len(o.cfg.Containers))
 
 go func(container config.ContainerCfg) {
@@ -856,20 +1138,120 @@ if len(errs) > 0 {
                 </section>
                 <section>
                     <h3>Channel Akışı — Görsel</h3>
-                    <div class="sketch-box" style="text-align:center; font-size:0.65em">
-                        goroutine-1 ──errChan<──── goroutine-2 │ │ ▼ ▼ errChan <- err₁ errChan <- err₂ │ │
-                            └──────────┬───────────────┘ ▼ wg.Wait() close(errChan) │ ▼ for err :=range errChan {
-                            errs=append(errs, err) } │ ▼ errors.Join(errs...) </div>
-                            <div class="highlight-box" style="font-size:0.7em">
-                                <strong>Neden buffered?</strong> — <code>make(chan error, N)</code> ile N goroutine hata
-                                gönderebilir
-                                ve hiçbiri bloklanmaz. Unbuffered olsaydı her gönderim bir alıcı beklerdi.
-                            </div>
+                    <svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg"
+                        style="max-width:680px;margin:0.3em auto;display:block;font-family:'Courier New',monospace;">
+                        <defs>
+                            <marker id="chArr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                                <path d="M0,0 L8,3 L0,6" fill="#00ADD8" />
+                            </marker>
+                            <marker id="chArrMag" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                                <path d="M0,0 L8,3 L0,6" fill="#CE3263" />
+                            </marker>
+                        </defs>
+
+                        <!-- background -->
+                        <rect width="720" height="340" rx="12" fill="rgba(0,0,0,0.35)" stroke="rgba(0,173,216,0.5)"
+                            stroke-width="2" stroke-dasharray="8 4" />
+
+                        <!-- ====== Goroutine boxes (top row) ====== -->
+                        <rect x="60" y="20" width="140" height="52" rx="8" fill="rgba(0,173,216,0.12)" stroke="#00ADD8"
+                            stroke-width="1.5" />
+                        <text x="130" y="42" text-anchor="middle" fill="#00ADD8" font-size="11"
+                            font-weight="bold">goroutine-1</text>
+                        <text x="130" y="60" text-anchor="middle" fill="#aaa" font-size="10">(container)</text>
+
+                        <rect x="290" y="20" width="140" height="52" rx="8" fill="rgba(0,173,216,0.12)" stroke="#00ADD8"
+                            stroke-width="1.5" />
+                        <text x="360" y="42" text-anchor="middle" fill="#00ADD8" font-size="11"
+                            font-weight="bold">goroutine-2</text>
+                        <text x="360" y="60" text-anchor="middle" fill="#aaa" font-size="10">(VM)</text>
+
+                        <rect x="520" y="20" width="140" height="52" rx="8" fill="rgba(0,173,216,0.12)" stroke="#00ADD8"
+                            stroke-width="1.5" />
+                        <text x="590" y="42" text-anchor="middle" fill="#00ADD8" font-size="11"
+                            font-weight="bold">goroutine-N</text>
+                        <text x="590" y="60" text-anchor="middle" fill="#aaa" font-size="10">(servis)</text>
+
+                        <!-- dots between g2 and gN -->
+                        <text x="465" y="50" text-anchor="middle" fill="#555" font-size="16">···</text>
+
+                        <!-- ====== Error sends (arrows down to channel) ====== -->
+                        <!-- g1 → errChan -->
+                        <line x1="130" y1="72" x2="130" y2="112" stroke="#CE3263" stroke-width="1.3"
+                            marker-end="url(#chArrMag)" />
+                        <text x="105" y="96" fill="#CE3263" font-size="9" transform="rotate(-90,105,96)">err₁</text>
+
+                        <!-- g2 → errChan -->
+                        <line x1="360" y1="72" x2="360" y2="112" stroke="#CE3263" stroke-width="1.3"
+                            marker-end="url(#chArrMag)" />
+                        <text x="335" y="96" fill="#CE3263" font-size="9" transform="rotate(-90,335,96)">err₂</text>
+
+                        <!-- gN → errChan -->
+                        <line x1="590" y1="72" x2="590" y2="112" stroke="#CE3263" stroke-width="1.3"
+                            marker-end="url(#chArrMag)" />
+                        <text x="565" y="96" fill="#CE3263" font-size="9" transform="rotate(-90,565,96)">errₙ</text>
+
+                        <!-- ====== errChan (buffered channel bar) ====== -->
+                        <rect x="80" y="115" width="560" height="36" rx="6" fill="rgba(206,50,99,0.1)" stroke="#CE3263"
+                            stroke-width="1.5" />
+                        <text x="360" y="138" text-anchor="middle" fill="#CE3263" font-size="13"
+                            font-weight="bold">errChan := make(chan error, N)</text>
+
+                        <!-- buffer slot indicators -->
+                        <rect x="100" y="122" width="22" height="22" rx="3" fill="rgba(206,50,99,0.25)" stroke="#CE3263"
+                            stroke-width="0.8" />
+                        <text x="111" y="137" text-anchor="middle" fill="#CE3263" font-size="9">e₁</text>
+                        <rect x="128" y="122" width="22" height="22" rx="3" fill="rgba(206,50,99,0.25)" stroke="#CE3263"
+                            stroke-width="0.8" />
+                        <text x="139" y="137" text-anchor="middle" fill="#CE3263" font-size="9">e₂</text>
+                        <rect x="156" y="122" width="22" height="22" rx="3" fill="rgba(206,50,99,0.15)" stroke="#CE3263"
+                            stroke-width="0.8" stroke-dasharray="3 2" />
+                        <text x="167" y="137" text-anchor="middle" fill="#666" font-size="9">··</text>
+                        <rect x="184" y="122" width="22" height="22" rx="3" fill="rgba(206,50,99,0.15)" stroke="#CE3263"
+                            stroke-width="0.8" stroke-dasharray="3 2" />
+                        <text x="195" y="137" text-anchor="middle" fill="#666" font-size="9">eₙ</text>
+
+                        <!-- label: buffered -->
+                        <text x="620" y="118" fill="#777" font-size="9">buffered</text>
+                        <text x="620" y="130" fill="#777" font-size="9">(bloklanmaz)</text>
+
+                        <!-- ====== wg.Wait() + close ====== -->
+                        <line x1="360" y1="151" x2="360" y2="182" stroke="#00ADD8" stroke-width="1.3"
+                            marker-end="url(#chArr)" />
+
+                        <rect x="250" y="185" width="220" height="32" rx="6" fill="rgba(93,201,226,0.1)"
+                            stroke="#5DC9E2" stroke-width="1.5" />
+                        <text x="360" y="206" text-anchor="middle" fill="#5DC9E2" font-size="12"
+                            font-weight="bold">wg.Wait() → close(errChan)</text>
+
+                        <!-- ====== range loop ====== -->
+                        <line x1="360" y1="217" x2="360" y2="248" stroke="#00ADD8" stroke-width="1.3"
+                            marker-end="url(#chArr)" />
+
+                        <rect x="180" y="250" width="360" height="32" rx="6" fill="rgba(255,255,255,0.05)"
+                            stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
+                        <text x="360" y="271" text-anchor="middle" fill="#fff" font-size="11">for err := range
+                            errChan { errs = append(errs, err) }</text>
+
+                        <!-- ====== errors.Join ====== -->
+                        <line x1="360" y1="282" x2="360" y2="300" stroke="#00ADD8" stroke-width="1.3"
+                            marker-end="url(#chArr)" />
+
+                        <rect x="240" y="302" width="240" height="28" rx="6" fill="rgba(0,173,216,0.12)"
+                            stroke="#00ADD8" stroke-width="1.5" />
+                        <text x="360" y="321" text-anchor="middle" fill="#00ADD8" font-size="12"
+                            font-weight="bold">errors.Join(errs...)</text>
+                    </svg>
+                    <div class="highlight-box" style="font-size:0.7em">
+                        <strong>Neden buffered?</strong> — <code>make(chan error, N)</code> ile N goroutine hata
+                        gönderebilir
+                        ve hiçbiri bloklanmaz. Unbuffered olsaydı her gönderim bir alıcı beklerdi.
+                    </div>
                 </section>
                 <section>
                     <h3>select — Üç Yollu Bekleme</h3>
                     <p class="file-ref">📁 orch/dockerctl/client.go — waitForRunning()</p>
-                    <pre><code class="language-go">func (c *Client) waitForRunning(ctx context.Context,
+                    <pre style="font-size:0.46em"><code class="language-go">func (c *Client) waitForRunning(ctx context.Context,
     containerID string, timeout time.Duration) error {
 
     timer := time.NewTimer(timeout)
@@ -899,7 +1281,7 @@ if len(errs) > 0 {
                 <section>
                     <h3>DHCP + DNS — Paralel Servis Başlatma</h3>
                     <p class="file-ref">📁 orch/dockerctl/client.go — EnsureDHCPAndDNS()</p>
-                    <pre><code class="language-go">type serviceResult struct {
+                    <pre style="font-size:0.46em"><code class="language-go">type serviceResult struct {
     name string
     id   string
     err  error
@@ -941,7 +1323,7 @@ for res := range results {
                 <section>
                     <h3>os/exec — Sistem Komutlarını Yönetmek</h3>
                     <p class="file-ref">📁 orch/libvirtctl/libvirt.go — DefineVM()</p>
-                    <pre><code class="language-go">func (c *Client) DefineVM(name, imagePath, cloudInitISO,
+                    <pre style="font-size:0.46em"><code class="language-go">func (c *Client) DefineVM(name, imagePath, cloudInitISO,
     network string, memoryMB, vcpus int) error {
 
     // XML şablonunu Go string'i olarak oluştur
@@ -969,7 +1351,7 @@ for res := range results {
                 <section>
                     <h3>os.Stat — Ortam Algılama</h3>
                     <p class="file-ref">📁 orch/libvirtctl/libvirt.go</p>
-                    <pre><code class="language-go">// KVMAvailable — donanım sanallaştırma desteğini kontrol et
+                    <pre style="font-size:0.46em"><code class="language-go">// KVMAvailable — donanım sanallaştırma desteğini kontrol et
 func KVMAvailable() bool {
     _, err := os.Stat("/dev/kvm")
     return err == nil              // dosya varsa KVM kullanılabilir
@@ -983,14 +1365,14 @@ func virtType() string {
     return "qemu"                  // yazılım emülasyonu (örn: AWS EC2)
 }</code></pre>
                     <p class="file-ref">📁 orch/orchestrator.go — cloud-init ISO algılama</p>
-                    <pre><code class="language-go">// Dosya var mı kontrol et — yoksa CD-ROM ekleme
+                    <pre style="font-size:0.46em"><code class="language-go">// Dosya var mı kontrol et — yoksa CD-ROM ekleme
 cloudInitISO := filepath.Join(
     filepath.Dir(vm.Image), "..", "cloud-init", "cloud-init.iso",
 )
 if _, err := os.Stat(cloudInitISO); err != nil {
     cloudInitISO = ""   // cloud-init bulunamadı → CD-ROM'u atla
 }</code></pre>
-                    <div class="warn-box" style="font-size:0.7em">
+                    <div class="warn-box" style="font-size:0.65em">
                         ⚠️ Bulut VM'lerinin çoğunda <code>/dev/kvm</code> yoktur — aracınız çökmek yerine
                         <strong>zarif bir şekilde geri çekilmelidir</strong>.
                     </div>
@@ -998,7 +1380,7 @@ if _, err := os.Stat(cloudInitISO); err != nil {
                 <section>
                     <h3>crypto — Saf Go ile WireGuard Anahtarları</h3>
                     <p class="file-ref">📁 wg/wg.go — GenerateClientConfig()</p>
-                    <pre><code class="language-go">func GenerateClientConfig(peerName, address string) error {
+                    <pre style="font-size:0.46em"><code class="language-go">func GenerateClientConfig(peerName, address string) error {
     // 32 rastgele byte üret — Go'nun crypto/rand paketi
     var priv [32]byte
     if _, err := rand.Read(priv[:]); err != nil {
@@ -1030,7 +1412,7 @@ if _, err := os.Stat(cloudInitISO); err != nil {
                 <section>
                     <h3>fmt.Errorf("%w") — Hata Sarmalama Zinciri</h3>
                     <p class="file-ref">📁 Tüm paketlerde kullanılan kalıp</p>
-                    <pre><code class="language-go">// Her katmanda bağlam ekle
+                    <pre style="font-size:0.46em"><code class="language-go">// Her katmanda bağlam ekle
 if err := o.dc.CreateNetwork(name, subnet, driver); err != nil {
     return fmt.Errorf("ağ oluştur: %w", err)
 }
@@ -1065,7 +1447,7 @@ return errors.Join(err1, err2, err3)</code></pre>
                 <section>
                     <h3>sync.Mutex — IP Havuzunu Korumak</h3>
                     <p class="file-ref">📁 orch/ipool/ipool.go</p>
-                    <pre><code class="language-go">type IPPool struct {
+                    <pre style="font-size:0.46em"><code class="language-go">type IPPool struct {
     subnet string
     base   uint32
     bcast  uint32
@@ -1091,19 +1473,14 @@ func (p *IPPool) RandomIP() (string, error) {
                 </section>
                 <section>
                     <h3>İkili Strateji — Neden?</h3>
-                    <div class="highlight-box" style="font-size:0.7em">
-                        <strong>İkili strateji ne demek?</strong> IP havuzunun büyüklüğüne göre farklı veri yapısı
+                    <div class="highlight-box" style="font-size:0.6em">
+                        <strong>İkili strateji ne demek?</strong> Havuz büyüklüğüne göre farklı veri yapısı
                         kullanmak:<br />
-                        <strong>Eager (hevesli):</strong> Küçük subnet'lerde (≤1024 host) tüm IP'leri baştan bir
-                        <code>map</code>'e doldur.
-                        Tahsis = map'ten rastgele sil. Hızlı, çünkü az eleman.<br />
-                        <strong>Lazy (tembel):</strong> Büyük subnet'lerde (>1024 host) map'e <em>sadece
-                            kullanılanları</em> yaz.
-                        Tahsis = rastgele bir IP üret, kullanılmış mı kontrol et, değilse al.
-                        16 milyon IP'yi baştan belleğe yüklemek yerine ihtiyaç oldukça çalışır.<br />
-                        <em>Veri yapısını probleme uyarla — one size fits all yerine akıllı seçim.</em>
+                        <strong>Eager:</strong> ≤1024 host → tüm IP'leri <code>map</code>'e doldur, tahsis = sil.<br />
+                        <strong>Lazy:</strong> >1024 host → sadece kullanılanları yaz, rastgele üret, kontrol et.<br />
+                        <em>Veri yapısını probleme uyarla.</em>
                     </div>
-                    <table>
+                    <table style="font-size:0.65em">
                         <thead>
                             <tr>
                                 <th>CIDR</th>
@@ -1133,7 +1510,11 @@ func (p *IPPool) RandomIP() (string, error) {
                             </tr>
                         </tbody>
                     </table>
-                    <pre><code class="language-go">// Lazy strateji: rastgele başla, doğrusal tara
+                </section>
+                <section>
+                    <h3>Lazy Strateji — Kod</h3>
+                    <p class="file-ref">📁 orch/ipool/ipool.go — randomIPLazy()</p>
+                    <pre style="font-size:0.46em"><code class="language-go">// Lazy strateji: rastgele başla, doğrusal tara
 func (p *IPPool) randomIPLazy() (string, error) {
     total := p.end - p.start + 1
     if uint32(len(p.used)) >= total {
@@ -1156,7 +1537,7 @@ func (p *IPPool) randomIPLazy() (string, error) {
                 <section>
                     <h3>Eşzamanlılık Testi — 100 Goroutine</h3>
                     <p class="file-ref">📁 orch/ipool/ipool_test.go</p>
-                    <pre><code class="language-go">func TestPool_ConcurrentAccess(t *testing.T) {
+                    <pre style="font-size:0.46em"><code class="language-go">func TestPool_ConcurrentAccess(t *testing.T) {
     p, err := NewIPPool("172.18.5.0/24")
     if err != nil {
         t.Fatalf("havuz oluştur: %v", err)
@@ -1201,7 +1582,7 @@ func (p *IPPool) randomIPLazy() (string, error) {
                 <section>
                     <h3>runtime.Stack ile Goroutine ID Çıkarmak</h3>
                     <p class="file-ref">📁 cmd/log_hook.go</p>
-                    <pre><code class="language-go">// goroutineHook — logrus'a goroutine ID ekleyen hook
+                    <pre style="font-size:0.44em"><code class="language-go">// goroutineHook — logrus'a goroutine ID ekleyen hook
 type goroutineHook struct{}
 
 func (h *goroutineHook) Levels() []log.Level { return log.AllLevels }
@@ -1232,7 +1613,7 @@ func goID() string {
                 </section>
                 <section>
                     <h3>Log Çıktısı — Paralelliğin Kanıtı</h3>
-                    <pre><code class="language-text">INFO[0001] container başlatılıyor  container=nginx    goroutine=34
+                    <pre style="font-size:0.46em"><code class="language-text">INFO[0001] container başlatılıyor  container=nginx    goroutine=34
 INFO[0001] VM tanımlanıyor         vm=demo-vm         goroutine=38
 INFO[0001] container başlatılıyor  container=whoami   goroutine=36
 INFO[0002] container başlatıldı    container=nginx    goroutine=34
@@ -1243,7 +1624,7 @@ INFO[0004] VM başlatıldı           vm=demo-vm         goroutine=38</code></pr
                         Farklı goroutine ID'leri = gerçek paralel çalışma. Aynı zaman damgası = eşzamanlı başlangıç.
                     </div>
                     <p class="file-ref">📁 cmd/root.go — hook'u kaydet</p>
-                    <pre><code class="language-go">RootCmd.PersistentPreRunE = func(cmd *cobra.Command, args []string) error {
+                    <pre style="font-size:0.46em"><code class="language-go">RootCmd.PersistentPreRunE = func(cmd *cobra.Command, args []string) error {
     lvl, _ := log.ParseLevel(logLevel)
     log.SetLevel(lvl)
     log.SetFormatter(&log.TextFormatter{FullTimestamp: true})
@@ -1426,7 +1807,7 @@ wireguard:
                 <section>
                     <h3>Üstel Geri Çekilme ile Image Çekme</h3>
                     <p class="file-ref">📁 orch/dockerctl/client.go</p>
-                    <pre><code class="language-go">func (c *Client) pullImageWithRetries(image string, retry int) error {
+                    <pre style="font-size:0.40em"><code class="language-go">func (c *Client) pullImageWithRetries(image string, retry int) error {
     var lastErr error
     for i := 0; i < retry; i++ {
         err := c.c.PullImage(docker.PullImageOptions{
@@ -1448,7 +1829,7 @@ wireguard:
                 <section>
                     <h3>Durum Yönetimi — JSON Dosyası</h3>
                     <p class="file-ref">📁 orch/orchestrator.go</p>
-                    <pre><code class="language-go">type state struct {
+                    <pre style="font-size:0.38em"><code class="language-go">type state struct {
     Network        string `json:"network"`
     CreatedNetwork bool   `json:"created_network"`
     DHCPContainer  string `json:"dhcp_container"`
@@ -1474,7 +1855,7 @@ func readState() (*state, error) {
                 <section>
                     <h3>VM XML Şablonu — Koşullu CD-ROM</h3>
                     <p class="file-ref">📁 orch/libvirtctl/libvirt.go</p>
-                    <pre><code class="language-go">// Cloud-init ISO varsa CD-ROM ekle, yoksa atla
+                    <pre style="font-size:0.34em"><code class="language-go">// Cloud-init ISO varsa CD-ROM ekle, yoksa atla
 cdromXML := ""
 if cloudInitISO != "" {
     cdromXML = fmt.Sprintf(`
@@ -1501,10 +1882,15 @@ xml := fmt.Sprintf(`&lt;domain type='%s'&gt;
   &lt;/devices&gt;
 &lt;/domain&gt;`, virtType(), name, memoryMB, vcpus,
     imagePath, cdromXML, network)</code></pre>
+                    <div class="highlight-box" style="font-size:0.58em">
+                        <strong>Koşullu şablon:</strong> <code>cloudInitISO</code> boşsa CD-ROM XML'i atlanır →
+                        aynı fonksiyon hem ilk kurulum hem de sonraki başlatmalar için çalışır.
+                    </div>
                 </section>
                 <section>
                     <h3>Go Struct Tag'leri — YAML ↔ Go</h3>
-                    <pre><code class="language-go">type Config struct {
+                    <p class="file-ref">📁 config/config.go</p>
+                    <pre style="font-size:0.38em"><code class="language-go">type Config struct {
     NetworkName string         `yaml:"network_name"`
     Subnet      string         `yaml:"subnet"`
     Containers  []ContainerCfg `yaml:"containers"`
@@ -1525,8 +1911,10 @@ func LoadConfig(path string) (*Config, error) {
     }
     return &cfg, nil
 }</code></pre>
-                    <p class="small dimmed">Struct tag'leri = Go'nun deklaratif serileştirme yaklaşımı. Ayrı schema
-                        dosyası gereksiz.</p>
+                    <div class="highlight-box" style="font-size:0.58em">
+                        <strong>Struct tag'leri</strong> = Go'nun deklaratif serileştirme yaklaşımı.
+                        <code>yaml.Unmarshal</code> tag'leri okuyarak YAML anahtarlarını doğrudan struct alanlarına eşler.
+                    </div>
                 </section>
             </section>
 
@@ -1541,6 +1929,11 @@ func LoadConfig(path string) (*Config, error) {
             hash: true,
             slideNumber: true,
             transition: 'slide',
+            width: 960,
+            height: 700,
+            margin: 0.08,
+            minScale: 0.2,
+            maxScale: 1.5,
             plugins: [RevealHighlight, RevealNotes],
             keyboard: {
                 70: function () { document.documentElement.requestFullscreen(); }
