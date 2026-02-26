@@ -1,6 +1,6 @@
 ---
 title: "Orchestrating a Virtual Hub in Go"
-date: 2026-02-26T20:00:00+01:00
+date: 2026-02-26T15:00:00+01:00
 tags: ["go", "infrastructure", "docker", "libvirt", "wireguard", "conference", "goroutine", "networking"]
 author: "mrturkmen"
 showToc: true
