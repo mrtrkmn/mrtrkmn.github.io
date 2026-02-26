@@ -14,11 +14,11 @@
     <lastBuildDate>Thu, 26 Feb 2026 15:00:00 +0100</lastBuildDate>
     <atom:link href="https://mrturkmen.com/tags/infrastructure/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Orchestrating a Virtual Hub in Go</title>
+      <title>Go ile Sanal Ortam Orkestrasyonu</title>
       <link>https://mrturkmen.com/posts/orchestrating-virtual-hub-in-go/</link>
       <pubDate>Thu, 26 Feb 2026 15:00:00 +0100</pubDate>
       <guid>https://mrturkmen.com/posts/orchestrating-virtual-hub-in-go/</guid>
-      <description>Building a single Go binary to spin up containers, VMs, networking, and VPN from one YAML file — why it exists, where it fits, and what&amp;#39;s still missing.</description>
+      <description>Tek bir Go binary&amp;#39;si ile container, VM, ağ ve VPN&amp;#39;i ayağa kaldırmak — neden var, nerede işe yarar, neleri eksik.</description>
     </item>
   </channel>
 </rss>
