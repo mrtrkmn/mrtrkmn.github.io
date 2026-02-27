@@ -20,7 +20,7 @@ ShowPostNavLinks: true
 
 Geçtiğimiz günlerde **Gophers İstanbul 2026**'da bir sunum yaptım. Konu: tek bir Go binary'si ile Docker container'ları, libvirt/KVM sanal makineleri, DHCP+DNS altyapısını ve WireGuard VPN tünelini — hepsini bir YAML dosyasından ayağa kaldıran bir araç. Sunumda bol bol kod parçacıkları ve Go'nun iç yapısı var. Bu yazı *o değil*. Burada daha çok aracın arkasındaki dağınık gerçek-dünya probleminden, nerelerde gerçekten işe yaradığını düşündüğümden, nelerin hâlâ eksik olduğundan ve vakit bulursam denemek istediğim fikirlerden bahsetmek istiyorum.
 
-**[📊 Sunum slaytları](/talks/orchestrator.html)** · **[💻 Kaynak kod](https://github.com/mrtrkmn/orchestrator)**
+**[📊 Sunum slaytları](/talks/orchestrator.html)** · **[📊 Slides (English)](/talks/orchestrator_en.html)** · **[💻 Kaynak kod](https://github.com/mrtrkmn/orchestrator)**
 
 ---
 
@@ -248,4 +248,4 @@ Go bu iş için doğru dil çıktı — tek bir özellik yüzünden değil, alty
 
 Bunlardan herhangi biri iş akışınız için kullanışlı geliyorsa, kod açık ve binary kendi kendine yeterli. Deneyin, kırın ve nelerin eksik olduğunu söyleyin.
 
-**[📊 Sunum slaytları](/talks/orchestrator.html)** · **[💻 GitHub](https://github.com/mrtrkmn/orchestrator)** · **[LinkedIn](https://www.linkedin.com/in/mrturkmen/)**
+**[📊 Sunum slaytları](/talks/orchestrator.html)** · **[📊 Slides (English)](/talks/orchestrator_en.html)** · **[💻 GitHub](https://github.com/mrtrkmn/orchestrator)** · **[LinkedIn](https://www.linkedin.com/in/mrturkmen/)**
