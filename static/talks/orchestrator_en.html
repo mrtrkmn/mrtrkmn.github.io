@@ -1626,7 +1626,7 @@ func (h *goroutineHook) Fire(entry *log.Entry) error {
 
 func goID() string {
     var buf [64]byte
-    // runtime.Stack: "goroutine 42 [running]:\n..." yazar
+    // runtime.Stack writes: "goroutine 42 [running]:\n..."
     n := runtime.Stack(buf[:], false)
     s := string(buf[:n])
 
