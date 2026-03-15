@@ -24,7 +24,7 @@ Geçtiğimiz günlerde **Gophers İstanbul 2026**'da bir sunum yaptım. Konu: te
 
 ---
 
-## Kaşıntı
+## Problem
 
 Bir noktada çoğu backend ya da platform ekibi benzer bir duvara tosluyor: aynı makine üzerinde hem container hem de VM çalıştırmanız gereken bir demo ya da test ortamı ihtiyacı çıkıyor. İlk başta kulağa çok büyük bir mesele gibi gelmiyor. “Bir iki script yazarız, ayağa kalkar” diye düşünüyorsunuz. Sonra işin detayları yavaş yavaş ortaya çıkıyor.
 
