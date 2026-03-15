@@ -16,6 +16,12 @@ searchHidden: false
 ShowReadingTime: true
 ShowBreadCrumbs: true
 ShowPostNavLinks: true
+cover:
+    image: "../resources/assets/images/orchestrator.png" # image path/url
+    alt: "Network altyapisi" # alt text
+    caption: "<text>" # display caption under cover
+    relative: false # when using page bundles set this to true
+    hidden: true # only hide on current single page
 ---
 
 Geçtiğimiz günlerde **Gophers İstanbul 2026**'da bir sunum yaptım. Konu: tek bir Go binary'si ile Docker container'ları, libvirt/KVM sanal makineleri, DHCP+DNS altyapısını ve WireGuard VPN tünelini — hepsini bir YAML dosyasından ayağa kaldıran bir araç. Sunumda bol bol kod parçacıkları ve Go'nun iç yapısı var. Bu yazı *o değil*. Burada daha çok aracın arkasındaki dağınık gerçek-dünya probleminden, nerelerde gerçekten işe yaradığını düşündüğümden, nelerin hâlâ eksik olduğundan ve vakit bulursam denemek istediğim fikirlerden bahsetmek istiyorum.
