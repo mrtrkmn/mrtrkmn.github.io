@@ -54,6 +54,7 @@ Araçla ilgili sevdiğim detaylardan biri de dağıtım tarafının çok sade ol
 Bu araç ortaya çıkarken asıl hedefim “yeni bir platform” yazmak değildi. Daha çok, dağınık bash script’leri, unutulan ağ ayarlarını ve her makinede farklı davranan el yapımı kurulumları tek bir akışta toplamak istedim. Sonuçta ortaya çıkan şey, bizim ekip için hem kurulum süresini düşüren hem de hata ayıklamayı ciddi biçimde kolaylaştıran bir çözüm oldu.
 
 Bazen en faydalı araçlar en iddialı olanlar değil, her gün tekrar edilen can sıkıcı işleri ortadan kaldıranlar oluyor. Bu da benim için tam olarak öyle bir projeydi.
+
 ---
 
 ## Gerçekte Ne Yapıyor?
