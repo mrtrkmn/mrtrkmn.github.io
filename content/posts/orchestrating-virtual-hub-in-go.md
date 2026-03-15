@@ -26,116 +26,102 @@ Geçtiğimiz günlerde **Gophers İstanbul 2026**'da bir sunum yaptım. Konu: te
 
 ## Kaşıntı
 
-Eğer bir gün tek bir makinede hem container'lar hem de VM'ler içeren çok katmanlı bir demo ortamı kurmak zorunda kaldıysanız, hikayeyi biliyorsunuzdur. Önce `docker network create` çağıran bir shell script yazarsınız. Sonra `dhcpd.conf` üreten bir tane daha. Sonra elle `virsh` XML tanımı hazırlarsınız. Sonra VM'in IP alamadığını fark edersiniz — çünkü bridge promiscuous modda değildir. Bir `ip link set` komutu eklersiniz. Sonra birisi bunu başka bir makinede tekrarlamanızı ister ve yarısının dizüstü bilgisayarınıza hardcoded olduğunu keşfedersiniz.
+Bir noktada çoğu backend ya da platform ekibi benzer bir duvara tosluyor: aynı makine üzerinde hem container hem de VM çalıştırmanız gereken bir demo ya da test ortamı ihtiyacı çıkıyor. İlk başta kulağa çok büyük bir mesele gibi gelmiyor. “Bir iki script yazarız, ayağa kalkar” diye düşünüyorsunuz. Sonra işin detayları yavaş yavaş ortaya çıkıyor.
 
-İş yerinde tam olarak bu sorunla karşılaştım. İzole hibrit ortamlara ihtiyacımız vardı — bazı servisler container'da koşuyordu, ama bazı iş yükleri gerçekten kendi kernel'ine sahip bir VM gerektiriyordu. Manuel kurulum 15-20 dakika sürüyordu ve neredeyse hiçbir zaman aynı şekilde çalışmıyordu. Ortamı kaldırmak daha da kötüydü. Bazı container'lar geride kalıyordu, bridge ağı yeniden başlatmalara dayanıyordu ve artık VM tanımları bir sonraki çalıştırmayla çakışıyordu.
+Önce Docker ağı için küçük bir script yazılıyor. Ardından DHCP tarafı için bir konfigürasyon üreten başka bir script ekleniyor. Sonra virsh için XML tanımları geliyor. Her şeyin hazır olduğunu düşündüğünüz noktada bu kez VM’in IP almadığını fark ediyorsunuz. Biraz kurcalayınca sorunun bridge arayüzünde olduğunu görüyorsunuz; promiscuous mode açık değil. Bu defa zincire bir ip link set daha ekleniyor.
 
-Bu yüzden tek seferde hallettiren bir araç yazdım:
+Asıl sorun ise genelde daha sonra ortaya çıkıyor. Birisi sizden aynı ortamı başka bir makinede tekrar kurmanızı istediğinde, yazdığınız şeyin önemli bir kısmının fark etmeden kendi geliştirme makinenize bağlandığını anlıyorsunuz. Interface isimleri, dosya yolları, varsayımlar, geçici çözümler… Her şey ilk kurulduğu anda mantıklı görünse de tekrar üretilebilirlik tarafında tablo pek iç açıcı olmuyor.
 
-```bash
-orchestrator up -c config.yaml    # her şey ayağa kalkar
-orchestrator status               # nelerin çalıştığını gör
-orchestrator ssh demo-vm          # VM'e SSH (IP otomatik algılanır)
-orchestrator down                 # temiz kaldırma
+Ben yıllar önce iş yerinde tam olarak bu problemle karşılaştım. İhtiyacımız olan şey izole hibrit ortamlardı. Bazı servisler container içinde sorunsuz çalışıyordu, ama bazı iş yükleri gerçekten sanal makine gerektiriyordu. Özellikle kendi kernel’ine ihtiyaç duyan ya da container içinde simüle edilmesi anlamsız olan bileşenlerde VM kaçınılmazdı.
+
+Sorun şu ki manuel kurulum hem yavaştı hem de güvenilmezdi. Ortamı baştan kurmak genelde 15-20 dakika sürüyordu ve neredeyse hiçbir zaman tamamen aynı sonucu vermiyordu. Bazen bir container geride kalıyor, bazen bridge ağı yeniden başlatmalardan sonra yaşamaya devam ediyor, bazen de eski VM tanımları yeni çalıştırmalarla çakışıyordu. Ortamı ayağa kaldırmak can sıkıcıydı ama kaldırmak çoğu zaman daha da kötüydü.
+
+Bir süre sonra bunun script koleksiyonuyla çözülecek bir problem olmadığını fark ettim. Parça parça otomasyon eklemek yerine, ortamın tamamını yöneten tek bir araç olması çok daha mantıklıydı. Bunun üzerine her şeyi tek yerden yöneten küçük bir orchestrator yazdım.
+
+Kullanımı mümkün olduğunca basit tuttum:
+
+```bash 
+orchestrator up -c config.yaml    # ortamı ayağa kaldır
+orchestrator status               # ne çalışıyor kontrol et
+orchestrator ssh demo-vm          # VM'e SSH ile bağlan
+orchestrator down                 # ortamı temiz şekilde kaldır
+
 ```
+Amaç yalnızca “çalıştırmak” değildi. Aynı zamanda tekrar üretilebilir, taşınabilir ve temiz kaldırılabilir bir yapı kurmaktı. Bir ortam ayağa kalktığında hangi ağların oluşturulduğunu, hangi VM’lerin tanımlandığını, hangi container’ların bağlı olduğunu sistematik biçimde bilmek; iş bittiğinde de bunların hepsini geride iz bırakmadan temizleyebilmek gerekiyordu.
 
-Tamamı ~15 MB'lık statik bir binary'ye derleniyor, çalışma zamanı bağımlılığı yok — sunucuya `scp` ile atıp çalıştırıyorsunuz.
+Araçla ilgili sevdiğim detaylardan biri de dağıtım tarafının çok sade olması oldu. Uygulama yaklaşık 15 MB’lık statik bir binary olarak derleniyor. Herhangi bir çalışma zamanı bağımlılığı gerektirmiyor. Dosyayı sunucuya scp ile kopyalayıp doğrudan çalıştırabiliyorsunuz. Özellikle demo ortamları, geçici lab kurulumları ya da farklı makinelerde hızlı tekrar kurulum gereken senaryolarda bu sadelik ciddi fark yaratıyor.
 
+Bu araç ortaya çıkarken asıl hedefim “yeni bir platform” yazmak değildi. Daha çok, dağınık bash script’leri, unutulan ağ ayarlarını ve her makinede farklı davranan el yapımı kurulumları tek bir akışta toplamak istedim. Sonuçta ortaya çıkan şey, bizim ekip için hem kurulum süresini düşüren hem de hata ayıklamayı ciddi biçimde kolaylaştıran bir çözüm oldu.
+
+Bazen en faydalı araçlar en iddialı olanlar değil, her gün tekrar edilen can sıkıcı işleri ortadan kaldıranlar oluyor. Bu da benim için tam olarak öyle bir projeydi.
 ---
 
 ## Gerçekte Ne Yapıyor?
 
-Mimari şu şekilde. Bir sunucu, bir binary, bir config dosyası:
+Aracın yaptığı işi en basit haliyle şöyle özetleyebilirim: tek bir sunucu üzerinde, tek bir binary ve tek bir config dosyasıyla hibrit bir ortam kuruyor.
 
-<svg viewBox="0 0 760 480" xmlns="http://www.w3.org/2000/svg" style="max-width:720px;margin:1.5em auto;display:block;font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;">
-  <defs>
-    <marker id="arrowD" markerWidth="10" markerHeight="7" refX="5" refY="7" orient="auto"><path d="M0,0 L5,7 L10,0" fill="#06b6d4"/></marker>
-    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0f172a"/><stop offset="100%" stop-color="#1e293b"/></linearGradient>
-    <linearGradient id="bridgeGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="rgba(6,182,212,0.08)"/><stop offset="50%" stop-color="rgba(6,182,212,0.22)"/><stop offset="100%" stop-color="rgba(6,182,212,0.08)"/></linearGradient>
-    <filter id="glow"><feGaussianBlur stdDeviation="2" result="g"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-    <filter id="shadow"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.35"/></filter>
-  </defs>
-  <rect width="760" height="480" rx="16" fill="url(#bg)"/>
-  <rect x="16" y="16" width="728" height="350" rx="14" fill="none" stroke="rgba(148,163,184,0.25)" stroke-width="1.5" stroke-dasharray="6 4"/>
-  <text x="32" y="38" fill="#94a3b8" font-size="11" font-weight="600" letter-spacing="0.5">SERVER</text>
-  <rect x="40" y="60" width="138" height="80" rx="10" fill="rgba(6,182,212,0.07)" stroke="#06b6d4" stroke-width="1.5" filter="url(#shadow)"/>
-  <text x="109" y="85" text-anchor="middle" fill="#06b6d4" font-size="13" font-weight="700">nginx:alpine</text>
-  <text x="109" y="103" text-anchor="middle" fill="#94a3b8" font-size="10">container</text>
-  <text x="109" y="128" text-anchor="middle" fill="#22d3ee" font-size="14" font-weight="700">.5.10</text>
-  <rect x="198" y="60" width="138" height="80" rx="10" fill="rgba(6,182,212,0.07)" stroke="#06b6d4" stroke-width="1.5" filter="url(#shadow)"/>
-  <text x="267" y="85" text-anchor="middle" fill="#06b6d4" font-size="13" font-weight="700">whoami</text>
-  <text x="267" y="103" text-anchor="middle" fill="#94a3b8" font-size="10">container</text>
-  <text x="267" y="128" text-anchor="middle" fill="#22d3ee" font-size="14" font-weight="700">.5.11</text>
-  <rect x="356" y="60" width="138" height="80" rx="10" fill="rgba(6,182,212,0.07)" stroke="#06b6d4" stroke-width="1.5" filter="url(#shadow)"/>
-  <text x="425" y="82" text-anchor="middle" fill="#06b6d4" font-size="13" font-weight="700">DHCP / DNS</text>
-  <text x="425" y="100" text-anchor="middle" fill="#94a3b8" font-size="10">container</text>
-  <text x="425" y="128" text-anchor="middle" fill="#22d3ee" font-size="14" font-weight="700">.5.2 / .5.3</text>
-  <rect x="530" y="54" width="194" height="92" rx="12" fill="rgba(244,63,94,0.06)" stroke="#f43f5e" stroke-width="1.5" stroke-dasharray="7 3" filter="url(#shadow)"/>
-  <text x="627" y="80" text-anchor="middle" fill="#fb7185" font-size="13" font-weight="700">Debian VM</text>
-  <text x="627" y="98" text-anchor="middle" fill="#94a3b8" font-size="10">cloud-init · 1024 MB · 2 vCPU</text>
-  <text x="627" y="118" text-anchor="middle" fill="#94a3b8" font-size="10">curl, wget, vim, htop, nmap</text>
-  <text x="627" y="136" text-anchor="middle" fill="#fb7185" font-size="10">DHCP assigned IP</text>
-  <line x1="109" y1="140" x2="109" y2="170" stroke="#06b6d4" stroke-width="1.2" marker-end="url(#arrowD)"/>
-  <line x1="267" y1="140" x2="267" y2="170" stroke="#06b6d4" stroke-width="1.2" marker-end="url(#arrowD)"/>
-  <line x1="425" y1="140" x2="425" y2="170" stroke="#06b6d4" stroke-width="1.2" marker-end="url(#arrowD)"/>
-  <line x1="627" y1="146" x2="627" y2="170" stroke="#f43f5e" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#arrowD)"/>
-  <rect x="30" y="174" width="700" height="40" rx="8" fill="url(#bridgeGrad)" stroke="#06b6d4" stroke-width="1.5"/>
-  <text x="380" y="200" text-anchor="middle" fill="#e2e8f0" font-size="14" font-weight="700" filter="url(#glow)">Docker Bridge — 172.19.5.0/24</text>
-  <text x="380" y="238" text-anchor="middle" fill="#64748b" font-size="10">gateway .5.1 · mask 255.255.255.0 · DHCP range .5.4 – .5.254</text>
-  <line x1="380" y1="214" x2="380" y2="260" stroke="#22d3ee" stroke-width="1.2" marker-end="url(#arrowD)"/>
-  <rect x="190" y="264" width="380" height="56" rx="12" fill="rgba(34,211,238,0.06)" stroke="#22d3ee" stroke-width="1.5" filter="url(#shadow)"/>
-  <rect x="212" y="282" width="14" height="11" rx="2.5" fill="none" stroke="#22d3ee" stroke-width="1.5"/>
-  <path d="M215,282 L215,277 a4,4.5 0 0,1 8,0 L223,282" fill="none" stroke="#22d3ee" stroke-width="1.5"/>
-  <text x="240" y="293" fill="#22d3ee" font-size="13" font-weight="700">WireGuard VPN Tunnel</text>
-  <text x="240" y="310" fill="#94a3b8" font-size="10">10.10.0.0/24 · X25519 key pair · wg-quick compatible</text>
-  <line x1="380" y1="320" x2="380" y2="366" stroke="#22d3ee" stroke-width="1.2" marker-end="url(#arrowD)"/>
-  <line x1="380" y1="366" x2="380" y2="410" stroke="#f43f5e" stroke-width="1.2" stroke-dasharray="5 3" marker-end="url(#arrowD)"/>
-  <rect x="305" y="416" width="150" height="50" rx="12" fill="rgba(244,63,94,0.08)" stroke="#f43f5e" stroke-width="1.5" filter="url(#shadow)"/>
-  <text x="380" y="440" text-anchor="middle" fill="#fb7185" font-size="13" font-weight="700">Remote Client</text>
-  <text x="380" y="456" text-anchor="middle" fill="#94a3b8" font-size="10">wg-client.conf</text>
-  <rect x="600" y="410" width="12" height="12" rx="3" fill="rgba(6,182,212,0.15)" stroke="#06b6d4" stroke-width="1"/>
-  <text x="618" y="420" fill="#94a3b8" font-size="10">Container</text>
-  <rect x="600" y="430" width="12" height="12" rx="3" fill="rgba(244,63,94,0.12)" stroke="#f43f5e" stroke-width="1" stroke-dasharray="3 2"/>
-  <text x="618" y="440" fill="#94a3b8" font-size="10">VM (libvirt/KVM)</text>
-  <rect x="600" y="450" width="12" height="12" rx="3" fill="rgba(34,211,238,0.12)" stroke="#22d3ee" stroke-width="1"/>
-  <text x="618" y="460" fill="#94a3b8" font-size="10">VPN Tunnel</text>
-</svg>
+`orchestrator up` çalıştığında arka planda birkaç adımı sırayla yürütüyor. Önce Docker tarafında gerekli bridge ağı oluşturuyor. Ardından DHCP ve DNS işini üstlenecek container’ları başlatıyor. Sonrasında uygulama container’larıyla birlikte VM’leri ayağa kaldırıyor. Bu aşamada işleri mümkün olduğunca paralel yürüttüğü için, her şey tek tek beklenerek değil eşzamanlı biçimde başlıyor. Kurulum tamamlanırken uzak erişim için WireGuard istemci yapılandırmasını üretiyor ve en son, daha sonra `orchestrator down` çağrıldığında neyin nasıl geri alınacağını bilmek için bir durum dosyası yazıyor.
 
-`orchestrator up` çalıştırdığınızda sırasıyla bir Docker bridge oluşturur, DHCP ve DNS container'larını başlatır, uygulama container'larınızı ve VM'lerinizi eşzamanlı olarak ayağa kaldırır (goroutine'ler sayesinde her şey paralel koşar), WireGuard istemci yapılandırması üretir ve `orchestrator down`'ın her şeyi temizce geri alabilmesi için bir durum dosyası yazar.
+Aslında burada çözmeye çalıştığı problem oldukça net. Docker size namespace’lerle izole edilmiş container’lar veriyor. Libvirt ise kendi kernel’ine sahip, tam anlamıyla ayrı makineler gibi davranan sanal makineler sunuyor. Tek başına bakınca iki dünya da tanıdık. Zor olan kısım, bunları aynı ağ düzleminde düzgün şekilde bir araya getirmek.
 
-Docker size namespace ile izole edilmiş container'lar verir. Libvirt ise *ayrı bir kernel'e* sahip sanal makineler. İkisini aynı Layer 2 bridge üzerinde, aynı DHCP sunucusuyla buluşturmak — işte aracın asıl değer önerisi bu. Uzak istemci WireGuard üzerinden bağlanır ve container ya da VM fark etmeksizin her servise şeffaf şekilde erişir.
+Bu aracın esas işi de tam olarak burada başlıyor: container’ları ve VM’leri aynı Layer 2 bridge üzerinde buluşturmak, üstelik ikisinin de aynı DHCP akışından IP almasını sağlamak. Böylece ortam dışarıdan bakıldığında iki ayrı altyapının yamalı birleşimi gibi değil, tek parça bir sistem gibi davranıyor.
+
+Bunun pratikteki karşılığı önemli. Uzak bir istemci WireGuard üzerinden ortama bağlandığında, karşısında “bu container ağı, şu VM ağı” gibi ayrımlar görmüyor. Servislere, arkada container mı var VM mi diye düşünmeden, şeffaf biçimde erişebiliyor. Bence aracın gerçek değeri de burada: farklı çalışma modellerini tek bir ağ ve yaşam döngüsü altında toplamak.
+
 
 ---
 
 ## Gerçekten Nerelerde İşe Yarar?
 
-Bir Kubernetes alternatifi yapmadım. Bu araç bilinçli olarak küçük ve fikirli tasarlandı ve dar bir senaryo kümesinde gerçekten işe yarıyor:
+Baştan net söyleyeyim: bu araç bir Kubernetes alternatifi değil. Zaten öyle olmak için de tasarlanmadı. Bilinçli olarak küçük tutulmuş, ne yaptığını bilen ve belirli senaryolarda gerçekten iş gören bir araç.
+
+Her yere uysun diye şişirilmiş bir platform olmaktan çok, “tek makinede container + VM karışık bir ortamı hızlı, tekrar üretilebilir ve temiz şekilde ayağa kaldırayım” problemine odaklanıyor. Bu yüzden en çok şu tip durumlarda anlamlı hale geliyor:
 
 ### Eğitim ve Workshop Ortamları
 
-İki günlük bir güvenlik workshop'u düzenlediğinizi düşünün. Her katılımcının izole bir ağa, içinde bir web uygulaması (container), üzerinde pratik yapılacak savunmasız bir VM'e ve dahili isimleri çözen DNS'e ihtiyacı var. Bugün ya bir bulut sağlayıcı kullanıp öğrenci başına VPC açarsınız (pahalı), ya da herkese bir Vagrant kurulumu verip dizüstü bilgisayarlarının kaldırmasını dua edersiniz (güvenilmez). Güçlü paylaşımlı bir sunucuda her öğrenci kendi YAML config'ini ve bir WireGuard tünelini alır.
+İki günlük bir güvenlik workshop’u düzenlediğinizi düşünün. Her katılımcının kendi izole ağı var. O ağın içinde bir web uygulaması container olarak çalışıyor, yanında kurcalanacak savunmasız bir VM bulunuyor, bir de içerideki servis isimlerini çözen DNS gerekiyor.
+
+Bunu klasik yöntemlerle yapmak genelde iki yere çıkıyor: ya bulut tarafında kişi başı VPC benzeri yapılar açıyorsunuz ve maliyet hızla büyüyor, ya da herkese Vagrant benzeri bir kurulum verip “umarım laptop kaldırır” noktasına geliyorsunuz. Teoride güzel, pratikte sabahın ilk yarısı kurulum sorunlarıyla geçiyor.
+
+Bu araçta yaklaşım daha sade. Güçlü tek bir paylaşımlı sunucu üzerinde her öğrenciye kendi YAML tanımı ve kendi WireGuard tüneli veriliyor. Herkes aynı fiziksel kaynak üzerinde, ama birbirinden izole ortamlarda çalışıyor. Eğitmen tarafında da yönetmesi çok daha kolay oluyor.
 
 ### Edge / IoT Prototipleme
 
-Edge'de prototipleme yapıyorsanız — belki bazı servisleri container'da çalıştırması ama firmware test etmek için tam bir Linux VM barındırması gereken bir gateway cihazı — Kubernetes deploy etmek istemezsiniz. Binary'yi `scp` ile atıp, bir YAML dosyası bırakıp, tek komut çalıştırmak istersiniz. Cross-compile hikayesi bunu kolaylaştırır: `GOOS=linux GOARCH=arm64 go build -o orchestrator .`
+Edge ya da IoT tarafında prototip geliştirirken ihtiyaçlar genelde biraz garip oluyor. Bazı parçalar container içinde rahatça çalışıyor, ama firmware testi ya da daha düşük seviye sistem davranışları için tam bir Linux VM gerekiyor. Böyle bir durumda kimsenin ilk refleksi “buraya bir Kubernetes kuralım” olmuyor.
+
+İstenen şey genelde çok daha basit: binary’yi cihaza at, config dosyasını bırak, tek komutla ortamı ayağa kaldır.
+
+```bash 
+GOOS=linux GOARCH=arm64 go build -o orchestrator .
+```
+
+Cross-compile tarafının kolay olması da burada ciddi avantaj. Özellikle ARM tabanlı edge cihazlarda, ekstra paket yöneticisi ya da karmaşık runtime bağımlılıklarıyla uğraşmadan doğrudan çalıştırabilmek büyük rahatlık.
 
 ### VM Gerektiren CI Entegrasyon Testleri
 
-Bazı yazılımlar gerçekten container'da test edilemez. Kernel modülleri, özel ağ yığınları, gerçek bir boot sırası gerektiren her şey. Bugün çoğu CI pipeline'ı bu testleri ya atlar ya da pahalı iç içe sanallaştırma kullanır. Böyle bir araç, pipeline'ın başında hibrit ortamı kurup sonunda yıkabilir. İdempotent `up`/`down` semantiği tam olarak bunun için tasarlandı.
+Bazı şeyler gerçekten container içinde doğru dürüst test edilemiyor. Kernel modülleri, özel ağ davranışları, gerçek boot sırası bekleyen servisler ya da sistemin gerçekten “makine gibi” davranmasını gerektiren senaryolar bunların başında geliyor.
+
+Bugün birçok CI pipeline’ında bu testler ya tamamen pas geçiliyor ya da pahalı ve kırılgan nested virtualization çözümleriyle yürütülüyor. İkisi de çok iç açıcı değil.
+
+Bu tür bir araç ise pipeline’ın başında hibrit ortamı kurup iş bitince düzgünce kaldırmak için uygun bir model sunuyor. Özellikle up ve down tarafının idempotent olacak şekilde düşünülmesi burada önemli; çünkü CI dünyasında aynı şeyi tekrar tekrar, temiz biçimde yapabilmek her şeyden daha değerli.
 
 ### Hızlı Demo Ortamları
 
-Satış mühendisleri, çözüm mimarları, destek ekipleri — tek bir makinede çoklu servis kurulumunu çalışır halde göstermesi gereken herkes. Kırılgan bir demo VM imajı bakımı yerine, ortamı versiyon kontrollü bir YAML dosyasında tanımlayıp saniyeler içinde ayağa kaldırırsınız.
+Satış mühendisleri, çözüm mimarları, destek ekipleri… Kısacası bir ürünü ya da sistemi “çalışır halde” göstermek zorunda olan herkes benzer bir dert yaşıyor. Demo ortamı genelde bir noktada kırılgan bir kar topuna dönüşüyor. Bir VM imajı var, onun üstünde elle yapılmış ayarlar var, kimsenin tam hatırlamadığı bir network workaround’u var; dokununca bozuluyor ama dokunmadan da yaşlanıyor.
+
+Bunun yerine ortamı versiyon kontrollü bir YAML dosyasında tarif etmek çok daha temiz bir yaklaşım. Gerektiğinde birkaç saniye içinde yeniden kurabiliyorsunuz. Demo makinesine “aman buna dokunmayın” muamelesi yapmak yerine, gerektiğinde sıfırdan üretilebilen bir yapıya geçmiş oluyorsunuz.
 
 ### Homelab Orkestrasyonu
 
-Evde Proxmox veya bare-metal sunucu çalıştıran insanlar için — tek bir node olduğunda ve tam bir hyperconverged kurulumun yükü olmadan tekrarlanabilir container+VM yığınları istediğinizde daha hafif bir alternatif.
+Bir de işin homelab tarafı var. Evde bare-metal sunucu ya da küçük bir Proxmox kutusu çalıştıranlar bu fikre hemen yakın hissedebilir. Bazen tek ihtiyacınız, tek node üzerinde tekrar kurulabilir container + VM yığınlarıdır. Ama bunun için tam boy bir hyperconverged platformun bütün ağırlığını da sırtlanmak istemezsiniz.
+
+Bu durumda daha hafif, doğrudan ve anlaşılır bir araç daha mantıklı olabiliyor. Özellikle “tek makine, birkaç servis, bir iki VM, düzgün ağ izolasyonu ve temiz lifecycle yönetimi” çizgisinde kalıyorsanız, küçük bir çözüm çoğu zaman büyük platformlardan daha kullanışlı oluyor.
 
 ---
 
 ## Nasıl Kullanılır?
 
-Config dosyası tüm düşünmenin yapıldığı yer:
+Bu aracın bütün mantığı config dosyasında yaşıyor. İşin güzel tarafı da burada: ortamı kuran şey dağınık script’ler değil, tek bir yerde duran açık bir tanım.
 
 ```yaml
 network_name: demo-net
@@ -164,45 +150,116 @@ wireguard:
   address: 10.10.0.2/24
 ```
 
-En iyi şekilde nasıl kullanılacağına dair birkaç not:
 
-**Config'i versiyonlayın, ortamı değil.** Tüm mesele config dosyasının ortamın *kendisi* olması. Git'e commit'leyin. Birisi "geçen çeyrekteki demo kurulumu nasıldı?" diye sorduğunda, hangi container'ları çalıştırdığınızı hatırlamaya çalışmak yerine `git log` bakarsınız.
+Buradaki fikir basit: ortamın neye benzediğini tek tek komutlarla değil, deklaratif bir dosyayla tarif ediyorsunuz. Ağ adı ne, subnet ne, hangi container’lar çalışacak, hangi VM açılacak, içine hangi paketler yüklenecek, WireGuard olacak mı — hepsi burada.
 
-**Referans etmeniz gereken servisler için statik IP kullanın.** Diğer servislerin bağımlı olduğu container'lar (web frontend'iniz, API gateway'iniz) sabit IP almalı. Araç hem statik atama hem de havuzdan rastgele tahsis destekler — kimsenin doğrudan adresleme yapmadığı worker node'lar gibi şeyler için rastgeleliği kullanın.
+Bu dosya bir bakıma “kurulum notu” değil, doğrudan ortamın kendisi.
 
-**VM'lere paketler önceden yüklenir.** VM config'indeki `packages` listesi özel bir imaj derlemesi tetikler — araç cloud-init ile bu paketleri ilk boot'ta yükler. Yani VM'iniz `curl`, `nmap` vb. zaten yüklü şekilde başlar; bu özellikle çevrimdışı veya air-gapped ortamlar için büyük avantaj.
+En iyi şekilde kullanmak için birkaç pratik not:
 
-**WireGuard config'leri istemciye hazır dosya olarak üretilir.** `orchestrator up` sonrasında, birine doğrudan verebileceğiniz bir `wg-client-<isim>.conf` dosyası bulursunuz. WireGuard istemcisine import ederler ve içerdeler — elle anahtar değişimi yok.
+**Config’i versiyonlayın, ortamı değil.**
+
+Bence işin en kritik noktası bu. Ortamı kafada ya da bir wiki sayfasında tutmaya çalışmak yerine config dosyasını Git’e koyuyorsunuz. Sonra biri gelip “geçen çeyrekte müşteriye gösterdiğimiz demo tam olarak nasıldı?” diye sorduğunda, kimsenin hafızasına güvenmiyorsunuz.
+
+
+```bash 
+git log
+git show <commit>
+```
+**Adres referanslanan servislerde statik IP kullanın.**
+
+Başka servislerin bağımlı olduğu bileşenler — mesela web frontend, API gateway ya da dahili DNS gibi şeyler — sabit IP ile tanımlanmalı. Böylece “o servis bugün hangi IP’yi aldı?” diye dolaşmanız gerekmiyor. Ama gerçekten önemi olmayan, kimsenin doğrudan adreslemediği worker benzeri işler için dinamik tahsis gayet yeterli.
+
+**VM tarafında paketleri baştan hazırlamak ciddi zaman kazandırıyor.** 
+
+`packages` alanı boşuna yok. Araç bunu görüp ilk boot sırasında gerekli paketleri cloud-init üzerinden yüklüyor. Yani VM açıldığında curl, wget, nmap, vim gibi temel araçlar zaten hazır oluyor. Özellikle internet erişimi sınırlı ortamlarda ya da “bu makine dışarı çıkamayacak” senaryolarında bu küçük detay ciddi fark yaratıyor.
+
+**WireGuard yapılandırması doğrudan kullanılabilir dosya olarak üretiliyor.**
+
+orchestrator up tamamlandıktan sonra elinizde istemciye verebileceğiniz hazır bir konfigürasyon oluyor. İnsanların tek tek anahtar üretmesi, peer eklemesi, “şu public key’i bana atsana” diye mesajlaşması gerekmiyor.
+
+```bash 
+orchestrator up -c config.yaml
+ls wg-client-*.conf
+```
+Dosyayı import ediyorlar ve ortama bağlanıyorlar. En sevdiğim kullanım türlerinden biri bu, çünkü gerçekten sürtünmeyi azaltıyor.
+
 
 ---
 
-## Neleri Eksik? (Dürüst Olmak Gerekirse)
+### Neleri Eksik? (Dürüst Olmak Gerekirse)
 
-Bir konferansta sundum, dolayısıyla parlak kısımları gösterdim. İşte pürüzlü taraflar:
+Konferans sunumunda tabii ki daha parlak taraflarını gösterdim. Ama işin dürüst kısmı şu: araç kullanışlı olsa da bazı yerleri hâlâ köşeli. Hatta bazı eksikleri özellikle not etmek istiyorum, çünkü bunlar gerçek dünyada bir noktada karşınıza çıkıyor.
 
 ### Düzgün Kapanış Zinciri Yok
 
-Şu anda `orchestrator down` her şeyi durdurur ve kaldırır, ancak sıralı kapanış yok. VM'inizin DHCP container'ı kaybolmadan önce veri flush etmesi gerekiyorsa, şansınız yok. Düzgün bir uygulama bağımlılık sıralaması gerektirir — belki başlatma DAG'ının tersi. Yapı taşları mevcut (context iptali, WaitGroup'lar), ama sıralama mantığı yok.
+Şu anda orchestrator down çağrıldığında ortam kapanıyor, kaynaklar temizleniyor, işler toparlanıyor. Ama bütün bunlar bilinçli bir bağımlılık sırasıyla yapılmıyor.
+
+```bash 
+orchestrator down
+```
+Bu şu anlama geliyor: eğer bir VM’in düzgün kapanmadan önce ağdaki başka bir servise ulaşması gerekiyorsa ya da veri flush etmesi için belli bir bileşenin biraz daha ayakta kalması şartsa, sistem bunu anlamıyor. Kısacası “önce bunu kapat, sonra şunu indir” gibi akıllı bir kapanış grafiği henüz yok.
+
+Yapı taşları aslında var. Context iptali var, WaitGroup mantığı var, eşzamanlı işlemler kontrol altında. Ama bağımlılık sırasını yöneten gerçek bir shutdown orchestration katmanı henüz eklenmiş değil. Muhtemelen doğru yaklaşım, başlatma sırasının tersini uygulayan bir DAG mantığı olurdu.
+
 
 ### Yalnızca Tek Sunucu
 
-Araç her şeyin tek bir sunucuda çalıştığını varsayar. VM'leri birden fazla sunucuya dağıtma veya ağları federasyon yapma kavramı yok. Birçok kullanım senaryosu için bu sorun değil — *zaten* tek sunucu aracı olması amaçlanıyor — ama ölçekleme ihtiyacı olan CI/CD ve eğitim senaryolarını sınırlıyor.
+Bu araç en başından beri tek sunucu varsayımıyla yazıldı. Zaten tasarım hedefi de buydu: bir makine, bir binary, bir config, tek komut.
+
+Ama bunun doğal sınırı şu: VM’leri farklı sunuculara dağıtmak, ağı federasyon yapmak, işleri cluster mantığıyla yaymak gibi kavramlar yok. Eğitim ortamı, hızlı demo, küçük CI senaryoları ve homelab için bu çoğu zaman sorun değil. Hatta sadelik sağlıyor. Ama ölçeği büyütmek istediğiniz anda sınır çizgisi gayet netleşiyor.
 
 ### "Çalışıyor mu?" Ötesinde Sağlık Kontrolü Yok
 
-`select` tabanlı polling döngüsü container'ın "running" durumuna ulaşıp ulaşmadığını kontrol eder, o kadar. Uygulama seviyesinde sağlık kontrolü yok — HTTP probe yok, TCP kontrolü yok, readiness gate yok. nginx container'ınız çalışıyor ama yanlış yapılandırılmış ve 502 döndürüyorsa, `orchestrator status` mutlu bir şekilde her şeyin yolunda olduğunu rapor eder.
+Bugünkü sağlık kontrolü temelde şuna bakıyor: container ya da VM ayağa kalktı mı, süreç running durumda mı?
 
-### VM Ağ Yapılandırması Kırılgan
+Yani sistem “çalışıyor” ile “işini doğru yapıyor” arasındaki farkı henüz bilmiyor.
 
-Bir VM'i Docker bridge'e bağlamak, aşikâr olmayan bir dizi adım gerektirir — bridge'i promiscuous moda almak, bağlantıyı doğrulamak için `brctl` kullanmak, bridge helper'ın yapılandırıldığından emin olmak. Araç bunu halleder, ama bir kötü kernel güncellemesiyle bozulabilir. Daha sağlam bir yaklaşım macvlan ya da ayrılmış bir OVS bridge kullanabilir.
+Mesela nginx container’ı açılmış olabilir ama yanlış config yüzünden 502 dönüyordur. Ya da servis portu açılmıştır ama uygulama içeride kendine gelmemiştir. Bu durumda orchestrator status size kötü bir haber vermez; dışarıdan bakınca her şey yolundaymış gibi görünür.
+
+```bash
+orchestrator status
+```
+HTTP probe, TCP check, readiness gate ya da uygulama seviyesinde health validation gibi şeyler henüz yok. Açık söylemek gerekirse, bu eklendiği anda araç bir üst seviyeye çıkmış olacak.
+
+**VM Ağ Yapılandırması Kırılgan**
+
+Container’ları aynı bridge’e almak kolay kısım. VM’i aynı yapıya düzgün bağlamak ise hâlâ biraz “burası Linux networking, burada kimse masum değil” kategorisinde.
+
+Bridge’in promiscuous modda olması gerekiyor, bağlantının gerçekten oluştuğunu doğrulamak gerekiyor, bridge helper doğru yapılandırılmış olmalı. Araç bunları hallediyor ama işin altında yine biraz hassas sistem davranışı yatıyor. Bir kernel güncellemesi, host tarafında ufak bir fark ya da dağıtıma özel bir değişiklik bu zinciri bozabilir.
+
+```bash 
+ip link set <bridge> promisc on
+brctl show
+```
+
+Daha sağlam bir yaklaşım belki macvlan ya da ayrılmış bir OVS bridge olurdu. Şu anki çözüm çalışıyor, ama “bunu sonsuza kadar düşünmeden bırakırım” türden değil.
+
 
 ### Çok Kiracılık (Multi-Tenancy) Yok
 
-Her çalıştırma aynı namespace'i paylaşır. İki kullanıcı aynı sunucuda farklı config'lerle `orchestrator up` çalıştırırsa, container adları, ağ adları ve port bağlamaları çakışır. Kullanıcı veya oturum başına namespace'leme (önek eklenmiş container adları, izole alt ağlar) eklemek, eğitim/workshop kullanım senaryosunu çok daha pratik hale getirirdi.
+Şu an aynı sunucuda iki farklı kullanıcının birbirinden bağımsız biçimde orchestrator up çalıştırdığını düşünün. Eğer isimlendirme ve ağ tarafı dikkatli tasarlanmamışsa, çakışmalar hemen başlıyor.
+
+```bash
+orchestrator up -c ata.yaml
+orchestrator up -c turkmen.yaml
+```
+Container adları çakışabilir, network isimleri üst üste binebilir, port binding’ler birbirine girebilir. Yani mevcut haliyle bu araç “çok kullanıcılı lab platformu” olmaktan çok, kontrollü biçimde kullanılan tek operatörlü bir araç.
+
+Kullanıcı ya da oturum bazlı namespace mantığı eklense — isim önekleri, izole alt ağlar, session ID tabanlı kaynak adları gibi — özellikle workshop tarafında çok daha rahat kullanılabilir hale gelirdi.
+
 
 ### Durum Yönetimi İlkel
 
-Durum dosyası düz bir JSON blob. Binary provisioning ortasında çökerse, durum dosyası gerçeği yansıtmayabilir. "Gerçekte ne çalışıyor?" ile "Ne çalışıyor olmalı?" arasını kontrol eden bir uzlaşma döngüsü yok — tek seferlik ateşle-unut yaklaşımı. Bunu Terraform'un durum yönetimiyle karşılaştırırsanız, burada ne kadar çok şey yapılabileceğini görürsünüz.
+Durum dosyası var, ama şu anda oldukça düz bir model. Temelde JSON halinde “ne oluşturuldu” bilgisini yazıyor ve down sırasında buna güveniyor.
+
+Bu basitlik belli bir noktaya kadar güzel. Ama binary provisioning sırasında çökerse ya da host üstünde dışarıdan bir değişiklik olursa, durum dosyasıyla gerçek dünya birbirinden kopabiliyor.
+
+Yani şu iki soru arasında henüz otomatik bir uzlaşma döngüsü yok:
+	•	Gerçekte ne çalışıyor?
+	•	Sisteme göre ne çalışıyor olması gerekiyor?
+
+Bugünkü model daha çok “bir kez çalıştır, sonucu kaydet, sonra oraya güven” yaklaşımı. Terraform benzeri bir reconciliation mantığıyla kıyaslayınca, burada geliştirilecek ciddi alan olduğu açık.
 
 ---
 
@@ -222,7 +279,7 @@ Her slaydı tekrarlamak istemiyorum (bunun için [sunum](/talks/orchestrator.htm
 
 ## Henüz Keşfetmediğim Fikirler
 
-Bunlar daha fazla zamanım olsa veya birisi ihtiyaç duyduğunu söylese yapacağım şeyler:
+Bunlar daha fazla zamanım olsa yapacağım şeyler:
 
 **Bir `plan` komutu (Terraform gibi).** `up`'tan önce tam olarak nelerin oluşturulacağını göster — "X ağı oluşturulacak, A, B, C container'ları başlatılacak, D VM'i tanımlanacak." Kullanıcı inceleyip onaylasın. Özellikle prodüksiyona yakın senaryolarda kullanışlı.
 
