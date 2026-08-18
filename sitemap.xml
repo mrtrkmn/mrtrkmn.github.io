@@ -2,6 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://mrturkmen.com/tags/claude/</loc>
+    <lastmod>2026-08-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/claude-code/</loc>
+    <lastmod>2026-08-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/context-window/</loc>
+    <lastmod>2026-08-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/llm/</loc>
+    <lastmod>2026-08-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/</loc>
+    <lastmod>2026-08-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/posts/nedir-bu-claude-tursusu/</loc>
+    <lastmod>2026-08-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/posts/</loc>
+    <lastmod>2026-08-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/</loc>
+    <lastmod>2026-08-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/token/</loc>
+    <lastmod>2026-08-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mrturkmen.com/tags/yapay-zeka/</loc>
+    <lastmod>2026-08-18T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://mrturkmen.com/tags/conference/</loc>
     <lastmod>2026-02-26T15:00:00+01:00</lastmod>
   </url><url>
@@ -23,16 +53,7 @@
     <loc>https://mrturkmen.com/tags/libvirt/</loc>
     <lastmod>2026-02-26T15:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://mrturkmen.com/</loc>
-    <lastmod>2026-02-26T15:00:00+01:00</lastmod>
-  </url><url>
     <loc>https://mrturkmen.com/tags/networking/</loc>
-    <lastmod>2026-02-26T15:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/posts/</loc>
-    <lastmod>2026-02-26T15:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://mrturkmen.com/tags/</loc>
     <lastmod>2026-02-26T15:00:00+01:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/wireguard/</loc>
