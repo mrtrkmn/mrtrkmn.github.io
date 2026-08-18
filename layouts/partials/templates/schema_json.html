@@ -1,0 +1,8 @@
+{{- /* Minimal JSON-LD partial to satisfy theme build */ -}}
+{{- /* Renders only when .Site.Params.env is set */ -}}
+{{- if .Site.Params.env }}
+<script type="application/ld+json">
+{{- $data := dict "@context" "https://schema.org" "@type" "Person" "name" .Site.Params.title "url" .Site.BaseURL -}}
+{{- $data | jsonify -}}
+</script>
+{{- end }}
