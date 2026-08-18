@@ -16,18 +16,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Git checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+          fetch-depth: 0
 
       - name: Set Git Creds
         run: |
           git config --global user.email "robotcuk@mrturkmen.com"
           git config --global user.name "robotcuk"
-
-      - name: Get Theme
-        run: git submodule update --init --recursive
-
-      - name: Update theme to Latest commit
-        run: git submodule update --remote --merge
 
       - name: Setup hugo
         uses: peaceiris/actions-hugo@v2
