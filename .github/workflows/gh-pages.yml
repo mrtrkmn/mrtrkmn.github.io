@@ -21,6 +21,10 @@ jobs:
           submodules: 'recursive'
           fetch-depth: 0
 
+      - name: Update submodules
+        run: |
+          git submodule update --init --recursive --remote
+
       - name: Set Git Creds
         run: |
           git config --global user.email "robotcuk@mrturkmen.com"
