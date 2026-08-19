@@ -49,7 +49,7 @@ Yani model değiştirmiyor, prompt'unuzu yeniden yazmıyor. **Modele gitmeden ö
 
 Yazının kalanında tek tek gireceğim parçaların tamamı tek resimde şöyle duruyor — istek soldan giriyor, `CacheAligner → ContentRouter → sıkıştırıcılar → CCR` hattından geçip sağdaki sağlayıcıya çıkıyor; kutuların içindeki kırmızılar da benim yaşadığım yerler:
 
-![Headroom mimarisi: ajanlar, dört entegrasyon modu, CacheAligner → ContentRouter → sıkıştırıcılar → CCR boru hattı, lokal cache, cross-agent memory deposu ve manşet rakamlar](headroom-genel-bakis.drawio.png)
+![Headroom mimarisi: ajanlar, dört entegrasyon modu, CacheAligner → ContentRouter → sıkıştırıcılar → CCR boru hattı, lokal cache, cross-agent memory deposu ve manşet rakamlar](../../images/headroom-genel-bakis.drawio.png)
 
 
 Burada bir yanlış anlaşılmayı baştan keselim, ben de bu tuzağa düşmüştüm: **bu semantik/embedding tabanlı bir sıkıştırma değil.** Bir LLM oturup metninizi özetlemiyor. Yapılan iş yapısal ve istatistiksel: fonksiyon gövdelerini atmak, yorumları atmak, uzun string değerleri kırpmak, boşlukları temizlemek, tekrar eden yapıyı maskelemek. UUID ve hash gibi şeyleri korumak için ayrı bir "entropy preservation" ayarı var (`use_entropy_preservation=True`), yoksa onları da çöp sanıp atabiliyor.
