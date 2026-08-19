@@ -9,11 +9,14 @@
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 1rem;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .homepage-main {
         flex: 1;
         min-width: 0;
+        width: 100%;
     }
 
     .homepage-sidebar {
@@ -74,13 +77,66 @@
         color: var(--secondary);
     }
 
-    @media (max-width: 768px) {
+    /* Enhanced responsive design */
+    @media (max-width: 900px) {
         .homepage-container {
             flex-direction: column;
+            gap: 1.5rem;
         }
 
         .homepage-sidebar {
             width: 100%;
+            padding-top: 0;
+        }
+
+        .homepage-main {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .homepage-container {
+            flex-direction: column;
+            padding: 0 1rem;
+            gap: 1.5rem;
+        }
+
+        .homepage-sidebar {
+            width: 100%;
+            padding-top: 0;
+        }
+
+        .homepage-main {
+            width: 100%;
+        }
+
+        .sidebar-section {
+            padding: 0.75rem;
+        }
+
+        .sidebar-section h3 {
+            font-size: 0.95rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .homepage-container {
+            padding: 0 0.75rem;
+            gap: 1rem;
+        }
+
+        .sidebar-section {
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .sidebar-section h3 {
+            font-size: 0.9rem;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .github-chart {
+            max-width: 100%;
         }
     }
 </style>
