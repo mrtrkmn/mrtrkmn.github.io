@@ -11,20 +11,62 @@
     </image>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 18 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 19 Aug 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://mrturkmen.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Claude</title>
       <link>https://mrturkmen.com/tags/claude/</link>
-      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
       <guid>https://mrturkmen.com/tags/claude/</guid>
       <description></description>
     </item>
     <item>
       <title>Claude-Code</title>
       <link>https://mrturkmen.com/tags/claude-code/</link>
-      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
       <guid>https://mrturkmen.com/tags/claude-code/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Context-Compression</title>
+      <link>https://mrturkmen.com/tags/context-compression/</link>
+      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://mrturkmen.com/tags/context-compression/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Headroom</title>
+      <link>https://mrturkmen.com/tags/headroom/</link>
+      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://mrturkmen.com/tags/headroom/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Llm</title>
+      <link>https://mrturkmen.com/tags/llm/</link>
+      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://mrturkmen.com/tags/llm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mcp</title>
+      <link>https://mrturkmen.com/tags/mcp/</link>
+      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://mrturkmen.com/tags/mcp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Token</title>
+      <link>https://mrturkmen.com/tags/token/</link>
+      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://mrturkmen.com/tags/token/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Yapay Zeka</title>
+      <link>https://mrturkmen.com/tags/yapay-zeka/</link>
+      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://mrturkmen.com/tags/yapay-zeka/</guid>
       <description></description>
     </item>
     <item>
@@ -32,27 +74,6 @@
       <link>https://mrturkmen.com/tags/context-window/</link>
       <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
       <guid>https://mrturkmen.com/tags/context-window/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Llm</title>
-      <link>https://mrturkmen.com/tags/llm/</link>
-      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>https://mrturkmen.com/tags/llm/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Token</title>
-      <link>https://mrturkmen.com/tags/token/</link>
-      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>https://mrturkmen.com/tags/token/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Yapay Zeka</title>
-      <link>https://mrturkmen.com/tags/yapay-zeka/</link>
-      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>https://mrturkmen.com/tags/yapay-zeka/</guid>
       <description></description>
     </item>
     <item>

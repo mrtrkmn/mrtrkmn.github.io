@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 18 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 19 Aug 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://mrturkmen.com/tags/llm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Headroom&#39;u kurdum, denedim, kaldırdım</title>
+      <link>https://mrturkmen.com/posts/headroom-denemesi/</link>
+      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://mrturkmen.com/posts/headroom-denemesi/</guid>
+      <description>Headroom gerçekten token tasarrufu sağlıyor mu? Kurulum, mimari, kendi benchmark&amp;#39;ları ile bağımsız ölçümler arasındaki fark ve prompt caching tuzağı.</description>
+    </item>
     <item>
       <title>Nedir bu Claude turşusu?</title>
       <link>https://mrturkmen.com/posts/nedir-bu-claude-tursusu/</link>
