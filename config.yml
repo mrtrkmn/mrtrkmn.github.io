@@ -1,7 +1,40 @@
 baseURL: "https://mrturkmen.com/"
 title: mrturkmen
-pagerSize: 10
-theme: PaperMod
+theme: dream
+
+params:
+  env: production
+  title: Ahmet Turkmen
+  description: "Contains notes and blog posts"
+  keywords: [gRPC, docker, go, golang, cloud, virtualization, python]
+  author: mrturkmen
+  images: ["static"]
+  
+  # Dream theme specific settings
+  avatar: "content/images/profile.jpg"
+  description: "informatics (M.Sc) student at TUM"
+  
+  social:
+    - name: github
+      url: "https://github.com/mrtrkmn"
+    - name: linkedin
+      url: "https://linkedin.com/in/mrturkmen"
+    - name: gitlab
+      url: "https://gitlab.com/mrturkmen"
+    - name: email
+      url: "mailto:hi@mrturkmen.com"
+
+menu:
+  main:
+    - name: Posts
+      url: /posts/
+      weight: 10
+    - name: Archive
+      url: /archives/
+      weight: 20
+    - name: Search
+      url: /search/
+      weight: 30
 
 enableRobotsTXT: true
 buildDrafts: false
@@ -11,276 +44,11 @@ buildExpired: false
 googleAnalytics: UA-165248542-1
 
 minify:
-    disableXML: true
-    minifyOutput: true
+  disableXML: true
+  minifyOutput: true
 
 outputs:
-    home:
-        - HTML
-        - RSS
-        - JSON
-
-params:
-    env: production # to enable google analytics, opengraph, twitter-cards and schema.
-    title: Ahmet Turkmen
-    description: "Contains notes and blog posts "
-    keywords: [gRPC, docker, go, golang, cloud, virtualization, python]
-    author: mrturkmen
-    # author: ["Me", "You"] # multiple authors
-    images: ["static"]
-    DateFormat: "January 2,  2006"
-    defaultTheme: auto # dark, light
-    disableThemeToggle: false
-
-    ShowReadingTime: true
-    ShowShareButtons: true
-    ShowPostNavLinks: true
-    ShowBreadCrumbs: true
-    disableSpecial1stPost: false
-    disableScrollToTop: false
-    comments: true
-    hidemeta: false
-    hideSummary: false
-    showtoc: false
-    tocopen: false
-
-    assets:
-        # disableHLJS: true # to disable highlight.js
-        # disableFingerprinting: true
-        favicon: "<link / abs url>"
-        favicon16x16: "<link / abs url>"
-        favicon32x32: "<link / abs url>"
-        apple_touch_icon: "<link / abs url>"
-        safari_pinned_tab: "<link / abs url>"
-
-    label:
-        text: "Home"
-        icon: 
-        iconHeight: 35
-
-    # profile-mode
-    profileMode:
-        enabled: true # needs to be explicitly set
-        title: Ahmet Turkmen 
-        subtitle: "informatics (M.Sc) student at TUM"
-        imageUrl: "content/images/profile.jpg"
-        imageWidth: 120
-        imageHeight: 120
-        imageTitle: Profile pic
-        buttons:
-            - name: Posts
-              url: posts  
-              # - name: Tags
-              # url: tags
-
-    # home-info mode
-    homeInfoParams:
-        Title: "Hi there \U0001F44B"
-        Content: "Examples from blog posts are hosted here: https://github.com/merkez"
-
-    socialIcons:
-        # - name: twitter
-        #   url: "https://twitter.com/"
-        # - name: stackoverflow
-        #   url: "https://stackoverflow.com"
-        - name: linkedin
-          url: "https://linkedin.com/in/mrturkmen"
-        - name: github
-          url: "https://github.com/mrtrkmn"
-
-        - name: gitlab
-          url: "https://gitlab.com/mrturkmen"
-        - name: mail 
-          url: "mailto:hi@mrturkmen.com"
-    analytics:
-        google:
-            SiteVerificationTag: "XYZabc"
-        bing:
-            SiteVerificationTag: "XYZabc"
-        yandex:
-            SiteVerificationTag: "XYZabc"
-
-    cover:
-        hidden: true # hide everywhere but not in structured data
-        hiddenInList: true # hide on list pages and home
-        hiddenInSingle: true # hide on single page
-
-    editPost:
-        URL: "https://github.com/<path_to_repo>/content"
-        Text: "Suggest Changes" # edit text
-        appendFilePath: true # to append file path to Edit link
-
-    # for search
-    # https://fusejs.io/api/options.html
-    fuseOpts:
-        isCaseSensitive: false
-        shouldSort: true
-        location: 0
-        distance: 1000
-        threshold: 0.4
-        minMatchCharLength: 0
-        keys: ["title", "permalink", "summary", "content"]
-menu:
-    main:
-       - name: Archive
-         url: archives/
-         weight: 10
-       - name: Search
-         url: search/
-         weight: 10
-
-       
-        # - identifier: categories
-        #   name: categories
-        #   url: /categories/
-        #   weight: 10
-        # - identifier: tags
-        #   name: tags
-        #   url: /tags/
-        #   weight: 20
-        # - identifier: example
-        #   name: example.org
-        #   url: https://example.org
-        #   weight: 30
-# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
-# pygmentsUseClasses: true
-# markup:
-#     highlight:
-#         # anchorLineNos: true
-#         codeFences: true
-#         guessSyntax: true
-#         lineNos: true
-#         style: monokai
-    minifyOutput: true
-
-params:
-    env: production # to enable google analytics, opengraph, twitter-cards and schema.
-    title: Ahmet Turkmen
-    description: "Contains notes and blog posts "
-    keywords: [Blog, Portfolio, Software]
-    author: mrrturkmen
-    # author: ["Me", "You"] # multiple authors
-    images: ["<link or path of image for opengraph, twitter-cards>"]
-    DateFormat: "January 2,  2006"
-    defaultTheme: auto # dark, light
-    disableThemeToggle: false
-
-    ShowReadingTime: true
-    ShowShareButtons: true
-    ShowPostNavLinks: true
-    ShowBreadCrumbs: true
-    disableSpecial1stPost: false
-    disableScrollToTop: false
-    comments: true
-    hidemeta: false
-    hideSummary: false
-    showtoc: false
-    tocopen: false
-
-    assets:
-        # disableHLJS: true # to disable highlight.js
-        # disableFingerprinting: true
-        favicon: "<link / abs url>"
-        favicon16x16: "<link / abs url>"
-        favicon32x32: "<link / abs url>"
-        apple_touch_icon: "<link / abs url>"
-        safari_pinned_tab: "<link / abs url>"
-
-    label:
-        text: "Home"
-        icon: 
-        iconHeight: 35
-
-    # profile-mode
-    profileMode:
-        enabled: false  # needs to be explicitly set
-        title: Ahmet Turkmen 
-        subtitle: "informatics (M.Sc) student at TUM"
-        imageUrl: "profile.jpg"
-        imageWidth: 120
-        imageHeight: 120
-        imageTitle: Profile pic
-        buttons:
-            - name: Posts
-              url: posts 
-              # - name: Tags
-              # url: tags
-
-    # home-info mode
-    homeInfoParams:
-        Title: "Hi there \U0001F44B"
-        Content: "about me > https://linkedin.com/in/mrturkmen"
-
-    socialIcons:
-        # - name: stackoverflow
-        #   url: "https://stackoverflow.com"
-        - name: linkedin
-          url: "https://www.linkedin.com/in/mrturkmen"
-        - name: github
-          url: "https://github.com/mrtrkmn"
-   #     - name: twitter
-   #       url: "https://twitter.com/mrtrkmn_"
-
-        - name: gitlab
-          url: "https://gitlab.com/mrturkmen"
-   #     - name: medium
-   #       url:  "https://mrturkmen.medium.com"
-        - name: RsS
-          url: "index.xml"
-    analytics:
-        google:
-            SiteVerificationTag: "XYZabc"
-        bing:
-            SiteVerificationTag: "XYZabc"
-        yandex:
-            SiteVerificationTag: "XYZabc"
-
-    cover:
-        hidden: true # hide everywhere but not in structured data
-        hiddenInList: true # hide on list pages and home
-        hiddenInSingle: true # hide on single page
-
-    editPost:
-        URL: "https://github.com/mrtrkmn/mrtrkmn.github.io/edit/master/content"
-        Text: "Suggest Changes" # edit text
-        appendFilePath: true # to append file path to Edit link
-
-    # for search
-    # https://fusejs.io/api/options.html
-    fuseOpts:
-        isCaseSensitive: false
-        shouldSort: true
-        location: 0
-        distance: 1000
-        threshold: 0.4
-        minMatchCharLength: 0
-        keys: ["title", "permalink", "summary", "content"]
-menu:
-    main:
-        - name: Archive
-          url: archives/
-          weight: 10
-        # - identifier: categories
-        #   name: categories
-        #   url: /categories/
-        #   weight: 10
-        # - identifier: tags
-        #   name: tags
-        #   url: /tags/
-        #   weight: 20
-        # - identifier: example
-        #   name: example.org
-        #   url: https://example.org
-        #   weight: 30
-        - name: Search
-          url: search/
-          weight: 10
-# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
-# pygmentsUseClasses: true
-# markup:
-#     highlight:
-#         # anchorLineNos: true
-#         codeFences: true
-#         guessSyntax: true
-#         lineNos: true
-#         style: monokai
+  home:
+    - HTML
+    - RSS
+    - JSON
