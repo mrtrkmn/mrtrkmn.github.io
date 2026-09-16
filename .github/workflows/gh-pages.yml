@@ -36,6 +36,9 @@ jobs:
           hugo-version: "0.146.0"
           extended: true
 
+      - name: Download Hugo modules
+        run: hugo mod get -u
+
       - name: Build
         run: hugo --buildDrafts --gc --logLevel info --minify
 
