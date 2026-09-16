@@ -12,7 +12,7 @@ params:
   
   # Dream theme specific settings
   avatar: "content/images/profile.jpg"
-  description: "informatics (M.Sc) student at TUM"
+  subtitle: "Systems Development Engineer at Amazon"
   
   social:
     - name: github
