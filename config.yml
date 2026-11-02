@@ -28,6 +28,11 @@ menu:
 markup:
   highlight:
     noClasses: false
+  goldmark:
+    renderer:
+      # Posts embed hand-written HTML (tables, a YouTube embed, an <img>);
+      # without this Goldmark drops it silently.
+      unsafe: true
 
 services:
   googleAnalytics:

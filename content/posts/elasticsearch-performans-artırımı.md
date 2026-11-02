@@ -30,7 +30,7 @@ http://<elk-ip>:9200/_cat/shards
 
 Bu performans iyileştirme adımları, tek sunucu (node) üzerinde çalışan Elasticsearch üzerinde yapılmıştır, yani dağıtık bir sistem üzerinde iyileştirme yapmak buradaki anlatılacaklardan farklı olacaktır. (Bazı kısımları benzerlik gösterse dahi)
 
-<ins>__Not : Bu iyileştirme işlemleri, çalıştırılan sunucu sayısına (dağıtık sistem ise), internet hızına (dağıtık sistem ise), sunucuda çalışan işletim sisteminden, kullandığı disk, CPU ve RAM kapasitesine göre değişiklik gösterebilir.__<ins>
+<ins>__Not : Bu iyileştirme işlemleri, çalıştırılan sunucu sayısına (dağıtık sistem ise), internet hızına (dağıtık sistem ise), sunucuda çalışan işletim sisteminden, kullandığı disk, CPU ve RAM kapasitesine göre değişiklik gösterebilir.__</ins>
 
 
 #### Paralel Bulk indeksleme

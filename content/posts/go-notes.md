@@ -255,7 +255,7 @@ __Good Programming Practices__
 
 - Subclass redefines a method inherited from the superclass 
 - Example: `Speaker`, `Cat`, `Dog`
-  - Spekaer `Speak()` prints "<noise>"
+  - Spekaer `Speak()` prints "&lt;noise&gt;"
   - Cat  `Speak()` prints "meow"
   - Dog `Speak()` prints "woof"
   

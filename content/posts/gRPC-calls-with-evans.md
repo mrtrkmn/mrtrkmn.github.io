@@ -173,6 +173,6 @@ You can check demonstration video below.
 
 ⚠️ **_You may wish to change the video quality to 1080p60_**
 
-<iframe width="810" height="500" src="https://www.youtube.com/embed/GnAUkPUXYCs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+<iframe width="810" height="500" style="max-width:100%;aspect-ratio:810/500;height:auto;" src="https://www.youtube.com/embed/GnAUkPUXYCs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
 
 If you have any questions, fix, or something else, do not hesitate to contact with me. 
