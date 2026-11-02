@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ci/Cd on mrturkmen</title>
     <link>https://mrturkmen.com/tags/ci/cd/</link>
     <description>Recent content in Ci/Cd on mrturkmen</description>
-    <image>
-      <title>mrturkmen</title>
-      <url>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sat, 12 Dec 2020 17:42:03 +0000</lastBuildDate>
@@ -18,30 +13,28 @@
       <link>https://mrturkmen.com/posts/deploy-with-ansible/</link>
       <pubDate>Sat, 12 Dec 2020 17:42:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/deploy-with-ansible/</guid>
-      <description>Deploying with Ansible on CI/CD. </description>
+      <description>&lt;p&gt;In this post, deployment process of an application with Ansible will be explained. Traditionally applications can be deployed in different ways, quite similar approach to deploy applications like in Ansible is executing bash script which has ssh commands. To give an example, Travis continuous integration has a feature where a bash script can be defined to deploy application and through given instructions within bash script, application can be successfully deployed.&lt;/p&gt;</description>
     </item>
     <item>
       <title>ansible: introductory handwritten notes</title>
       <link>https://mrturkmen.com/posts/introduction-to-ansible-notes/</link>
       <pubDate>Sat, 05 Dec 2020 12:45:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/introduction-to-ansible-notes/</guid>
-      <description>&lt;p&gt;While watching video tutorial about Ansible, I took some notes and created following PDF file.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../../pdfs/20201205-introduction-to-ansible.pdf&#34;&gt;INTRODUCTION TO ANSIBLE HANDWRITTEN NOTES&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;../../images/ansible_hand_written_notes.png&#34;&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;While watching video tutorial about Ansible, I took some notes and created following PDF file.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../../pdfs/20201205-introduction-to-ansible.pdf&#34;&gt;INTRODUCTION TO ANSIBLE HANDWRITTEN NOTES&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../../images/ansible_hand_written_notes.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>youtubeto: download and save playlists to releases on Github</title>
       <link>https://mrturkmen.com/posts/download-release-youtube-playlists/</link>
       <pubDate>Tue, 24 Nov 2020 10:55:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/download-release-youtube-playlists/</guid>
-      <description>Automated way of fetching and releasing list of playlists defined by user.</description>
+      <description>&lt;p&gt;In some moments, Youtube algorithm is working perfect, but sometimes it shows a video from ten years ago from nowhere. For the moments where it shows and suggests videos/playlists to us, we might want to save the list of playlist and watch in some other time. It could be on a plane, train, bus, whenever you are planning to spent some time. However, taking the URL of a playlist and saving it to your cute note program might not be sufficient enough.&#xA;There is a high chance that it will be forgotten or missed, therefore, I thought that it would be nice to have an automated way of saving playlists on somewhere and download them when I need. (- in particular, when there is no or limited internet connection -).&lt;/p&gt;</description>
     </item>
     <item>
       <title>auto-latex: generate and handle latex through github actions</title>
       <link>https://mrturkmen.com/posts/build-release-latex/</link>
       <pubDate>Mon, 26 Oct 2020 16:25:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/build-release-latex/</guid>
-      <description>Creating PDFs with Latex</description>
+      <description>&lt;hr&gt;&#xA;&lt;p&gt;In this post, I will be describing to setup a workflow to build and release your Latex files through Github actions. First of all, keep in mind that this post is not about what is Latex and how to use it.&lt;/p&gt;&#xA;&lt;p&gt;It is extremely nice to integrate daily development tools such as CI/CD to your preparation of paper, without any hassle. Why is that because it is cool to track of what has been changed on a paper over time. In fact, having a couple of people who are responsible in different parts of paper, sometimes blocks others. Therefore, having such a workflow will increase productivity for everyone in a group.  Whenever pull request created to main branch, it will be easy to check typos, logic errors and missing points by others.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

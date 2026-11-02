@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wireguard on mrturkmen</title>
     <link>https://mrturkmen.com/tags/wireguard/</link>
     <description>Recent content in Wireguard on mrturkmen</description>
-    <image>
-      <title>mrturkmen</title>
-      <url>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 26 Feb 2026 15:00:00 +0100</lastBuildDate>
@@ -18,21 +13,21 @@
       <link>https://mrturkmen.com/posts/orchestrating-virtual-hub-in-go/</link>
       <pubDate>Thu, 26 Feb 2026 15:00:00 +0100</pubDate>
       <guid>https://mrturkmen.com/posts/orchestrating-virtual-hub-in-go/</guid>
-      <description>Tek bir Go binary&amp;#39;si ile container, VM, ağ ve VPN&amp;#39;i ayağa kaldırmak — neden var, nerede işe yarar, neleri eksik.</description>
+      <description>&lt;p&gt;Geçtiğimiz günlerde &lt;strong&gt;Gophers İstanbul 2026&lt;/strong&gt;&amp;lsquo;da bir sunum yaptım. Konu: tek bir Go binary&amp;rsquo;si ile Docker container&amp;rsquo;ları, libvirt/KVM sanal makineleri, DHCP+DNS altyapısını ve WireGuard VPN tünelini — hepsini bir YAML dosyasından ayağa kaldıran bir araç. Sunumda bol bol kod parçacıkları ve Go&amp;rsquo;nun iç yapısı var. Bu yazı &lt;em&gt;o değil&lt;/em&gt;. Burada daha çok aracın arkasındaki dağınık gerçek-dünya probleminden, nerelerde gerçekten işe yaradığını düşündüğümden, nelerin hâlâ eksik olduğundan ve vakit bulursam denemek istediğim fikirlerden bahsetmek istiyorum.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>wireguard: kendimize özel vpn kurulumu </title>
+      <title>wireguard: kendimize özel vpn kurulumu</title>
       <link>https://mrturkmen.com/posts/vpn-kuralim/</link>
       <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/vpn-kuralim/</guid>
-      <description>Decent open source, lightweight VPN solution.</description>
+      <description>&lt;h1 id=&#34;vpn-kuralım&#34;&gt;VPN Kuralım&lt;/h1&gt;&#xA;&lt;p&gt;Bugün sizlere kendinize ait VPN sistemi nasıl kurulur, onu anlatmak istiyorum, daha önce İngilizce olarak, &lt;a href=&#34;https://mrturkmen.com/setup-free-vpn/&#34;&gt;yayınladım&lt;/a&gt; fakat  Türkçe bir kaynağın da faydalı olabileceğini düşündüm. Burada anlatılanlar, ubuntu ailesine (16.04,18.04) ait sunucular üzerinde test edilmiştir.&lt;/p&gt;&#xA;&lt;p&gt;İlk olarak bulut hizmeti sağlayan bir şirketten bu DigitalOcean, Google Cloud, Microsoft Azure veya Amazon olabilir, sunucu kiralıyorsunuz, en ucuzu ve makul olanı DigitalOcean tarafından sunulan &lt;a href=&#34;https://www.digitalocean.com/pricing/&#34;&gt;aylık 5 dolar&lt;/a&gt; olan sunucu diyebilirim. Sunucuyu kiraladıktan ve ssh bağlantısını sağladıktan sonra VPN kurulumuna geçebiliriz.&lt;/p&gt;</description>
     </item>
     <item>
       <title>wireguard: set it up in few steps</title>
       <link>https://mrturkmen.com/posts/setup-free-vpn/</link>
       <pubDate>Sat, 06 Jun 2020 10:00:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/setup-free-vpn/</guid>
-      <description>Decent open source, lightweight VPN solution.</description>
+      <description>&lt;h2 id=&#34;why-vpn&#34;&gt;Why VPN?&lt;/h2&gt;&#xA;&lt;p&gt;It is crucial to do not expose your personal details or not being attacked by someone when you are connected to public endpoints such as coffee, airport, hotel and guest WIFI points. Furthermore,  sometimes, people require to have organizatinal VPN access if organization itself does not provide one. For instance when students in universities have taken into consideration, it is quite important to reach resources that university is providing, it could be IEEE library access or enclosed resource which is only exclusive to internal network of the organization.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Worker on mrturkmen</title>
     <link>https://mrturkmen.com/tags/worker/</link>
     <description>Recent content in Worker on mrturkmen</description>
-    <image>
-      <title>mrturkmen</title>
-      <url>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 10 Jul 2020 16:35:03 +0000</lastBuildDate>
@@ -18,14 +13,14 @@
       <link>https://mrturkmen.com/posts/setup-ingress-controller/</link>
       <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/setup-ingress-controller/</guid>
-      <description>NGINX Ingress Controller Setup</description>
+      <description>&lt;p&gt;In recent post, which is &lt;a href=&#34;https://mrturkmen.com/install-ha-kubernetes-cluster/&#34;&gt;Setup Highly Available Kubernetes Cluster with HAProxy &lt;/a&gt;, a highly available Kubernetes cluster is created. However, once I started to dig in and deploy some stuff to cluster, I realized that I am not able to connect any deployed application or services. For instance, when an web application is deployed using HAProxy load balancer (endpoint), and check from &lt;code&gt;kubectl&lt;/code&gt; (on client side), its status is running. However, that application could not be reached from outside world although I re-patch an external IP address by following command&lt;/p&gt;</description>
     </item>
     <item>
       <title>haproxy: setting it up for highly available k8s cluster</title>
       <link>https://mrturkmen.com/posts/install-ha-kubernetes-cluster/</link>
       <pubDate>Sun, 05 Jul 2020 17:43:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/install-ha-kubernetes-cluster/</guid>
-      <description>Installation of Highly Available Kubernetes Cluster</description>
+      <description>&lt;p&gt;The main purpose of this blog post a simple walkthrough of setting up Kubernetes cluster with external &lt;a href=&#34;http://www.haproxy.org/&#34;&gt;HAProxy&lt;/a&gt; which will be the endpoint where our &lt;code&gt;kubectl&lt;/code&gt; client communicates over.&#xA;Node specifications for this setup is given as shown in the table below. Keep in mind that all of them has access to each other with password and without password. The environment which Kubernetes cluster will stay is running on OpenStack. It means that once a configuration (ssh keys, hosts, and etc) is done for example master 1 then all other nodes could be initialized through snapshot of master 1. To be able to setup such a Kubernetes cluster easily, I will be using &lt;a href=&#34;https://github.com/kubernetes-sigs/kubespray&#34;&gt;KubeSpray&lt;/a&gt;  which is a repository where it has all required configuration and playbooks for setting up necessary cluster.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

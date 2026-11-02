@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ssh on mrturkmen</title>
     <link>https://mrturkmen.com/tags/ssh/</link>
     <description>Recent content in Ssh on mrturkmen</description>
-    <image>
-      <title>mrturkmen</title>
-      <url>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 24 Feb 2021 12:00:03 +0000</lastBuildDate>
     <atom:link href="https://mrturkmen.com/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>fail2ban: block ssh bruteforce attacks </title>
+      <title>fail2ban: block ssh bruteforce attacks</title>
       <link>https://mrturkmen.com/posts/fail2ban/</link>
       <pubDate>Wed, 24 Feb 2021 12:00:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/fail2ban/</guid>
-      <description>fail2ban: ban failed attempts</description>
+      <description>&lt;h1 id=&#34;fail2ban&#34;&gt;fail2ban&lt;/h1&gt;&#xA;&lt;p&gt;A while ago, I was checking servers&amp;rsquo; logs to see any suspicious activities going on from outside. I noticed that the servers both staging/testing and production servers are receiving a lot of brute force SSH attacks from variety of countries which are shown in table below.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;list-of-ip-addresses--who-are-doing-ssh-brute-forcing-&#34;&gt;List of IP Addresses ( who are doing SSH Brute Forcing )&lt;/h2&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;** Information on the table gathered from: [ https://www.maxmind.com/en/geoip-demo ]&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

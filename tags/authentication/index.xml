@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Authentication on mrturkmen</title>
     <link>https://mrturkmen.com/tags/authentication/</link>
     <description>Recent content in Authentication on mrturkmen</description>
-    <image>
-      <title>mrturkmen</title>
-      <url>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 28 Jun 2022 19:29:03 +0000</lastBuildDate>
@@ -18,7 +13,7 @@
       <link>https://mrturkmen.com/posts/cloudflare-workers/</link>
       <pubDate>Tue, 28 Jun 2022 19:29:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/cloudflare-workers/</guid>
-      <description>protect gitbook pages with cloudflare workers</description>
+      <description>&lt;p&gt;Gitbook is simple, easy and free way of keeping notes under your own domain.&#xA;However, it is NOT possible to set password protection when you do not want anyone access to your resources except you or your team for free. (&lt;em&gt;More information: &lt;a href=&#34;https://docs.gitbook.com/features/visitor-authentication&#34;&gt;https://docs.gitbook.com/features/visitor-authentication&lt;/a&gt;&lt;/em&gt;) Nice news is that it is possible to set password protection even though you are on free tier with some tricks.&lt;/p&gt;&#xA;&lt;p&gt;First of all, for this example, your custom domain should be configured to Cloudflare, since I will use Cloudflare Workers to setup Basic Authentication in between you and Gitbook origin.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

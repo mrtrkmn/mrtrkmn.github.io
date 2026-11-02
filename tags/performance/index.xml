@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Performance on mrturkmen</title>
     <link>https://mrturkmen.com/tags/performance/</link>
     <description>Recent content in Performance on mrturkmen</description>
-    <image>
-      <title>mrturkmen</title>
-      <url>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sun, 17 Feb 2019 09:04:03 +0000</lastBuildDate>
     <atom:link href="https://mrturkmen.com/tags/performance/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>elasticsearch: performans artırımı </title>
+      <title>elasticsearch: performans artırımı</title>
       <link>https://mrturkmen.com/posts/elasticsearch-performans-art%C4%B1r%C4%B1m%C4%B1/</link>
       <pubDate>Sun, 17 Feb 2019 09:04:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/elasticsearch-performans-art%C4%B1r%C4%B1m%C4%B1/</guid>
-      <description>Elasticsearch ortamı performans artırımı</description>
+      <description>&lt;h4 id=&#34;giriş&#34;&gt;Giriş&lt;/h4&gt;&#xA;&lt;p&gt;Elasticsearch üzerinde büyük boyuttaki verileri hızlı bir şekilde işlemek çaba gerektiren işlerden biridir. Bu yazıda bir çalışma esnasında yapılan elasticsearch performans iyileştirmelerini ve nasıl yapıldığını anlatmaya çalışacağım.&lt;/p&gt;&#xA;&lt;p&gt;Bu iyileştirme işlemlerinin nasıl yapıldığına geçmeden once elasticsearch mimarisinde bulunan bazı bileşenlerden bahsetmekte yarar var.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cluster&lt;/strong&gt; : Elasticsearch bir veya birden fazla bilgisayarda entegre şekilde çalışabilir ve bu elasticsearch ün çalıştığı makinelere NODE denir. Cluster (Küme) ise bu node’ların oluşturduğu gruba verilen yapıya denir.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Index&lt;/strong&gt; : Elasticsearch üzerinde veriler indexlerde tutulur, index basit olarak dökümanların toplandığı ve tutulduğu yapıdır.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Shard&lt;/strong&gt;: Elasticsearch ü birden fazla makine üzerinde (sanal veya fiziksel makine) tutabildiğimizden dolayı, indekslerde tutulan veriler bu cluster adı verdiğimiz ortamlarda dağıtık (distributed) şekilde tutulur. Bu işlemin yönetim kısmını elasticsearch otomatik olarak halleder.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Replica&lt;/strong&gt;: Elasticsearch normalde (default) her indeks için 5 ana shard ve 1 replica oluşturur, yani her bir indeks 5 adet shard’a sahip ve her shard bir replica içermektedir.  Aşağıda bu durumu gösteren bir ekran görüntüsü verilmiştir.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;http://&amp;lt;elk-ip&amp;gt;:9200/_cat/shards&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;../../images/figure_1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

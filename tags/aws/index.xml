@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Aws on mrturkmen</title>
     <link>https://mrturkmen.com/tags/aws/</link>
     <description>Recent content in Aws on mrturkmen</description>
-    <image>
-      <title>mrturkmen</title>
-      <url>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sun, 15 Jan 2023 01:20:00 +0000</lastBuildDate>
@@ -18,14 +13,14 @@
       <link>https://mrturkmen.com/posts/automate-ci-cd-with-slack-command/</link>
       <pubDate>Sun, 15 Jan 2023 01:20:00 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/automate-ci-cd-with-slack-command/</guid>
-      <description>Easy integration for running Github workflow files through Slack slash command</description>
+      <description>&lt;p&gt;In this post, I will create a simple command to run a workflow on Github using AWS Gateway service. This post was written when AWS offered 1 million free API calls per month for a 12-month period.&lt;/p&gt;&#xA;&lt;h2 id=&#34;setup-github&#34;&gt;Setup Github&lt;/h2&gt;&#xA;&lt;p&gt;The setup on the Github side is minimal and only requires adding a line to the existing workflow file. For demonstration purposes, I will go use one of the repository from &lt;a href=&#34;https://github.com/merkez&#34;&gt;merkez&lt;/a&gt;. Let&amp;rsquo;s choose &lt;a href=&#34;https://github.com/merkez/insthat&#34;&gt;insthat&lt;/a&gt; repository for this occurence.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>packer: build custom images on cloud and local </title>
+      <title>packer: build custom images on cloud and local</title>
       <link>https://mrturkmen.com/posts/build-with-packer/</link>
       <pubDate>Sat, 17 Apr 2021 09:00:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/build-with-packer/</guid>
-      <description>create custom images on with packer</description>
+      <description>&lt;hr&gt;&#xA;&lt;p&gt;&lt;strong&gt;THE REPOSITORY: &lt;a href=&#34;https://github.com/merkez/ubuntu-packer&#34;&gt;https://github.com/merkez/ubuntu-packer&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;In this blog post, provisioning and customizing images using packer will be shown with a template repository.&lt;/p&gt;&#xA;&lt;p&gt;If you are asking or wondering what is Packer, the official definition is :&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Packer is a free and open source tool for creating golden images for multiple platforms from a single source configuration.  (From Official Website).&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;This post includes provisioning of ubuntu image on AWS and local.&lt;/p&gt;&#xA;&lt;h1 id=&#34;build-custom-ubuntu-2004-lts-on-local&#34;&gt;Build Custom Ubuntu 20.04 LTS on Local&lt;/h1&gt;&#xA;&lt;p&gt;In an ideal repository of Packer template, it would be nice to have a skeleton where it includes &lt;code&gt;uploads&lt;/code&gt;, &lt;code&gt;http&lt;/code&gt;, &lt;code&gt;scripts&lt;/code&gt; folders along packer configuration file with a readme. Overall, the structure of folder might look like this :&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

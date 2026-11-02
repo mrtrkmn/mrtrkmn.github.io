@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tunneling on mrturkmen</title>
     <link>https://mrturkmen.com/tags/tunneling/</link>
     <description>Recent content in Tunneling on mrturkmen</description>
-    <image>
-      <title>mrturkmen</title>
-      <url>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sun, 05 Mar 2023 14:01:03 +0000</lastBuildDate>
@@ -18,28 +13,28 @@
       <link>https://mrturkmen.com/posts/tunnelling-to-local-ssh-service/</link>
       <pubDate>Sun, 05 Mar 2023 14:01:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/tunnelling-to-local-ssh-service/</guid>
-      <description>Access local PC/Server through Cloudflare tunneling</description>
+      <description>&lt;p&gt;It is always been fun to access a local machine that is running at your home or at university or somewhere which does not have a public IP address or you do not have control over the network.&lt;/p&gt;&#xA;&lt;p&gt;I already wrote a post about &lt;a href=&#34;https://mrturkmen.com/posts/cloudflare-tunneling/&#34;&gt;cloudflare tunneling&lt;/a&gt; however it was about serving local web applications. This time I will show you how to access local SSH service without exposing it to the world.&lt;/p&gt;</description>
     </item>
     <item>
       <title>cloudflare tunneling: serve local like not local</title>
       <link>https://mrturkmen.com/posts/cloudflare-tunneling/</link>
       <pubDate>Sun, 20 Mar 2022 21:26:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/cloudflare-tunneling/</guid>
-      <description>Run locally, serve globally </description>
+      <description>&lt;h3 id=&#34;would-like-to-see-it-in-action-right-away-&#34;&gt;Would like to see it in action right away ?&lt;/h3&gt;&#xA;&lt;p&gt;Go to demonstration video here:&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=Ayjk7J_KQ8A&#34;&gt;&lt;img src=&#34;https://img.youtube.com/vi/Ayjk7J_KQ8A/0.jpg&#34; alt=&#34;Demonstration Video&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;I am always amazed with Cloudflare&amp;rsquo;s products, blog posts and tools that they are offering. In my spare time, I am trying to read through blog posts over here &lt;a href=&#34;https://blog.cloudflare.com/&#34;&gt;Cloudflare Blog&lt;/a&gt;. Some of them are really easy to consume, some are not, you might need to have an idea about network related terms, or need to follow Cloudflare closely to catch on the blog posts.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>wireguard: kendimize özel vpn kurulumu </title>
+      <title>wireguard: kendimize özel vpn kurulumu</title>
       <link>https://mrturkmen.com/posts/vpn-kuralim/</link>
       <pubDate>Wed, 01 Jul 2020 10:00:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/vpn-kuralim/</guid>
-      <description>Decent open source, lightweight VPN solution.</description>
+      <description>&lt;h1 id=&#34;vpn-kuralım&#34;&gt;VPN Kuralım&lt;/h1&gt;&#xA;&lt;p&gt;Bugün sizlere kendinize ait VPN sistemi nasıl kurulur, onu anlatmak istiyorum, daha önce İngilizce olarak, &lt;a href=&#34;https://mrturkmen.com/setup-free-vpn/&#34;&gt;yayınladım&lt;/a&gt; fakat  Türkçe bir kaynağın da faydalı olabileceğini düşündüm. Burada anlatılanlar, ubuntu ailesine (16.04,18.04) ait sunucular üzerinde test edilmiştir.&lt;/p&gt;&#xA;&lt;p&gt;İlk olarak bulut hizmeti sağlayan bir şirketten bu DigitalOcean, Google Cloud, Microsoft Azure veya Amazon olabilir, sunucu kiralıyorsunuz, en ucuzu ve makul olanı DigitalOcean tarafından sunulan &lt;a href=&#34;https://www.digitalocean.com/pricing/&#34;&gt;aylık 5 dolar&lt;/a&gt; olan sunucu diyebilirim. Sunucuyu kiraladıktan ve ssh bağlantısını sağladıktan sonra VPN kurulumuna geçebiliriz.&lt;/p&gt;</description>
     </item>
     <item>
       <title>wireguard: set it up in few steps</title>
       <link>https://mrturkmen.com/posts/setup-free-vpn/</link>
       <pubDate>Sat, 06 Jun 2020 10:00:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/setup-free-vpn/</guid>
-      <description>Decent open source, lightweight VPN solution.</description>
+      <description>&lt;h2 id=&#34;why-vpn&#34;&gt;Why VPN?&lt;/h2&gt;&#xA;&lt;p&gt;It is crucial to do not expose your personal details or not being attacked by someone when you are connected to public endpoints such as coffee, airport, hotel and guest WIFI points. Furthermore,  sometimes, people require to have organizatinal VPN access if organization itself does not provide one. For instance when students in universities have taken into consideration, it is quite important to reach resources that university is providing, it could be IEEE library access or enclosed resource which is only exclusive to internal network of the organization.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cluster on mrturkmen</title>
     <link>https://mrturkmen.com/tags/cluster/</link>
     <description>Recent content in Cluster on mrturkmen</description>
-    <image>
-      <title>mrturkmen</title>
-      <url>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 10 Jul 2020 16:35:03 +0000</lastBuildDate>
@@ -18,21 +13,21 @@
       <link>https://mrturkmen.com/posts/setup-ingress-controller/</link>
       <pubDate>Fri, 10 Jul 2020 16:35:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/setup-ingress-controller/</guid>
-      <description>NGINX Ingress Controller Setup</description>
+      <description>&lt;p&gt;In recent post, which is &lt;a href=&#34;https://mrturkmen.com/install-ha-kubernetes-cluster/&#34;&gt;Setup Highly Available Kubernetes Cluster with HAProxy &lt;/a&gt;, a highly available Kubernetes cluster is created. However, once I started to dig in and deploy some stuff to cluster, I realized that I am not able to connect any deployed application or services. For instance, when an web application is deployed using HAProxy load balancer (endpoint), and check from &lt;code&gt;kubectl&lt;/code&gt; (on client side), its status is running. However, that application could not be reached from outside world although I re-patch an external IP address by following command&lt;/p&gt;</description>
     </item>
     <item>
       <title>haproxy: setting it up for highly available k8s cluster</title>
       <link>https://mrturkmen.com/posts/install-ha-kubernetes-cluster/</link>
       <pubDate>Sun, 05 Jul 2020 17:43:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/install-ha-kubernetes-cluster/</guid>
-      <description>Installation of Highly Available Kubernetes Cluster</description>
+      <description>&lt;p&gt;The main purpose of this blog post a simple walkthrough of setting up Kubernetes cluster with external &lt;a href=&#34;http://www.haproxy.org/&#34;&gt;HAProxy&lt;/a&gt; which will be the endpoint where our &lt;code&gt;kubectl&lt;/code&gt; client communicates over.&#xA;Node specifications for this setup is given as shown in the table below. Keep in mind that all of them has access to each other with password and without password. The environment which Kubernetes cluster will stay is running on OpenStack. It means that once a configuration (ssh keys, hosts, and etc) is done for example master 1 then all other nodes could be initialized through snapshot of master 1. To be able to setup such a Kubernetes cluster easily, I will be using &lt;a href=&#34;https://github.com/kubernetes-sigs/kubespray&#34;&gt;KubeSpray&lt;/a&gt;  which is a repository where it has all required configuration and playbooks for setting up necessary cluster.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>elasticsearch: performans artırımı </title>
+      <title>elasticsearch: performans artırımı</title>
       <link>https://mrturkmen.com/posts/elasticsearch-performans-art%C4%B1r%C4%B1m%C4%B1/</link>
       <pubDate>Sun, 17 Feb 2019 09:04:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/elasticsearch-performans-art%C4%B1r%C4%B1m%C4%B1/</guid>
-      <description>Elasticsearch ortamı performans artırımı</description>
+      <description>&lt;h4 id=&#34;giriş&#34;&gt;Giriş&lt;/h4&gt;&#xA;&lt;p&gt;Elasticsearch üzerinde büyük boyuttaki verileri hızlı bir şekilde işlemek çaba gerektiren işlerden biridir. Bu yazıda bir çalışma esnasında yapılan elasticsearch performans iyileştirmelerini ve nasıl yapıldığını anlatmaya çalışacağım.&lt;/p&gt;&#xA;&lt;p&gt;Bu iyileştirme işlemlerinin nasıl yapıldığına geçmeden once elasticsearch mimarisinde bulunan bazı bileşenlerden bahsetmekte yarar var.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cluster&lt;/strong&gt; : Elasticsearch bir veya birden fazla bilgisayarda entegre şekilde çalışabilir ve bu elasticsearch ün çalıştığı makinelere NODE denir. Cluster (Küme) ise bu node’ların oluşturduğu gruba verilen yapıya denir.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Index&lt;/strong&gt; : Elasticsearch üzerinde veriler indexlerde tutulur, index basit olarak dökümanların toplandığı ve tutulduğu yapıdır.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Shard&lt;/strong&gt;: Elasticsearch ü birden fazla makine üzerinde (sanal veya fiziksel makine) tutabildiğimizden dolayı, indekslerde tutulan veriler bu cluster adı verdiğimiz ortamlarda dağıtık (distributed) şekilde tutulur. Bu işlemin yönetim kısmını elasticsearch otomatik olarak halleder.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Replica&lt;/strong&gt;: Elasticsearch normalde (default) her indeks için 5 ana shard ve 1 replica oluşturur, yani her bir indeks 5 adet shard’a sahip ve her shard bir replica içermektedir.  Aşağıda bu durumu gösteren bir ekran görüntüsü verilmiştir.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;http://&amp;lt;elk-ip&amp;gt;:9200/_cat/shards&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;../../images/figure_1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

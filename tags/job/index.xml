@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Job on mrturkmen</title>
     <link>https://mrturkmen.com/tags/job/</link>
     <description>Recent content in Job on mrturkmen</description>
-    <image>
-      <title>mrturkmen</title>
-      <url>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sun, 18 Jun 2023 10:20:00 +0000</lastBuildDate>
     <atom:link href="https://mrturkmen.com/tags/job/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>from interview question to enlightenment: metaclasses in python </title>
+      <title>from interview question to enlightenment: metaclasses in python</title>
       <link>https://mrturkmen.com/posts/metaclasses-python/</link>
       <pubDate>Sun, 18 Jun 2023 10:20:00 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/metaclasses-python/</guid>
-      <description>metaclasses in python</description>
+      <description>&lt;p&gt;It was another interview that I had with a company, and I was asked about metaclasses in Python. Up to now, I did not have a requirement to use them, it leads to have a superficial idea about them but not exactly know what they are, therefore decided to do some research and write a short blog post about them.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-are-metaclasses&#34;&gt;What are metaclasses?&lt;/h2&gt;&#xA;&lt;p&gt;In Python, everything is an object. Classes are objects too. Metaclasses are classes that create classes or customize class creation. We can say that metaclasses are the &amp;ldquo;stuff&amp;rdquo; that creates classes.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Technical on mrturkmen</title>
     <link>https://mrturkmen.com/tags/technical/</link>
     <description>Recent content in Technical on mrturkmen</description>
-    <image>
-      <title>mrturkmen</title>
-      <url>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 09 Dec 2024 09:00:03 +0000</lastBuildDate>
     <atom:link href="https://mrturkmen.com/tags/technical/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>rejection </title>
+      <title>rejection</title>
       <link>https://mrturkmen.com/posts/rejection/</link>
       <pubDate>Mon, 09 Dec 2024 09:00:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/rejection/</guid>
-      <description>Failures bring success</description>
+      <description>&lt;p&gt;What I like about interviews is that they can directly show your weaknesses to you. When you think about a friend, girlfriend, parents and even your teacher, they all might say that you are great. Well, maybe you are really good at what you do, but hearing it from someone who has objective views on you is very effective. It is all about trade-offs. Here, objective views refer to the perspective of conducting interviews - it would not be fair to have your closest friend as the interviewer. All judgment is done based on your technical skills rather than personal thoughts. Sure, you do not want to hear bad judgments from your close friends, girlfriend or parents. However, you might still want to see your value in the industry independently from what your friends, parents think about. Therefore, I started interviewing with companies to find my weaknesses and desired job.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

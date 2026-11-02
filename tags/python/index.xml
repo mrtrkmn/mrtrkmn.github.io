@@ -1,45 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on mrturkmen</title>
     <link>https://mrturkmen.com/tags/python/</link>
     <description>Recent content in Python on mrturkmen</description>
-    <image>
-      <title>mrturkmen</title>
-      <url>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 09 Dec 2024 09:00:03 +0000</lastBuildDate>
     <atom:link href="https://mrturkmen.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>rejection </title>
+      <title>rejection</title>
       <link>https://mrturkmen.com/posts/rejection/</link>
       <pubDate>Mon, 09 Dec 2024 09:00:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/rejection/</guid>
-      <description>Failures bring success</description>
+      <description>&lt;p&gt;What I like about interviews is that they can directly show your weaknesses to you. When you think about a friend, girlfriend, parents and even your teacher, they all might say that you are great. Well, maybe you are really good at what you do, but hearing it from someone who has objective views on you is very effective. It is all about trade-offs. Here, objective views refer to the perspective of conducting interviews - it would not be fair to have your closest friend as the interviewer. All judgment is done based on your technical skills rather than personal thoughts. Sure, you do not want to hear bad judgments from your close friends, girlfriend or parents. However, you might still want to see your value in the industry independently from what your friends, parents think about. Therefore, I started interviewing with companies to find my weaknesses and desired job.&lt;/p&gt;</description>
     </item>
     <item>
       <title>decorators in python with examples</title>
       <link>https://mrturkmen.com/posts/decorators-in-python/</link>
       <pubDate>Fri, 23 Jun 2023 17:05:00 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/decorators-in-python/</guid>
-      <description>decorators in python</description>
+      <description>&lt;p&gt;Python has some excellent features which provide you confidence. One of them is decorators. Decorators are used to modify the behaviour of a function or a class. In this article, we will learn how to use decorators in Python.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-are-decorators&#34;&gt;What are decorators?&lt;/h2&gt;&#xA;&lt;p&gt;In programming, decorators are functions that enhance the functionality of another function by receiving it as input, modifying it, and then returning a new function. This process is known as metaprogramming, as one part of the program modifies another part during compilation.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>from interview question to enlightenment: metaclasses in python </title>
+      <title>from interview question to enlightenment: metaclasses in python</title>
       <link>https://mrturkmen.com/posts/metaclasses-python/</link>
       <pubDate>Sun, 18 Jun 2023 10:20:00 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/metaclasses-python/</guid>
-      <description>metaclasses in python</description>
+      <description>&lt;p&gt;It was another interview that I had with a company, and I was asked about metaclasses in Python. Up to now, I did not have a requirement to use them, it leads to have a superficial idea about them but not exactly know what they are, therefore decided to do some research and write a short blog post about them.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-are-metaclasses&#34;&gt;What are metaclasses?&lt;/h2&gt;&#xA;&lt;p&gt;In Python, everything is an object. Classes are objects too. Metaclasses are classes that create classes or customize class creation. We can say that metaclasses are the &amp;ldquo;stuff&amp;rdquo; that creates classes.&lt;/p&gt;</description>
     </item>
     <item>
       <title>github-actions: complain messages to a company in automated way</title>
       <link>https://mrturkmen.com/posts/automation-for-complain/</link>
       <pubDate>Fri, 25 Feb 2022 13:53:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/automation-for-complain/</guid>
-      <description>Complain to krc.com.tr with automation</description>
+      <description>&lt;hr&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;I am alive !!!&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Right, I did not post anything for long time and  could not imagine that this will be my next blog post after long time, but it is indeed.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;This is a story about a company who hold the product (- sent for warranty -) for five months and did not respond any emails.&lt;/p&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s start from the beginning of the story, the product itself is not important, instead how they (- company -) approached to situation is important.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

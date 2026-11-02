@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Download on mrturkmen</title>
     <link>https://mrturkmen.com/tags/download/</link>
     <description>Recent content in Download on mrturkmen</description>
-    <image>
-      <title>mrturkmen</title>
-      <url>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 24 Nov 2020 10:55:03 +0000</lastBuildDate>
@@ -18,7 +13,7 @@
       <link>https://mrturkmen.com/posts/download-release-youtube-playlists/</link>
       <pubDate>Tue, 24 Nov 2020 10:55:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/download-release-youtube-playlists/</guid>
-      <description>Automated way of fetching and releasing list of playlists defined by user.</description>
+      <description>&lt;p&gt;In some moments, Youtube algorithm is working perfect, but sometimes it shows a video from ten years ago from nowhere. For the moments where it shows and suggests videos/playlists to us, we might want to save the list of playlist and watch in some other time. It could be on a plane, train, bus, whenever you are planning to spent some time. However, taking the URL of a playlist and saving it to your cute note program might not be sufficient enough.&#xA;There is a high chance that it will be forgotten or missed, therefore, I thought that it would be nice to have an automated way of saving playlists on somewhere and download them when I need. (- in particular, when there is no or limited internet connection -).&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

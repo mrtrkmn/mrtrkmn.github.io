@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Karaca.com.tr on mrturkmen</title>
     <link>https://mrturkmen.com/tags/karaca.com.tr/</link>
     <description>Recent content in Karaca.com.tr on mrturkmen</description>
-    <image>
-      <title>mrturkmen</title>
-      <url>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 25 Feb 2022 13:53:03 +0000</lastBuildDate>
@@ -18,7 +13,7 @@
       <link>https://mrturkmen.com/posts/automation-for-complain/</link>
       <pubDate>Fri, 25 Feb 2022 13:53:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/automation-for-complain/</guid>
-      <description>Complain to krc.com.tr with automation</description>
+      <description>&lt;hr&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;I am alive !!!&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Right, I did not post anything for long time and  could not imagine that this will be my next blog post after long time, but it is indeed.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;This is a story about a company who hold the product (- sent for warranty -) for five months and did not respond any emails.&lt;/p&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s start from the beginning of the story, the product itself is not important, instead how they (- company -) approached to situation is important.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

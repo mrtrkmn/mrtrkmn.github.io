@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Yapay Zeka on mrturkmen</title>
     <link>https://mrturkmen.com/tags/yapay-zeka/</link>
     <description>Recent content in Yapay Zeka on mrturkmen</description>
-    <image>
-      <title>mrturkmen</title>
-      <url>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 19 Aug 2026 00:00:00 +0000</lastBuildDate>
@@ -18,14 +13,14 @@
       <link>https://mrturkmen.com/posts/headroom-denemesi/</link>
       <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/headroom-denemesi/</guid>
-      <description>Headroom gerçekten token tasarrufu sağlıyor mu? Kurulum, mimari, kendi benchmark&amp;#39;ları ile bağımsız ölçümler arasındaki fark ve prompt caching tuzağı.</description>
+      <description>&lt;p&gt;&lt;em&gt;(Serinin ikinci yazısı. &lt;a href=&#34;../nedir-bu-claude-tursusu/&#34;&gt;İlk yazı&lt;/a&gt; token&amp;rsquo;ın nereye gittiğiyle ilgiliydi.)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Token derdine çözüm arayan bir sürü repo çıktı son aylarda. En dikkat çekeni &lt;strong&gt;Headroom&lt;/strong&gt; (&lt;a href=&#34;https://github.com/headroomlabs-ai/headroom&#34;&gt;headroomlabs-ai/headroom&lt;/a&gt;). Ocak 2026&amp;rsquo;da açılmış, yazdığım sırada 66 bin civarı yıldızı var, Apache-2.0, Python. Trendshift&amp;rsquo;in kaydına göre 2 Haziran 2026&amp;rsquo;da GitHub Trending&amp;rsquo;de #1 olmuş.&lt;/p&gt;&#xA;&lt;h2 id=&#34;headroom-aslında-ne-yapıyor&#34;&gt;Headroom aslında ne yapıyor?&lt;/h2&gt;&#xA;&lt;p&gt;GitHub açıklaması net: &lt;em&gt;&amp;ldquo;Compress tool outputs, logs, files, and RAG chunks before they reach the LLM.&amp;rdquo;&lt;/em&gt; README&amp;rsquo;deki slogan da &lt;em&gt;&amp;ldquo;The context compression layer for AI agents.&amp;rdquo;&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Nedir bu Claude turşusu?</title>
       <link>https://mrturkmen.com/posts/nedir-bu-claude-tursusu/</link>
       <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/nedir-bu-claude-tursusu/</guid>
-      <description>Claude Code&amp;#39;da token&amp;#39;ların neden hızlı tükendiği, context window ve uzun oturumları yönetme rehberi.</description>
+      <description>&lt;p&gt;Yapay zeka hayatımıza girdi gireli teknik konularda yazı yazmak, bir şeyleri anlatmak veya çizmek epey kolaylaştı. Fakat bu kadar kolaylaşması öğrenme eğrisini de düzleştirdi. Araştırma olmadan tüm bilgilerin önümüze rahat şekilde gelmesi de o bilgilerin değerini ister istemez düşürebiliyor.&lt;/p&gt;&#xA;&lt;p&gt;Neyse, uzun lafın kısası: bunlar araçlar ve kullanılması şart araçlar, fakat burada önemli olan işinizde kullanmayı öğrenmek en mantıklı seçenek. Zaten öğrenmediğinizde o veya bu şekilde öğrenenler sizin yerinizi er ya da geç alacaktır.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

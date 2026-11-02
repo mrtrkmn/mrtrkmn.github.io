@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Workflow on mrturkmen</title>
     <link>https://mrturkmen.com/tags/workflow/</link>
     <description>Recent content in Workflow on mrturkmen</description>
-    <image>
-      <title>mrturkmen</title>
-      <url>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 25 Feb 2022 13:53:03 +0000</lastBuildDate>
@@ -18,14 +13,14 @@
       <link>https://mrturkmen.com/posts/automation-for-complain/</link>
       <pubDate>Fri, 25 Feb 2022 13:53:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/automation-for-complain/</guid>
-      <description>Complain to krc.com.tr with automation</description>
+      <description>&lt;hr&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;I am alive !!!&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Right, I did not post anything for long time and  could not imagine that this will be my next blog post after long time, but it is indeed.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;This is a story about a company who hold the product (- sent for warranty -) for five months and did not respond any emails.&lt;/p&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s start from the beginning of the story, the product itself is not important, instead how they (- company -) approached to situation is important.&lt;/p&gt;</description>
     </item>
     <item>
       <title>auto-latex: generate and handle latex through github actions</title>
       <link>https://mrturkmen.com/posts/build-release-latex/</link>
       <pubDate>Mon, 26 Oct 2020 16:25:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/build-release-latex/</guid>
-      <description>Creating PDFs with Latex</description>
+      <description>&lt;hr&gt;&#xA;&lt;p&gt;In this post, I will be describing to setup a workflow to build and release your Latex files through Github actions. First of all, keep in mind that this post is not about what is Latex and how to use it.&lt;/p&gt;&#xA;&lt;p&gt;It is extremely nice to integrate daily development tools such as CI/CD to your preparation of paper, without any hassle. Why is that because it is cool to track of what has been changed on a paper over time. In fact, having a couple of people who are responsible in different parts of paper, sometimes blocks others. Therefore, having such a workflow will increase productivity for everyone in a group.  Whenever pull request created to main branch, it will be easy to check typos, logic errors and missing points by others.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

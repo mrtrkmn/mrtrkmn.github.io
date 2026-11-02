@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Default on mrturkmen</title>
     <link>https://mrturkmen.com/tags/default/</link>
     <description>Recent content in Default on mrturkmen</description>
-    <image>
-      <title>mrturkmen</title>
-      <url>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 18 May 2020 00:00:03 +0000</lastBuildDate>
     <atom:link href="https://mrturkmen.com/tags/default/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>error: no space left on this device </title>
+      <title>error: no space left on this device</title>
       <link>https://mrturkmen.com/posts/no-space-left-on-device/</link>
       <pubDate>Mon, 18 May 2020 00:00:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/no-space-left-on-device/</guid>
-      <description>How to solve issue of &amp;#39;No space left on device&amp;#39; which is caused by Docker. </description>
+      <description>&lt;h1 id=&#34;summary&#34;&gt;Summary&lt;/h1&gt;&#xA;&lt;p&gt;In this post, one of the well known (-open to discuss :)-) error of &amp;ldquo;No space left on device&amp;rdquo; &lt;strong&gt;which is caused due to Docker&lt;/strong&gt; will be solved with different approaches.&lt;/p&gt;&#xA;&lt;p&gt;Note: &amp;ldquo;No space left on device&amp;rdquo; error can be caused due to any other reason than docker itself. Hence, it would be nice to make sure that the error is caused due to docker volumes.&lt;/p&gt;&#xA;&lt;p&gt;You can check whether it is caused due to docker volumes or not by following steps over &lt;a href=&#34;#ensure-about-the-problem&#34;&gt;here&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

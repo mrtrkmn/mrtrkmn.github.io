@@ -1,3 +1,1 @@
 User-agent: *
-Disallow:
-Sitemap: https://mrturkmen.com/sitemap.xml

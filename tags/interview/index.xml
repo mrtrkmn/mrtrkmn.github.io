@@ -1,31 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Interview on mrturkmen</title>
     <link>https://mrturkmen.com/tags/interview/</link>
     <description>Recent content in Interview on mrturkmen</description>
-    <image>
-      <title>mrturkmen</title>
-      <url>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 09 Dec 2024 09:00:03 +0000</lastBuildDate>
     <atom:link href="https://mrturkmen.com/tags/interview/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>rejection </title>
+      <title>rejection</title>
       <link>https://mrturkmen.com/posts/rejection/</link>
       <pubDate>Mon, 09 Dec 2024 09:00:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/rejection/</guid>
-      <description>Failures bring success</description>
+      <description>&lt;p&gt;What I like about interviews is that they can directly show your weaknesses to you. When you think about a friend, girlfriend, parents and even your teacher, they all might say that you are great. Well, maybe you are really good at what you do, but hearing it from someone who has objective views on you is very effective. It is all about trade-offs. Here, objective views refer to the perspective of conducting interviews - it would not be fair to have your closest friend as the interviewer. All judgment is done based on your technical skills rather than personal thoughts. Sure, you do not want to hear bad judgments from your close friends, girlfriend or parents. However, you might still want to see your value in the industry independently from what your friends, parents think about. Therefore, I started interviewing with companies to find my weaknesses and desired job.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>from interview question to enlightenment: metaclasses in python </title>
+      <title>from interview question to enlightenment: metaclasses in python</title>
       <link>https://mrturkmen.com/posts/metaclasses-python/</link>
       <pubDate>Sun, 18 Jun 2023 10:20:00 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/metaclasses-python/</guid>
-      <description>metaclasses in python</description>
+      <description>&lt;p&gt;It was another interview that I had with a company, and I was asked about metaclasses in Python. Up to now, I did not have a requirement to use them, it leads to have a superficial idea about them but not exactly know what they are, therefore decided to do some research and write a short blog post about them.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-are-metaclasses&#34;&gt;What are metaclasses?&lt;/h2&gt;&#xA;&lt;p&gt;In Python, everything is an object. Classes are objects too. Metaclasses are classes that create classes or customize class creation. We can say that metaclasses are the &amp;ldquo;stuff&amp;rdquo; that creates classes.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Do-178 on mrturkmen</title>
     <link>https://mrturkmen.com/tags/do-178/</link>
     <description>Recent content in Do-178 on mrturkmen</description>
-    <image>
-      <title>mrturkmen</title>
-      <url>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 12 Feb 2024 00:00:03 +0000</lastBuildDate>
@@ -18,7 +13,7 @@
       <link>https://mrturkmen.com/posts/safety-critical-software/</link>
       <pubDate>Mon, 12 Feb 2024 00:00:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/safety-critical-software/</guid>
-      <description> </description>
+      <description>&lt;p&gt;Have you heard of it ?  If not, you are not the only one, who did not heard such a field until now.&lt;/p&gt;&#xA;&lt;p&gt;Software development should not only focus on development of the software. In those cases, numerous problems will occur eventually, it might resemble addressing the manifestations of a severe ailment without delving into its underlying source.&lt;/p&gt;&#xA;&lt;p&gt;There are some standardizations and certifications which are pointing out main requirements and features of these kind of software systems. I started to learn about this in the aerospace domain, for instance DO-178 safety standard is one of them. Even though DO-178 standard published in 1984, it has been regularly updated in 1985 and 2011.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

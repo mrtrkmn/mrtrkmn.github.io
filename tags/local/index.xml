@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Local on mrturkmen</title>
     <link>https://mrturkmen.com/tags/local/</link>
     <description>Recent content in Local on mrturkmen</description>
-    <image>
-      <title>mrturkmen</title>
-      <url>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://mrturkmen.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sun, 05 Mar 2023 14:01:03 +0000</lastBuildDate>
@@ -18,14 +13,14 @@
       <link>https://mrturkmen.com/posts/tunnelling-to-local-ssh-service/</link>
       <pubDate>Sun, 05 Mar 2023 14:01:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/tunnelling-to-local-ssh-service/</guid>
-      <description>Access local PC/Server through Cloudflare tunneling</description>
+      <description>&lt;p&gt;It is always been fun to access a local machine that is running at your home or at university or somewhere which does not have a public IP address or you do not have control over the network.&lt;/p&gt;&#xA;&lt;p&gt;I already wrote a post about &lt;a href=&#34;https://mrturkmen.com/posts/cloudflare-tunneling/&#34;&gt;cloudflare tunneling&lt;/a&gt; however it was about serving local web applications. This time I will show you how to access local SSH service without exposing it to the world.&lt;/p&gt;</description>
     </item>
     <item>
       <title>cloudflare tunneling: serve local like not local</title>
       <link>https://mrturkmen.com/posts/cloudflare-tunneling/</link>
       <pubDate>Sun, 20 Mar 2022 21:26:03 +0000</pubDate>
       <guid>https://mrturkmen.com/posts/cloudflare-tunneling/</guid>
-      <description>Run locally, serve globally </description>
+      <description>&lt;h3 id=&#34;would-like-to-see-it-in-action-right-away-&#34;&gt;Would like to see it in action right away ?&lt;/h3&gt;&#xA;&lt;p&gt;Go to demonstration video here:&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=Ayjk7J_KQ8A&#34;&gt;&lt;img src=&#34;https://img.youtube.com/vi/Ayjk7J_KQ8A/0.jpg&#34; alt=&#34;Demonstration Video&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;I am always amazed with Cloudflare&amp;rsquo;s products, blog posts and tools that they are offering. In my spare time, I am trying to read through blog posts over here &lt;a href=&#34;https://blog.cloudflare.com/&#34;&gt;Cloudflare Blog&lt;/a&gt;. Some of them are really easy to consume, some are not, you might need to have an idea about network related terms, or need to follow Cloudflare closely to catch on the blog posts.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

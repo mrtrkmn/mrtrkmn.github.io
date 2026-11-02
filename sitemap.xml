@@ -416,10 +416,10 @@
     <loc>https://mrturkmen.com/tags/scp/</loc>
     <lastmod>2019-01-11T09:04:03+00:00</lastmod>
   </url><url>
-    <loc>https://mrturkmen.com/tags/vim/</loc>
+    <loc>https://mrturkmen.com/posts/vim/</loc>
     <lastmod>2019-01-11T09:04:03+00:00</lastmod>
   </url><url>
-    <loc>https://mrturkmen.com/posts/vim/</loc>
+    <loc>https://mrturkmen.com/tags/vim/</loc>
     <lastmod>2019-01-11T09:04:03+00:00</lastmod>
   </url><url>
     <loc>https://mrturkmen.com/tags/wget/</loc>
@@ -431,10 +431,6 @@
     <loc>https://mrturkmen.com/posts/linux-terminalinden-basit-komutlar/</loc>
     <lastmod>2019-01-09T09:04:03+00:00</lastmod>
   </url><url>
-    <loc>https://mrturkmen.com/archives/</loc>
-  </url><url>
     <loc>https://mrturkmen.com/categories/</loc>
-  </url><url>
-    <loc>https://mrturkmen.com/search/</loc>
   </url>
 </urlset>
