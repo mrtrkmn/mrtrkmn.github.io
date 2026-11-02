@@ -1,35 +1,12 @@
 ---
 title: "haproxy-with-nginx: setting them up for k8s cluster"
 date: 2020-07-10T16:35:03+00:00
-# weight: 1
-# aliases: ["/first"]
-tags: ["kubernetes", "docker", "pod","HAProxy","cluster","master","node","nginx","worker","ingress"]
-author: "mrturkmen"
-# author: ["Me", "You"] # multiple authors
-showToc: true
-TocOpen: false
 draft: false
-hidemeta: false
-comments: true
+author: "mrturkmen"
 description: "NGINX Ingress Controller Setup"
-disableHLJS: true # to disable highlightjs
-disableShare: false
-disableHLJS: false
-hideSummary: false
-searchHidden: false
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
-cover:
-    image: "../resources/assets/images/github_actions.png" # image path/url
-    alt: "<alt text>" # alt text
-    caption: "<text>" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
-editPost:
-    URL: "https://github.com/mrtrkmn/mrtrkmn.github.io/edit/master/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
+tags: ["kubernetes", "docker", "pod", "HAProxy", "cluster", "master", "node", "nginx", "worker", "ingress"]
+toc: true
+images: ["/images/github_actions.png"]
 ---
 
 

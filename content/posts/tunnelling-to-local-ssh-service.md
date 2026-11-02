@@ -1,35 +1,11 @@
 ---
 title: "cloudflare tunneling: serve local SSH service without PUBLIC IP"
 date: 2023-03-05T14:01:03+00:00
-# weight: 1
-# aliases: ["/first"]
-tags: ["cloudflared", "cloudflare", "local","argo","tunneling", "deployment"]
-author: "mrturkmen"
-# author: ["Me", "You"] # multiple authors
-showToc: false
-TocOpen: false
 draft: false
-hidemeta: false
-comments: true
+author: "mrturkmen"
 description: "Access local PC/Server through Cloudflare tunneling"
-disableHLJS: true # to disable highlightjs
-disableShare: false
-disableHLJS: false
-hideSummary: false
-searchHidden: false
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
-cover:
-    image: "../../images/cloudflare-banner.png" # image path/url
-    alt: "" # alt text
-    caption: "Cloudflare" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: false # only hide on current single page
-editPost:
-    URL: "https://github.com/mrtrkmn/mrtrkmn.github.io/edit/master/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
+tags: ["cloudflared", "cloudflare", "local", "argo", "tunneling", "deployment"]
+images: ["/images/cloudflare-banner.png"]
 ---
 
 It is always been fun to access a local machine that is running at your home or at university or somewhere which does not have a public IP address or you do not have control over the network. 

@@ -1,27 +1,12 @@
 ---
 title: "Go ile Sanal Ortam Orkestrasyonu"
 date: 2026-02-26T15:00:00+01:00
-tags: ["go", "infrastructure", "docker", "libvirt", "wireguard", "conference", "goroutine", "networking"]
-author: "mrturkmen"
-showToc: true
-TocOpen: false
 draft: false
-hidemeta: false
-comments: true
+author: "mrturkmen"
 description: "Tek bir Go binary'si ile container, VM, ağ ve VPN'i ayağa kaldırmak — neden var, nerede işe yarar, neleri eksik."
-disableHLJS: true
-disableShare: false
-hideSummary: false
-searchHidden: false
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
-cover:
-    image: "../resources/assets/images/orchestrator.png" # image path/url
-    alt: "Network altyapisi" # alt text
-    caption: "<text>" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
+tags: ["go", "infrastructure", "docker", "libvirt", "wireguard", "conference", "goroutine", "networking"]
+toc: true
+images: ["/images/orchestrator.png"]
 ---
 
 Geçtiğimiz günlerde **Gophers İstanbul 2026**'da bir sunum yaptım. Konu: tek bir Go binary'si ile Docker container'ları, libvirt/KVM sanal makineleri, DHCP+DNS altyapısını ve WireGuard VPN tünelini — hepsini bir YAML dosyasından ayağa kaldıran bir araç. Sunumda bol bol kod parçacıkları ve Go'nun iç yapısı var. Bu yazı *o değil*. Burada daha çok aracın arkasındaki dağınık gerçek-dünya probleminden, nerelerde gerçekten işe yaradığını düşündüğümden, nelerin hâlâ eksik olduğundan ve vakit bulursam denemek istediğim fikirlerden bahsetmek istiyorum.

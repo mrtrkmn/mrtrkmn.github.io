@@ -1,36 +1,12 @@
 ---
-title: "debian: terminal/komut "
+title: "debian: terminal/komut"
 date: 2019-01-10T09:04:03+00:00
-# weight: 1
-# aliases: ["/first"]
-tags: ["linux", "terminal", "komut", "nftp","wget", "scp", "html"]
-author: "mrturkmen"
-# author: ["Me", "You"] # multiple authors
-showToc: true
-TocOpen: false
 draft: false
-hidemeta: false
-comments: true
+author: "mrturkmen"
 description: "Linuxa başlamak ve basit komutları ögrenmek"
-disableHLJS: true # to disable highlightjs
-disableShare: false
-disableHLJS: false
-hideSummary: false
-searchHidden: false
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
-cover:
-    image: "../../images/Icon-Vim.svg" # image path/url
-    alt: "" # alt text
-    caption: "" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
-editPost:
-    URL: "https://github.com/mrtrkmn/mrtrkmn.github.io/edit/master/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
-
+tags: ["linux", "terminal", "komut", "nftp", "wget", "scp", "html"]
+toc: true
+images: ["/images/Icon-Vim.svg"]
 ---
 
 ## Özet:

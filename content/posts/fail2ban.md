@@ -1,35 +1,11 @@
 ---
-title: "fail2ban: block ssh bruteforce attacks "
+title: "fail2ban: block ssh bruteforce attacks"
 date: 2021-02-24T12:00:03+00:00
-# weight: 1
-# aliases: ["/first"]
-tags: ["fail2ban", "ssh", "attack","bruteforce"]
-author: "mrturkmen"
-# author: ["Me", "You"] # multiple authors
-showToc: true
-TocOpen: false
 draft: false
-hidemeta: false
-comments: true
+author: "mrturkmen"
 description: "fail2ban: ban failed attempts"
-disableHLJS: true # to disable highlightjs
-disableShare: false
-disableHLJS: false
-hideSummary: false
-searchHidden: false
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
-cover:
-    image: "<image path/url>" # image path/url
-    alt: "<alt text>" # alt text
-    caption: "<text>" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
-editPost:
-    URL: "https://github.com/mrtrkmn/mrtrkmn.github.io/tree/master/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
+tags: ["fail2ban", "ssh", "attack", "bruteforce"]
+toc: true
 ---
 
 

@@ -1,35 +1,12 @@
 ---
 title: "youtubeto: download and save playlists to releases on Github"
 date: 2020-11-24T10:55:03+00:00
-# weight: 1
-# aliases: ["/first"]
-tags: ["youtube", "playlist", "download","youtubeto","ci/cd","fetch"]
-author: "mrturkmen"
-# author: ["Me", "You"] # multiple authors
-showToc: true
-TocOpen: false
 draft: false
-hidemeta: false
-comments: true
+author: "mrturkmen"
 description: "Automated way of fetching and releasing list of playlists defined by user."
-disableHLJS: true # to disable highlightjs
-disableShare: false
-disableHLJS: false
-hideSummary: false
-searchHidden: false
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
-cover:
-    image: "../../images/youtube_playlist_releases.png" # image path/url
-    alt: "" # alt text
-    caption: "" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: false # only hide on current single page
-editPost:
-    URL: "https://github.com/mrtrkmn/mrtrkmn.github.io/tree/master/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
+tags: ["youtube", "playlist", "download", "youtubeto", "ci/cd", "fetch"]
+toc: true
+images: ["/images/youtube_playlist_releases.png"]
 ---
 
 

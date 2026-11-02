@@ -1,35 +1,12 @@
 ---
 title: "brief intro on DO-178; safety critical software development"
 date: 2024-02-12T00:00:03+00:00
-# weight: 1
-# aliases: ["/first"]
-tags: ["aviation", "safety", "critical","software","certification","do-178"]
-author: "mrturkmen"
-# author: ["Me", "You"] # multiple authors
-showToc: true
-TocOpen: false
 draft: false
-hidemeta: false
-comments: true
-description: " "
-disableHLJS: true # to disable highlightjs
-disableShare: false
-disableHLJS: false
-hideSummary: false
-searchHidden: false
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
-cover:
-    image: "../../images/eurofigher.jpg" # image path/url
-    alt: "<alt text>" # alt text
-    caption: "Eurofighter" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: false # only hide on current single page
-editPost:
-    URL: "https://github.com/mrtrkmn/mrtrkmn.github.io/edit/master/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
+author: "mrturkmen"
+description: ""
+tags: ["aviation", "safety", "critical", "software", "certification", "do-178"]
+toc: true
+images: ["/images/eurofigher.jpg"]
 ---
 
 Have you heard of it ?  If not, you are not the only one, who did not heard such a field until now.

@@ -1,35 +1,10 @@
 ---
-title: "go[channels]: hot config reload with os signal "
+title: "go[channels]: hot config reload with os signal"
 date: 2021-04-18T05:30:03+00:00
-# weight: 1
-# aliases: ["/first"]
-tags: ["golang", "os", "programming", "reload"]
-author: "mrturkmen"
-# author: ["Me", "You"] # multiple authors
-showToc: false
-TocOpen: false
 draft: false
-hidemeta: false
-comments: false
+author: "mrturkmen"
 description: "Reloading config files with OS Signal"
-disableHLJS: true # to disable highlightjs
-disableShare: false
-disableHLJS: false
-hideSummary: false
-searchHidden: false
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
-cover:
-    image: "<image path/url>" # image path/url
-    alt: "<alt text>" # alt text
-    caption: "<text>" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
-editPost:
-    URL: "https://github.com/mrtrkmn/mrtrkmn.github.io/tree/master/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
+tags: ["golang", "os", "programming", "reload"]
 ---
 
 

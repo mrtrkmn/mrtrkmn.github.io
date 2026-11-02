@@ -1,31 +1,11 @@
 ---
 title: "Headroom'u kurdum, denedim, kaldırdım"
 date: 2026-08-19T00:00:00+00:00
-tags: ["headroom", "claude", "claude-code", "yapay zeka", "llm", "token", "context-compression", "mcp"]
-author: "mrturkmen"
-showToc: true
-TocOpen: false
 draft: false
-hidemeta: false
-comments: true
+author: "mrturkmen"
 description: "Headroom gerçekten token tasarrufu sağlıyor mu? Kurulum, mimari, kendi benchmark'ları ile bağımsız ölçümler arasındaki fark ve prompt caching tuzağı."
-disableHLJS: false
-disableShare: false
-hideSummary: false
-searchHidden: false
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
-cover:
-    image: ""
-    alt: "Headroom context compression mimarisi"
-    caption: ""
-    relative: false
-    hidden: true
-editPost:
-    URL: "https://github.com/mrtrkmn/mrtrkmn.github.io/edit/master/content"
-    Text: "Suggest Changes"
-    appendFilePath: true
+tags: ["headroom", "claude", "claude-code", "yapay zeka", "llm", "token", "context-compression", "mcp"]
+toc: true
 ---
 
 *(Serinin ikinci yazısı. [İlk yazı](../nedir-bu-claude-tursusu/) token'ın nereye gittiğiyle ilgiliydi.)*

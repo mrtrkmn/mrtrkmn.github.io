@@ -1,35 +1,12 @@
 ---
-title: "rejection "
+title: "rejection"
 date: 2024-12-09T09:00:03+00:00
-# weight: 1
-# aliases: ["/first"]
-tags: ["interview", "maang", "technical","python","programming","error"]
-author: "mrturkmen"
-# author: ["Me", "You"] # multiple authors
-showToc: true
-TocOpen: false
 draft: false
-hidemeta: false
-comments: true
+author: "mrturkmen"
 description: "Failures bring success"
-disableHLJS: true # to disable highlightjs
-disableShare: false
-disableHLJS: false
-hideSummary: false
-searchHidden: false
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
-cover:
-    image: "../../images/1684471555110.jpeg" # image path/url
-    alt: "<alt text>" # alt text
-    caption: "<text>" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: false # only hide on current single page
-editPost:
-    URL: "https://github.com/mrtrkmn/mrtrkmn.github.io/edit/master/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
+tags: ["interview", "maang", "technical", "python", "programming", "error"]
+toc: true
+images: ["/images/1684471555110.jpeg"]
 ---
 
 What I like about interviews is that they can directly show your weaknesses to you. When you think about a friend, girlfriend, parents and even your teacher, they all might say that you are great. Well, maybe you are really good at what you do, but hearing it from someone who has objective views on you is very effective. It is all about trade-offs. Here, objective views refer to the perspective of conducting interviews - it would not be fair to have your closest friend as the interviewer. All judgment is done based on your technical skills rather than personal thoughts. Sure, you do not want to hear bad judgments from your close friends, girlfriend or parents. However, you might still want to see your value in the industry independently from what your friends, parents think about. Therefore, I started interviewing with companies to find my weaknesses and desired job.

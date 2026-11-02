@@ -1,31 +1,11 @@
 ---
 title: "Nedir bu Claude turşusu?"
 date: 2026-08-18T00:00:00+00:00
-tags: ["claude", "claude-code", "yapay zeka", "llm", "token", "context-window"]
-author: "mrturkmen"
-showToc: true
-TocOpen: false
 draft: false
-hidemeta: false
-comments: true
+author: "mrturkmen"
 description: "Claude Code'da token'ların neden hızlı tükendiği, context window ve uzun oturumları yönetme rehberi."
-disableHLJS: false
-disableShare: false
-hideSummary: false
-searchHidden: false
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
-cover:
-    image: ""
-    alt: "Claude Code ve context window"
-    caption: ""
-    relative: false
-    hidden: true
-editPost:
-    URL: "https://github.com/mrtrkmn/mrtrkmn.github.io/edit/master/content"
-    Text: "Suggest Changes"
-    appendFilePath: true
+tags: ["claude", "claude-code", "yapay zeka", "llm", "token", "context-window"]
+toc: true
 ---
 
 Yapay zeka hayatımıza girdi gireli teknik konularda yazı yazmak, bir şeyleri anlatmak veya çizmek epey kolaylaştı. Fakat bu kadar kolaylaşması öğrenme eğrisini de düzleştirdi. Araştırma olmadan tüm bilgilerin önümüze rahat şekilde gelmesi de o bilgilerin değerini ister istemez düşürebiliyor. 

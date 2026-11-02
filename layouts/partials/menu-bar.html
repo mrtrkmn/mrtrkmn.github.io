@@ -1,0 +1,114 @@
+<header class="menu-bar" role="menubar">
+  {{- /* Hamburger menu for mobile */ -}}
+  <button class="menu-hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span aria-hidden="true">&#9776;</span>
+  </button>
+  
+  <nav class="menu-items">
+    {{- /* File Menu */ -}}
+    <div class="menu-item" role="none">
+      <button role="menuitem" aria-haspopup="true" aria-expanded="false">
+        <span class="underline">F</span>ile
+      </button>
+      <div class="menu-dropdown" role="menu">
+        <a href="{{ "/" | relURL }}" class="menu-dropdown-item" role="menuitem">
+          <span>Home</span>
+          <span class="menu-shortcut">g h</span>
+        </a>
+        <a href="{{ "/posts/" | relURL }}" class="menu-dropdown-item" role="menuitem">
+          <span>All Posts</span>
+          <span class="menu-shortcut">g p</span>
+        </a>
+        {{ with .OutputFormats.Get "RSS" -}}
+        <div class="menu-separator" role="separator"></div>
+        <a href="{{ .RelPermalink }}" class="menu-dropdown-item" role="menuitem" target="_blank">
+          <span>RSS Feed</span>
+        </a>
+        {{- end }}
+      </div>
+    </div>
+    
+    {{- /* View Menu */ -}}
+    <div class="menu-item" role="none">
+      <button role="menuitem" aria-haspopup="true" aria-expanded="false">
+        <span class="underline">V</span>iew
+      </button>
+      <div class="menu-dropdown" role="menu">
+        <button class="menu-dropdown-item" role="menuitem" data-action="toggle-theme">
+          <span>Toggle Theme</span>
+          <span class="menu-shortcut">t</span>
+        </button>
+        <div class="menu-separator" role="separator"></div>
+        <button class="menu-dropdown-item" role="menuitem" data-action="increase-font">
+          <span>Increase Font Size</span>
+          <span class="menu-shortcut">+</span>
+        </button>
+        <button class="menu-dropdown-item" role="menuitem" data-action="decrease-font">
+          <span>Decrease Font Size</span>
+          <span class="menu-shortcut">-</span>
+        </button>
+        <button class="menu-dropdown-item" role="menuitem" data-action="reset-font">
+          <span>Reset Font Size</span>
+          <span class="menu-shortcut">0</span>
+        </button>
+      </div>
+    </div>
+    
+    {{- /* Buffers Menu */ -}}
+    <div class="menu-item" role="none">
+      <button role="menuitem" aria-haspopup="true" aria-expanded="false">
+        <span class="underline">B</span>uffers
+      </button>
+      <div class="menu-dropdown" role="menu">
+        {{- range .Site.Menus.main }}
+        <a href="{{ .URL | relURL }}" class="menu-dropdown-item" role="menuitem">
+          <span>{{ .Name }}</span>
+        </a>
+        {{- end }}
+        <div class="menu-separator" role="separator"></div>
+        <a href="{{ "/tags/" | relURL }}" class="menu-dropdown-item" role="menuitem">
+          <span>Tags</span>
+        </a>
+        <a href="{{ "/categories/" | relURL }}" class="menu-dropdown-item" role="menuitem">
+          <span>Categories</span>
+        </a>
+      </div>
+    </div>
+    
+    {{- /* Help Menu */ -}}
+    <div class="menu-item" role="none">
+      <button role="menuitem" aria-haspopup="true" aria-expanded="false">
+        <span class="underline">H</span>elp
+      </button>
+      <div class="menu-dropdown" role="menu">
+        <button class="menu-dropdown-item" role="menuitem" data-action="show-help">
+          <span>Keyboard Shortcuts</span>
+          <span class="menu-shortcut">?</span>
+        </button>
+        {{ with .Site.Params.github -}}
+        <div class="menu-separator" role="separator"></div>
+        <a href="https://github.com/{{ . }}" class="menu-dropdown-item" role="menuitem" target="_blank" rel="noopener">
+          <span>GitHub</span>
+        </a>
+        {{- end }}
+      </div>
+    </div>
+  </nav>
+  
+  <div class="menu-bar-right">
+    <span class="menu-bar-title">{{ .Site.Title }}</span>
+    
+    <button class="mode-toggle" aria-label="Toggle between Emacs and Evil mode" data-action="toggle-evil">
+      <span class="mode-indicator" aria-hidden="true">E</span>
+      <span class="mode-label">Emacs</span>
+    </button>
+    
+    <button class="theme-toggle" aria-label="Toggle color theme" data-action="toggle-theme">
+      <span class="icon" aria-hidden="true">
+        <span class="theme-icon-dark">&#9790;</span>
+        <span class="theme-icon-light" style="display:none;">&#9788;</span>
+      </span>
+      <span class="theme-label">Theme</span>
+    </button>
+  </div>
+</header>

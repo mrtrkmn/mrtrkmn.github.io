@@ -1,35 +1,11 @@
 ---
 title: "cloudflare tunneling: serve local like not local"
 date: 2022-03-20T21:26:03+00:00
-# weight: 1
-# aliases: ["/first"]
-tags: ["cloudflared", "cloudflare", "local","argo","tunneling", "deployment"]
-author: "mrturkmen"
-# author: ["Me", "You"] # multiple authors
-showToc: false
-TocOpen: false
 draft: false
-hidemeta: false
-comments: true
-description: "Run locally, serve globally "
-disableHLJS: true # to disable highlightjs
-disableShare: false
-disableHLJS: false
-hideSummary: false
-searchHidden: false
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
-cover:
-    image: "../../images/cloudflare-banner.png" # image path/url
-    alt: "" # alt text
-    caption: "Cloudflare" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: false # only hide on current single page
-editPost:
-    URL: "https://github.com/mrtrkmn/mrtrkmn.github.io/edit/master/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
+author: "mrturkmen"
+description: "Run locally, serve globally"
+tags: ["cloudflared", "cloudflare", "local", "argo", "tunneling", "deployment"]
+images: ["/images/cloudflare-banner.png"]
 ---
 ### Would like to see it in action right away ? 
 

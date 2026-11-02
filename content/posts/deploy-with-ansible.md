@@ -1,35 +1,12 @@
 ---
 title: "ansible: deploy easily in simple steps"
 date: 2020-12-12T17:42:03+00:00
-# weight: 1
-# aliases: ["/first"]
-tags: ["ansible", "deployment", "continuous","github","ci/cd"]
-author: "mrturkmen"
-# author: ["Me", "You"] # multiple authors
-showToc: true
-TocOpen: false
 draft: false
-hidemeta: false
-comments: true
-description: "Deploying with Ansible on CI/CD. "
-disableHLJS: true # to disable highlightjs
-disableShare: false
-disableHLJS: false
-hideSummary: false
-searchHidden: false
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
-cover:
-    image: "../../images/ansible_deployment.jpeg" # image path/url
-    alt: "" # alt text
-    caption: "Deployment Workflow" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: false # only hide on current single page
-editPost:
-    URL: "https://github.com/mrtrkmn/mrtrkmn.github.io/edit/master/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
+author: "mrturkmen"
+description: "Deploying with Ansible on CI/CD."
+tags: ["ansible", "deployment", "continuous", "github", "ci/cd"]
+toc: true
+images: ["/images/ansible_deployment.jpeg"]
 ---
 
 
@@ -90,7 +67,7 @@ Setting ssh connection between server and ansible user is pretty straitforward, 
 
 Overall simplified flow for deployment is given below :
 
-![Overall simplified flow](../../ansible_deployment.jpeg)
+![Overall simplified flow](../../images/ansible_deployment.jpeg)
 
 As it is declared from overall picture above, we need to provide encrypted ssh key and script for decryption together, in order to use plain private key to access the server. 
 

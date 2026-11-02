@@ -1,35 +1,12 @@
 ---
-title: "packer: build custom images on cloud and local "
+title: "packer: build custom images on cloud and local"
 date: 2021-04-17T09:00:03+00:00
-# weight: 1
-# aliases: ["/first"]
-tags: ["packer", "aws", "ubuntu", "automation"]
-author: "mrturkmen"
-# author: ["Me", "You"] # multiple authors
-showToc: true
-TocOpen: false
 draft: false
-hidemeta: false
-comments: false
+author: "mrturkmen"
 description: "create custom images on with packer"
-disableHLJS: true # to disable highlightjs
-disableShare: false
-disableHLJS: false
-hideSummary: false
-searchHidden: false
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
-cover:
-    image: "../../images/packer_build_on_aws.png" # image path/url
-    alt: "" # alt text
-    caption: "Build custom AMI on AWS" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: false # only hide on current single page
-editPost:
-    URL: "https://github.com/mrtrkmn/mrtrkmn.github.io/edit/master/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
+tags: ["packer", "aws", "ubuntu", "automation"]
+toc: true
+images: ["/images/packer_build_on_aws.png"]
 ---
 
 

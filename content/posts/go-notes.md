@@ -1,35 +1,12 @@
 ---
-title: "go: object oriented programming notes "
+title: "go: object oriented programming notes"
 date: 2020-06-08T10:00:03+00:00
-# weight: 1
-# aliases: ["/first"]
-tags: ["golang", "go", "google","coursera","programming","examples"]
-author: "mrturkmen"
-# author: ["Me", "You"] # multiple authors
-showToc: true
-TocOpen: false
 draft: false
-hidemeta: false
-comments: true
+author: "mrturkmen"
 description: "Go Programming Language Notes."
-disableHLJS: true # to disable highlightjs
-disableShare: false
-disableHLJS: false
-hideSummary: false
-searchHidden: false
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
-cover:
-    image: "../../images/golangposts/header.png" # image path/url
-    alt: "" # alt text
-    caption: "" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: false # only hide on current single page
-editPost:
-    URL: "https://github.com/mrtrkmn/mrtrkmn.github.io/tree/master/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
+tags: ["golang", "go", "google", "coursera", "programming", "examples"]
+toc: true
+images: ["/images/golangposts/header.png"]
 ---
 
 In this post, I would like to share the notes that I took when I was completing following Go series education on Coursera. I can recommend it for anyone who would like to get rapid introduction to Go programming. 

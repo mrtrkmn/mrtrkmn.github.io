@@ -1,35 +1,12 @@
 ---
 title: "cherry-pick: re-build git history"
 date: 2022-08-02T20:10:03+00:00
-# weight: 1
-# aliases: ["/first"]
-tags: ["cherry-pick", "git", "github"]
-author: "mrturkmen"
-# author: ["Me", "You"] # multiple authors
-showToc: true
-TocOpen: true
 draft: false
-hidemeta: false
-comments: true
-description: "remove any commit from git history and re-build it "
-disableHLJS: true # to disable highlightjs
-disableShare: false
-disableHLJS: false
-hideSummary: false
-searchHidden: false
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
-cover:
-    image: "../../images/cherry-pick.png" # image path/url
-    alt: "" # alt text
-    caption: "cherry-pick (taken from: https://mattstauffer.com/assets/images/content/opengraph/cherry-pick.png)" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: false # only hide on current single page
-editPost:
-    URL: "https://github.com/mrtrkmn/mrtrkmn.github.io/edit/master/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
+author: "mrturkmen"
+description: "remove any commit from git history and re-build it"
+tags: ["cherry-pick", "git", "github"]
+toc: true
+images: ["/images/cherry-pick.png"]
 ---
 
 

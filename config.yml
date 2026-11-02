@@ -1,47 +1,37 @@
 baseURL: "https://mrturkmen.com/"
 title: mrturkmen
-theme: dream
-
-params:
-  env: production
-  title: Ahmet Turkmen
-  description: "Contains notes and blog posts"
-  keywords: [gRPC, docker, go, golang, cloud, virtualization, python]
-  author: mrturkmen
-  images: ["static"]
-  
-  # Dream theme specific settings
-  avatar: "content/images/profile.jpg"
-  subtitle: "Systems Development Engineer at Amazon"
-  
-  social:
-    - name: github
-      url: "https://github.com/mrtrkmn"
-    - name: linkedin
-      url: "https://linkedin.com/in/mrturkmen"
-    - name: gitlab
-      url: "https://gitlab.com/mrturkmen"
-    - name: email
-      url: "mailto:hi@mrturkmen.com"
-
-menu:
-  main:
-    - name: Posts
-      url: /posts/
-      weight: 10
-    - name: Archive
-      url: /archives/
-      weight: 20
-    - name: Search
-      url: /search/
-      weight: 30
+theme: emacs
 
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
 buildExpired: false
 
-googleAnalytics: UA-165248542-1
+params:
+  title: Ahmet Turkmen
+  description: "Contains notes and blog posts"
+  keywords: [gRPC, docker, go, golang, cloud, virtualization, python]
+  author: mrturkmen
+  images: ["/profile.jpg"]
+  # Emacs theme: GitHub handle shown in the Help menu
+  github: mrtrkmn
+  tocTitle: "Table of Contents"
+
+menu:
+  main:
+    - name: Posts
+      url: /posts/
+      weight: 10
+
+# Emacs theme styles code blocks from its own syntax.css, so Hugo must
+# emit highlight classes instead of inline styles.
+markup:
+  highlight:
+    noClasses: false
+
+services:
+  googleAnalytics:
+    ID: UA-165248542-1
 
 minify:
   disableXML: true
@@ -51,4 +41,3 @@ outputs:
   home:
     - HTML
     - RSS
-    - JSON

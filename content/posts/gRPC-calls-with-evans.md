@@ -1,35 +1,12 @@
 ---
 title: "evans: universal gRPC client demonstration"
 date: 2020-08-08T09:19:03+00:00
-# weight: 1
-# aliases: ["/first"]
-tags: ["grpc", "go", "client","server","cli","automated","mock-client"]
-author: "mrturkmen"
-# author: ["Me", "You"] # multiple authors
-showToc: true
-TocOpen: false
 draft: false
-hidemeta: false
-comments: true
+author: "mrturkmen"
 description: "Mock gRPC client"
-disableHLJS: true # to disable highlightjs
-disableShare: false
-disableHLJS: false
-hideSummary: false
-searchHidden: false
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
-cover:
-    image: "../../images/github_actions.png" # image path/url
-    alt: "<alt text>" # alt text
-    caption: "<text>" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
-editPost:
-    URL: "https://github.com/mrtrkmn/mrtrkmn.github.io/tree/master/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
+tags: ["grpc", "go", "client", "server", "cli", "automated", "mock-client"]
+toc: true
+images: ["/images/github_actions.png"]
 ---
 
 In this post, I am going to write demo for a tool which I have just met, it is called **Evans**. It is basically universal gRPC client. What it means ? Basically when you have gRPC server and would like to test gRPC calls without creating client, you can test server side calls with **Evans**. It is known that gRPC is very common communication method between microservices, it can be used for internal and external communication. I do not have intention to explain what gRPC is in this post since it is not the purpose. 
