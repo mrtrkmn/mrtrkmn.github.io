@@ -38,14 +38,15 @@ Cloud Providers Solutions:
 Kubernetes cluster will be setup on following nodes in the table below, note that HAProxy will run on another node and all ansible playbooks and setting up Kubernetes cluster will be managed through HAProxy. Keep in mind that all nodes + HAProxy is under same subnet internally which means that we will only one external IP address where HAProxy use and `kubectl` clients communicate. All instances are running on ubuntu_18.04, it means that the instructions and steps may not work with another system. 
 
 <style type="text/css">
-.tg  {border-collapse:collapse;border-color:#9ABAD9;border-spacing:0;  margin-left: auto; margin-right: auto;}
-.tg td{background-color:#EBF5FF;border-color:#9ABAD9;border-style:solid;border-width:1px;color:#444;
-  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{background-color:#409cff;border-color:#9ABAD9;border-style:solid;border-width:1px;color:#fff;
-  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-pwe8{background-color:#fe0000;color:#ffffff;font-weight:bold;text-align:left;vertical-align:top}
-.tg .tg-0lax{text-align:left;vertical-align:top}
-.tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
+/* Table-generator colours replaced with the theme's own, so the table
+   follows light and dark mode instead of staying light. */
+.tg {border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto}
+.tg td, .tg th {border:1px solid var(--border);padding:0.5em 1em;vertical-align:top}
+.tg th {background-color:var(--bg-active);color:var(--fg-main)}
+.tg td {background-color:var(--bg-alt);color:var(--fg-main)}
+.tg .tg-pwe8 {background-color:var(--red);color:var(--bg-main);font-weight:bold;text-align:left}
+.tg .tg-0lax {text-align:left}
+.tg .tg-amwm {font-weight:bold;text-align:center}
 </style>
 <table class="tg">
 <thead>
