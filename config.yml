@@ -46,3 +46,5 @@ outputs:
   home:
     - HTML
     - RSS
+    # Search index for assets/js/search.js
+    - JSON

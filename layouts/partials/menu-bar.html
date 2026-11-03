@@ -54,6 +54,23 @@
       </div>
     </div>
     
+    {{- /* Search Menu - site addition, driven by assets/js/search.js */ -}}
+    <div class="menu-item" role="none">
+      <button role="menuitem" aria-haspopup="true" aria-expanded="false">
+        <span class="underline">S</span>earch
+      </button>
+      <div class="menu-dropdown" role="menu">
+        <button class="menu-dropdown-item" role="menuitem" data-action="search-page">
+          <span>I-search</span>
+          <span class="menu-shortcut">C-s</span>
+        </button>
+        <button class="menu-dropdown-item" role="menuitem" data-action="search-posts">
+          <span>Search All Posts</span>
+          <span class="menu-shortcut">M-s</span>
+        </button>
+      </div>
+    </div>
+    
     {{- /* Buffers Menu */ -}}
     <div class="menu-item" role="none">
       <button role="menuitem" aria-haspopup="true" aria-expanded="false">
